@@ -1,4 +1,6 @@
-﻿namespace Wacton.Desu
+﻿using Ionic.Zip;
+
+namespace Wacton.Desu
 {
     using System;
     using System.Collections.Generic;
@@ -56,7 +58,8 @@
             var assembly = Assembly.GetExecutingAssembly();
             var resourceNames = assembly.GetManifestResourceNames();
             var resourceName = resourceNames.Single(resource => resource.Contains(DictionaryName));
-            return assembly.GetManifestResourceStream(resourceName);
+            var resourceStream = assembly.GetManifestResourceStream(resourceName);
+            return ZipFile.Read(resourceStream).Single().OpenReader();
         }
 
         private static IEnumerable<IJapaneseDictionaryEntry> ParseDictionary(Func<Stream> openStreamFunction)

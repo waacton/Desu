@@ -18,7 +18,7 @@
         public static readonly EntryElement Reading = new EntryElement("Reading", "r_ele", (entry, data) => entry.StartNewReading(), false);
         public static readonly EntryElement ReadingText = new EntryElement("ReadingText", "reb", (entry, data) => entry.GetReading().Text = data.Content);
         public static readonly EntryElement ReadingNoKanji = new EntryElement("ReadingNoKanji", "re_nokanji", (entry, data) => entry.GetReading().IsTrueKanjiReading = false);
-        public static readonly EntryElement ReadingRestriction = new EntryElement("ReadingRestriction", "re_restr", (entry, data) => AddContent(entry.GetReading().GetRestricted(), data));
+        public static readonly EntryElement ReadingRestriction = new EntryElement("ReadingRestriction", "re_restr", (entry, data) => AddContent(entry.GetReading().GetRestriction(), data));
         public static readonly EntryElement ReadingInformation = new EntryElement("ReadingInformation", "re_inf", (entry, data) => AddContent(entry.GetReading().GetInformations(), data, ReadingInformations));
         public static readonly EntryElement ReadingPriority = new EntryElement("ReadingPriority", "re_pri", (entry, data) => AddContent(entry.GetReading().GetPriorities(), data, Priorities));
 

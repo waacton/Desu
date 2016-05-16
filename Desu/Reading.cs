@@ -8,9 +8,9 @@
 
         public bool IsTrueKanjiReading { get; set; } = true;
 
-        private readonly List<string> restricted = new List<string>();
-        internal List<string> GetRestricted() => this.restricted;
-        public IEnumerable<string> Restricted => this.GetRestricted();
+        private readonly List<string> restriction = new List<string>();
+        internal List<string> GetRestriction() => this.restriction;
+        public IEnumerable<string> Restriction => this.GetRestriction();
 
         private readonly List<ReadingInformation> informations = new List<ReadingInformation>();
         internal List<ReadingInformation> GetInformations() => this.informations;
