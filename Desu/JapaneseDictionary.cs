@@ -34,7 +34,7 @@
 
         /// <summary> 
         /// Provides Japanese dictionary entries from the custom specified dictionary file.
-        /// File assumed to follow JMdict 1.08 formatting (http://www.edrdg.org/jmdict/edict_doc.html#IREF02
+        /// File assumed to follow JMdict 1.08 formatting (http://www.edrdg.org/jmdict/edict_doc.html#IREF02)
         /// </summary>
         public JapaneseDictionary(string dictionaryFilepath)
         {
