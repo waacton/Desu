@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Wacton.Desu")]
-[assembly: AssemblyDescription("JMdict .NET wrapper")]
+[assembly: AssemblyDescription("Japanese dictionary JMdict .NET wrapper")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Wacton")]
 [assembly: AssemblyProduct("Wacton.Desu")]
