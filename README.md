@@ -1,5 +1,5 @@
 # Desu
-Wacton.Desu provides a .NET interface to [JMdict](http://www.edrdg.org/jmdict/j_jmdict.html) (Japanese-multilingual dictionary), with a data structure that does not rely on magic strings.  All JMdict elements have object representations where appropriate
+Wacton.Desu provides a .NET interface to [JMdict](http://www.edrdg.org/jmdict/j_jmdict.html) (Japanese-multilingual dictionary), with a data structure that does not rely on magic strings.  All JMdict elements have object representations where appropriate.
 
 ## How to use
 Can be installed as a [NuGet package](https://www.nuget.org/packages/Wacton.Desu/):
