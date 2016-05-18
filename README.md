@@ -18,3 +18,7 @@ An example can be found in the [Desu.Example project](https://github.com/waacton
 ---
 
 **Note:** Due to containing an embedded copy of JMdict, this is a large library.  Parsing the 170,000+ entries takes a few seconds, and requires ~250MB of memory.
+
+---
+
+![](https://raw.githubusercontent.com/waacton/Desu/master/Desu/Resources/Desu.png)
