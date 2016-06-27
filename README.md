@@ -13,7 +13,7 @@ var dictionary = new JapaneseDictionary();
 var entries = dictionary.GetEntries();
 ```
 
-An example can be found in the [Desu.Example project](https://github.com/waacton/Desu/tree/master/Desu.Example).
+An example can be found in the [Desu.Example project](https://gitlab.com/Wacton/Desu/tree/master/Desu.Example).
 
 ---
 
@@ -21,4 +21,4 @@ _**Note:** Due to containing an embedded copy of JMdict, this is a large library
 
 ---
 
-![](https://raw.githubusercontent.com/waacton/Desu/master/Desu/Resources/Desu.png)
+![](https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu.png)
