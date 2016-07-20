@@ -25,4 +25,4 @@ _**Note:** Due to containing an embedded copy of JMdict, this is a large library
 
 ---
 
-[![NuGet](https://img.shields.io/nuget/v/Wacton.Desu.svg?maxAge=2592000)]()
+[![NuGet](https://img.shields.io/nuget/v/Wacton.Desu.svg?maxAge=2592000)](https://www.nuget.org/packages/Wacton.Desu/)
