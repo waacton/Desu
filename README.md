@@ -21,7 +21,7 @@ _**Note:** Due to containing an embedded copy of JMdict, this is a large library
 
 ---
 
-![](https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu.png)
+<img src="https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu.png" width="64" height="64">
 
 ---
 
