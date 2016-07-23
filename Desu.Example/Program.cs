@@ -14,6 +14,7 @@
             var index = new Random().Next(0, entries.Count);
             var entry = entries[index];
 
+            Debug.WriteLine($"{index} / {entries.Count}");
             Debug.WriteLine(entry);
         }
     }
