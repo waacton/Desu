@@ -77,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
-    <Content Include="Resources\Desu.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
