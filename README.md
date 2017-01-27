@@ -21,8 +21,8 @@ _**Note:** Due to containing an embedded copy of JMdict, this is a large library
 
 ---
 
-![](https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu.png)
+[![NuGet](https://img.shields.io/nuget/v/Wacton.Desu.svg?maxAge=2592000)](https://www.nuget.org/packages/Wacton.Desu/)
 
 ---
 
-[![NuGet](https://img.shields.io/nuget/v/Wacton.Desu.svg?maxAge=2592000)](https://www.nuget.org/packages/Wacton.Desu/)
+<img src="https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu.png" width="32" height="32">
