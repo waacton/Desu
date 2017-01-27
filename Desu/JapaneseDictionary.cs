@@ -1,6 +1,4 @@
-﻿using Ionic.Zip;
-
-namespace Wacton.Desu
+﻿namespace Wacton.Desu
 {
     using System;
     using System.Collections.Generic;
@@ -8,6 +6,8 @@ namespace Wacton.Desu
     using System.Linq;
     using System.Reflection;
     using System.Xml;
+
+    using Ionic.Zip;
 
     using Wacton.Tovarisch.Enum;
 
@@ -23,8 +23,17 @@ namespace Wacton.Desu
         private const string LoanwordWaseiAttribute = "ls_wasei";
         private const string GlossGenderAttribute = "g_gend";
 
+        private const string CreationDatePrefix = "JMdict created:";
+
         public readonly string DictionaryFilePath;
         public bool IsOverriding => this.DictionaryFilePath != null;
+
+        private DateTime creationDate = DateTime.MinValue;
+
+        /// <summary>
+        /// The creation date of the dictionary file (DateTime.MinValue if not found)
+        /// </summary>
+        public DateTime CreationDate => this.GetCreationDate();
 
         /// <summary> 
         /// Provides Japanese dictionary entries from the default embedded dictionary file 
@@ -51,6 +60,13 @@ namespace Wacton.Desu
             return this.IsOverriding
                 ? ParseDictionary(() => File.OpenRead(this.DictionaryFilePath))
                 : ParseDictionary(GetEmbeddedResouceStream);
+        }
+
+        private DateTime GetCreationDate()
+        {
+            return this.IsOverriding
+                ? this.ParseCreationDate(() => File.OpenRead(this.DictionaryFilePath))
+                : this.ParseCreationDate(GetEmbeddedResouceStream);
         }
 
         private static Stream GetEmbeddedResouceStream()
@@ -125,6 +141,46 @@ namespace Wacton.Desu
             }
 
             return dictionaryEntries;
+        }
+
+        private DateTime ParseCreationDate(Func<Stream> openStreamFunction)
+        {
+            if (this.creationDate != DateTime.MinValue)
+            {
+                return this.creationDate;
+            }
+
+            using (var stream = openStreamFunction())
+            {
+                var settings = new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse };
+                using (var reader = XmlReader.Create(stream, settings))
+                {
+                    this.creationDate = this.ParseCreationDate(reader);
+                }
+            }
+
+            return this.creationDate;
+        }
+
+        private DateTime ParseCreationDate(XmlReader reader)
+        {
+            while (reader.Read())
+            {
+                if (reader.NodeType != XmlNodeType.Comment)
+                {
+                    continue;
+                }
+
+                if (!reader.Value.Contains("JMdict created: "))
+                {
+                    continue;
+                }
+
+                var commentSplit = reader.Value.Split(new[] { CreationDatePrefix }, StringSplitOptions.RemoveEmptyEntries);
+                return DateTime.Parse(commentSplit[1]);
+            }
+
+            return DateTime.MinValue;
         }
 
         public override string ToString()

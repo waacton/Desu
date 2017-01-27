@@ -104,9 +104,8 @@
 
         public string Code { get; }
 
-        private static int counter;
         public PartOfSpeech(string displayName, string code)
-            : base(counter++, displayName)
+            : base(displayName)
         {
             this.Code = code;
         }

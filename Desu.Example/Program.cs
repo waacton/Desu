@@ -15,6 +15,9 @@
             var entry = entries[index];
 
             Debug.WriteLine(entry);
+
+            var creationDate = dictionary.CreationDate;
+            Debug.WriteLine($"JMdict created: {creationDate.ToShortDateString()}");
         }
     }
 }

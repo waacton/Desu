@@ -49,9 +49,8 @@
         public bool ExpectsContent { get; }
         private readonly Action<JapaneseDictionaryEntry, EntryElementData> addDataToEntryAction;
 
-        private static int counter;
         public EntryElement(string displayName, string code, Action<JapaneseDictionaryEntry, EntryElementData> addDataToEntryAction = null, bool expectsContent = true)
-            : base(counter++, displayName)
+            : base(displayName)
         {
             this.Code = code;
             this.addDataToEntryAction = addDataToEntryAction ?? ((entry, data) => { });

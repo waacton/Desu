@@ -32,10 +32,12 @@
         public static readonly Language Italian = new Language("Italian", "ita");
         public static readonly Language KhmerCentral = new Language("KhmerCentral", "khm");
         public static readonly Language Korean = new Language("Korean", "kor");
+        public static readonly Language Kurdish = new Language("Kurdish", "kur");
         public static readonly Language Latin = new Language("Latin", "lat");
         public static readonly Language Malayalam = new Language("Malayalam", "mal");
         public static readonly Language Malay = new Language("Malay", "may");
         public static readonly Language Manchu = new Language("Manchu", "mnc");
+        public static readonly Language Maori = new Language("Maori", "mao");
         public static readonly Language Mongolian = new Language("Mongolian", "mon");
         public static readonly Language Norwegian = new Language("Norwegian", "nor");
         public static readonly Language Ottoman = new Language("Ottoman", "ota");
@@ -59,9 +61,8 @@
 
         public string Code { get; }
 
-        private static int counter;
         public Language(string displayName, string code)
-            : base(counter++, displayName)
+            : base(displayName)
         {
             this.Code = code;
         }
