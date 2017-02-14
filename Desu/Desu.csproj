@@ -56,10 +56,13 @@
     <Compile Include="IKanji.cs" />
     <Compile Include="Kanjidict\CharacterElement.cs" />
     <Compile Include="Kanjidict\CharacterElementData.cs" />
+    <Compile Include="Kanjidict\ICodepoint.cs" />
     <Compile Include="Kanjidict\IKanjiDictionary.cs" />
     <Compile Include="Kanjidict\IKanjiDictionaryEntry.cs" />
+    <Compile Include="Kanjidict\Codepoint.cs" />
     <Compile Include="Kanjidict\KanjiDictionaryEntry.cs" />
     <Compile Include="Kanjidict\KanjiDictionary.cs" />
+    <Compile Include="Kanjidict\CodepointType.cs" />
     <Compile Include="Miscellaneous.cs" />
     <Compile Include="Priority.cs" />
     <Compile Include="ReadingInformation.cs" />

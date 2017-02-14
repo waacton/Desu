@@ -10,7 +10,9 @@
     {
         public static readonly CharacterElement Literal = new CharacterElement("Literal", "literal", (entry, data) => entry.Literal = data.Content);
 
-        //public static readonly CharacterElement Kanji = new CharacterElement("Kanji", "k_ele", (entry, data) => entry.StartNewKanji(), false);
+        //public static readonly CharacterElement Codepoint = new CharacterElement("Codepoint", "codepoint", (entry, data) => entry.StartNewCodepoint(), false);
+        public static readonly CharacterElement CodepointValue = new CharacterElement("CodepointValue", "cp_value", AddCodepoint);
+
         //public static readonly CharacterElement KanjiText = new CharacterElement("KanjiText", "keb", (entry, data) => entry.GetKanji().Text = data.Content);
         //public static readonly CharacterElement KanjiInformation = new CharacterElement("KanjiInformation", "ke_inf", (entry, data) => AddContent(entry.GetKanji().GetInformations(), data, KanjiInformations));
         //public static readonly CharacterElement KanjiPriority = new CharacterElement("KanjiPriority", "ke_pri", (entry, data) => AddContent(entry.GetKanji().GetPriorities(), data, Priorities));
@@ -37,7 +39,7 @@
 
         //private static readonly Dictionary<string, Language> Languages = GetAll<Language>().ToDictionary(language => language.Code, language => language);
 
-        //private static readonly Dictionary<string, Dialect> Dialects = GetAll<Dialect>().ToDictionary(dialect => dialect.Code, dialect => dialect);
+        private static readonly Dictionary<string, CodepointType> CodepointTypes = GetAll<CodepointType>().ToDictionary(codepointType => codepointType.Code, codepointType => codepointType);
         //private static readonly Dictionary<string, Field> Fields = GetAll<Field>().ToDictionary(field => field.Code, field => field);
         //private static readonly Dictionary<string, KanjiInformation> KanjiInformations = GetAll<KanjiInformation>().ToDictionary(information => information.Code, information => information);
         //private static readonly Dictionary<string, Miscellaneous> Miscellanea = GetAll<Miscellaneous>().ToDictionary(miscellaneous => miscellaneous.Code, miscellaneous => miscellaneous);
@@ -70,6 +72,11 @@
         private static void AddContent<T>(List<T> list, CharacterElementData data, Dictionary<string, T> lookupDictionary)
         {
             list.Add(lookupDictionary[data.Content]);
+        }
+
+        private static void AddCodepoint(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            entry.AddCodepoint(new Codepoint(CodepointTypes[data.CodepointTypeAttribute], data.Content));
         }
 
         //private static void AddGloss(List<Gloss> list, CharacterElementData data)

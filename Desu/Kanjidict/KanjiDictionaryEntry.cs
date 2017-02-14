@@ -8,8 +8,8 @@
     {
         public string Literal { get; set; }
 
-        //private readonly List<Kanji> kanjis = new List<Kanji>();
-        //public IEnumerable<IKanji> Kanjis => this.kanjis;
+        private readonly List<ICodepoint> codepoints = new List<ICodepoint>();
+        public IEnumerable<ICodepoint> Codepoints => this.codepoints;
 
         //private readonly List<Reading> readings = new List<Reading>();
         //public IEnumerable<IReading> Readings => this.readings;
@@ -17,11 +17,10 @@
         //private readonly List<Sense> senses = new List<Sense>();
         //public IEnumerable<ISense> Senses => this.senses;
 
-
-        //internal void StartNewKanji()
-        //{
-        //    this.kanjis.Add(new Kanji());
-        //}
+        internal void AddCodepoint(ICodepoint codepoint)
+        {
+            this.codepoints.Add(codepoint);
+        }
 
         //internal Kanji GetKanji() => this.kanjis.Last();
 
