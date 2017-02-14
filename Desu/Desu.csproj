@@ -54,6 +54,12 @@
     <Compile Include="ISense.cs" />
     <Compile Include="IReading.cs" />
     <Compile Include="IKanji.cs" />
+    <Compile Include="Kanjidict\CharacterElement.cs" />
+    <Compile Include="Kanjidict\CharacterElementData.cs" />
+    <Compile Include="Kanjidict\IKanjiDictionary.cs" />
+    <Compile Include="Kanjidict\IKanjiDictionaryEntry.cs" />
+    <Compile Include="Kanjidict\KanjiDictionaryEntry.cs" />
+    <Compile Include="Kanjidict\KanjiDictionary.cs" />
     <Compile Include="Miscellaneous.cs" />
     <Compile Include="Priority.cs" />
     <Compile Include="ReadingInformation.cs" />
@@ -84,8 +90,9 @@
       <SubType>Designer</SubType>
     </None>
     <EmbeddedResource Include="Resources\JMdict.zip" />
-    <None Include="Resources\kanjidic2.zip" />
+    <EmbeddedResource Include="Resources\kanjidic2.zip" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.1.28.3\build\Fody.targets" Condition="Exists('..\packages\Fody.1.28.3\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

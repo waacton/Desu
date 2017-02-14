@@ -4,10 +4,15 @@
     using System.Diagnostics;
     using System.Linq;
 
+    using Wacton.Desu.Kanjidict;
+
     public class Program
     {
         public static void Main(string[] args)
         {
+            var kanjiDict = new KanjiDictionary();
+            var kanjiEntries = kanjiDict.GetEntries();
+
             var dictionary = new JapaneseDictionary();
             var entries = dictionary.GetEntries().ToList();
 
