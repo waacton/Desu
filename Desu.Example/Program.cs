@@ -10,14 +10,16 @@
     {
         public static void Main(string[] args)
         {
-            var kanjiDict = new KanjiDictionary();
-            var kanjiEntries = kanjiDict.GetEntries();
-
             var dictionary = new JapaneseDictionary();
             var entries = dictionary.GetEntries().ToList();
 
             var index = new Random().Next(0, entries.Count);
-            var entry = entries[index];
+            var entry = entries[43];
+
+            var kanjiDict = new KanjiDictionary();
+            var kanjiEntries = kanjiDict.GetEntries();
+            var kanji = entry.Kanjis.First().Text[0].ToString();
+            var kanjiReference = kanjiEntries.Single(kanjiEntry => kanjiEntry.Literal.Equals(kanji));
 
             Debug.WriteLine($"{index} / {entries.Count}");
             Debug.WriteLine(entry);
