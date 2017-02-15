@@ -56,6 +56,9 @@
     <Compile Include="IKanji.cs" />
     <Compile Include="Kanjidict\CharacterElement.cs" />
     <Compile Include="Kanjidict\CharacterElementData.cs" />
+    <Compile Include="Kanjidict\IBushuRadical.cs" />
+    <Compile Include="Kanjidict\BushuRadical.cs" />
+    <Compile Include="Kanjidict\BushuRadicalType.cs" />
     <Compile Include="Kanjidict\ICodepoint.cs" />
     <Compile Include="Kanjidict\IKanjiDictionary.cs" />
     <Compile Include="Kanjidict\IKanjiDictionaryEntry.cs" />

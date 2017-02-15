@@ -126,12 +126,10 @@
                         if (characterElement.ExpectsContent)
                         {
                             var languageAttribute = reader.GetAttribute(LanguageAttribute);
-                            // TODO: add attributes to data
                             var codepointTypeAttribute = reader.GetAttribute(CodepointTypeAttribute);
-                            //var loanwordWaseiAttribute = reader.GetAttribute(LoanwordWaseiAttribute);
-                            //var glossGenderAttribute = reader.GetAttribute(VariantType);
+                            var radicalTypeAttribute = reader.GetAttribute(RadicalTypeAttribute);
                             var content = reader.ReadElementContentAsString();
-                            characterElementData = new CharacterElementData(content, codepointTypeAttribute, languageAttribute);
+                            characterElementData = new CharacterElementData(content, codepointTypeAttribute, radicalTypeAttribute, languageAttribute);
                         }
 
                         characterElement.AddDataToEntry(dictionaryEntry, characterElementData);

@@ -6,9 +6,7 @@
     {
         string Literal { get; }
         IEnumerable<string> RadicalDecomposition { get; }
-
-        //IEnumerable<IKanji> Kanjis { get; }
-        //IEnumerable<IReading> Readings { get; }
-        //IEnumerable<ISense> Senses { get; }
+        IEnumerable<ICodepoint> Codepoints { get; }
+        IEnumerable<IBushuRadical> BushuRadicals { get; }
     }
 }

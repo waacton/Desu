@@ -4,12 +4,14 @@
     {
         public string Content { get; }
         public string CodepointTypeAttribute { get; }
+        public string RadicalTypeAttribute { get; }
         public string LanguageAttribute { get; }
 
-        public CharacterElementData(string content, string codepointTypeAttribute, string languageAttribute)
+        public CharacterElementData(string content, string codepointTypeAttribute, string radicalTypeAttribute, string languageAttribute)
         {
             this.Content = content;
             this.CodepointTypeAttribute = codepointTypeAttribute;
+            this.RadicalTypeAttribute = radicalTypeAttribute;
             this.LanguageAttribute = languageAttribute;
         }
 
