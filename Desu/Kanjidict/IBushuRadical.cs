@@ -3,7 +3,7 @@
     public interface IBushuRadical
     {
         BushuRadicalType Type { get; }
-        
-        string Value { get; }
+
+        int Number { get; }
     }
 }

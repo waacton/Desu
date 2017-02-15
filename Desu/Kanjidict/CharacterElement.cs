@@ -42,6 +42,7 @@
 
         private static readonly Dictionary<string, CodepointType> CodepointTypes = GetAll<CodepointType>().ToDictionary(codepointType => codepointType.Code, codepointType => codepointType);
         private static readonly Dictionary<string, BushuRadicalType> RadicalTypes = GetAll<BushuRadicalType>().ToDictionary(radicalType => radicalType.Code, radicalType => radicalType);
+        private static readonly Dictionary<int, ClassicalBushuRadical> ClassicalBushuRadicals = GetAll<ClassicalBushuRadical>().ToDictionary(kiangXiBushuRadical => kiangXiBushuRadical.Number, kiangXiBushuRadical => kiangXiBushuRadical);
 
         //private static readonly Dictionary<string, Field> Fields = GetAll<Field>().ToDictionary(field => field.Code, field => field);
         //private static readonly Dictionary<string, KanjiInformation> KanjiInformations = GetAll<KanjiInformation>().ToDictionary(information => information.Code, information => information);
@@ -94,7 +95,21 @@
 
         private static void AddRadical(KanjiDictionaryEntry entry, CharacterElementData data)
         {
-            entry.AddBushuRadical(new BushuRadical(RadicalTypes[data.RadicalTypeAttribute], data.Content));
+            IBushuRadical bushuRadical;
+
+            var radicalType = RadicalTypes[data.RadicalTypeAttribute];
+            var radicalNumber = int.Parse(data.Content);
+
+            if (radicalType.Equals(BushuRadicalType.Classical))
+            {
+                bushuRadical = ClassicalBushuRadicals.ContainsKey(radicalNumber) ? ClassicalBushuRadicals[radicalNumber] : null;
+            }
+            else
+            {
+                bushuRadical = new NelsonBushuRadical(radicalNumber);
+            }
+
+            entry.AddBushuRadical(bushuRadical);
         }
 
         //private static void AddGloss(List<Gloss> list, CharacterElementData data)

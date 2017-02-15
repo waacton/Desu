@@ -4,7 +4,7 @@
 
     public class BushuRadicalType : Enumeration
     {
-        public static readonly BushuRadicalType Classical = new BushuRadicalType("Classical KangXi Zidian", "classical");
+        public static readonly BushuRadicalType Classical = new BushuRadicalType("Classical", "classical");
         public static readonly BushuRadicalType Nelson = new BushuRadicalType("Nelson", "nelson_c");
 
         public string Code { get; }
