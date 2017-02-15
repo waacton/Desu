@@ -5,28 +5,52 @@
     using System.Linq;
 
     using Wacton.Desu.Kanjidict;
+    using Wacton.Tovarisch.Collections;
 
     public class Program
     {
         public static void Main(string[] args)
         {
-            var kanjiDict = new KanjiDictionary();
-            var kanjiEntries = kanjiDict.GetEntries();
-
             var dictionary = new JapaneseDictionary();
             var entries = dictionary.GetEntries().ToList();
 
-            var index = new Random().Next(0, entries.Count);
-            var entry = entries[43];
-            
-            var kanji = entry.Kanjis.First().Text[0].ToString();
-            var kanjiReference = kanjiEntries.Single(kanjiEntry => kanjiEntry.Literal.Equals(kanji));
+            var kanjiDict = new KanjiDictionary();
+            var kanjiEntries = kanjiDict.GetEntries().ToList();
 
-            Debug.WriteLine($"{index} / {entries.Count}");
-            Debug.WriteLine(entry);
+            var japaneseDictionaryCreationDate = dictionary.CreationDate;
+            Debug.WriteLine($"JMdict created: {japaneseDictionaryCreationDate.ToShortDateString()}");
 
-            var creationDate = dictionary.CreationDate;
-            Debug.WriteLine($"JMdict created: {creationDate.ToShortDateString()}");
+            var kanjiDictionaryCreationDate = kanjiDict.CreationDate;
+            Debug.WriteLine($"kanjidict2 created: {kanjiDictionaryCreationDate.ToShortDateString()}");
+
+            var random = new Random();
+            for (var i = 0; i < 100; i++)
+            {
+                Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
+
+                var index = random.Next(0, entries.Count);
+                var entry = entries[index];
+
+                Debug.WriteLine($"{index} / {entries.Count}");
+                Debug.WriteLine(entry);
+
+                var firstKanji = entry.Kanjis.FirstOrDefault()?.Text;
+                if (firstKanji == null)
+                {
+                    continue;
+                }
+
+                foreach (var character in firstKanji)
+                {
+                    var kanjiReference = kanjiEntries.SingleOrDefault(kanjiEntry => kanjiEntry.Literal.Equals(character.ToString()));
+                    if (kanjiReference == null)
+                    {
+                        continue;
+                    }
+
+                    Debug.WriteLine($"{kanjiReference.Literal} -> {kanjiReference.RadicalDecomposition.ToDelimitedString(" ")}");
+                }
+            }
         }
     }
 }

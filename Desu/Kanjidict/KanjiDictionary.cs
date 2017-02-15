@@ -5,6 +5,7 @@
     using System.IO;
     using System.Linq;
     using System.Reflection;
+    using System.Text;
     using System.Xml;
 
     using Ionic.Zip;
@@ -170,18 +171,13 @@
         {
             while (reader.Read())
             {
-                if (reader.NodeType != XmlNodeType.Comment)
+                if (reader.NodeType != XmlNodeType.Element || reader.Name != "date_of_creation")
                 {
                     continue;
                 }
 
-                if (!reader.Value.Contains("JMdict created: "))
-                {
-                    continue;
-                }
-
-                var commentSplit = reader.Value.Split(new[] { CreationDatePrefix }, StringSplitOptions.RemoveEmptyEntries);
-                return DateTime.Parse(commentSplit[1]);
+                var content = reader.ReadElementContentAsString();
+                return DateTime.Parse(content);
             }
 
             return DateTime.MinValue;

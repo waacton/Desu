@@ -63,6 +63,7 @@
     <Compile Include="Kanjidict\KanjiDictionaryEntry.cs" />
     <Compile Include="Kanjidict\KanjiDictionary.cs" />
     <Compile Include="Kanjidict\CodepointType.cs" />
+    <Compile Include="Kanjidict\RadicalsLookup.cs" />
     <Compile Include="Miscellaneous.cs" />
     <Compile Include="Priority.cs" />
     <Compile Include="ReadingInformation.cs" />
@@ -94,6 +95,9 @@
     </None>
     <EmbeddedResource Include="Resources\JMdict.zip" />
     <EmbeddedResource Include="Resources\kanjidic2.zip" />
+    <EmbeddedResource Include="Resources\kradfile" />
+    <EmbeddedResource Include="Resources\kradfile2" />
+    <EmbeddedResource Include="Resources\radkfilex" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

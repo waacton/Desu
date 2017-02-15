@@ -8,7 +8,7 @@
 
     public class CharacterElement : Enumeration
     {
-        public static readonly CharacterElement Literal = new CharacterElement("Literal", "literal", (entry, data) => entry.Literal = data.Content);
+        public static readonly CharacterElement Literal = new CharacterElement("Literal", "literal", AddLiteral );
 
         //public static readonly CharacterElement Codepoint = new CharacterElement("Codepoint", "codepoint", (entry, data) => entry.StartNewCodepoint(), false);
         public static readonly CharacterElement CodepointValue = new CharacterElement("CodepointValue", "cp_value", AddCodepoint);
@@ -72,6 +72,16 @@
         private static void AddContent<T>(List<T> list, CharacterElementData data, Dictionary<string, T> lookupDictionary)
         {
             list.Add(lookupDictionary[data.Content]);
+        }
+
+        private static void AddLiteral(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            entry.Literal = data.Content;
+
+            var radicalDecomposition = RadicalsLookup.RadicalsByKanji.ContainsKey(entry.Literal)
+                ? RadicalsLookup.RadicalsByKanji[entry.Literal]
+                : new List<string>();
+            entry.AddRadicalDecomposition(radicalDecomposition);
         }
 
         private static void AddCodepoint(KanjiDictionaryEntry entry, CharacterElementData data)

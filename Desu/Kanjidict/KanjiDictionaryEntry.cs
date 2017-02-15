@@ -4,9 +4,14 @@
     using System.Linq;
     using System.Text;
 
+    using Wacton.Tovarisch.Collections;
+
     public class KanjiDictionaryEntry : IKanjiDictionaryEntry
     {
         public string Literal { get; set; }
+
+        private readonly List<string> radicalDecomposition = new List<string>();
+        public IEnumerable<string> RadicalDecomposition => this.radicalDecomposition;
 
         private readonly List<ICodepoint> codepoints = new List<ICodepoint>();
         public IEnumerable<ICodepoint> Codepoints => this.codepoints;
@@ -16,6 +21,14 @@
 
         //private readonly List<Sense> senses = new List<Sense>();
         //public IEnumerable<ISense> Senses => this.senses;
+
+        internal void AddRadicalDecomposition(List<string> radicals)
+        {
+            foreach (var radical in radicals)
+            {
+                this.radicalDecomposition.Add(radical);
+            }
+        }
 
         internal void AddCodepoint(ICodepoint codepoint)
         {
