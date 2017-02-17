@@ -14,6 +14,8 @@
 
         public static readonly CharacterElement RadicalValue = new CharacterElement("RadicalValue", "rad_value", AddRadical);
 
+        public static readonly CharacterElement Grade = new CharacterElement("Grade", "grade", AddGrade);
+
         //public static readonly CharacterElement KanjiText = new CharacterElement("KanjiText", "keb", (entry, data) => entry.GetKanji().Text = data.Content);
         //public static readonly CharacterElement KanjiInformation = new CharacterElement("KanjiInformation", "ke_inf", (entry, data) => AddContent(entry.GetKanji().GetInformations(), data, KanjiInformations));
         //public static readonly CharacterElement KanjiPriority = new CharacterElement("KanjiPriority", "ke_pri", (entry, data) => AddContent(entry.GetKanji().GetPriorities(), data, Priorities));
@@ -43,6 +45,7 @@
         private static readonly Dictionary<string, CodepointType> CodepointTypes = GetAll<CodepointType>().ToDictionary(codepointType => codepointType.Code, codepointType => codepointType);
         private static readonly Dictionary<string, BushuRadicalType> RadicalTypes = GetAll<BushuRadicalType>().ToDictionary(radicalType => radicalType.Code, radicalType => radicalType);
         private static readonly Dictionary<int, ClassicalBushuRadical> ClassicalBushuRadicals = GetAll<ClassicalBushuRadical>().ToDictionary(kiangXiBushuRadical => kiangXiBushuRadical.Number, kiangXiBushuRadical => kiangXiBushuRadical);
+        private static readonly Dictionary<int, Grade> Grades = GetAll<Grade>().ToDictionary(grade => grade.Number, grade => grade);
 
         //private static readonly Dictionary<string, Field> Fields = GetAll<Field>().ToDictionary(field => field.Code, field => field);
         //private static readonly Dictionary<string, KanjiInformation> KanjiInformations = GetAll<KanjiInformation>().ToDictionary(information => information.Code, information => information);
@@ -110,6 +113,11 @@
             }
 
             entry.AddBushuRadical(bushuRadical);
+        }
+
+        private static void AddGrade(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            entry.Miscellaneous.Grade = Grades[int.Parse(data.Content)];
         }
 
         //private static void AddGloss(List<Gloss> list, CharacterElementData data)

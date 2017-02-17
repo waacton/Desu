@@ -15,6 +15,8 @@
         private readonly List<IBushuRadical> bushuRadicals = new List<IBushuRadical>();
         public IEnumerable<IBushuRadical> BushuRadicals => this.bushuRadicals;
 
+        public MiscellaneousKanjiData Miscellaneous { get; set; } = new MiscellaneousKanjiData();
+
         internal void AddRadicalDecomposition(List<string> radicals)
         {
             foreach (var radical in radicals)
