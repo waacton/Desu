@@ -5,8 +5,22 @@
     public class MiscellaneousKanjiData : IMiscellaneousKanjiData
     {
         public Grade Grade { get; set; } = Grade.None;
+
         public int StrokeCount { get; set; }
-        public List<int> StrokeCommonMiscounts { get; set; } = new List<int>();
+
+        private readonly List<int> strokeCommonMiscounts = new List<int>();
+        public IEnumerable<int> StrokeCommonMiscounts => this.strokeCommonMiscounts;
+        internal void AddStrokeCommonMiscount(int strokeMiscount)
+        {
+            this.strokeCommonMiscounts.Add(strokeMiscount);
+        }
+
+        private readonly List<IVariant> variants = new List<IVariant>();
+        public IEnumerable<IVariant> Variants => this.variants;
+        internal void AddVariant(IVariant variant)
+        {
+            this.variants.Add(variant);
+        }
 
         public override string ToString()
         {

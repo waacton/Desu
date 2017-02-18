@@ -8,17 +8,6 @@
 
         private readonly List<string> radicalDecomposition = new List<string>();
         public IEnumerable<string> RadicalDecomposition => this.radicalDecomposition;
-
-        private readonly List<ICodepoint> codepoints = new List<ICodepoint>();
-        public IEnumerable<ICodepoint> Codepoints => this.codepoints;
-
-        private readonly List<IBushuRadical> bushuRadicals = new List<IBushuRadical>();
-        public IEnumerable<IBushuRadical> BushuRadicals => this.bushuRadicals;
-
-        private readonly MiscellaneousKanjiData miscellaneous = new MiscellaneousKanjiData();
-        public IMiscellaneousKanjiData Miscellaneous => this.miscellaneous;
-        internal MiscellaneousKanjiData GetMiscellaneous() => this.miscellaneous;
-
         internal void AddRadicalDecomposition(List<string> radicals)
         {
             foreach (var radical in radicals)
@@ -27,15 +16,24 @@
             }
         }
 
+        private readonly List<ICodepoint> codepoints = new List<ICodepoint>();
+        public IEnumerable<ICodepoint> Codepoints => this.codepoints;
         internal void AddCodepoint(ICodepoint codepoint)
         {
             this.codepoints.Add(codepoint);
         }
 
+        private readonly List<IBushuRadical> bushuRadicals = new List<IBushuRadical>();
+        public IEnumerable<IBushuRadical> BushuRadicals => this.bushuRadicals;
         internal void AddBushuRadical(IBushuRadical bushuRadical)
         {
             this.bushuRadicals.Add(bushuRadical);
         }
+
+        private readonly MiscellaneousKanjiData miscellaneous = new MiscellaneousKanjiData();
+        public IMiscellaneousKanjiData Miscellaneous => this.miscellaneous;
+        internal MiscellaneousKanjiData GetMiscellaneous() => this.miscellaneous;
+
 
         //internal void StartNewSense()
         //{

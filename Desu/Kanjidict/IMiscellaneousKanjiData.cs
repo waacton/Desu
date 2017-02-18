@@ -6,6 +6,7 @@
     {
         Grade Grade { get; }
         int StrokeCount { get; }
-        List<int> StrokeCommonMiscounts { get; }
+        IEnumerable<int> StrokeCommonMiscounts { get; }
+        IEnumerable<IVariant> Variants { get; }
     }
 }

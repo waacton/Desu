@@ -125,11 +125,12 @@
                         CharacterElementData characterElementData = null;
                         if (characterElement.ExpectsContent)
                         {
-                            var languageAttribute = reader.GetAttribute(LanguageAttribute);
                             var codepointTypeAttribute = reader.GetAttribute(CodepointTypeAttribute);
                             var radicalTypeAttribute = reader.GetAttribute(RadicalTypeAttribute);
+                            var variantTypeAttribute = reader.GetAttribute(VariantTypeAttribute);
+                            var languageAttribute = reader.GetAttribute(LanguageAttribute);
                             var content = reader.ReadElementContentAsString();
-                            characterElementData = new CharacterElementData(content, codepointTypeAttribute, radicalTypeAttribute, languageAttribute);
+                            characterElementData = new CharacterElementData(content, codepointTypeAttribute, radicalTypeAttribute, variantTypeAttribute, languageAttribute);
                         }
 
                         characterElement.AddDataToEntry(dictionaryEntry, characterElementData);

@@ -13,6 +13,7 @@
         public static readonly CharacterElement RadicalValue = new CharacterElement("RadicalValue", "rad_value", AddRadical);
         public static readonly CharacterElement Grade = new CharacterElement("Grade", "grade", AddGrade);
         public static readonly CharacterElement StrokeCount = new CharacterElement("StrokeCount", "stroke_count", AddStrokeCount);
+        public static readonly CharacterElement Variant = new CharacterElement("Variant", "variant", AddVariant);
 
         //public static readonly CharacterElement KanjiText = new CharacterElement("KanjiText", "keb", (entry, data) => entry.GetKanji().Text = data.Content);
         //public static readonly CharacterElement KanjiInformation = new CharacterElement("KanjiInformation", "ke_inf", (entry, data) => AddContent(entry.GetKanji().GetInformations(), data, KanjiInformations));
@@ -44,6 +45,7 @@
         private static readonly Dictionary<string, BushuRadicalType> RadicalTypes = GetAll<BushuRadicalType>().ToDictionary(radicalType => radicalType.Code, radicalType => radicalType);
         private static readonly Dictionary<int, ClassicalBushuRadical> ClassicalBushuRadicals = GetAll<ClassicalBushuRadical>().ToDictionary(kiangXiBushuRadical => kiangXiBushuRadical.Number, kiangXiBushuRadical => kiangXiBushuRadical);
         private static readonly Dictionary<int, Grade> Grades = GetAll<Grade>().ToDictionary(grade => grade.Number, grade => grade);
+        private static readonly Dictionary<string, VariantType> VariantTypes = GetAll<VariantType>().ToDictionary(variantType => variantType.Code, variantType => variantType);
 
         //private static readonly Dictionary<string, Field> Fields = GetAll<Field>().ToDictionary(field => field.Code, field => field);
         //private static readonly Dictionary<string, KanjiInformation> KanjiInformations = GetAll<KanjiInformation>().ToDictionary(information => information.Code, information => information);
@@ -130,8 +132,13 @@
             }
             else
             {
-                misc.StrokeCommonMiscounts.Add(strokeCount);
+                misc.AddStrokeCommonMiscount(strokeCount);
             }
+        }
+
+        private static void AddVariant(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            entry.GetMiscellaneous().AddVariant(new Variant(VariantTypes[data.VariantTypeAttribute], data.Content));
         }
 
         //private static void AddGloss(List<Gloss> list, CharacterElementData data)
