@@ -4,12 +4,13 @@
 
     public class Grade : Enumeration
     {
-        public static readonly Grade Grade1 = new Grade("Grade1", 1);
-        public static readonly Grade Grade2 = new Grade("Grade2", 2);
-        public static readonly Grade Grade3 = new Grade("Grade3", 3);
-        public static readonly Grade Grade4 = new Grade("Grade4", 4);
-        public static readonly Grade Grade5 = new Grade("Grade5", 5);
-        public static readonly Grade Grade6 = new Grade("Grade6", 6);
+        public static readonly Grade None = new Grade("None", -1);
+        public static readonly Grade One = new Grade("One", 1);
+        public static readonly Grade Two = new Grade("Two", 2);
+        public static readonly Grade Three = new Grade("Three", 3);
+        public static readonly Grade Four = new Grade("Four", 4);
+        public static readonly Grade Five = new Grade("Five", 5);
+        public static readonly Grade Six = new Grade("Six", 6);
         public static readonly Grade Secondary = new Grade("Secondary", 8);
         public static readonly Grade Jinmeiyou = new Grade("Jinmeiyou", 9);
         public static readonly Grade JinmeiyouTraditional = new Grade("JinmeiyouTraditional", 10);

@@ -9,12 +9,10 @@
     public class CharacterElement : Enumeration
     {
         public static readonly CharacterElement Literal = new CharacterElement("Literal", "literal", AddLiteral );
-
         public static readonly CharacterElement CodepointValue = new CharacterElement("CodepointValue", "cp_value", AddCodepoint);
-
         public static readonly CharacterElement RadicalValue = new CharacterElement("RadicalValue", "rad_value", AddRadical);
-
         public static readonly CharacterElement Grade = new CharacterElement("Grade", "grade", AddGrade);
+        public static readonly CharacterElement StrokeCount = new CharacterElement("StrokeCount", "stroke_count", AddStrokeCount);
 
         //public static readonly CharacterElement KanjiText = new CharacterElement("KanjiText", "keb", (entry, data) => entry.GetKanji().Text = data.Content);
         //public static readonly CharacterElement KanjiInformation = new CharacterElement("KanjiInformation", "ke_inf", (entry, data) => AddContent(entry.GetKanji().GetInformations(), data, KanjiInformations));
@@ -117,7 +115,23 @@
 
         private static void AddGrade(KanjiDictionaryEntry entry, CharacterElementData data)
         {
-            entry.Miscellaneous.Grade = Grades[int.Parse(data.Content)];
+            var misc = entry.GetMiscellaneous();
+            misc.Grade = Grades[int.Parse(data.Content)];
+        }
+
+        private static void AddStrokeCount(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            var misc = entry.GetMiscellaneous();
+            var strokeCount = int.Parse(data.Content);
+
+            if (misc.StrokeCount == 0)
+            {
+                misc.StrokeCount = strokeCount;
+            }
+            else
+            {
+                misc.StrokeCommonMiscounts.Add(strokeCount);
+            }
         }
 
         //private static void AddGloss(List<Gloss> list, CharacterElementData data)
