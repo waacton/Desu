@@ -135,14 +135,17 @@
                             var referencePageAttribute = reader.GetAttribute(ReferencePageAttribute);
                             var queryCodeTypeAttribute = reader.GetAttribute(QueryCodeTypeAttribute);
                             var skipMisclassificationAttribute = reader.GetAttribute(SkipMisclassificationAttribute);
+                            var readingTypeAttribute = reader.GetAttribute(ReadingTypeAttribute);
                             var languageAttribute = reader.GetAttribute(LanguageAttribute);
 
                             var content = reader.ReadElementContentAsString();
                             characterElementData = new CharacterElementData(
                                 content, 
-                                codepointTypeAttribute, radicalTypeAttribute, variantTypeAttribute, 
-                                referenceTypeAttribute, referenceVolumeAttribute, referencePageAttribute, 
-                                queryCodeTypeAttribute, skipMisclassificationAttribute, languageAttribute);
+                                codepointTypeAttribute, radicalTypeAttribute, 
+                                variantTypeAttribute, referenceTypeAttribute, 
+                                referenceVolumeAttribute, referencePageAttribute, 
+                                queryCodeTypeAttribute, skipMisclassificationAttribute, 
+                                readingTypeAttribute, languageAttribute);
                         }
 
                         characterElement.AddDataToEntry(dictionaryEntry, characterElementData);

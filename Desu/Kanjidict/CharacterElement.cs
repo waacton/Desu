@@ -27,31 +27,10 @@
 
         public static readonly CharacterElement QueryCode = new CharacterElement("QueryCode", "q_code", AddQueryCode);
 
-        //public static readonly CharacterElement KanjiText = new CharacterElement("KanjiText", "keb", (entry, data) => entry.GetKanji().Text = data.Content);
-        //public static readonly CharacterElement KanjiInformation = new CharacterElement("KanjiInformation", "ke_inf", (entry, data) => AddContent(entry.GetKanji().GetInformations(), data, KanjiInformations));
-        //public static readonly CharacterElement KanjiPriority = new CharacterElement("KanjiPriority", "ke_pri", (entry, data) => AddContent(entry.GetKanji().GetPriorities(), data, Priorities));
+        public static readonly CharacterElement Reading = new CharacterElement("Reading", "reading", AddReading);
+        public static readonly CharacterElement Meaning = new CharacterElement("Meaning", "meaning", AddMeaning);
+        public static readonly CharacterElement Nanori = new CharacterElement("Nanori", "nanori", AddNanori);
 
-        //public static readonly CharacterElement Reading = new CharacterElement("Reading", "r_ele", (entry, data) => entry.StartNewReading(), false);
-        //public static readonly CharacterElement ReadingText = new CharacterElement("ReadingText", "reb", (entry, data) => entry.GetReading().Text = data.Content);
-        //public static readonly CharacterElement ReadingNoKanji = new CharacterElement("ReadingNoKanji", "re_nokanji", (entry, data) => entry.GetReading().IsTrueKanjiReading = false);
-        //public static readonly CharacterElement ReadingRestriction = new CharacterElement("ReadingRestriction", "re_restr", (entry, data) => AddContent(entry.GetReading().GetRestriction(), data));
-        //public static readonly CharacterElement ReadingInformation = new CharacterElement("ReadingInformation", "re_inf", (entry, data) => AddContent(entry.GetReading().GetInformations(), data, ReadingInformations));
-        //public static readonly CharacterElement ReadingPriority = new CharacterElement("ReadingPriority", "re_pri", (entry, data) => AddContent(entry.GetReading().GetPriorities(), data, Priorities));
-
-        //public static readonly CharacterElement Sense = new CharacterElement("Sense", "sense", (entry, data) => entry.StartNewSense(), false);
-        //public static readonly CharacterElement SenseKanjiRestriction = new CharacterElement("SenseKanjiRestriction", "stagk", (entry, data) => AddContent(entry.GetSense().GetKanjiRestriction(), data));
-        //public static readonly CharacterElement SenseReadingRestriction = new CharacterElement("SenseReadingRestriction", "stagr", (entry, data) => AddContent(entry.GetSense().GetReadingRestriction(), data));
-        //public static readonly CharacterElement PartOfSpeech = new CharacterElement("PartOfSpeech", "pos", (entry, data) => AddContent(entry.GetSense().GetPartsOfSpeech(), data, PartsOfSpeech));
-        //public static readonly CharacterElement CrossReference = new CharacterElement("CrossReference", "xref", (entry, data) => AddContent(entry.GetSense().GetCrossReferences(), data));
-        //public static readonly CharacterElement Antonym = new CharacterElement("Antonym", "ant", (entry, data) => AddContent(entry.GetSense().GetAntonyms(), data));
-        //public static readonly CharacterElement Field = new CharacterElement("Field", "field", (entry, data) => AddContent(entry.GetSense().GetFields(), data, Fields));
-        //public static readonly CharacterElement Miscellaneous = new CharacterElement("Miscellaneous", "misc", (entry, data) => AddContent(entry.GetSense().GetMiscellanea(), data, Miscellanea));
-        //public static readonly CharacterElement SenseInformation = new CharacterElement("SenseInformation", "s_inf", (entry, data) => AddContent(entry.GetSense().GetInformations(), data));
-        //public static readonly CharacterElement LoanwordSource = new CharacterElement("LoanwordSource", "lsource", (entry, data) => AddLoanwordGloss(entry.GetSense().GetLoanwordSources(), data));
-        //public static readonly CharacterElement Dialect = new CharacterElement("Dialect", "dial", (entry, data) => AddContent(entry.GetSense().GetDialects(), data, Dialects));
-        //public static readonly CharacterElement Gloss = new CharacterElement("Gloss", "gloss", (entry, data) => AddGloss(entry.GetSense().GetGlosses(), data));
-
-        //private static readonly Dictionary<string, Language> Languages = GetAll<Language>().ToDictionary(language => language.Code, language => language);
 
         private static readonly Dictionary<string, CodepointType> CodepointTypes = GetAll<CodepointType>().ToDictionary(codepointType => codepointType.Code, codepointType => codepointType);
         private static readonly Dictionary<string, BushuRadicalType> RadicalTypes = GetAll<BushuRadicalType>().ToDictionary(radicalType => radicalType.Code, radicalType => radicalType);
@@ -61,13 +40,8 @@
         private static readonly Dictionary<string, ReferenceType> ReferenceTypes = GetAll<ReferenceType>().ToDictionary(referenceType => referenceType.Code, referenceType => referenceType);
         private static readonly Dictionary<string, QueryCodeType> QueryCodeTypes = GetAll<QueryCodeType>().ToDictionary(queryCodeType => queryCodeType.Code, queryCodeType => queryCodeType);
         private static readonly Dictionary<string, SkipMisclassification> SkipMisclassifications = GetAll<SkipMisclassification>().ToDictionary(skipMisclassification => skipMisclassification.Code, skipMisclassification => skipMisclassification);
-
-        //private static readonly Dictionary<string, Field> Fields = GetAll<Field>().ToDictionary(field => field.Code, field => field);
-        //private static readonly Dictionary<string, KanjiInformation> KanjiInformations = GetAll<KanjiInformation>().ToDictionary(information => information.Code, information => information);
-        //private static readonly Dictionary<string, Miscellaneous> Miscellanea = GetAll<Miscellaneous>().ToDictionary(miscellaneous => miscellaneous.Code, miscellaneous => miscellaneous);
-        //private static readonly Dictionary<string, PartOfSpeech> PartsOfSpeech = GetAll<PartOfSpeech>().ToDictionary(partOfSpeech => partOfSpeech.Code, partOfSpeech => partOfSpeech);
-        //private static readonly Dictionary<string, Priority> Priorities = GetAll<Priority>().ToDictionary(priority => priority.Code, priority => priority);
-        //private static readonly Dictionary<string, ReadingInformation> ReadingInformations = GetAll<ReadingInformation>().ToDictionary(information => information.Code, information => information);
+        private static readonly Dictionary<string, KanjiReadingType> KanjiReadingTypes = GetAll<KanjiReadingType>().ToDictionary(kanjiReadingType => kanjiReadingType.Code, kanjiReadingType => kanjiReadingType);
+        private static readonly Dictionary<string, Language> Languages = GetAll<Language>().Where(language => language.TwoLetterCode != null).ToDictionary(language => language.TwoLetterCode, language => language);
 
         public string Code { get; }
         public bool ExpectsContent { get; }
@@ -195,14 +169,23 @@
             entry.AddQueryCode(new QueryCode(QueryCodeTypes[data.QueryCodeTypeAttribute], data.Content, skipMisclassification));
         }
 
-        //private static void AddGloss(List<Gloss> list, CharacterElementData data)
-        //{
-        //    list.Add(new Gloss(data.Content, Languages[data.LanguageAttribute], data.GlossGenderAttribute));
-        //}
+        private static void AddReading(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            entry.AddReading(new KanjiReading(KanjiReadingTypes[data.ReadingTypeAttribute], data.Content));
+        }
 
-        //private static void AddLoanwordGloss(List<LoanwordGloss> list, CharacterElementData data)
-        //{
-        //    list.Add(new LoanwordGloss(data.Content, Languages[data.LanguageAttribute], data.GlossGenderAttribute, data.LoanwordTypeAttribute != null, data.LoanwordWaseiAttribute != null));
-        //}
+        private static void AddMeaning(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            var language = string.IsNullOrEmpty(data.LanguageAttribute)
+                ? Language.English
+                : Languages[data.LanguageAttribute];
+
+            entry.AddMeaning(new KanjiMeaning(language, data.Content));
+        }
+
+        private static void AddNanori(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            entry.AddNanori(data.Content);
+        }
     }
 }

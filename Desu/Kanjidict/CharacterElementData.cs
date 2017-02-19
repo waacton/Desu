@@ -11,9 +11,15 @@
         public string ReferencePageAttribute { get; }
         public string QueryCodeTypeAttribute { get; }
         public string SkipMisclassificationAttribute { get; }
+        public string ReadingTypeAttribute { get; }
         public string LanguageAttribute { get; }
 
-        public CharacterElementData(string content, string codepointTypeAttribute, string radicalTypeAttribute, string variantTypeAttribute, string referenceTypeAttribute, string referenceVolumeAttribute, string referencePageAttribute, string QueryCodeTypeAttribute, string skipMisclassificationAttribute, string languageAttribute)
+        public CharacterElementData(string content, 
+            string codepointTypeAttribute, string radicalTypeAttribute,
+            string variantTypeAttribute, string referenceTypeAttribute, 
+            string referenceVolumeAttribute, string referencePageAttribute, 
+            string queryCodeTypeAttribute, string skipMisclassificationAttribute,
+            string readingTypeAttribute, string languageAttribute)
         {
             this.Content = content;
             this.CodepointTypeAttribute = codepointTypeAttribute;
@@ -22,9 +28,9 @@
             this.ReferenceTypeAttribute = referenceTypeAttribute;
             this.ReferenceVolumeAttribute = referenceVolumeAttribute;
             this.ReferencePageAttribute = referencePageAttribute;
-            this.QueryCodeTypeAttribute = QueryCodeTypeAttribute;
+            this.QueryCodeTypeAttribute = queryCodeTypeAttribute;
             this.SkipMisclassificationAttribute = skipMisclassificationAttribute;
-
+            this.ReadingTypeAttribute = readingTypeAttribute;
             this.LanguageAttribute = languageAttribute;
         }
 

@@ -48,7 +48,7 @@
                         continue;
                     }
 
-                    Debug.WriteLine($"{kanjiReference.Literal} -> {kanjiReference.RadicalDecomposition.ToDelimitedString(" ")}");
+                    Debug.WriteLine($"{kanjiReference.Literal} -> {kanjiReference.RadicalDecomposition.ToDelimitedString(" ")} ({kanjiReference.Meanings.First(meaning => meaning.Language.Equals(Language.English)).Term})");
                 }
             }
         }

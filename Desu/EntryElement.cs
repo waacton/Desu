@@ -35,7 +35,7 @@
         public static readonly EntryElement Dialect = new EntryElement("Dialect", "dial", (entry, data) => AddContent(entry.GetSense().GetDialects(), data, Dialects));
         public static readonly EntryElement Gloss = new EntryElement("Gloss", "gloss", (entry, data) => AddGloss(entry.GetSense().GetGlosses(), data));
 
-        private static readonly Dictionary<string, Language> Languages = GetAll<Language>().ToDictionary(language => language.Code, language => language);
+        private static readonly Dictionary<string, Language> Languages = GetAll<Language>().ToDictionary(language => language.ThreeLetterCode, language => language);
 
         private static readonly Dictionary<string, Dialect> Dialects = GetAll<Dialect>().ToDictionary(dialect => dialect.Code, dialect => dialect);
         private static readonly Dictionary<string, Field> Fields = GetAll<Field>().ToDictionary(field => field.Code, field => field);

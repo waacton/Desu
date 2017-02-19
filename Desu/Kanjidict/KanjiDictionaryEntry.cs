@@ -51,12 +51,26 @@
             this.queryCodes.Add(queryCode);
         }
 
-        //internal void StartNewSense()
-        //{
-        //    this.senses.Add(new Sense());
-        //}
+        private readonly List<IKanjiReading> readings = new List<IKanjiReading>();
+        public IEnumerable<IKanjiReading> Readings => this.readings;
+        internal void AddReading(IKanjiReading reading)
+        {
+            this.readings.Add(reading);
+        }
 
-        //internal Sense GetSense() => this.senses.Last();
+        private readonly List<IKanjiMeaning> meanings = new List<IKanjiMeaning>();
+        public IEnumerable<IKanjiMeaning> Meanings => this.meanings;
+        internal void AddMeaning(IKanjiMeaning meaning)
+        {
+            this.meanings.Add(meaning);
+        }
+
+        private readonly List<string> nanoris = new List<string>();
+        public IEnumerable<string> Nanoris => this.nanoris;
+        internal void AddNanori(string nanori)
+        {
+            this.nanoris.Add(nanori);
+        }
 
         public override string ToString()
         {
