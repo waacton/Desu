@@ -22,6 +22,8 @@
             this.variants.Add(variant);
         }
 
+        public int? Frequency { get; set; }
+
         public override string ToString()
         {
             return $"Grade: {this.Grade} | Strokes: {this.StrokeCount}";

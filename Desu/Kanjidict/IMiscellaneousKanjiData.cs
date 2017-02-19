@@ -8,5 +8,6 @@
         int StrokeCount { get; }
         IEnumerable<int> StrokeCommonMiscounts { get; }
         IEnumerable<IVariant> Variants { get; }
+        int? Frequency { get; }
     }
 }

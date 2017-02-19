@@ -14,6 +14,7 @@
         public static readonly CharacterElement Grade = new CharacterElement("Grade", "grade", AddGrade);
         public static readonly CharacterElement StrokeCount = new CharacterElement("StrokeCount", "stroke_count", AddStrokeCount);
         public static readonly CharacterElement Variant = new CharacterElement("Variant", "variant", AddVariant);
+        public static readonly CharacterElement Frequency = new CharacterElement("Frequency", "freq", AddFrequency);
 
         //public static readonly CharacterElement KanjiText = new CharacterElement("KanjiText", "keb", (entry, data) => entry.GetKanji().Text = data.Content);
         //public static readonly CharacterElement KanjiInformation = new CharacterElement("KanjiInformation", "ke_inf", (entry, data) => AddContent(entry.GetKanji().GetInformations(), data, KanjiInformations));
@@ -139,6 +140,11 @@
         private static void AddVariant(KanjiDictionaryEntry entry, CharacterElementData data)
         {
             entry.GetMiscellaneous().AddVariant(new Variant(VariantTypes[data.VariantTypeAttribute], data.Content));
+        }
+
+        private static void AddFrequency(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            entry.GetMiscellaneous().Frequency = int.Parse(data.Content);
         }
 
         //private static void AddGloss(List<Gloss> list, CharacterElementData data)
