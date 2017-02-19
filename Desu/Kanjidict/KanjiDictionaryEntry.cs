@@ -1,6 +1,7 @@
 ﻿namespace Wacton.Desu.Kanjidict
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     public class KanjiDictionaryEntry : IKanjiDictionaryEntry
     {
@@ -29,6 +30,8 @@
         {
             this.bushuRadicals.Add(bushuRadical);
         }
+
+        public bool IsBushuRadical => this.bushuRadicals.Single(radical => radical.Type.Equals(BushuRadicalType.Classical)).Radical.Equals(this.Literal);
 
         private readonly MiscellaneousKanjiData miscellaneous = new MiscellaneousKanjiData();
         public IMiscellaneousKanjiData Miscellaneous => this.miscellaneous;

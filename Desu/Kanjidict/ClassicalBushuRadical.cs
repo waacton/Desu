@@ -236,7 +236,7 @@
 
         public override string ToString()
         {
-            return $"{this.Type} #{this.Number} ({this.Radical})";
+            return $"{this.Type} #{this.Number.ToString().PadLeft(3, '0')} ({this.Radical})";
         }
     }
 }

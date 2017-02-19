@@ -3,6 +3,7 @@
     public class NelsonBushuRadical : IBushuRadical
     {
         public BushuRadicalType Type => BushuRadicalType.Nelson;
+        public string Radical => null;
         public int Number { get; }
 
         public NelsonBushuRadical(int number)

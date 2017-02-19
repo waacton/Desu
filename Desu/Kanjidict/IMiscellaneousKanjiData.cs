@@ -9,5 +9,7 @@
         IEnumerable<int> StrokeCommonMiscounts { get; }
         IEnumerable<IVariant> Variants { get; }
         int? Frequency { get; }
+        IEnumerable<string> RadicalNames { get; } 
+        int? JLPT { get; }
     }
 }

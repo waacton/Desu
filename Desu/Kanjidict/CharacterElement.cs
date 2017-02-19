@@ -15,6 +15,8 @@
         public static readonly CharacterElement StrokeCount = new CharacterElement("StrokeCount", "stroke_count", AddStrokeCount);
         public static readonly CharacterElement Variant = new CharacterElement("Variant", "variant", AddVariant);
         public static readonly CharacterElement Frequency = new CharacterElement("Frequency", "freq", AddFrequency);
+        public static readonly CharacterElement RadicalName = new CharacterElement("RadicalName", "rad_name", AddRadicalName);
+        public static readonly CharacterElement JLPT = new CharacterElement("JLPT", "jlpt", AddJLPT);
 
         //public static readonly CharacterElement KanjiText = new CharacterElement("KanjiText", "keb", (entry, data) => entry.GetKanji().Text = data.Content);
         //public static readonly CharacterElement KanjiInformation = new CharacterElement("KanjiInformation", "ke_inf", (entry, data) => AddContent(entry.GetKanji().GetInformations(), data, KanjiInformations));
@@ -70,16 +72,6 @@
         internal void AddDataToEntry(KanjiDictionaryEntry entry, CharacterElementData data)
         {
             this.addDataToEntryAction(entry, data);
-        }
-
-        private static void AddContent(List<string> list, CharacterElementData data)
-        {
-            list.Add(data.Content);
-        }
-
-        private static void AddContent<T>(List<T> list, CharacterElementData data, Dictionary<string, T> lookupDictionary)
-        {
-            list.Add(lookupDictionary[data.Content]);
         }
 
         private static void AddLiteral(KanjiDictionaryEntry entry, CharacterElementData data)
@@ -145,6 +137,16 @@
         private static void AddFrequency(KanjiDictionaryEntry entry, CharacterElementData data)
         {
             entry.GetMiscellaneous().Frequency = int.Parse(data.Content);
+        }
+
+        private static void AddRadicalName(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            entry.GetMiscellaneous().AddRadicalName(data.Content);
+        }
+
+        private static void AddJLPT(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            entry.GetMiscellaneous().JLPT = int.Parse(data.Content);
         }
 
         //private static void AddGloss(List<Gloss> list, CharacterElementData data)

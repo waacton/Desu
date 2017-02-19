@@ -24,6 +24,15 @@
 
         public int? Frequency { get; set; }
 
+        private readonly List<string> radicalNames = new List<string>();
+        public IEnumerable<string> RadicalNames => this.radicalNames;
+        internal void AddRadicalName(string radicalName)
+        {
+            this.radicalNames.Add(radicalName);
+        }
+
+        public int? JLPT { get; set; }
+
         public override string ToString()
         {
             return $"Grade: {this.Grade} | Strokes: {this.StrokeCount}";
