@@ -21,7 +21,9 @@
         private const string CodepointTypeAttribute = "cp_type";
         private const string RadicalTypeAttribute = "rad_type";
         private const string VariantTypeAttribute = "var_type";
-        private const string DicRefTypeAttribute = "dr_type";
+        private const string ReferenceTypeAttribute = "dr_type";
+        private const string ReferenceVolumeAttribute = "m_vol";
+        private const string ReferencePageAttribute = "m_page";
         private const string QueryCodeTypeAttribute = "qc_type";
         private const string ReadingTypeAttribute = "r_type";
         private const string LanguageAttribute = "m_lang";
@@ -127,9 +129,13 @@
                             var codepointTypeAttribute = reader.GetAttribute(CodepointTypeAttribute);
                             var radicalTypeAttribute = reader.GetAttribute(RadicalTypeAttribute);
                             var variantTypeAttribute = reader.GetAttribute(VariantTypeAttribute);
+                            var referenceTypeAttribute = reader.GetAttribute(ReferenceTypeAttribute);
+                            var referenceVolumeAttribute = reader.GetAttribute(ReferenceVolumeAttribute);
+                            var referencePageAttribute = reader.GetAttribute(ReferencePageAttribute);
                             var languageAttribute = reader.GetAttribute(LanguageAttribute);
+
                             var content = reader.ReadElementContentAsString();
-                            characterElementData = new CharacterElementData(content, codepointTypeAttribute, radicalTypeAttribute, variantTypeAttribute, languageAttribute);
+                            characterElementData = new CharacterElementData(content, codepointTypeAttribute, radicalTypeAttribute, variantTypeAttribute, referenceTypeAttribute, referenceVolumeAttribute, referencePageAttribute, languageAttribute);
                         }
 
                         characterElement.AddDataToEntry(dictionaryEntry, characterElementData);

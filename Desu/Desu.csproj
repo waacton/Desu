@@ -56,6 +56,9 @@
     <Compile Include="IKanji.cs" />
     <Compile Include="Kanjidict\CharacterElement.cs" />
     <Compile Include="Kanjidict\CharacterElementData.cs" />
+    <Compile Include="Kanjidict\Reference.cs" />
+    <Compile Include="Kanjidict\ReferenceType.cs" />
+    <Compile Include="Kanjidict\IReference.cs" />
     <Compile Include="Kanjidict\IVariant.cs" />
     <Compile Include="Kanjidict\Variant.cs" />
     <Compile Include="Kanjidict\VariantType.cs" />

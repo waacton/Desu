@@ -37,6 +37,12 @@
         public IMiscellaneousKanjiData Miscellaneous => this.miscellaneous;
         internal MiscellaneousKanjiData GetMiscellaneous() => this.miscellaneous;
 
+        private readonly List<IReference> references = new List<IReference>();
+        public IEnumerable<IReference> References => this.references;
+        internal void AddReference(IReference references)
+        {
+            this.references.Add(references);
+        }
 
         //internal void StartNewSense()
         //{
