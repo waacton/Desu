@@ -25,6 +25,8 @@
 
         public static readonly CharacterElement Reference = new CharacterElement("Reference", "dic_ref", AddReference);
 
+        public static readonly CharacterElement QueryCode = new CharacterElement("QueryCode", "q_code", AddQueryCode);
+
         //public static readonly CharacterElement KanjiText = new CharacterElement("KanjiText", "keb", (entry, data) => entry.GetKanji().Text = data.Content);
         //public static readonly CharacterElement KanjiInformation = new CharacterElement("KanjiInformation", "ke_inf", (entry, data) => AddContent(entry.GetKanji().GetInformations(), data, KanjiInformations));
         //public static readonly CharacterElement KanjiPriority = new CharacterElement("KanjiPriority", "ke_pri", (entry, data) => AddContent(entry.GetKanji().GetPriorities(), data, Priorities));
@@ -57,7 +59,9 @@
         private static readonly Dictionary<int, Grade> Grades = GetAll<Grade>().ToDictionary(grade => grade.Number, grade => grade);
         private static readonly Dictionary<string, VariantType> VariantTypes = GetAll<VariantType>().ToDictionary(variantType => variantType.Code, variantType => variantType);
         private static readonly Dictionary<string, ReferenceType> ReferenceTypes = GetAll<ReferenceType>().ToDictionary(referenceType => referenceType.Code, referenceType => referenceType);
-        
+        private static readonly Dictionary<string, QueryCodeType> QueryCodeTypes = GetAll<QueryCodeType>().ToDictionary(queryCodeType => queryCodeType.Code, queryCodeType => queryCodeType);
+        private static readonly Dictionary<string, SkipMisclassification> SkipMisclassifications = GetAll<SkipMisclassification>().ToDictionary(skipMisclassification => skipMisclassification.Code, skipMisclassification => skipMisclassification);
+
         //private static readonly Dictionary<string, Field> Fields = GetAll<Field>().ToDictionary(field => field.Code, field => field);
         //private static readonly Dictionary<string, KanjiInformation> KanjiInformations = GetAll<KanjiInformation>().ToDictionary(information => information.Code, information => information);
         //private static readonly Dictionary<string, Miscellaneous> Miscellanea = GetAll<Miscellaneous>().ToDictionary(miscellaneous => miscellaneous.Code, miscellaneous => miscellaneous);
@@ -177,6 +181,18 @@
             }
 
             entry.AddReference(new Reference(ReferenceTypes[data.ReferenceTypeAttribute], content));
+        }
+
+        private static void AddQueryCode(KanjiDictionaryEntry entry, CharacterElementData data)
+        {
+            SkipMisclassification skipMisclassification = null;
+            var queryCodeType = QueryCodeTypes[data.QueryCodeTypeAttribute];
+            if (queryCodeType.Equals(QueryCodeType.SKIP) && !string.IsNullOrEmpty(data.SkipMisclassificationAttribute))
+            {
+                skipMisclassification = SkipMisclassifications[data.SkipMisclassificationAttribute];
+            }
+
+            entry.AddQueryCode(new QueryCode(QueryCodeTypes[data.QueryCodeTypeAttribute], data.Content, skipMisclassification));
         }
 
         //private static void AddGloss(List<Gloss> list, CharacterElementData data)

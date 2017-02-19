@@ -11,5 +11,6 @@
         bool IsBushuRadical { get; }
         IMiscellaneousKanjiData Miscellaneous { get; }
         IEnumerable<IReference> References { get; }
+        IEnumerable<IQueryCode> QueryCodes { get; }
     }
 }

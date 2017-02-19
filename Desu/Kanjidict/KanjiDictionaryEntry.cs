@@ -39,9 +39,16 @@
 
         private readonly List<IReference> references = new List<IReference>();
         public IEnumerable<IReference> References => this.references;
-        internal void AddReference(IReference references)
+        internal void AddReference(IReference reference)
         {
-            this.references.Add(references);
+            this.references.Add(reference);
+        }
+
+        private readonly List<IQueryCode> queryCodes = new List<IQueryCode>();
+        public IEnumerable<IQueryCode> QueryCodes => this.queryCodes;
+        internal void AddQueryCode(IQueryCode queryCode)
+        {
+            this.queryCodes.Add(queryCode);
         }
 
         //internal void StartNewSense()

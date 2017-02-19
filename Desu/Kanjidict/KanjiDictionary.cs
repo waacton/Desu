@@ -25,6 +25,7 @@
         private const string ReferenceVolumeAttribute = "m_vol";
         private const string ReferencePageAttribute = "m_page";
         private const string QueryCodeTypeAttribute = "qc_type";
+        private const string SkipMisclassificationAttribute = "skip_misclass";
         private const string ReadingTypeAttribute = "r_type";
         private const string LanguageAttribute = "m_lang";
 
@@ -132,10 +133,16 @@
                             var referenceTypeAttribute = reader.GetAttribute(ReferenceTypeAttribute);
                             var referenceVolumeAttribute = reader.GetAttribute(ReferenceVolumeAttribute);
                             var referencePageAttribute = reader.GetAttribute(ReferencePageAttribute);
+                            var queryCodeTypeAttribute = reader.GetAttribute(QueryCodeTypeAttribute);
+                            var skipMisclassificationAttribute = reader.GetAttribute(SkipMisclassificationAttribute);
                             var languageAttribute = reader.GetAttribute(LanguageAttribute);
 
                             var content = reader.ReadElementContentAsString();
-                            characterElementData = new CharacterElementData(content, codepointTypeAttribute, radicalTypeAttribute, variantTypeAttribute, referenceTypeAttribute, referenceVolumeAttribute, referencePageAttribute, languageAttribute);
+                            characterElementData = new CharacterElementData(
+                                content, 
+                                codepointTypeAttribute, radicalTypeAttribute, variantTypeAttribute, 
+                                referenceTypeAttribute, referenceVolumeAttribute, referencePageAttribute, 
+                                queryCodeTypeAttribute, skipMisclassificationAttribute, languageAttribute);
                         }
 
                         characterElement.AddDataToEntry(dictionaryEntry, characterElementData);
