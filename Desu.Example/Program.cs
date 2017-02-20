@@ -4,37 +4,39 @@
     using System.Diagnostics;
     using System.Linq;
 
-    using Wacton.Desu.Kanjidict;
+    using Wacton.Desu.Enums;
+    using Wacton.Desu.Japanese;
+    using Wacton.Desu.Kanji;
     using Wacton.Tovarisch.Collections;
 
     public class Program
     {
         public static void Main(string[] args)
         {
-            var jmDictStopwatch = new Stopwatch();
-            var kanjiDictStopwatch = new Stopwatch();
+            var japaneseDictionaryStopwatch = new Stopwatch();
+            var kanjiDictionaryStopwatch = new Stopwatch();
 
-            jmDictStopwatch.Start();
-            var dictionary = new JapaneseDictionary();
-            var entries = dictionary.GetEntries().ToList();
-            jmDictStopwatch.Stop();
+            japaneseDictionaryStopwatch.Start();
+            var japaneseDictionary = new JapaneseDictionary();
+            var japaneseEntries = japaneseDictionary.GetEntries().ToList();
+            japaneseDictionaryStopwatch.Stop();
 
-            kanjiDictStopwatch.Start();
-            var kanjiDict = new KanjiDictionary();
-            var kanjiEntries = kanjiDict.GetEntries().ToList();
-            kanjiDictStopwatch.Stop();
+            kanjiDictionaryStopwatch.Start();
+            var kanjiDictionary = new KanjiDictionary();
+            var kanjiEntries = kanjiDictionary.GetEntries().ToList();
+            kanjiDictionaryStopwatch.Stop();
 
             Debug.WriteLine("____________________");
 
-            Debug.WriteLine($"Time to parse JMdict: {jmDictStopwatch.Elapsed}");
-            Debug.WriteLine($"Time to parse kanjidict2: {kanjiDictStopwatch.Elapsed}");
+            Debug.WriteLine($"Time to parse JMdict: {japaneseDictionaryStopwatch.Elapsed}");
+            Debug.WriteLine($"Time to parse kanjidict2: {kanjiDictionaryStopwatch.Elapsed}");
 
             Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
 
-            var japaneseDictionaryCreationDate = dictionary.CreationDate;
+            var japaneseDictionaryCreationDate = japaneseDictionary.CreationDate;
             Debug.WriteLine($"JMdict created: {japaneseDictionaryCreationDate.ToShortDateString()}");
 
-            var kanjiDictionaryCreationDate = kanjiDict.CreationDate;
+            var kanjiDictionaryCreationDate = kanjiDictionary.CreationDate;
             Debug.WriteLine($"kanjidict2 created: {kanjiDictionaryCreationDate.ToShortDateString()}");
 
             var random = new Random();
@@ -42,10 +44,10 @@
             {
                 Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
 
-                var index = random.Next(0, entries.Count);
-                var entry = entries[index];
+                var index = random.Next(0, japaneseEntries.Count);
+                var entry = japaneseEntries[index];
 
-                Debug.WriteLine($"{index} / {entries.Count}");
+                Debug.WriteLine($"{index} / {japaneseEntries.Count}");
                 Debug.WriteLine(entry);
 
                 var firstKanji = entry.Kanjis.FirstOrDefault()?.Text;
