@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
+    <Content Include="Resources\Desu.ico" />
     <Content Include="Resources\Desu.png" />
   </ItemGroup>
   <ItemGroup>

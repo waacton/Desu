@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Wacton.Desu.Example")]
+[assembly: AssemblyTitle("Wacton.Desu.ExampleConsole")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Wacton")]
-[assembly: AssemblyProduct("Wacton.Desu.Example")]
+[assembly: AssemblyProduct("Wacton.Desu.ExampleConsole")]
 [assembly: AssemblyCopyright("Copyright © Wacton 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
