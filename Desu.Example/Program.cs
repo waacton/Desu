@@ -62,9 +62,14 @@
                         continue;
                     }
 
-                    Debug.WriteLine($"{kanjiReference.Literal} -> {kanjiReference.RadicalDecomposition.ToDelimitedString(" ")} ({kanjiReference.Meanings.First(meaning => meaning.Language.Equals(Language.English)).Term})");
+                    var literal = kanjiReference.Literal;
+                    var radicalDecomposition = kanjiReference.RadicalDecomposition.ToDelimitedString(" ");
+                    var kanjiMeaning = !kanjiReference.Meanings.Any() ? string.Empty : kanjiReference.Meanings.First(meaning => meaning.Language.Equals(Language.English)).Term;
+                    Debug.WriteLine($"{literal} -> {radicalDecomposition} ({kanjiMeaning})");
                 }
             }
+
+            Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
         }
     }
 }
