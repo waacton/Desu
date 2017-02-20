@@ -11,11 +11,25 @@
     {
         public static void Main(string[] args)
         {
+            var jmDictStopwatch = new Stopwatch();
+            var kanjiDictStopwatch = new Stopwatch();
+
+            jmDictStopwatch.Start();
             var dictionary = new JapaneseDictionary();
             var entries = dictionary.GetEntries().ToList();
+            jmDictStopwatch.Stop();
 
+            kanjiDictStopwatch.Start();
             var kanjiDict = new KanjiDictionary();
             var kanjiEntries = kanjiDict.GetEntries().ToList();
+            kanjiDictStopwatch.Stop();
+
+            Debug.WriteLine("____________________");
+
+            Debug.WriteLine($"Time to parse JMdict: {jmDictStopwatch.Elapsed}");
+            Debug.WriteLine($"Time to parse kanjidict2: {kanjiDictStopwatch.Elapsed}");
+
+            Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
 
             var japaneseDictionaryCreationDate = dictionary.CreationDate;
             Debug.WriteLine($"JMdict created: {japaneseDictionaryCreationDate.ToShortDateString()}");

@@ -23,6 +23,23 @@
             }
         }
 
+        private static Dictionary<string, List<string>> kanjiByRadicals;
+        public static Dictionary<string, List<string>> KanjiByRadicals
+        {
+            get
+            {
+                if (kanjiByRadicals != null)
+                {
+                    return kanjiByRadicals;
+                }
+
+                kanjiByRadicals = GetKanjiByRadicals();
+                return kanjiByRadicals;
+            }
+        }
+
+        private static readonly string HeaderEnd = "###########################################################";
+
         private static Dictionary<string, List<string>> GetRadicalsByKanji()
         {
             var kradfile1 = GetRadicalsByKanji("kradfile");
@@ -41,10 +58,8 @@
             var resourceStream = assembly.GetManifestResourceStream(resourceName);
             using (var reader = new StreamReader(resourceStream))
             {
-                var headerEnd = "###########################################################";
-
                 var line = string.Empty;
-                while (line != headerEnd)
+                while (line != HeaderEnd)
                 {
                     line = reader.ReadLine();
                 }
@@ -57,6 +72,48 @@
                     var kanji = lineElements.First();
                     var radicals = lineElements.Skip(1).ToList();
                     dictionary.Add(kanji, radicals);
+
+                    line = reader.ReadLine();
+                }
+            }
+
+            return dictionary;
+        }
+
+        private static Dictionary<string, List<string>> GetKanjiByRadicals()
+        {
+            var dictionary = new Dictionary<string, List<string>>();
+
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceNames = assembly.GetManifestResourceNames();
+            var resourceName = resourceNames.Single(resource => resource.EndsWith("radkfilex"));
+            var resourceStream = assembly.GetManifestResourceStream(resourceName);
+            using (var reader = new StreamReader(resourceStream))
+            {
+                var line = string.Empty;
+                while (line != HeaderEnd)
+                {
+                    line = reader.ReadLine();
+                }
+
+                line = reader.ReadLine();
+
+                var currentRadical = string.Empty;
+
+                while (line != null)
+                {
+                    if (line.StartsWith("$"))
+                    {
+                        currentRadical = line.Split(' ')[1];
+                        dictionary.Add(currentRadical, new List<string>());
+                    }
+                    else
+                    {
+                        foreach (var character in line)
+                        {
+                            dictionary[currentRadical].Add(character.ToString());
+                        }                        
+                    }
 
                     line = reader.ReadLine();
                 }
