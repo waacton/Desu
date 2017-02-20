@@ -58,6 +58,7 @@
     <Compile Include="Kanji\CharacterElementData.cs" />
     <Compile Include="Kanji\IKanjiMeaning.cs" />
     <Compile Include="Kanji\IKanjiReading.cs" />
+    <Compile Include="Kanji\StrokesLookup.cs" />
     <Compile Include="Kanji\KanjiMeaning.cs" />
     <Compile Include="Kanji\KanjiReading.cs" />
     <Compile Include="Enums\KanjiReadingType.cs" />

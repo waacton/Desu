@@ -63,6 +63,7 @@
         private static void AddLiteral(KanjiDictionaryEntry entry, CharacterElementData data)
         {
             entry.Literal = data.Content;
+
             var radicalDecomposition = RadicalsLookup.RadicalsByKanji.ContainsKey(entry.Literal)
                 ? RadicalsLookup.RadicalsByKanji[entry.Literal]
                 : new List<string>();
@@ -76,7 +77,22 @@
 
         private static void AddCodepoint(KanjiDictionaryEntry entry, CharacterElementData data)
         {
-            entry.GetCodepoints().Add(new Codepoint(CodepointTypes[data.CodepointTypeAttribute], data.Content));
+            var codepoint = new Codepoint(CodepointTypes[data.CodepointTypeAttribute], data.Content);
+            entry.GetCodepoints().Add(codepoint);
+
+            if (!codepoint.Type.Equals(CodepointType.Unicode))
+            {
+                return;
+            }
+
+            var fiveLetterUnicode = codepoint.Value.PadLeft(5, '0');
+            if (!StrokesLookup.Strokes.ContainsKey(fiveLetterUnicode))
+            {
+                return;
+            }
+
+            var entryStrokePaths = entry.GetStrokePaths();
+            entryStrokePaths.AddRange(StrokesLookup.Strokes[fiveLetterUnicode]);
         }
 
         private static void AddRadical(KanjiDictionaryEntry entry, CharacterElementData data)

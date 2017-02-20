@@ -17,6 +17,10 @@
         public List<Codepoint> GetCodepoints() => this.codepoints;
         public IEnumerable<ICodepoint> Codepoints => this.GetCodepoints();
 
+        private readonly List<string> strokePaths = new List<string>();
+        public List<string> GetStrokePaths() => this.strokePaths;
+        public IEnumerable<string> StrokePaths => this.GetStrokePaths();
+
         private readonly List<IBushuRadical> bushuRadicals = new List<IBushuRadical>();
         public List<IBushuRadical> GetBushuRadicals() => this.bushuRadicals;
         public IEnumerable<IBushuRadical> BushuRadicals => this.GetBushuRadicals();

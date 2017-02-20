@@ -7,6 +7,7 @@
         string Literal { get; }
         IEnumerable<string> RadicalDecomposition { get; }
         IEnumerable<ICodepoint> Codepoints { get; }
+        IEnumerable<string> StrokePaths { get; }
         IEnumerable<IBushuRadical> BushuRadicals { get; }
         bool IsBushuRadical { get; }
         IMiscellaneousKanjiData Miscellaneous { get; }
