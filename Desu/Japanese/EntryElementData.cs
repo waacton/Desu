@@ -8,7 +8,9 @@
         public string LoanwordTypeAttribute { get; }
         public string LoanwordWaseiAttribute { get; }
 
-        public EntryElementData(string content, string languageAttribute, string glossGenderAttribute, string loanwordTypeAttribute, string loanwordWaseiAttribute)
+        public EntryElementData(string content, 
+            string languageAttribute, string glossGenderAttribute, 
+            string loanwordTypeAttribute, string loanwordWaseiAttribute)
         {
             this.Content = content;
             this.LanguageAttribute = languageAttribute;

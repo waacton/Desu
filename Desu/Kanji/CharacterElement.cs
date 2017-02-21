@@ -10,7 +10,7 @@
 
     public class CharacterElement : Enumeration
     {
-        public static readonly CharacterElement Literal = new CharacterElement("Literal", "literal", AddLiteral );
+        public static readonly CharacterElement Literal = new CharacterElement("Literal", "literal", AddLiteral);
 
         public static readonly CharacterElement CodepointValue = new CharacterElement("CodepointValue", "cp_value", AddCodepoint);
 
@@ -44,15 +44,13 @@
         private static readonly Dictionary<string, KanjiReadingType> KanjiReadingTypes = GetAll<KanjiReadingType>().ToDictionary(kanjiReadingType => kanjiReadingType.Code, kanjiReadingType => kanjiReadingType);
 
         public string Code { get; }
-        public bool ExpectsContent { get; }
         private readonly Action<KanjiDictionaryEntry, CharacterElementData> addDataToEntryAction;
 
-        public CharacterElement(string displayName, string code, Action<KanjiDictionaryEntry, CharacterElementData> addDataToEntryAction = null, bool expectsContent = true)
+        public CharacterElement(string displayName, string code, Action<KanjiDictionaryEntry, CharacterElementData> addDataToEntryAction = null)
             : base(displayName)
         {
             this.Code = code;
             this.addDataToEntryAction = addDataToEntryAction ?? ((entry, data) => { });
-            this.ExpectsContent = expectsContent;
         }
 
         internal void AddDataToEntry(KanjiDictionaryEntry entry, CharacterElementData data)
@@ -64,8 +62,8 @@
         {
             entry.Literal = data.Content;
 
-            var radicalDecomposition = RadicalsLookup.RadicalsByKanji.ContainsKey(entry.Literal)
-                ? RadicalsLookup.RadicalsByKanji[entry.Literal]
+            var radicalDecomposition = RadicalsLookup.KanjiToRadicals.ContainsKey(entry.Literal)
+                ? RadicalsLookup.KanjiToRadicals[entry.Literal]
                 : new List<string>();
 
             var radicals = entry.GetRadicalDecompositions();

@@ -48,6 +48,7 @@
 
         public string Code { get; }
         public bool ExpectsContent { get; }
+
         private readonly Action<JapaneseDictionaryEntry, EntryElementData> addDataToEntryAction;
 
         public EntryElement(string displayName, string code, Action<JapaneseDictionaryEntry, EntryElementData> addDataToEntryAction = null, bool expectsContent = true)

@@ -3,16 +3,12 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
-    using System.Reflection;
     using System.Xml;
 
-    using Ionic.Zip;
+    using Wacton.Desu.Resources;
 
     public class StrokesLookup
     {
-        private const string FileName = "KanjiVG";
-
         private const string KanjiElement = "kanji";
         private const string PathElement = "path";
         private const string IdAttribute = "id";
@@ -33,25 +29,10 @@
             }
         }
 
-        private static Stream GetEmbeddedResouceStream()
-        {
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceNames = assembly.GetManifestResourceNames();
-            var resourceName = resourceNames.Single(resource => resource.Contains(FileName));
-            var resourceStream = assembly.GetManifestResourceStream(resourceName);
-            return ZipFile.Read(resourceStream).Single().OpenReader();
-        }
-
         private static Dictionary<string, List<string>> GetStrokes()
         {
-            using (var streamReader = new StreamReader(GetEmbeddedResouceStream()))
-            {
-                var settings = new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse };
-                using (var reader = XmlReader.Create(streamReader, settings))
-                {
-                    return ParseDictionary(reader);
-                }
-            }
+            var xmlStream = EmbeddedResources.OpenKanjiStrokes();
+            return EmbeddedResources.ReadXmlStream(xmlStream, ParseDictionary);
         }
 
         private static Dictionary<string, List<string>> ParseDictionary(XmlReader reader)

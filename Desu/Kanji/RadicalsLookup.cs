@@ -4,59 +4,55 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Reflection;
+
+    using Wacton.Desu.Resources;
 
     public static class RadicalsLookup
     {
-        private static Dictionary<string, List<string>> radicalsByKanji;
-        public static Dictionary<string, List<string>> RadicalsByKanji
+        private static Dictionary<string, List<string>> kanjiToRadicals;
+        public static Dictionary<string, List<string>> KanjiToRadicals
         {
             get
             {
-                if (radicalsByKanji != null)
+                if (kanjiToRadicals != null)
                 {
-                    return radicalsByKanji;
+                    return kanjiToRadicals;
                 }
 
-                radicalsByKanji = GetRadicalsByKanji();
-                return radicalsByKanji;
+                kanjiToRadicals = GetKanjiToRadicals();
+                return kanjiToRadicals;
             }
         }
 
-        private static Dictionary<string, List<string>> kanjiByRadicals;
-        public static Dictionary<string, List<string>> KanjiByRadicals
+        private static Dictionary<string, List<string>> radicalToKanjis;
+        public static Dictionary<string, List<string>> RadicalToKanjis
         {
             get
             {
-                if (kanjiByRadicals != null)
+                if (radicalToKanjis != null)
                 {
-                    return kanjiByRadicals;
+                    return radicalToKanjis;
                 }
 
-                kanjiByRadicals = GetKanjiByRadicals();
-                return kanjiByRadicals;
+                radicalToKanjis = GetKanjiByRadicals();
+                return radicalToKanjis;
             }
         }
 
         private static readonly string HeaderEnd = "###########################################################";
 
-        private static Dictionary<string, List<string>> GetRadicalsByKanji()
+        private static Dictionary<string, List<string>> GetKanjiToRadicals()
         {
-            var kradfile1 = GetRadicalsByKanji("kradfile");
-            var kradfile2 = GetRadicalsByKanji("kradfile2");
-            radicalsByKanji = kradfile1.Concat(kradfile2).ToDictionary(dictionary => dictionary.Key, dictionary => dictionary.Value);
-            return radicalsByKanji;
+            var kradfile1 = GetKanjiToRadicals(EmbeddedResources.OpenKanjiToRadicals1());
+            var kradfile2 = GetKanjiToRadicals(EmbeddedResources.OpenKanjiToRadicals2());
+            return kradfile1.Concat(kradfile2).ToDictionary(dictionary => dictionary.Key, dictionary => dictionary.Value);
         }
 
-        private static Dictionary<string, List<string>> GetRadicalsByKanji(string resourceNameEnding)
+        private static Dictionary<string, List<string>> GetKanjiToRadicals(Stream radicalsToKanjiStream)
         {
             var dictionary = new Dictionary<string, List<string>>();
 
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceNames = assembly.GetManifestResourceNames();
-            var resourceName = resourceNames.Single(resource => resource.EndsWith(resourceNameEnding));
-            var resourceStream = assembly.GetManifestResourceStream(resourceName);
-            using (var reader = new StreamReader(resourceStream))
+            using (var reader = new StreamReader(radicalsToKanjiStream))
             {
                 var line = string.Empty;
                 while (line != HeaderEnd)
@@ -84,11 +80,7 @@
         {
             var dictionary = new Dictionary<string, List<string>>();
 
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceNames = assembly.GetManifestResourceNames();
-            var resourceName = resourceNames.Single(resource => resource.EndsWith("radkfilex"));
-            var resourceStream = assembly.GetManifestResourceStream(resourceName);
-            using (var reader = new StreamReader(resourceStream))
+            using (var reader = new StreamReader(EmbeddedResources.OpenRadicalToKanjis()))
             {
                 var line = string.Empty;
                 while (line != HeaderEnd)
