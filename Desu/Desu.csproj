@@ -56,11 +56,11 @@
     <Compile Include="Japanese\IKanji.cs" />
     <Compile Include="Kanji\CharacterElement.cs" />
     <Compile Include="Kanji\CharacterElementData.cs" />
-    <Compile Include="Kanji\IKanjiMeaning.cs" />
-    <Compile Include="Kanji\IKanjiReading.cs" />
-    <Compile Include="Kanji\StrokesLookup.cs" />
-    <Compile Include="Kanji\KanjiMeaning.cs" />
-    <Compile Include="Kanji\KanjiReading.cs" />
+    <Compile Include="Kanji\IMeaning.cs" />
+    <Compile Include="Kanji\IReading.cs" />
+    <Compile Include="Strokes\StrokeLookup.cs" />
+    <Compile Include="Kanji\Meaning.cs" />
+    <Compile Include="Kanji\Reading.cs" />
     <Compile Include="Enums\KanjiReadingType.cs" />
     <Compile Include="Kanji\QueryCode.cs" />
     <Compile Include="Kanji\IQueryCode.cs" />
@@ -72,9 +72,7 @@
     <Compile Include="Kanji\IVariant.cs" />
     <Compile Include="Kanji\Variant.cs" />
     <Compile Include="Enums\VariantType.cs" />
-    <Compile Include="Kanji\IMiscellaneousKanjiData.cs" />
     <Compile Include="Enums\Grade.cs" />
-    <Compile Include="Kanji\MiscellaneousKanjiData.cs" />
     <Compile Include="Kanji\IBushuRadical.cs" />
     <Compile Include="Kanji\NelsonBushuRadical.cs" />
     <Compile Include="Enums\ClassicalBushuRadical.cs" />
@@ -86,7 +84,7 @@
     <Compile Include="Kanji\KanjiDictionaryEntry.cs" />
     <Compile Include="Kanji\KanjiDictionary.cs" />
     <Compile Include="Enums\CodepointType.cs" />
-    <Compile Include="Kanji\RadicalsLookup.cs" />
+    <Compile Include="Radicals\RadicalLookup.cs" />
     <Compile Include="Enums\Miscellaneous.cs" />
     <Compile Include="Enums\Priority.cs" />
     <Compile Include="Japanese\ReadingInformation.cs" />

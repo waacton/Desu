@@ -1,4 +1,4 @@
-﻿namespace Wacton.Desu.Kanji
+﻿namespace Wacton.Desu.Radicals
 {
     using System;
     using System.Collections.Generic;
@@ -7,7 +7,7 @@
 
     using Wacton.Desu.Resources;
 
-    public static class RadicalsLookup
+    public static class RadicalLookup
     {
         private static Dictionary<string, List<string>> kanjiToRadicals;
         public static Dictionary<string, List<string>> KanjiToRadicals

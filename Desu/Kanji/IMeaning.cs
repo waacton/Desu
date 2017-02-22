@@ -2,7 +2,7 @@
 {
     using Wacton.Desu.Enums;
 
-    public interface IKanjiMeaning
+    public interface IMeaning
     {
         Language Language { get; }
         

@@ -2,6 +2,8 @@
 {
     using System.Collections.Generic;
 
+    using Wacton.Desu.Enums;
+
     public interface IKanjiDictionaryEntry
     {
         string Literal { get; }
@@ -10,11 +12,17 @@
         IEnumerable<string> StrokePaths { get; }
         IEnumerable<IBushuRadical> BushuRadicals { get; }
         bool IsBushuRadical { get; }
-        IMiscellaneousKanjiData Miscellaneous { get; }
+        Grade Grade { get; }
+        int StrokeCount { get; }
+        IEnumerable<int> StrokeCommonMiscounts { get; }
+        IEnumerable<IVariant> Variants { get; }
+        int? Frequency { get; }
+        IEnumerable<string> RadicalNames { get; }
+        int? JLPT { get; }
         IEnumerable<IReference> References { get; }
         IEnumerable<IQueryCode> QueryCodes { get; }
-        IEnumerable<IKanjiReading> Readings { get; }
-        IEnumerable<IKanjiMeaning> Meanings { get; }
+        IEnumerable<IReading> Readings { get; }
+        IEnumerable<IMeaning> Meanings { get; }
         IEnumerable<string> Nanoris { get; }
     }
 }

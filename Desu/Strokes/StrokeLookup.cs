@@ -1,13 +1,12 @@
-﻿namespace Wacton.Desu.Kanji
+﻿namespace Wacton.Desu.Strokes
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Xml;
 
     using Wacton.Desu.Resources;
 
-    public class StrokesLookup
+    public static class StrokeLookup
     {
         private const string KanjiElement = "kanji";
         private const string PathElement = "path";

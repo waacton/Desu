@@ -1,4 +1,4 @@
-﻿namespace ExampleWpf
+﻿namespace Wacton.Desu.ExampleWpf
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -8,7 +8,7 @@
     using System.Windows;
     using System.Windows.Media;
 
-    using Annotations;
+    using global::ExampleWpf.Annotations;
 
     using Wacton.Desu.Kanji;
     using Wacton.Tovarisch.Randomness;
@@ -48,10 +48,10 @@
                 hasStrokePaths = this.currentEntry.StrokePaths.Any();
             }
 
-            Strokes = new ObservableCollection<Geometry>();
+            this.Strokes = new ObservableCollection<Geometry>();
             foreach (var strokePath in this.currentEntry.StrokePaths)
             {
-                Strokes.Add(Geometry.Parse(strokePath));
+                this.Strokes.Add(Geometry.Parse(strokePath));
             }
 
             this.OnPropertyChanged(nameof(this.Text));

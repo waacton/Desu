@@ -5,6 +5,8 @@
     using System.Linq;
 
     using Wacton.Desu.Enums;
+    using Wacton.Desu.Radicals;
+    using Wacton.Desu.Strokes;
     using Wacton.Tovarisch.Collections;
     using Wacton.Tovarisch.Enum;
 
@@ -62,8 +64,8 @@
         {
             entry.Literal = data.Content;
 
-            var radicalDecomposition = RadicalsLookup.KanjiToRadicals.ContainsKey(entry.Literal)
-                ? RadicalsLookup.KanjiToRadicals[entry.Literal]
+            var radicalDecomposition = RadicalLookup.KanjiToRadicals.ContainsKey(entry.Literal)
+                ? RadicalLookup.KanjiToRadicals[entry.Literal]
                 : new List<string>();
 
             var radicals = entry.GetRadicalDecompositions();
@@ -84,13 +86,13 @@
             }
 
             var fiveLetterUnicode = codepoint.Value.PadLeft(5, '0');
-            if (!StrokesLookup.Strokes.ContainsKey(fiveLetterUnicode))
+            if (!StrokeLookup.Strokes.ContainsKey(fiveLetterUnicode))
             {
                 return;
             }
 
             var entryStrokePaths = entry.GetStrokePaths();
-            entryStrokePaths.AddRange(StrokesLookup.Strokes[fiveLetterUnicode]);
+            entryStrokePaths.AddRange(StrokeLookup.Strokes[fiveLetterUnicode]);
         }
 
         private static void AddRadical(KanjiDictionaryEntry entry, CharacterElementData data)
@@ -114,43 +116,41 @@
 
         private static void AddGrade(KanjiDictionaryEntry entry, CharacterElementData data)
         {
-            var misc = entry.GetMiscellaneous();
-            misc.Grade = Grades[int.Parse(data.Content)];
+            entry.Grade = Grades[int.Parse(data.Content)];
         }
 
         private static void AddStrokeCount(KanjiDictionaryEntry entry, CharacterElementData data)
         {
-            var misc = entry.GetMiscellaneous();
             var strokeCount = int.Parse(data.Content);
 
-            if (misc.StrokeCount == 0)
+            if (entry.StrokeCount == 0)
             {
-                misc.StrokeCount = strokeCount;
+                entry.StrokeCount = strokeCount;
             }
             else
             {
-                misc.GetStrokeMiscounts().Add(strokeCount);
+                entry.GetStrokeMiscounts().Add(strokeCount);
             }
         }
 
         private static void AddVariant(KanjiDictionaryEntry entry, CharacterElementData data)
         {
-            entry.GetMiscellaneous().GetVariants().Add(new Variant(VariantTypes[data.VariantTypeAttribute], data.Content));
+            entry.GetVariants().Add(new Variant(VariantTypes[data.VariantTypeAttribute], data.Content));
         }
 
         private static void AddFrequency(KanjiDictionaryEntry entry, CharacterElementData data)
         {
-            entry.GetMiscellaneous().Frequency = int.Parse(data.Content);
+            entry.Frequency = int.Parse(data.Content);
         }
 
         private static void AddRadicalName(KanjiDictionaryEntry entry, CharacterElementData data)
         {
-            entry.GetMiscellaneous().GetRadicalNames().Add(data.Content);
+            entry.GetRadicalNames().Add(data.Content);
         }
 
         private static void AddJLPT(KanjiDictionaryEntry entry, CharacterElementData data)
         {
-            entry.GetMiscellaneous().JLPT = int.Parse(data.Content);
+            entry.JLPT = int.Parse(data.Content);
         }
 
         private static void AddReference(KanjiDictionaryEntry entry, CharacterElementData data)
@@ -189,7 +189,7 @@
 
         private static void AddReading(KanjiDictionaryEntry entry, CharacterElementData data)
         {
-            entry.GetReadings().Add(new KanjiReading(KanjiReadingTypes[data.ReadingTypeAttribute], data.Content));
+            entry.GetReadings().Add(new Reading(KanjiReadingTypes[data.ReadingTypeAttribute], data.Content));
         }
 
         private static void AddMeaning(KanjiDictionaryEntry entry, CharacterElementData data)
@@ -198,7 +198,7 @@
                 ? Language.English
                 : Languages[data.LanguageAttribute];
 
-            entry.GetMeanings().Add(new KanjiMeaning(language, data.Content));
+            entry.GetMeanings().Add(new Meaning(language, data.Content));
         }
 
         private static void AddNanori(KanjiDictionaryEntry entry, CharacterElementData data)

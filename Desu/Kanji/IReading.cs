@@ -2,7 +2,7 @@
 {
     using Wacton.Desu.Enums;
 
-    public interface IKanjiReading
+    public interface IReading
     {
         KanjiReadingType Type { get; }
         

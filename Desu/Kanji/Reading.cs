@@ -2,13 +2,13 @@
 {
     using Wacton.Desu.Enums;
 
-    public class KanjiReading : IKanjiReading
+    public class Reading : IReading
     {
         public KanjiReadingType Type { get; }
 
         public string Value { get; }
 
-        public KanjiReading(KanjiReadingType kanjiReadingType, string value)
+        public Reading(KanjiReadingType kanjiReadingType, string value)
         {
             this.Type = kanjiReadingType;
             this.Value = value;

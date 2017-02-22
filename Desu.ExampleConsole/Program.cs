@@ -1,4 +1,4 @@
-﻿namespace Wacton.Desu.Example
+﻿namespace Wacton.Desu.ExampleConsole
 {
     using System;
     using System.Diagnostics;
@@ -45,12 +45,12 @@
                 Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
 
                 var index = random.Next(0, japaneseEntries.Count);
-                var entry = japaneseEntries[index];
+                var japaneseEntry = japaneseEntries[index];
 
                 Debug.WriteLine($"{index} / {japaneseEntries.Count}");
-                Debug.WriteLine(entry);
+                Debug.WriteLine(japaneseEntry);
 
-                var firstKanji = entry.Kanjis.FirstOrDefault()?.Text;
+                var firstKanji = japaneseEntry.Kanjis.FirstOrDefault()?.Text;
                 if (firstKanji == null)
                 {
                     continue;
@@ -58,15 +58,15 @@
 
                 foreach (var character in firstKanji)
                 {
-                    var kanjiReference = kanjiEntries.SingleOrDefault(kanjiEntry => kanjiEntry.Literal.Equals(character.ToString()));
-                    if (kanjiReference == null)
+                    var kanjiEntry = kanjiEntries.SingleOrDefault(kanji => kanji.Literal.Equals(character.ToString()));
+                    if (kanjiEntry == null)
                     {
                         continue;
                     }
 
-                    var literal = kanjiReference.Literal;
-                    var radicalDecomposition = kanjiReference.RadicalDecomposition.ToDelimitedString(" ");
-                    var kanjiMeaning = !kanjiReference.Meanings.Any() ? string.Empty : kanjiReference.Meanings.First(meaning => meaning.Language.Equals(Language.English)).Term;
+                    var literal = kanjiEntry.Literal;
+                    var radicalDecomposition = kanjiEntry.RadicalDecomposition.ToDelimitedString(" ");
+                    var kanjiMeaning = !kanjiEntry.Meanings.Any() ? string.Empty : kanjiEntry.Meanings.First(meaning => meaning.Language.Equals(Language.English)).Term;
                     Debug.WriteLine($"{literal} -> {radicalDecomposition} ({kanjiMeaning})");
                 }
             }

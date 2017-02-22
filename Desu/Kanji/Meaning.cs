@@ -2,13 +2,13 @@
 {
     using Wacton.Desu.Enums;
 
-    public class KanjiMeaning : IKanjiMeaning
+    public class Meaning : IMeaning
     {
         public Language Language { get; }
 
         public string Term { get; }
 
-        public KanjiMeaning(Language language, string term)
+        public Meaning(Language language, string term)
         {
             this.Language = language;
             this.Term = term;
