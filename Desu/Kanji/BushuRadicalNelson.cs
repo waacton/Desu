@@ -2,13 +2,13 @@
 {
     using Wacton.Desu.Enums;
 
-    public class NelsonBushuRadical : IBushuRadical
+    public class BushuRadicalNelson : IBushuRadical
     {
         public BushuRadicalType Type => BushuRadicalType.Nelson;
         public string Radical => null;
         public int Number { get; }
 
-        public NelsonBushuRadical(int number)
+        public BushuRadicalNelson(int number)
         {
             this.Number = number;
         }

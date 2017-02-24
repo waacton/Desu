@@ -77,8 +77,8 @@
     <Compile Include="Enums\VariantType.cs" />
     <Compile Include="Enums\Grade.cs" />
     <Compile Include="Kanji\IBushuRadical.cs" />
-    <Compile Include="Kanji\NelsonBushuRadical.cs" />
-    <Compile Include="Enums\ClassicalBushuRadical.cs" />
+    <Compile Include="Kanji\BushuRadicalNelson.cs" />
+    <Compile Include="Enums\BushuRadicalClassical.cs" />
     <Compile Include="Enums\BushuRadicalType.cs" />
     <Compile Include="Kanji\ICodepoint.cs" />
     <Compile Include="Kanji\IKanjiDictionary.cs" />

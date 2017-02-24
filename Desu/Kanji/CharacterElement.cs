@@ -37,7 +37,7 @@
 
         private static readonly Dictionary<string, CodepointType> CodepointTypes = GetAll<CodepointType>().ToDictionary(codepointType => codepointType.Code, codepointType => codepointType);
         private static readonly Dictionary<string, BushuRadicalType> RadicalTypes = GetAll<BushuRadicalType>().ToDictionary(radicalType => radicalType.Code, radicalType => radicalType);
-        private static readonly Dictionary<int, ClassicalBushuRadical> ClassicalBushuRadicals = GetAll<ClassicalBushuRadical>().ToDictionary(kiangXiBushuRadical => kiangXiBushuRadical.Number, kiangXiBushuRadical => kiangXiBushuRadical);
+        private static readonly Dictionary<int, BushuRadicalClassical> ClassicalBushuRadicals = GetAll<BushuRadicalClassical>().ToDictionary(classicalBushuRadical => classicalBushuRadical.Number, classicalBushuRadical => classicalBushuRadical);
         private static readonly Dictionary<int, Grade> Grades = GetAll<Grade>().ToDictionary(grade => grade.Number, grade => grade);
         private static readonly Dictionary<string, VariantType> VariantTypes = GetAll<VariantType>().ToDictionary(variantType => variantType.Code, variantType => variantType);
         private static readonly Dictionary<string, ReferenceType> ReferenceTypes = GetAll<ReferenceType>().ToDictionary(referenceType => referenceType.Code, referenceType => referenceType);
@@ -109,7 +109,7 @@
             }
             else
             {
-                bushuRadical = new NelsonBushuRadical(radicalNumber);
+                bushuRadical = new BushuRadicalNelson(radicalNumber);
             }
 
             entry.GetBushuRadicals().Add(bushuRadical);
