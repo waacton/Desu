@@ -1,22 +1,33 @@
 ﻿namespace Wacton.Desu.Japanese
 {
+    using System.Xml;
+
     public class EntryElementData
     {
-        public string Content { get; }
-        public string LanguageAttribute { get; }
-        public string GlossGenderAttribute { get; }
-        public string LoanwordTypeAttribute { get; }
-        public string LoanwordWaseiAttribute { get; }
+        private static readonly string LanguageTag = "xml:lang";
+        private static readonly string LoanwordTypeTag = "ls_type";
+        private static readonly string LoanwordWasei = "ls_wasei";
+        private static readonly string GlossGenderTag = "g_gend";
 
-        public EntryElementData(string content, 
-            string languageAttribute, string glossGenderAttribute, 
-            string loanwordTypeAttribute, string loanwordWaseiAttribute)
+        public string Content { get; private set; }
+
+        public string LanguageAttribute { get; private set; }
+        public string GlossGenderAttribute { get; private set; }
+        public string LoanwordTypeAttribute { get; private set; }
+        public string LoanwordWaseiAttribute { get; private set; }
+
+        public static EntryElementData FromXmlReader(XmlReader reader)
         {
-            this.Content = content;
-            this.LanguageAttribute = languageAttribute;
-            this.GlossGenderAttribute = glossGenderAttribute;
-            this.LoanwordTypeAttribute = loanwordTypeAttribute;
-            this.LoanwordWaseiAttribute = loanwordWaseiAttribute;
+            var entryElementData = new EntryElementData
+            {
+                LanguageAttribute = reader.GetAttribute(LanguageTag),
+                LoanwordTypeAttribute = reader.GetAttribute(LoanwordTypeTag),
+                LoanwordWaseiAttribute = reader.GetAttribute(LoanwordWasei),
+                GlossGenderAttribute = reader.GetAttribute(GlossGenderTag),
+                Content = reader.ReadElementContentAsString()
+            };
+
+            return entryElementData;
         }
 
         public override string ToString()

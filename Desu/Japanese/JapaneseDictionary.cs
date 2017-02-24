@@ -10,13 +10,7 @@
 
     public class JapaneseDictionary : IJapaneseDictionary
     {
-        private static readonly string EntryElement = "entry";
-
-        private static readonly string LanguageAttribute = "xml:lang";
-        private static readonly string LoanwordTypeAttribute = "ls_type";
-        private static readonly string LoanwordWaseiAttribute = "ls_wasei";
-        private static readonly string GlossGenderAttribute = "g_gend";
-
+        private static readonly string EntryTag = "entry";
         private static readonly string CreationDatePrefix = "JMdict created: ";
 
         private DateTime creationDate = DateTime.MinValue;
@@ -53,7 +47,7 @@
             reader.MoveToContent();
             while (reader.Read())
             {
-                if (!reader.IsStartElement() || reader.Name != EntryElement)
+                if (!reader.IsStartElement() || reader.Name != EntryTag)
                 {
                     continue;
                 }
@@ -80,12 +74,12 @@
                             continue;
                         }
 
-                        var entryElementData = ReadEntryElementData(reader);
+                        var entryElementData = EntryElementData.FromXmlReader(reader);
                         entryElement.AddDataToEntry(dictionaryEntry, entryElementData);
                     }
                     else if (reader.NodeType == XmlNodeType.EndElement)
                     {
-                        isEndOfEntry = reader.Name.Equals(EntryElement);
+                        isEndOfEntry = reader.Name.Equals(EntryTag);
                     }
                 }
 
@@ -93,21 +87,6 @@
             }
 
             return entries;
-        }
-
-        private static EntryElementData ReadEntryElementData(XmlReader reader)
-        {
-            var languageAttribute = reader.GetAttribute(LanguageAttribute);
-            var loanwordTypeAttribute = reader.GetAttribute(LoanwordTypeAttribute);
-            var loanwordWaseiAttribute = reader.GetAttribute(LoanwordWaseiAttribute);
-            var glossGenderAttribute = reader.GetAttribute(GlossGenderAttribute);
-
-            var content = reader.ReadElementContentAsString();
-
-            return new EntryElementData(
-                content,
-                languageAttribute, glossGenderAttribute,
-                loanwordTypeAttribute, loanwordWaseiAttribute);
         }
 
         private static DateTime ParseCreationDate()
