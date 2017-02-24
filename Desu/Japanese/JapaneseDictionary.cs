@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
     using System.Xml;
 
@@ -11,40 +10,45 @@
 
     public class JapaneseDictionary : IJapaneseDictionary
     {
-        private const string EntryElement = "entry";
-        private static readonly Dictionary<string, EntryElement> EntryElements =
-            Enumeration.GetAll<EntryElement>().ToDictionary(element => element.Code, element => element);
+        private static readonly string EntryElement = "entry";
 
-        private const string LanguageAttribute = "xml:lang";
-        private const string LoanwordTypeAttribute = "ls_type";
-        private const string LoanwordWaseiAttribute = "ls_wasei";
-        private const string GlossGenderAttribute = "g_gend";
+        private static readonly string LanguageAttribute = "xml:lang";
+        private static readonly string LoanwordTypeAttribute = "ls_type";
+        private static readonly string LoanwordWaseiAttribute = "ls_wasei";
+        private static readonly string GlossGenderAttribute = "g_gend";
 
-        private const string CreationDatePrefix = "JMdict created: ";
+        private static readonly string CreationDatePrefix = "JMdict created: ";
 
         private DateTime creationDate = DateTime.MinValue;
 
         /// <summary>
         /// The creation date of the dictionary file
         /// </summary>
-        public DateTime CreationDate => this.GetCreationDate();
-        private DateTime GetCreationDate()
+        public DateTime CreationDate
         {
-            return this.ParseCreationDate(EmbeddedResources.OpenJapaneseDictionary);
+            get
+            {
+                if (this.creationDate == DateTime.MinValue)
+                {
+                    this.creationDate = ParseCreationDate();
+                }
+
+                return this.creationDate;
+            }
         }
 
         /// <summary>
         /// Returns the entries of the Japanese dictionary
         /// </summary>
-        public IEnumerable<IJapaneseDictionaryEntry> GetEntries()
+        public IEnumerable<IJapaneseEntry> GetEntries()
         {
-            var xmlStream = EmbeddedResources.OpenJapaneseDictionary();
-            return EmbeddedResources.ReadXmlStream(xmlStream, ParseDictionary);
+            return EmbeddedResources.ReadStream(Resource.JapaneseDictionary, ParseDictionary);
         }
 
-        private static IEnumerable<IJapaneseDictionaryEntry> ParseDictionary(XmlReader reader)
+        private static IEnumerable<IJapaneseEntry> ParseDictionary(XmlReader reader)
         {
-            var dictionaryEntries = new List<IJapaneseDictionaryEntry>();
+            var entries = new List<IJapaneseEntry>();
+            var entryElements = Enumeration.GetAll<EntryElement>().ToDictionary(element => element.Code, element => element);
 
             reader.MoveToContent();
             while (reader.Read())
@@ -56,7 +60,7 @@
 
                 // now within an entry, can now create data entry
                 // keep reading until the end entry tag is reached
-                var dictionaryEntry = new JapaneseDictionaryEntry();
+                var dictionaryEntry = new JapaneseEntry();
                 var isEndOfEntry = false;
                 while (!isEndOfEntry)
                 {
@@ -64,12 +68,12 @@
                     if (reader.NodeType == XmlNodeType.Element)
                     {
                         var elementCode = reader.Name;
-                        if (!EntryElements.ContainsKey(elementCode))
+                        if (!entryElements.ContainsKey(elementCode))
                         {
                             continue;
                         }
 
-                        var entryElement = EntryElements[elementCode];
+                        var entryElement = entryElements[elementCode];
                         if (!entryElement.ExpectsContent)
                         {
                             entryElement.AddDataToEntry(dictionaryEntry, null);
@@ -85,10 +89,10 @@
                     }
                 }
 
-                dictionaryEntries.Add(dictionaryEntry);
+                entries.Add(dictionaryEntry);
             }
 
-            return dictionaryEntries;
+            return entries;
         }
 
         private static EntryElementData ReadEntryElementData(XmlReader reader)
@@ -106,26 +110,12 @@
                 loanwordTypeAttribute, loanwordWaseiAttribute);
         }
 
-        private DateTime ParseCreationDate(Func<Stream> openStreamFunction)
+        private static DateTime ParseCreationDate()
         {
-            if (this.creationDate != DateTime.MinValue)
-            {
-                return this.creationDate;
-            }
-
-            using (var stream = openStreamFunction())
-            {
-                var settings = new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse };
-                using (var reader = XmlReader.Create(stream, settings))
-                {
-                    this.creationDate = this.ParseCreationDate(reader);
-                }
-            }
-
-            return this.creationDate;
+            return EmbeddedResources.ReadStream(Resource.JapaneseDictionary, ParseCreationDate);
         }
 
-        private DateTime ParseCreationDate(XmlReader reader)
+        private static DateTime ParseCreationDate(XmlReader reader)
         {
             while (reader.Read())
             {

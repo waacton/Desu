@@ -6,7 +6,7 @@
 
     using Wacton.Desu.Enums;
 
-    public class JapaneseDictionaryEntry : IJapaneseDictionaryEntry
+    public class JapaneseEntry : IJapaneseEntry
     {
         public int Sequence { get; set; }
 

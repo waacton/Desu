@@ -4,7 +4,7 @@
 
     using Wacton.Desu.Enums;
 
-    public interface IKanjiDictionaryEntry
+    public interface IKanjiEntry
     {
         string Literal { get; }
         IEnumerable<string> RadicalDecomposition { get; }

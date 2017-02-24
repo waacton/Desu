@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Radicals\IRadicalLookup.cs" />
+    <Compile Include="Strokes\IStrokeLookup.cs" />
     <Compile Include="Japanese\ISense.cs" />
     <Compile Include="Japanese\IReading.cs" />
     <Compile Include="Japanese\IKanji.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="Kanji\CharacterElementData.cs" />
     <Compile Include="Kanji\IMeaning.cs" />
     <Compile Include="Kanji\IReading.cs" />
+    <Compile Include="Resources\Resource.cs" />
     <Compile Include="Strokes\StrokeLookup.cs" />
     <Compile Include="Kanji\Meaning.cs" />
     <Compile Include="Kanji\Reading.cs" />
@@ -79,9 +82,9 @@
     <Compile Include="Enums\BushuRadicalType.cs" />
     <Compile Include="Kanji\ICodepoint.cs" />
     <Compile Include="Kanji\IKanjiDictionary.cs" />
-    <Compile Include="Kanji\IKanjiDictionaryEntry.cs" />
+    <Compile Include="Kanji\IKanjiEntry.cs" />
     <Compile Include="Kanji\Codepoint.cs" />
-    <Compile Include="Kanji\KanjiDictionaryEntry.cs" />
+    <Compile Include="Kanji\KanjiEntry.cs" />
     <Compile Include="Kanji\KanjiDictionary.cs" />
     <Compile Include="Enums\CodepointType.cs" />
     <Compile Include="Radicals\RadicalLookup.cs" />
@@ -92,7 +95,7 @@
     <Compile Include="Enums\Field.cs" />
     <Compile Include="Japanese\EntryElement.cs" />
     <Compile Include="Japanese\LoanwordGloss.cs" />
-    <Compile Include="Japanese\IJapaneseDictionaryEntry.cs" />
+    <Compile Include="Japanese\IJapaneseEntry.cs" />
     <Compile Include="Japanese\Gloss.cs" />
     <Compile Include="Enums\Dialect.cs" />
     <Compile Include="Japanese\EntryElementData.cs" />
@@ -101,7 +104,7 @@
     <Compile Include="Japanese\Kanji.cs" />
     <Compile Include="Enums\PartOfSpeech.cs" />
     <Compile Include="Japanese\IJapaneseDictionary.cs" />
-    <Compile Include="Japanese\JapaneseDictionaryEntry.cs" />
+    <Compile Include="Japanese\JapaneseEntry.cs" />
     <Compile Include="Japanese\JapaneseDictionary.cs" />
     <Compile Include="Enums\Language.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

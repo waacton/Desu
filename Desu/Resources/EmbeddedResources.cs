@@ -10,45 +10,29 @@
 
     internal static class EmbeddedResources
     {
-        internal static Stream OpenJapaneseDictionary()
+        internal static T ReadStream<T>(Resource resource, Func<XmlReader, T> readerFunction)
         {
-            return GetEmbeddedResouceStream(nameof(Properties.Resources.JMdict));
-        }
-
-        internal static Stream OpenKanjiDictionary()
-        {
-            return GetEmbeddedResouceStream(nameof(Properties.Resources.kanjidic2));
-        }
-
-        internal static Stream OpenKanjiToRadicals1()
-        {
-            return GetEmbeddedResouceStream(nameof(Properties.Resources.kradfile));
-        }
-
-        internal static Stream OpenKanjiToRadicals2()
-        {
-            return GetEmbeddedResouceStream(nameof(Properties.Resources.kradfile2));
-        }
-
-        internal static Stream OpenRadicalToKanjis()
-        {
-            return GetEmbeddedResouceStream(nameof(Properties.Resources.radkfilex));
-        }
-
-        internal static Stream OpenKanjiStrokes()
-        {
-            return GetEmbeddedResouceStream(nameof(Properties.Resources.KanjiVG));
-        }
-
-        internal static T ReadXmlStream<T>(Stream stream, Func<XmlReader, T> readerFunction)
-        {
+            using (var stream = GetEmbeddedResouceStream(resource.Name))
             using (var streamReader = new StreamReader(stream))
             {
                 var settings = new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse };
-                using (var reader = XmlReader.Create(streamReader, settings))
+                using (var xmlReader = XmlReader.Create(streamReader, settings))
                 {
-                    return readerFunction(reader);
+                    var readResult = readerFunction(xmlReader);
+                    stream.Close();
+                    return readResult;
                 }
+            }
+        }
+
+        internal static T ReadStream<T>(Resource resource, Func<StreamReader, T> readerFunction)
+        {
+            using (var stream = GetEmbeddedResouceStream(resource.Name))
+            using (var streamReader = new StreamReader(stream))
+            {
+                var readResult = readerFunction(streamReader);
+                stream.Close();
+                return readResult;
             }
         }
 
@@ -60,7 +44,5 @@
             var resourceStream = assembly.GetManifestResourceStream(resourceName);
             return resourceName.EndsWith(".zip") ? ZipFile.Read(resourceStream).Single().OpenReader() : resourceStream;
         }
-
-       
     }
 }

@@ -6,7 +6,7 @@
     using Wacton.Desu.Enums;
     using Wacton.Tovarisch.Collections;
 
-    public class KanjiDictionaryEntry : IKanjiDictionaryEntry
+    public class KanjiEntry : IKanjiEntry
     {
         public string Literal { get; set; }
 

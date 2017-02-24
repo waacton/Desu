@@ -18,8 +18,8 @@
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        private List<IKanjiDictionaryEntry> kanjiEntries = new List<IKanjiDictionaryEntry>();
-        private IKanjiDictionaryEntry currentEntry;
+        private readonly List<IKanjiEntry> kanjiEntries;
+        private IKanjiEntry currentEntry;
 
         public MainWindow()
         {

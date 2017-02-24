@@ -4,6 +4,6 @@
 
     public interface IKanjiDictionary
     {
-        IEnumerable<IKanjiDictionaryEntry> GetEntries();
+        IEnumerable<IKanjiEntry> GetEntries();
     }
 }

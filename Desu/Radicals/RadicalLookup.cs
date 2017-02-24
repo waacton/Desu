@@ -7,108 +7,83 @@
 
     using Wacton.Desu.Resources;
 
-    public static class RadicalLookup
+    public class RadicalLookup
     {
-        private static Dictionary<string, List<string>> kanjiToRadicals;
-        public static Dictionary<string, List<string>> KanjiToRadicals
-        {
-            get
-            {
-                if (kanjiToRadicals != null)
-                {
-                    return kanjiToRadicals;
-                }
-
-                kanjiToRadicals = GetKanjiToRadicals();
-                return kanjiToRadicals;
-            }
-        }
-
-        private static Dictionary<string, List<string>> radicalToKanjis;
-        public static Dictionary<string, List<string>> RadicalToKanjis
-        {
-            get
-            {
-                if (radicalToKanjis != null)
-                {
-                    return radicalToKanjis;
-                }
-
-                radicalToKanjis = GetKanjiByRadicals();
-                return radicalToKanjis;
-            }
-        }
-
         private static readonly string HeaderEnd = "###########################################################";
 
-        private static Dictionary<string, List<string>> GetKanjiToRadicals()
+        /// <summary>
+        /// Returns the lookup of kanji to radicals
+        /// </summary>
+        public Dictionary<string, List<string>> GetKanjiToRadicals()
         {
-            var kradfile1 = GetKanjiToRadicals(EmbeddedResources.OpenKanjiToRadicals1());
-            var kradfile2 = GetKanjiToRadicals(EmbeddedResources.OpenKanjiToRadicals2());
+            var kradfile1 = EmbeddedResources.ReadStream(Resource.KanjiToRadicals1, ParseKanjiToRadicals);
+            var kradfile2 = EmbeddedResources.ReadStream(Resource.KanjiToRadicals2, ParseKanjiToRadicals);
             return kradfile1.Concat(kradfile2).ToDictionary(dictionary => dictionary.Key, dictionary => dictionary.Value);
         }
 
-        private static Dictionary<string, List<string>> GetKanjiToRadicals(Stream radicalsToKanjiStream)
+        /// <summary>
+        /// Returns the lookup of radical to kanjis
+        /// </summary>
+        public Dictionary<string, List<string>> GetRadicalToKanjis()
+        {
+            return EmbeddedResources.ReadStream(Resource.RadicalToKanjis, ParseRadicalToKanjis);
+        }
+
+        private static Dictionary<string, List<string>> ParseKanjiToRadicals(StreamReader streamReader)
         {
             var dictionary = new Dictionary<string, List<string>>();
 
-            using (var reader = new StreamReader(radicalsToKanjiStream))
+            var line = string.Empty;
+            while (line != HeaderEnd)
             {
-                var line = string.Empty;
-                while (line != HeaderEnd)
-                {
-                    line = reader.ReadLine();
-                }
+                line = streamReader.ReadLine();
+            }
 
-                line = reader.ReadLine();
+            line = streamReader.ReadLine();
 
-                while (line != null)
-                {
-                    var lineElements = line.Split(new[] { ':', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    var kanji = lineElements.First();
-                    var radicals = lineElements.Skip(1).ToList();
-                    dictionary.Add(kanji, radicals);
+            while (line != null)
+            {
+                var lineElements = line.Split(new[] { ':', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var kanji = lineElements.First();
+                var radicals = lineElements.Skip(1).ToList();
+                dictionary.Add(kanji, radicals);
 
-                    line = reader.ReadLine();
-                }
+                line = streamReader.ReadLine();
             }
 
             return dictionary;
         }
 
-        private static Dictionary<string, List<string>> GetKanjiByRadicals()
+        private static Dictionary<string, List<string>> ParseRadicalToKanjis(StreamReader streamReader)
         {
             var dictionary = new Dictionary<string, List<string>>();
 
-            using (var reader = new StreamReader(EmbeddedResources.OpenRadicalToKanjis()))
+            var line = string.Empty;
+            while (line != HeaderEnd)
             {
-                var line = string.Empty;
-                while (line != HeaderEnd)
+                line = streamReader.ReadLine();
+            }
+
+            line = streamReader.ReadLine();
+
+            var currentRadical = string.Empty;
+
+            while (line != null)
+            {
+                if (line.StartsWith("$"))
                 {
-                    line = reader.ReadLine();
+                    currentRadical = line.Split(' ')[1];
+                    dictionary.Add(currentRadical, new List<string>());
+                }
+                else
+                {
+                    foreach (var character in line)
+                    {
+                        dictionary[currentRadical].Add(character.ToString());
+                    }                        
                 }
 
-                line = reader.ReadLine();
-
-                var currentRadical = string.Empty;
-
-                while (line != null)
-                {
-                    if (line.StartsWith("$"))
-                    {
-                        currentRadical = line.Split(' ')[1];
-                        dictionary.Add(currentRadical, new List<string>());
-                    }
-                    else
-                    {
-                        foreach (var character in line)
-                        {
-                            dictionary[currentRadical].Add(character.ToString());
-                        }                        
-                    }
-
-                    line = reader.ReadLine();
-                }
+                line = streamReader.ReadLine();
             }
 
             return dictionary;

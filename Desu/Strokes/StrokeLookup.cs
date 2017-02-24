@@ -6,32 +6,20 @@
 
     using Wacton.Desu.Resources;
 
-    public static class StrokeLookup
+    public class StrokeLookup : IStrokeLookup
     {
-        private const string KanjiElement = "kanji";
-        private const string PathElement = "path";
-        private const string IdAttribute = "id";
-        private const string DataAttribute = "d";
+        private static readonly string KanjiElement = "kanji";
+        private static readonly string PathElement = "path";
 
-        private static Dictionary<string, List<string>> strokes;
-        public static Dictionary<string, List<string>> Strokes
+        private static readonly string IdAttribute = "id";
+        private static readonly string DataAttribute = "d";
+
+        /// <summary>
+        /// Returns the lookup of kanji to strokes
+        /// </summary>
+        public Dictionary<string, List<string>> GetKanjiToStrokes()
         {
-            get
-            {
-                if (strokes != null)
-                {
-                    return strokes;
-                }
-
-                strokes = GetStrokes();
-                return strokes;
-            }
-        }
-
-        private static Dictionary<string, List<string>> GetStrokes()
-        {
-            var xmlStream = EmbeddedResources.OpenKanjiStrokes();
-            return EmbeddedResources.ReadXmlStream(xmlStream, ParseDictionary);
+            return EmbeddedResources.ReadStream(Resource.KanjiStrokes, ParseDictionary);
         }
 
         private static Dictionary<string, List<string>> ParseDictionary(XmlReader reader)

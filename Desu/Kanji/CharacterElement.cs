@@ -45,37 +45,38 @@
         private static readonly Dictionary<string, SkipMisclassification> SkipMisclassifications = GetAll<SkipMisclassification>().ToDictionary(skipMisclassification => skipMisclassification.Code, skipMisclassification => skipMisclassification);
         private static readonly Dictionary<string, KanjiReadingType> KanjiReadingTypes = GetAll<KanjiReadingType>().ToDictionary(kanjiReadingType => kanjiReadingType.Code, kanjiReadingType => kanjiReadingType);
 
-        public string Code { get; }
-        private readonly Action<KanjiDictionaryEntry, CharacterElementData> addDataToEntryAction;
+        private static readonly Dictionary<string, List<string>> RadicalLookup = new RadicalLookup().GetKanjiToRadicals();
+        private static readonly Dictionary<string, List<string>> StrokeLookup = new StrokeLookup().GetKanjiToStrokes();
 
-        public CharacterElement(string displayName, string code, Action<KanjiDictionaryEntry, CharacterElementData> addDataToEntryAction = null)
+        public string Code { get; }
+
+        private readonly Action<KanjiEntry, CharacterElementData> addDataToEntryAction;
+
+        public CharacterElement(string displayName, string code, Action<KanjiEntry, CharacterElementData> addDataToEntryAction = null)
             : base(displayName)
         {
             this.Code = code;
             this.addDataToEntryAction = addDataToEntryAction ?? ((entry, data) => { });
         }
 
-        internal void AddDataToEntry(KanjiDictionaryEntry entry, CharacterElementData data)
+        internal void AddDataToEntry(KanjiEntry entry, CharacterElementData data)
         {
             this.addDataToEntryAction(entry, data);
         }
 
-        private static void AddLiteral(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddLiteral(KanjiEntry entry, CharacterElementData data)
         {
             entry.Literal = data.Content;
 
-            var radicalDecomposition = RadicalLookup.KanjiToRadicals.ContainsKey(entry.Literal)
-                ? RadicalLookup.KanjiToRadicals[entry.Literal]
+            var radicalDecomposition = RadicalLookup.ContainsKey(entry.Literal)
+                ? RadicalLookup[entry.Literal]
                 : new List<string>();
 
             var radicals = entry.GetRadicalDecompositions();
-            foreach (var radical in radicalDecomposition)
-            {
-                radicals.Add(radical);
-            }
+            radicals.AddRange(radicalDecomposition);
         }
 
-        private static void AddCodepoint(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddCodepoint(KanjiEntry entry, CharacterElementData data)
         {
             var codepoint = new Codepoint(CodepointTypes[data.CodepointTypeAttribute], data.Content);
             entry.GetCodepoints().Add(codepoint);
@@ -86,16 +87,16 @@
             }
 
             var fiveLetterUnicode = codepoint.Value.PadLeft(5, '0');
-            if (!StrokeLookup.Strokes.ContainsKey(fiveLetterUnicode))
+            if (!StrokeLookup.ContainsKey(fiveLetterUnicode))
             {
                 return;
             }
 
             var entryStrokePaths = entry.GetStrokePaths();
-            entryStrokePaths.AddRange(StrokeLookup.Strokes[fiveLetterUnicode]);
+            entryStrokePaths.AddRange(StrokeLookup[fiveLetterUnicode]);
         }
 
-        private static void AddRadical(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddRadical(KanjiEntry entry, CharacterElementData data)
         {
             IBushuRadical bushuRadical;
 
@@ -114,12 +115,12 @@
             entry.GetBushuRadicals().Add(bushuRadical);
         }
 
-        private static void AddGrade(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddGrade(KanjiEntry entry, CharacterElementData data)
         {
             entry.Grade = Grades[int.Parse(data.Content)];
         }
 
-        private static void AddStrokeCount(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddStrokeCount(KanjiEntry entry, CharacterElementData data)
         {
             var strokeCount = int.Parse(data.Content);
 
@@ -133,27 +134,27 @@
             }
         }
 
-        private static void AddVariant(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddVariant(KanjiEntry entry, CharacterElementData data)
         {
             entry.GetVariants().Add(new Variant(VariantTypes[data.VariantTypeAttribute], data.Content));
         }
 
-        private static void AddFrequency(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddFrequency(KanjiEntry entry, CharacterElementData data)
         {
             entry.Frequency = int.Parse(data.Content);
         }
 
-        private static void AddRadicalName(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddRadicalName(KanjiEntry entry, CharacterElementData data)
         {
             entry.GetRadicalNames().Add(data.Content);
         }
 
-        private static void AddJLPT(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddJLPT(KanjiEntry entry, CharacterElementData data)
         {
             entry.JLPT = int.Parse(data.Content);
         }
 
-        private static void AddReference(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddReference(KanjiEntry entry, CharacterElementData data)
         {
             var content = data.Content;
             var additionalContents = new List<string>();
@@ -175,7 +176,7 @@
             entry.GetReferences().Add(new Reference(ReferenceTypes[data.ReferenceTypeAttribute], content));
         }
 
-        private static void AddQueryCode(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddQueryCode(KanjiEntry entry, CharacterElementData data)
         {
             SkipMisclassification skipMisclassification = null;
             var queryCodeType = QueryCodeTypes[data.QueryCodeTypeAttribute];
@@ -187,12 +188,12 @@
             entry.GetQueryCodes().Add(new QueryCode(QueryCodeTypes[data.QueryCodeTypeAttribute], data.Content, skipMisclassification));
         }
 
-        private static void AddReading(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddReading(KanjiEntry entry, CharacterElementData data)
         {
             entry.GetReadings().Add(new Reading(KanjiReadingTypes[data.ReadingTypeAttribute], data.Content));
         }
 
-        private static void AddMeaning(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddMeaning(KanjiEntry entry, CharacterElementData data)
         {
             var language = string.IsNullOrEmpty(data.LanguageAttribute)
                 ? Language.English
@@ -201,7 +202,7 @@
             entry.GetMeanings().Add(new Meaning(language, data.Content));
         }
 
-        private static void AddNanori(KanjiDictionaryEntry entry, CharacterElementData data)
+        private static void AddNanori(KanjiEntry entry, CharacterElementData data)
         {
             entry.GetNanoris().Add(data.Content);
         }

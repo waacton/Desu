@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public interface IJapaneseDictionaryEntry
+    public interface IJapaneseEntry
     {
         int Sequence { get; }
         IEnumerable<IKanji> Kanjis { get; }

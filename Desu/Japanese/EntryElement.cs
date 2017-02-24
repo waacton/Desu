@@ -49,9 +49,9 @@
         public string Code { get; }
         public bool ExpectsContent { get; }
 
-        private readonly Action<JapaneseDictionaryEntry, EntryElementData> addDataToEntryAction;
+        private readonly Action<JapaneseEntry, EntryElementData> addDataToEntryAction;
 
-        public EntryElement(string displayName, string code, Action<JapaneseDictionaryEntry, EntryElementData> addDataToEntryAction = null, bool expectsContent = true)
+        public EntryElement(string displayName, string code, Action<JapaneseEntry, EntryElementData> addDataToEntryAction = null, bool expectsContent = true)
             : base(displayName)
         {
             this.Code = code;
@@ -59,7 +59,7 @@
             this.ExpectsContent = expectsContent;
         }
 
-        internal void AddDataToEntry(JapaneseDictionaryEntry entry, EntryElementData data)
+        internal void AddDataToEntry(JapaneseEntry entry, EntryElementData data)
         {
             this.addDataToEntryAction(entry, data);
         }
