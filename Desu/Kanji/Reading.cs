@@ -4,13 +4,13 @@
 
     public class Reading : IReading
     {
-        public KanjiReadingType Type { get; }
+        public ReadingType Type { get; }
 
         public string Value { get; }
 
-        public Reading(KanjiReadingType kanjiReadingType, string value)
+        public Reading(ReadingType readingType, string value)
         {
-            this.Type = kanjiReadingType;
+            this.Type = readingType;
             this.Value = value;
         }
 

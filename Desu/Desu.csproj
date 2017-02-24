@@ -64,7 +64,7 @@
     <Compile Include="Strokes\StrokeLookup.cs" />
     <Compile Include="Kanji\Meaning.cs" />
     <Compile Include="Kanji\Reading.cs" />
-    <Compile Include="Enums\KanjiReadingType.cs" />
+    <Compile Include="Enums\ReadingType.cs" />
     <Compile Include="Kanji\QueryCode.cs" />
     <Compile Include="Kanji\IQueryCode.cs" />
     <Compile Include="Enums\SkipMisclassification.cs" />

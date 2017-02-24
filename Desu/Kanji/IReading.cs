@@ -4,7 +4,7 @@
 
     public interface IReading
     {
-        KanjiReadingType Type { get; }
+        ReadingType Type { get; }
         
         string Value { get; }
     }

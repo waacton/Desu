@@ -43,7 +43,7 @@
         private static readonly Dictionary<string, ReferenceType> ReferenceTypes = GetAll<ReferenceType>().ToDictionary(referenceType => referenceType.Code, referenceType => referenceType);
         private static readonly Dictionary<string, QueryCodeType> QueryCodeTypes = GetAll<QueryCodeType>().ToDictionary(queryCodeType => queryCodeType.Code, queryCodeType => queryCodeType);
         private static readonly Dictionary<string, SkipMisclassification> SkipMisclassifications = GetAll<SkipMisclassification>().ToDictionary(skipMisclassification => skipMisclassification.Code, skipMisclassification => skipMisclassification);
-        private static readonly Dictionary<string, KanjiReadingType> KanjiReadingTypes = GetAll<KanjiReadingType>().ToDictionary(kanjiReadingType => kanjiReadingType.Code, kanjiReadingType => kanjiReadingType);
+        private static readonly Dictionary<string, ReadingType> ReadingTypes = GetAll<ReadingType>().ToDictionary(readingType => readingType.Code, readingType => readingType);
 
         private static readonly IDictionary<string, List<string>> RadicalLookup = new RadicalLookup().GetKanjiToRadicals();
         private static readonly IDictionary<string, List<string>> StrokeLookup = new StrokeLookup().GetKanjiToStrokes();
@@ -190,7 +190,7 @@
 
         private static void AddReading(KanjiEntry entry, CharacterElementData data)
         {
-            entry.GetReadings().Add(new Reading(KanjiReadingTypes[data.ReadingTypeAttribute], data.Content));
+            entry.GetReadings().Add(new Reading(ReadingTypes[data.ReadingTypeAttribute], data.Content));
         }
 
         private static void AddMeaning(KanjiEntry entry, CharacterElementData data)
