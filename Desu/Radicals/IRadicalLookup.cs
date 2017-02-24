@@ -4,8 +4,8 @@
 
     public interface IRadicalLookup
     {
-        Dictionary<string, List<string>> GetKanjiToRadicals();
+        IDictionary<string, List<string>> GetKanjiToRadicals();
 
-        Dictionary<string, List<string>> GetRadicalToKanjis();
+        IDictionary<string, List<string>> GetRadicalToKanjis();
     }
 }

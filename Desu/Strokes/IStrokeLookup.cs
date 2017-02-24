@@ -4,6 +4,6 @@
 
     public interface IStrokeLookup
     {
-        Dictionary<string, List<string>> GetKanjiToStrokes();
+        IDictionary<string, List<string>> GetKanjiToStrokes();
     }
 }

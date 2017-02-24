@@ -45,8 +45,8 @@
         private static readonly Dictionary<string, SkipMisclassification> SkipMisclassifications = GetAll<SkipMisclassification>().ToDictionary(skipMisclassification => skipMisclassification.Code, skipMisclassification => skipMisclassification);
         private static readonly Dictionary<string, KanjiReadingType> KanjiReadingTypes = GetAll<KanjiReadingType>().ToDictionary(kanjiReadingType => kanjiReadingType.Code, kanjiReadingType => kanjiReadingType);
 
-        private static readonly Dictionary<string, List<string>> RadicalLookup = new RadicalLookup().GetKanjiToRadicals();
-        private static readonly Dictionary<string, List<string>> StrokeLookup = new StrokeLookup().GetKanjiToStrokes();
+        private static readonly IDictionary<string, List<string>> RadicalLookup = new RadicalLookup().GetKanjiToRadicals();
+        private static readonly IDictionary<string, List<string>> StrokeLookup = new StrokeLookup().GetKanjiToStrokes();
 
         public string Code { get; }
 

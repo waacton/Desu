@@ -7,14 +7,14 @@
 
     using Wacton.Desu.Resources;
 
-    public class RadicalLookup
+    public class RadicalLookup : IRadicalLookup
     {
         private static readonly string HeaderEnd = "###########################################################";
 
         /// <summary>
         /// Returns the lookup of kanji to radicals
         /// </summary>
-        public Dictionary<string, List<string>> GetKanjiToRadicals()
+        public IDictionary<string, List<string>> GetKanjiToRadicals()
         {
             var kradfile1 = EmbeddedResources.ReadStream(Resource.KanjiToRadicals1, ParseKanjiToRadicals);
             var kradfile2 = EmbeddedResources.ReadStream(Resource.KanjiToRadicals2, ParseKanjiToRadicals);
@@ -24,7 +24,7 @@
         /// <summary>
         /// Returns the lookup of radical to kanjis
         /// </summary>
-        public Dictionary<string, List<string>> GetRadicalToKanjis()
+        public IDictionary<string, List<string>> GetRadicalToKanjis()
         {
             return EmbeddedResources.ReadStream(Resource.RadicalToKanjis, ParseRadicalToKanjis);
         }
