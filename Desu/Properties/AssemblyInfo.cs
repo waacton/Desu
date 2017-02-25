@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Wacton.Desu")]
-[assembly: AssemblyDescription("Japanese and kanji dictionary (.NET wrapper for JMdict, KANJIDIC2, KRADFILE, RADKFILE, KanjiVG)")]
+[assembly: AssemblyDescription("Japanese and kanji dictionary .NET library built upon JMdict, KANJIDIC, KRADFILE/RADKFILE, and KanjiVG")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Wacton")]
 [assembly: AssemblyProduct("Wacton.Desu")]
