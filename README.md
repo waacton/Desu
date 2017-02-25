@@ -1,23 +1,93 @@
 # Desu
-Wacton.Desu provides a .NET interface to [JMdict](http://www.edrdg.org/jmdict/j_jmdict.html) (Japanese-multilingual dictionary), with a data structure that does not rely on magic strings.  All JMdict elements have object representations where appropriate.
-
+Wacton.Desu is a Japanese and kanji dictionary .NET library built upon [JMdict](http://www.edrdg.org/jmdict/edict_doc.html), [KANJIDIC] (http://www.edrdg.org/kanjidic/kanjidic.html), [RADKFILE/KRADFILE] (http://users.monash.edu/~jwb/kradinf.html), and [KanjiVG] (http://kanjivg.tagaini.net/).  
+The data structure uses object representations where possible.
+<br><br>
 ## How to use
 Can be installed as a [NuGet package](https://www.nuget.org/packages/Wacton.Desu/):
 ```
 Install-Package Wacton.Desu
 ```
+<br>
+**Japanese dictionary** *(JMdict)*:
 
-Create a ```JapaneseDictionary``` object and get the entries:
+Create a ```JapaneseDictionary``` and ```GetEntries()```
 ```c#
-var dictionary = new JapaneseDictionary();
-var entries = dictionary.GetEntries();
+var japaneseDictionary = new JapaneseDictionary();
+var japaneseEntries = japaneseDictionary.GetEntries();
 ```
+<br>
+**Kanji dictionary** *(KANJIDIC + KRADFILE + KanjiVG)*: 
 
-An example can be found in the [Desu.Example project](https://gitlab.com/Wacton/Desu/tree/master/Desu.Example).
+Create a ```KanjiDictionary``` and ```GetEntries()```
+```c#
+var kanjiDictionary = new KanjiDictionary();
+var kanjiEntries = kanjiDictionary.GetEntries();
+```
+<br>
+**Radical lookup** *(RADKFILE/KRADFILE)*:
+
+Create a ```RadicalLookup``` and either ```GetKanjiToRadicals()``` or ```GetRadicalToKanjis()```
+```c#
+var radicalLookup = new RadicalLookup();
+var kanjiToRadicals = radicalLookup.GetKanjiToRadicals();
+var radicalToKanjis = radicalLookup.GetRadicalToKanjis();
+```
+<br>
+**Stroke lookup** *(KanjiVG)*:
+
+Create a ```StrokeLookup``` and ```GetKanjiToStrokes()```
+```c#
+var strokeLookup = new StrokeLookup();
+var kanjiToStrokes = strokeLookup.GetKanjiToStrokes();
+```
+<br>
+Examples can be found in the [Desu.ExampleConsole](https://gitlab.com/Wacton/Desu/tree/master/Desu.ExampleConsole) and [Desu.ExampleWpf](https://gitlab.com/Wacton/Desu/tree/master/Desu.ExampleWpf) projects.
+<br><br>
 
 ---
 
-_**Note:** Due to containing an embedded copy of JMdict, this is a large library.  Parsing the 170,000+ entries takes a few seconds, and requires ~250MB of memory._
+## Attributions
+This library uses the following files in conformance to their respective licences:
+
+**JMdict** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
+Licence URL: http://www.edrdg.org/edrdg/licence.html  
+Source File URL: http://www.edrdg.org/jmdict/j_jmdict.html *(JMdict.gz)*  
+
+**KANJIDIC2** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
+Licence URL: http://www.edrdg.org/edrdg/licence.html  
+Source File URL: http://nihongo.monash.edu/kanjidic2/  *(kanjidic2.xml.gz)*  
+
+**KRADFILE** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
+Licence URL: http://www.edrdg.org/edrdg/licence.html  
+Source File URL: http://users.monash.edu/~jwb/kradinf.html  *(kradzip.zip\kradfile)*  
+
+**KRADFILE2** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright James Rose  
+Licence URL: http://www.kanjicafe.com/kradfile_license.htm  
+Source File URL: http://users.monash.edu/~jwb/kradinf.html  *(kradzip.zip\kradfile2)*  
+
+**RADKFILEX** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
+Licence URL: http://www.edrdg.org/edrdg/licence.html  
+Source File URL: http://users.monash.edu/~jwb/kradinf.html  *(kradzip.zip\radkfilex)*  
+
+**KanjiVG** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright Ulrich Apel  
+Licence URL: http://kanjivg.tagaini.net/  
+Source File URL: https://github.com/KanjiVG/kanjivg/releases  *(kanjivg-___.xml.gz)*  
+
+---
+
+_**Notes:**_
+
+_This is a large library due to the embedded Japanese and kanji resource files._
+
+_The Japanese dictionary contains 176,027 entries and requires ~255MB of memory (and takes a few seconds to create)._
+
+_The kanji dictionary contains 13,108 entries and requires ~45MB of memory._
 
 ---
 
