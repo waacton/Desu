@@ -10,7 +10,6 @@
     using Wacton.Desu.Kanji;
     using Wacton.Desu.Radicals;
     using Wacton.Desu.Strokes;
-    using Wacton.Tovarisch.Collections;
 
     public class Program
     {
@@ -68,7 +67,7 @@
                     }
 
                     var literal = kanjiEntry.Literal;
-                    var radicalDecomposition = kanjiEntry.RadicalDecomposition.ToDelimitedString(" ");
+                    var radicalDecomposition = string.Join(" ", kanjiEntry.RadicalDecomposition);
                     var kanjiMeaning = !kanjiEntry.Meanings.Any() ? string.Empty : kanjiEntry.Meanings.First(meaning => meaning.Language.Equals(Language.English)).Term;
                     Debug.WriteLine($"{literal} -> {radicalDecomposition} ({kanjiMeaning})");
                 }
