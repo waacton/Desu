@@ -1,8 +1,13 @@
 ﻿namespace Wacton.Desu.ExampleConsole
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
+
+    using Radicals;
+
+    using Strokes;
 
     using Wacton.Desu.Enums;
     using Wacton.Desu.Japanese;
@@ -72,6 +77,41 @@
             }
 
             Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
+        }
+
+        private static IEnumerable<IJapaneseEntry> GetJapaneseEntries()
+        {
+            var japaneseDictionary = new JapaneseDictionary();
+            var japaneseEntries = japaneseDictionary.GetEntries();
+            return japaneseEntries;
+        }
+
+        private static IEnumerable<IKanjiEntry> GetKanjiEntries()
+        {
+            var kanjiDictionary = new KanjiDictionary();
+            var kanjiEntries = kanjiDictionary.GetEntries();
+            return kanjiEntries;
+        }
+
+        private static IDictionary<string, List<string>> GetKanjiToRadicals()
+        {
+            var radicalLookup = new RadicalLookup();
+            var kanjiToRadicals = radicalLookup.GetKanjiToRadicals();
+            return kanjiToRadicals;
+        }
+
+        private static IDictionary<string, List<string>> GetRadicalToKanjis()
+        {
+            var radicalLookup = new RadicalLookup();
+            var radicalToKanjis = radicalLookup.GetRadicalToKanjis();
+            return radicalToKanjis;
+        }
+
+        private static IDictionary<string, List<string>> GetKanjiToStrokes()
+        {
+            var strokeLookup = new StrokeLookup();
+            var kanjiToStrokes = strokeLookup.GetKanjiToStrokes();
+            return kanjiToStrokes;
         }
     }
 }
