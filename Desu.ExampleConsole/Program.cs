@@ -5,13 +5,11 @@
     using System.Diagnostics;
     using System.Linq;
 
-    using Radicals;
-
-    using Strokes;
-
     using Wacton.Desu.Enums;
     using Wacton.Desu.Japanese;
     using Wacton.Desu.Kanji;
+    using Wacton.Desu.Radicals;
+    using Wacton.Desu.Strokes;
     using Wacton.Tovarisch.Collections;
 
     public class Program
