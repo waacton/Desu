@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class ReferenceType : Enumeration
     {
         public static readonly ReferenceType Nelson_Classic = new ReferenceType("Nelson: \"Modern Reader's Japanese-English Character Dictionary\"", "nelson_c");

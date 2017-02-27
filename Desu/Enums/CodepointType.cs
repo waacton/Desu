@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class CodepointType : Enumeration
     {
         public static readonly CodepointType JIS208 = new CodepointType("JIS X 0208-1997", "jis208");

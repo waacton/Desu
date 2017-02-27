@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class Language : Enumeration
     {
         public static readonly Language Afrikaans = new Language("Afrikaans", "afr", "af");

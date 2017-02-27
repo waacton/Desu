@@ -3,8 +3,6 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using Wacton.Tovarisch.Enum;
-
     public class Priority : Enumeration
     {
         public static readonly Priority Loanword1 = new Priority("Loanword1", "gai1");

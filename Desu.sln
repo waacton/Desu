@@ -5,11 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desu", "Desu\Desu.csproj", "{2D36DFD4-8FE3-4166-846D-4A8EFCB0178C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{5F6E6005-9DB5-4591-B17F-27301ED0F504}"
-	ProjectSection(SolutionItems) = preProject
-		Dependencies\Wacton.Tovarisch.dll = Dependencies\Wacton.Tovarisch.dll
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desu.ExampleWpf", "Desu.ExampleWpf\Desu.ExampleWpf.csproj", "{C8E0DA77-D64C-4CA3-9E06-68242989DFD6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desu.ExampleConsole", "Desu.ExampleConsole\Desu.ExampleConsole.csproj", "{943713F4-ED72-49B1-ACCE-433FA9E55B8A}"

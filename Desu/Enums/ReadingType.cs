@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class ReadingType : Enumeration
     {
         public static readonly ReadingType Pinyin = new ReadingType("Pinyin", "pinyin");

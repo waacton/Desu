@@ -3,8 +3,6 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using Wacton.Tovarisch.Enum;
-
     public class PartOfSpeech : Enumeration
     {
         public static readonly PartOfSpeech AdjectiveI = new PartOfSpeech("AdjectiveI", "adjective (keiyoushi)");

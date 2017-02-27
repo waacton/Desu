@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class Grade : Enumeration
     {
         public static readonly Grade None = new Grade("None", -1);

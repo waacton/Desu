@@ -5,7 +5,6 @@
     using System.Linq;
 
     using Wacton.Desu.Enums;
-    using Wacton.Tovarisch.Enum;
 
     public class EntryElement : Enumeration
     {

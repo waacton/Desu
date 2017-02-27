@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class BushuRadicalType : Enumeration
     {
         public static readonly BushuRadicalType Classical = new BushuRadicalType("Classical", "classical");

@@ -7,8 +7,6 @@
     using Wacton.Desu.Enums;
     using Wacton.Desu.Radicals;
     using Wacton.Desu.Strokes;
-    using Wacton.Tovarisch.Collections;
-    using Wacton.Tovarisch.Enum;
 
     public class CharacterElement : Enumeration
     {
@@ -170,7 +168,7 @@
 
             if (additionalContents.Any())
             {
-                content = $"{content} ({additionalContents.ToDelimitedString(", ")})";
+                content = $"{content} ({string.Join(", ", additionalContents)})";
             }
 
             entry.GetReferences().Add(new Reference(ReferenceTypes[data.ReferenceTypeAttribute], content));

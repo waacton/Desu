@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class Miscellaneous : Enumeration
     {
         public static readonly Miscellaneous Abbreviation = new Miscellaneous("Abbreviation", "abbreviation");

@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class Field : Enumeration
     {
         public static readonly Field Anatomical = new Field("Anatomical", "anatomical term");

@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class Dialect : Enumeration
     {
         public static readonly Dialect Hokkaido = new Dialect("Hokkaido", "Hokkaido-ben");

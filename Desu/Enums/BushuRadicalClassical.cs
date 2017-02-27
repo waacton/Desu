@@ -3,7 +3,6 @@
     using System.Collections.Generic;
 
     using Wacton.Desu.Kanji;
-    using Wacton.Tovarisch.Enum;
 
     public class BushuRadicalClassical : Enumeration, IBushuRadical
     {

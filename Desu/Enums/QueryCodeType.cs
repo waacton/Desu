@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class QueryCodeType : Enumeration
     {
         public static readonly QueryCodeType SKIP = new QueryCodeType("SKIP", "skip");

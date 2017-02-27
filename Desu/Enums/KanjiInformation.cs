@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class KanjiInformation : Enumeration
     {
         public static readonly KanjiInformation AtejiPhonetic = new KanjiInformation("AtejiPhonetic", "ateji (phonetic) reading");

@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class VariantType : Enumeration
     {
         public static readonly VariantType JIS208 = new VariantType("JIS X 0208", "jis208");

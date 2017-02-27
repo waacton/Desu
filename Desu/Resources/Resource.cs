@@ -1,6 +1,6 @@
 ﻿namespace Wacton.Desu.Resources
 {
-    using Wacton.Tovarisch.Enum;
+    using Wacton.Desu.Enums;
 
     public class Resource : Enumeration
     {

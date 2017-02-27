@@ -46,11 +46,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Wacton.Tovarisch">
-      <HintPath>..\Dependencies\Wacton.Tovarisch.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Enumeration.cs" />
     <Compile Include="Radicals\IRadicalLookup.cs" />
     <Compile Include="Strokes\IStrokeLookup.cs" />
     <Compile Include="Japanese\ISense.cs" />
@@ -90,7 +88,7 @@
     <Compile Include="Radicals\RadicalLookup.cs" />
     <Compile Include="Enums\Miscellaneous.cs" />
     <Compile Include="Enums\Priority.cs" />
-    <Compile Include="Japanese\ReadingInformation.cs" />
+    <Compile Include="Enums\ReadingInformation.cs" />
     <Compile Include="Enums\KanjiInformation.cs" />
     <Compile Include="Enums\Field.cs" />
     <Compile Include="Japanese\EntryElement.cs" />

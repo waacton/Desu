@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.ExampleWpf
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
@@ -8,10 +9,8 @@
     using System.Windows;
     using System.Windows.Media;
 
-    using global::ExampleWpf.Annotations;
-
+    using Wacton.Desu.ExampleWpf.Properties;
     using Wacton.Desu.Kanji;
-    using Wacton.Tovarisch.Randomness;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -20,6 +19,7 @@
     {
         private readonly List<IKanjiEntry> kanjiEntries;
         private IKanjiEntry currentEntry;
+        private readonly Random random = new Random();
 
         public MainWindow()
         {
@@ -44,7 +44,7 @@
             var hasStrokePaths = false;
             while (!hasStrokePaths)
             {
-                this.currentEntry = RandomSelection.SelectOne(this.kanjiEntries);
+                this.currentEntry = this.kanjiEntries[this.GetRandomIndex()];
                 hasStrokePaths = this.currentEntry.StrokePaths.Any();
             }
 
@@ -56,6 +56,11 @@
 
             this.OnPropertyChanged(nameof(this.Text));
             this.OnPropertyChanged(nameof(this.Strokes));
+        }
+
+        private int GetRandomIndex()
+        {
+            return this.random.Next(0, this.kanjiEntries.Count - 1);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

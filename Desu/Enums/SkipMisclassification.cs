@@ -1,7 +1,5 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    using Wacton.Tovarisch.Enum;
-
     public class SkipMisclassification : Enumeration
     {
         public static readonly SkipMisclassification None = new SkipMisclassification("None", string.Empty);

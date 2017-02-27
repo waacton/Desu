@@ -5,8 +5,8 @@
     using System.Linq;
     using System.Xml;
 
+    using Wacton.Desu.Enums;
     using Wacton.Desu.Resources;
-    using Wacton.Tovarisch.Enum;
 
     public class JapaneseDictionary : IJapaneseDictionary
     {

@@ -4,7 +4,6 @@
     using System.Linq;
 
     using Wacton.Desu.Enums;
-    using Wacton.Tovarisch.Collections;
 
     public class KanjiEntry : IKanjiEntry
     {
@@ -70,7 +69,7 @@
 
         public override string ToString()
         {
-            var english = this.Meanings.Where(meaning => meaning.Language.Equals(Language.English)).Select(meaning => meaning.Term).ToDelimitedString(" | ");
+            var english = string.Join(" | ", this.Meanings.Where(meaning => meaning.Language.Equals(Language.English)).Select(meaning => meaning.Term));
             return $"{this.Literal}{(string.IsNullOrEmpty(english) ? string.Empty : " | " + english)}";
         }
     }
