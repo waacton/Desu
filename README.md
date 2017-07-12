@@ -100,7 +100,7 @@ _This is a large library due to the embedded Japanese and kanji resource files._
 
 _The Japanese dictionary contains 176,027 entries and requires ~255MB of memory (and takes a few seconds to create)._
 
-_The Japanese dictionary contains 176,027 entries and requires ~435MB of memory (and takes a few more seconds to create)._
+_The proper name dictionary contains 740,044 entries and requires ~435MB of memory (and takes a few more seconds to create)._
 
 _The kanji dictionary contains 13,108 entries and requires ~45MB of memory._
 
