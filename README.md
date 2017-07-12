@@ -1,5 +1,5 @@
 # Desu
-Wacton.Desu is a Japanese and kanji dictionary .NET library built upon [JMdict](http://www.edrdg.org/jmdict/edict_doc.html), [KANJIDIC] (http://www.edrdg.org/kanjidic/kanjidic.html), [RADKFILE/KRADFILE] (http://users.monash.edu/~jwb/kradinf.html), and [KanjiVG] (http://kanjivg.tagaini.net/).  
+Wacton.Desu is a Japanese and kanji dictionary .NET library built upon [JMdict](http://www.edrdg.org/jmdict/edict_doc.html), [JMnedict](http://www.edrdg.org/enamdict/enamdict_doc.html), [KANJIDIC] (http://www.edrdg.org/kanjidic/kanjidic.html), [RADKFILE/KRADFILE] (http://users.monash.edu/~jwb/kradinf.html), and [KanjiVG] (http://kanjivg.tagaini.net/).  
 The data structure uses object representations where possible.  Please refer to the above projects for detailed definitions of the properties.
 <br><br>
 ## How to use
@@ -14,6 +14,14 @@ Create a ```JapaneseDictionary``` and ```GetEntries()```
 ```c#
 var japaneseDictionary = new JapaneseDictionary();
 var japaneseEntries = japaneseDictionary.GetEntries();
+```
+<br>
+**Proper name dictionary** *(JMnedict)*:
+
+Create a ```NameDictionary``` and ```GetEntries()```
+```c#
+var nameDictionary = new NameDictionary();
+var nameEntries = nameDictionary.GetEntries();
 ```
 <br>
 **Kanji dictionary** *(KANJIDIC + KRADFILE + KanjiVG)*: 
@@ -54,6 +62,11 @@ Copyright Jim Breen & The Electronic Dictionary Research and Development Group
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://www.edrdg.org/jmdict/j_jmdict.html *(JMdict.gz)*  
 
+**JMnedict** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
+Licence URL: http://www.edrdg.org/edrdg/licence.html  
+Source File URL: http://www.edrdg.org/enamdict/enamdict_doc.html *(JMnedict.gz)*  
+
 **KANJIDIC2** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
@@ -86,6 +99,8 @@ _**Notes:**_
 _This is a large library due to the embedded Japanese and kanji resource files._
 
 _The Japanese dictionary contains 176,027 entries and requires ~255MB of memory (and takes a few seconds to create)._
+
+_The Japanese dictionary contains 176,027 entries and requires ~435MB of memory (and takes a few more seconds to create)._
 
 _The kanji dictionary contains 13,108 entries and requires ~45MB of memory._
 
