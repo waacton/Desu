@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Wacton.Desu")]
-[assembly: AssemblyDescription("Japanese and kanji dictionary .NET library built upon JMdict, KANJIDIC, KRADFILE/RADKFILE, and KanjiVG")]
+[assembly: AssemblyDescription("Japanese and kanji dictionary .NET library built upon JMdict, JMnedict, KANJIDIC, KRADFILE/RADKFILE, and KanjiVG")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Wacton")]
 [assembly: AssemblyProduct("Wacton.Desu")]
@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.0.0.*")]
+[assembly: AssemblyVersion("3.1.0.*")]
 [assembly: NeutralResourcesLanguage("en-US")]
 
