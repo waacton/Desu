@@ -49,6 +49,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Enumeration.cs" />
+    <Compile Include="Enums\NameType.cs" />
+    <Compile Include="Names\EntryElement.cs" />
+    <Compile Include="Names\EntryElementData.cs" />
+    <Compile Include="Names\INameDictionary.cs" />
+    <Compile Include="Names\INameEntry.cs" />
+    <Compile Include="Names\IKanji.cs" />
+    <Compile Include="Names\IReading.cs" />
+    <Compile Include="Names\ITranslation.cs" />
+    <Compile Include="Names\NameDictionary.cs" />
+    <Compile Include="Names\NameEntry.cs" />
+    <Compile Include="Names\Kanji.cs" />
+    <Compile Include="Names\Reading.cs" />
+    <Compile Include="Names\Translation.cs" />
     <Compile Include="Radicals\IRadicalLookup.cs" />
     <Compile Include="Strokes\IStrokeLookup.cs" />
     <Compile Include="Japanese\ISense.cs" />
@@ -132,6 +145,7 @@
     <EmbeddedResource Include="Resources\kradfile2" />
     <EmbeddedResource Include="Resources\radkfilex" />
     <EmbeddedResource Include="Resources\KanjiVG.zip" />
+    <EmbeddedResource Include="Resources\JMnedict.zip" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

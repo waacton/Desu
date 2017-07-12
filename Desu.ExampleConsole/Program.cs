@@ -8,6 +8,7 @@
     using Wacton.Desu.Enums;
     using Wacton.Desu.Japanese;
     using Wacton.Desu.Kanji;
+    using Wacton.Desu.Names;
     using Wacton.Desu.Radicals;
     using Wacton.Desu.Strokes;
 
@@ -17,6 +18,7 @@
         {
             var japaneseDictionaryStopwatch = new Stopwatch();
             var kanjiDictionaryStopwatch = new Stopwatch();
+            var nameDictionaryStopwatch = new Stopwatch();
 
             japaneseDictionaryStopwatch.Start();
             var japaneseDictionary = new JapaneseDictionary();
@@ -28,10 +30,16 @@
             var kanjiEntries = kanjiDictionary.GetEntries().ToList();
             kanjiDictionaryStopwatch.Stop();
 
+            nameDictionaryStopwatch.Start();
+            var nameDictionary = new NameDictionary();
+            var nameEntries = nameDictionary.GetEntries().ToList();
+            nameDictionaryStopwatch.Stop();
+
             Debug.WriteLine("____________________");
 
             Debug.WriteLine($"Time to parse JMdict: {japaneseDictionaryStopwatch.Elapsed}");
             Debug.WriteLine($"Time to parse kanjidict2: {kanjiDictionaryStopwatch.Elapsed}");
+            Debug.WriteLine($"Time to parse JMnedict: {nameDictionaryStopwatch.Elapsed}");
 
             Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
 
@@ -40,6 +48,9 @@
 
             var kanjiDictionaryCreationDate = kanjiDictionary.CreationDate;
             Debug.WriteLine($"kanjidict2 created: {kanjiDictionaryCreationDate.ToShortDateString()}");
+
+            var nameDictionaryCreationDate = nameDictionary.CreationDate;
+            Debug.WriteLine($"JMnedict created: {nameDictionaryCreationDate.ToShortDateString()}");
 
             var random = new Random();
             for (var i = 0; i < 100; i++)
@@ -88,6 +99,13 @@
             var kanjiDictionary = new KanjiDictionary();
             var kanjiEntries = kanjiDictionary.GetEntries();
             return kanjiEntries;
+        }
+
+        private static IEnumerable<INameEntry> GetNameEntries()
+        {
+            var nameDictionary = new NameDictionary();
+            var nameEntries = nameDictionary.GetEntries();
+            return nameEntries;
         }
 
         private static IDictionary<string, List<string>> GetKanjiToRadicals()

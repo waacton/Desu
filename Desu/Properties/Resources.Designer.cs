@@ -73,6 +73,16 @@ namespace Wacton.Desu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] JMnedict {
+            get {
+                object obj = ResourceManager.GetObject("JMnedict", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] kanjidic2 {
             get {
                 object obj = ResourceManager.GetObject("kanjidic2", resourceCulture);

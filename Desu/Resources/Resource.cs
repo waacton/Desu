@@ -6,6 +6,7 @@
     {
         public static readonly Resource JapaneseDictionary = new Resource("JapaneseDictionary", nameof(Properties.Resources.JMdict));
         public static readonly Resource KanjiDictionary = new Resource("KanjiDictionary", nameof(Properties.Resources.kanjidic2));
+        public static readonly Resource NameDictionary = new Resource("NameDictionary", nameof(Properties.Resources.JMnedict));
         public static readonly Resource KanjiToRadicals1 = new Resource("KanjiToRadicals1", nameof(Properties.Resources.kradfile));
         public static readonly Resource KanjiToRadicals2 = new Resource("KanjiToRadicals2", nameof(Properties.Resources.kradfile2));
         public static readonly Resource RadicalToKanjis = new Resource("RadicalToKanjis", nameof(Properties.Resources.radkfilex));
