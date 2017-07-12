@@ -4,8 +4,6 @@
     using System.Linq;
     using System.Text;
 
-    using Wacton.Desu.Enums;
-
     public class NameEntry : INameEntry
     {
         public int Sequence { get; set; }
