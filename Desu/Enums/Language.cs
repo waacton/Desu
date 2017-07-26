@@ -12,6 +12,7 @@
         public static readonly Language Burmese = new Language("Burmese", "bur", "my");
         public static readonly Language Chinese = new Language("Chinese", "chi", "zh");
         public static readonly Language Chinook = new Language("Chinook", "chn");
+        public static readonly Language Czech = new Language("Czech", "cze", "cs");
         public static readonly Language Danish = new Language("Danish", "dan", "da");
         public static readonly Language Dutch = new Language("Dutch", "dut", "nl");
         public static readonly Language English = new Language("English", "eng", "en");
@@ -37,6 +38,7 @@
         public static readonly Language Manchu = new Language("Manchu", "mnc");
         public static readonly Language Maori = new Language("Maori", "mao", "mi");
         public static readonly Language Mongolian = new Language("Mongolian", "mon", "mn");
+        public static readonly Language Mapudungun = new Language("Mapudungun", "arn");
         public static readonly Language Norwegian = new Language("Norwegian", "nor", "no");
         public static readonly Language Ottoman = new Language("Ottoman", "ota");
         public static readonly Language Persian = new Language("Persian", "per", "fa");

@@ -50,6 +50,17 @@
   <ItemGroup>
     <Compile Include="Enums\Enumeration.cs" />
     <Compile Include="Enums\NameType.cs" />
+    <Compile Include="Kanas\Chouon.cs" />
+    <Compile Include="Romaji\Syllable.cs" />
+    <Compile Include="Kanas\Kana.cs" />
+    <Compile Include="Kanas\KanaBase.cs" />
+    <Compile Include="Kanas\KanaType.cs" />
+    <Compile Include="Kanas\Kurikaeshi.cs" />
+    <Compile Include="Kanas\Sokuon.cs" />
+    <Compile Include="Kanas\Syllabary.cs" />
+    <Compile Include="Kanas\Tokushuon.cs" />
+    <Compile Include="Romaji\Transliterator.cs" />
+    <Compile Include="Kanas\Youon.cs" />
     <Compile Include="Names\EntryElement.cs" />
     <Compile Include="Names\EntryElementData.cs" />
     <Compile Include="Names\INameDictionary.cs" />

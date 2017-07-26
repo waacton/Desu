@@ -10,6 +10,7 @@
     using Wacton.Desu.Kanji;
     using Wacton.Desu.Names;
     using Wacton.Desu.Radicals;
+    using Wacton.Desu.Romaji;
     using Wacton.Desu.Strokes;
 
     public class Program
@@ -52,6 +53,8 @@
             var nameDictionaryCreationDate = nameDictionary.CreationDate;
             Debug.WriteLine($"JMnedict created: {nameDictionaryCreationDate.ToShortDateString()}");
 
+            var transliterator = new Transliterator();
+
             var random = new Random();
             for (var i = 0; i < 100; i++)
             {
@@ -59,9 +62,10 @@
 
                 var index = random.Next(0, japaneseEntries.Count);
                 var japaneseEntry = japaneseEntries[index];
+                var romaji = transliterator.GetRomaji(japaneseEntry.Readings.First().Text);
 
                 Debug.WriteLine($"{index} / {japaneseEntries.Count}");
-                Debug.WriteLine(japaneseEntry);
+                Debug.WriteLine($"{japaneseEntry} >>> \"{romaji}\" ");
 
                 var firstKanji = japaneseEntry.Kanjis.FirstOrDefault()?.Text;
                 if (firstKanji == null)
