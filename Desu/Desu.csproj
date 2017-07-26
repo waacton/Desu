@@ -59,6 +59,7 @@
     <Compile Include="Kanas\Sokuon.cs" />
     <Compile Include="Kanas\Syllabary.cs" />
     <Compile Include="Kanas\Tokushuon.cs" />
+    <Compile Include="Romaji\TransliterationException.cs" />
     <Compile Include="Romaji\Transliterator.cs" />
     <Compile Include="Kanas\Youon.cs" />
     <Compile Include="Names\EntryElement.cs" />

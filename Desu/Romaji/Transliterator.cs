@@ -59,13 +59,22 @@
             }
 
             this.punctuations.Add(' ', " ");
+            this.punctuations.Add('　', " ");
             this.punctuations.Add('・', "-");
             this.punctuations.Add('、', ", ");
             this.punctuations.Add('〜', "~");
         }
 
+        /// <summary>
+        /// Returns the romaji transliteration of a string of kana characters.  Throws a TransliterationException if the string contains a non-kana character. 
+        /// </summary>
         public string GetRomaji(string kanaCharacters)
         {
+            if (string.IsNullOrEmpty(kanaCharacters))
+            {
+                return string.Empty;
+            }
+
             var syllables = new List<string>();
 
             var i = 0;
@@ -84,7 +93,13 @@
                 var romaji = syllable.GetRomaji();
                 if (string.IsNullOrEmpty(romaji))
                 {
-                    return null;
+                    var currentCharacter = GetCharacter(kanaCharacters, i);
+                    if (currentCharacter.HasValue)
+                    {
+                        throw new TransliterationException($"\"{currentCharacter}\" is not a recognised kana character");
+                    }
+
+                    throw new TransliterationException("Unknown error occurred during transliteration");
                 }
 
                 syllables.Add(romaji);
