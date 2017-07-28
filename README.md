@@ -12,6 +12,8 @@ Install-Package Wacton.Desu
 
 Create a ```JapaneseDictionary``` and ```GetEntries()```
 ```c#
+using Wacton.Desu.Japanese;
+...
 var japaneseDictionary = new JapaneseDictionary();
 var japaneseEntries = japaneseDictionary.GetEntries();
 ```
@@ -20,6 +22,8 @@ var japaneseEntries = japaneseDictionary.GetEntries();
 
 Create a ```NameDictionary``` and ```GetEntries()```
 ```c#
+using Wacton.Desu.Names;
+...
 var nameDictionary = new NameDictionary();
 var nameEntries = nameDictionary.GetEntries();
 ```
@@ -28,6 +32,8 @@ var nameEntries = nameDictionary.GetEntries();
 
 Create a ```KanjiDictionary``` and ```GetEntries()```
 ```c#
+using Wacton.Desu.Kanji;
+...
 var kanjiDictionary = new KanjiDictionary();
 var kanjiEntries = kanjiDictionary.GetEntries();
 ```
@@ -36,6 +42,8 @@ var kanjiEntries = kanjiDictionary.GetEntries();
 
 Create a ```RadicalLookup``` and either ```GetKanjiToRadicals()``` or ```GetRadicalToKanjis()```
 ```c#
+using Wacton.Desu.Radicals;
+...
 var radicalLookup = new RadicalLookup();
 var kanjiToRadicals = radicalLookup.GetKanjiToRadicals();
 var radicalToKanjis = radicalLookup.GetRadicalToKanjis();
@@ -45,8 +53,20 @@ var radicalToKanjis = radicalLookup.GetRadicalToKanjis();
 
 Create a ```StrokeLookup``` and ```GetKanjiToStrokes()```
 ```c#
+using Wacton.Desu.Strokes;
+...
 var strokeLookup = new StrokeLookup();
 var kanjiToStrokes = strokeLookup.GetKanjiToStrokes();
+```
+<br>
+**Romaji transliteration**:
+
+Create a ```Transliterator``` and ```GetRomaji()```
+```c#
+using Wacton.Desu.Romaji;
+...
+var transliterator = new Transliterator();
+var romaji = transliterator.GetRomaji("です"); // romaji == "desu"
 ```
 <br>
 Examples can be found in the [Desu.ExampleConsole](https://gitlab.com/Wacton/Desu/tree/master/Desu.ExampleConsole) and [Desu.ExampleWpf](https://gitlab.com/Wacton/Desu/tree/master/Desu.ExampleWpf) projects.
