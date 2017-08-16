@@ -2,12 +2,10 @@
 {
     using System;
     using System.IO;
+    using System.IO.Compression;
     using System.Linq;
     using System.Reflection;
-    using System.Text;
     using System.Xml;
-
-    using Ionic.Zip;
 
     internal static class EmbeddedResources
     {
@@ -43,7 +41,13 @@
             var resourceNames = assembly.GetManifestResourceNames();
             var resourceName = resourceNames.Single(resource => resource.Replace(".zip", string.Empty).EndsWith(resourceNameEnding));
             var resourceStream = assembly.GetManifestResourceStream(resourceName);
-            return resourceName.EndsWith(".zip") ? ZipFile.Read(resourceStream, new ReadOptions { Encoding = Encoding.UTF8 }).Single().OpenReader() : resourceStream;
+            if (!resourceName.EndsWith(".zip"))
+            {
+                return resourceStream;
+            }
+
+            var zipArchive = new ZipArchive(resourceStream, ZipArchiveMode.Read);
+            return zipArchive.Entries.Single().Open();
         }
     }
 }
