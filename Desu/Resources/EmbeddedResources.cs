@@ -4,6 +4,7 @@
     using System.IO;
     using System.Linq;
     using System.Reflection;
+    using System.Text;
     using System.Xml;
 
     using Ionic.Zip;
@@ -42,7 +43,7 @@
             var resourceNames = assembly.GetManifestResourceNames();
             var resourceName = resourceNames.Single(resource => resource.Replace(".zip", string.Empty).EndsWith(resourceNameEnding));
             var resourceStream = assembly.GetManifestResourceStream(resourceName);
-            return resourceName.EndsWith(".zip") ? ZipFile.Read(resourceStream).Single().OpenReader() : resourceStream;
+            return resourceName.EndsWith(".zip") ? ZipFile.Read(resourceStream, new ReadOptions { Encoding = Encoding.UTF8 }).Single().OpenReader() : resourceStream;
         }
     }
 }
