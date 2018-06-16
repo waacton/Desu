@@ -14,7 +14,7 @@
             using (var stream = GetEmbeddedResouceStream(resource.Name))
             using (var streamReader = new StreamReader(stream))
             {
-                var settings = new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse };
+                var settings = new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse, MaxCharactersFromEntities = 0 };
                 using (var xmlReader = XmlReader.Create(streamReader, settings))
                 {
                     var readResult = readerFunction(xmlReader);
