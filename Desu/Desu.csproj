@@ -1,166 +1,64 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2D36DFD4-8FE3-4166-846D-4A8EFCB0178C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wacton.Desu</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ApplicationIcon>Resources\Desu.ico</ApplicationIcon>
     <AssemblyName>Wacton.Desu</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
+    <RootNamespace>Wacton.Desu</RootNamespace>
+    <Version>4.0.0</Version>
+    <Authors>William Acton</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Japanese and kanji dictionary .NET library built upon JMdict, JMnedict, KANJIDIC, RADKFILE/KRADFILE, and KanjiVG.
+Targets .NET Standard 2.0 for use in .NET Core 2.0 and .NET Framework 4.7.1 applications.</Description>
+    <PackageProjectUrl>https://gitlab.com/Wacton/Desu</PackageProjectUrl>
+    <RepositoryUrl>https://gitlab.com/Wacton/Desu</RepositoryUrl>
+    <PackageIconUrl>https://gitlab.com/Wacton/Desu/blob/master/Desu/Resources/Desu.ico</PackageIconUrl>
+    <PackageLicenseUrl>https://gitlab.com/Wacton/Desu/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>Japanese, kanji, dictionary, JMdict, JMnedict, KANJIDIC, RADKFILE, KRADFILE, KanjiVG, EDICT, radicals, romaji, .NET Standard 2.0</PackageTags>
+    <PackageReleaseNotes>Targets .NET Standard 2.0.  Can be used in .NET Core 2.0 and .NET Framework 4.7.1 applications.</PackageReleaseNotes>
+    <RepositoryType>Copyright 2018</RepositoryType>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Wacton.Desu.XML</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Wacton.Desu.XML</DocumentationFile>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <None Remove="Resources\Desu.ico" />
+    <None Remove="Resources\Desu.png" />
+    <None Remove="Resources\JMdict.zip" />
+    <None Remove="Resources\JMnedict.zip" />
+    <None Remove="Resources\kanjidic2.zip" />
+    <None Remove="Resources\KanjiVG.zip" />
+    <None Remove="Resources\kradfile" />
+    <None Remove="Resources\kradfile2" />
+    <None Remove="Resources\radkfilex" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Enums\Enumeration.cs" />
-    <Compile Include="Enums\NameType.cs" />
-    <Compile Include="Kanas\Chouon.cs" />
-    <Compile Include="Romaji\Syllable.cs" />
-    <Compile Include="Kanas\Kana.cs" />
-    <Compile Include="Kanas\KanaBase.cs" />
-    <Compile Include="Kanas\KanaType.cs" />
-    <Compile Include="Kanas\Kurikaeshi.cs" />
-    <Compile Include="Kanas\Sokuon.cs" />
-    <Compile Include="Kanas\Syllabary.cs" />
-    <Compile Include="Kanas\Tokushuon.cs" />
-    <Compile Include="Romaji\TransliterationException.cs" />
-    <Compile Include="Romaji\Transliterator.cs" />
-    <Compile Include="Kanas\Youon.cs" />
-    <Compile Include="Names\EntryElement.cs" />
-    <Compile Include="Names\EntryElementData.cs" />
-    <Compile Include="Names\INameDictionary.cs" />
-    <Compile Include="Names\INameEntry.cs" />
-    <Compile Include="Names\IKanji.cs" />
-    <Compile Include="Names\IReading.cs" />
-    <Compile Include="Names\ITranslation.cs" />
-    <Compile Include="Names\NameDictionary.cs" />
-    <Compile Include="Names\NameEntry.cs" />
-    <Compile Include="Names\Kanji.cs" />
-    <Compile Include="Names\Reading.cs" />
-    <Compile Include="Names\Translation.cs" />
-    <Compile Include="Radicals\IRadicalLookup.cs" />
-    <Compile Include="Strokes\IStrokeLookup.cs" />
-    <Compile Include="Japanese\ISense.cs" />
-    <Compile Include="Japanese\IReading.cs" />
-    <Compile Include="Japanese\IKanji.cs" />
-    <Compile Include="Kanji\CharacterElement.cs" />
-    <Compile Include="Kanji\CharacterElementData.cs" />
-    <Compile Include="Kanji\IMeaning.cs" />
-    <Compile Include="Kanji\IReading.cs" />
-    <Compile Include="Resources\Resource.cs" />
-    <Compile Include="Strokes\StrokeLookup.cs" />
-    <Compile Include="Kanji\Meaning.cs" />
-    <Compile Include="Kanji\Reading.cs" />
-    <Compile Include="Enums\ReadingType.cs" />
-    <Compile Include="Kanji\QueryCode.cs" />
-    <Compile Include="Kanji\IQueryCode.cs" />
-    <Compile Include="Enums\SkipMisclassification.cs" />
-    <Compile Include="Kanji\Reference.cs" />
-    <Compile Include="Enums\QueryCodeType.cs" />
-    <Compile Include="Enums\ReferenceType.cs" />
-    <Compile Include="Kanji\IReference.cs" />
-    <Compile Include="Kanji\IVariant.cs" />
-    <Compile Include="Kanji\Variant.cs" />
-    <Compile Include="Enums\VariantType.cs" />
-    <Compile Include="Enums\Grade.cs" />
-    <Compile Include="Kanji\IBushuRadical.cs" />
-    <Compile Include="Kanji\BushuRadicalNelson.cs" />
-    <Compile Include="Enums\BushuRadicalClassical.cs" />
-    <Compile Include="Enums\BushuRadicalType.cs" />
-    <Compile Include="Kanji\ICodepoint.cs" />
-    <Compile Include="Kanji\IKanjiDictionary.cs" />
-    <Compile Include="Kanji\IKanjiEntry.cs" />
-    <Compile Include="Kanji\Codepoint.cs" />
-    <Compile Include="Kanji\KanjiEntry.cs" />
-    <Compile Include="Kanji\KanjiDictionary.cs" />
-    <Compile Include="Enums\CodepointType.cs" />
-    <Compile Include="Radicals\RadicalLookup.cs" />
-    <Compile Include="Enums\Miscellaneous.cs" />
-    <Compile Include="Enums\Priority.cs" />
-    <Compile Include="Enums\ReadingInformation.cs" />
-    <Compile Include="Enums\KanjiInformation.cs" />
-    <Compile Include="Enums\Field.cs" />
-    <Compile Include="Japanese\EntryElement.cs" />
-    <Compile Include="Japanese\LoanwordGloss.cs" />
-    <Compile Include="Japanese\IJapaneseEntry.cs" />
-    <Compile Include="Japanese\Gloss.cs" />
-    <Compile Include="Enums\Dialect.cs" />
-    <Compile Include="Japanese\EntryElementData.cs" />
-    <Compile Include="Japanese\Sense.cs" />
-    <Compile Include="Japanese\Reading.cs" />
-    <Compile Include="Japanese\Kanji.cs" />
-    <Compile Include="Enums\PartOfSpeech.cs" />
-    <Compile Include="Japanese\IJapaneseDictionary.cs" />
-    <Compile Include="Japanese\JapaneseEntry.cs" />
-    <Compile Include="Japanese\JapaneseDictionary.cs" />
-    <Compile Include="Enums\Language.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\EmbeddedResources.cs" />
-  </ItemGroup>
+
   <ItemGroup>
     <Content Include="Resources\Desu.ico" />
     <Content Include="Resources\Desu.png" />
   </ItemGroup>
+
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\JMdict.zip" />
+    <EmbeddedResource Include="Resources\JMnedict.zip" />
     <EmbeddedResource Include="Resources\kanjidic2.zip" />
+    <EmbeddedResource Include="Resources\KanjiVG.zip" />
     <EmbeddedResource Include="Resources\kradfile" />
     <EmbeddedResource Include="Resources\kradfile2" />
     <EmbeddedResource Include="Resources\radkfilex" />
-    <EmbeddedResource Include="Resources\KanjiVG.zip" />
-    <EmbeddedResource Include="Resources\JMnedict.zip" />
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

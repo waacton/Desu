@@ -18,6 +18,8 @@
             var kanjiDictionaryStopwatch = new Stopwatch();
             var nameDictionaryStopwatch = new Stopwatch();
 
+            OutputLine("Getting dictionaries...");
+
             japaneseDictionaryStopwatch.Start();
             var japaneseDictionary = new JapaneseDictionary();
             var japaneseEntries = japaneseDictionary.GetEntries().ToList();
@@ -33,36 +35,36 @@
             var nameEntries = nameDictionary.GetEntries().ToList();
             nameDictionaryStopwatch.Stop();
 
-            Debug.WriteLine("____________________");
+            OutputLine("____________________");
 
-            Debug.WriteLine($"Time to parse JMdict: {japaneseDictionaryStopwatch.Elapsed}");
-            Debug.WriteLine($"Time to parse kanjidict2: {kanjiDictionaryStopwatch.Elapsed}");
-            Debug.WriteLine($"Time to parse JMnedict: {nameDictionaryStopwatch.Elapsed}");
+            OutputLine($"Time to parse JMdict: {japaneseDictionaryStopwatch.Elapsed}");
+            OutputLine($"Time to parse kanjidict2: {kanjiDictionaryStopwatch.Elapsed}");
+            OutputLine($"Time to parse JMnedict: {nameDictionaryStopwatch.Elapsed}");
 
-            Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
+            OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
 
             var japaneseDictionaryCreationDate = japaneseDictionary.CreationDate;
-            Debug.WriteLine($"JMdict created: {japaneseDictionaryCreationDate.ToShortDateString()}");
+            OutputLine($"JMdict created: {japaneseDictionaryCreationDate.ToShortDateString()}");
 
             var kanjiDictionaryCreationDate = kanjiDictionary.CreationDate;
-            Debug.WriteLine($"kanjidict2 created: {kanjiDictionaryCreationDate.ToShortDateString()}");
+            OutputLine($"kanjidict2 created: {kanjiDictionaryCreationDate.ToShortDateString()}");
 
             var nameDictionaryCreationDate = nameDictionary.CreationDate;
-            Debug.WriteLine($"JMnedict created: {nameDictionaryCreationDate.ToShortDateString()}");
+            OutputLine($"JMnedict created: {nameDictionaryCreationDate.ToShortDateString()}");
 
             var transliterator = new Transliterator();
 
             var random = new Random();
             for (var i = 0; i < 100; i++)
             {
-                Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
+                OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
 
                 var index = random.Next(0, japaneseEntries.Count);
                 var japaneseEntry = japaneseEntries[index];
                 var romaji = transliterator.GetRomaji(japaneseEntry.Readings.First().Text);
 
-                Debug.WriteLine($"{index} / {japaneseEntries.Count}");
-                Debug.WriteLine($"{japaneseEntry} >>> \"{romaji}\" ");
+                OutputLine($"{index} / {japaneseEntries.Count}");
+                OutputLine($"{japaneseEntry} >>> \"{romaji}\" ");
 
                 var firstKanji = japaneseEntry.Kanjis.FirstOrDefault()?.Text;
                 if (firstKanji == null)
@@ -81,11 +83,21 @@
                     var literal = kanjiEntry.Literal;
                     var radicalDecomposition = string.Join(" ", kanjiEntry.RadicalDecomposition);
                     var kanjiMeaning = !kanjiEntry.Meanings.Any() ? string.Empty : kanjiEntry.Meanings.First(meaning => meaning.Language.Equals(Language.English)).Term;
-                    Debug.WriteLine($"{literal} -> {radicalDecomposition} ({kanjiMeaning})");
+                    OutputLine($"{literal} -> {radicalDecomposition} ({kanjiMeaning})");
                 }
             }
 
-            Debug.WriteLine("~~~ ~~~ ~~~ ~~~ ~~~");
+            OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to finish");
+            Console.ReadKey();
+        }
+
+        private static void OutputLine(string text)
+        {
+            Debug.WriteLine(text);
+            Console.WriteLine(text);
         }
     }
 }
