@@ -19,6 +19,10 @@ Targets .NET Standard 2.0 for use in .NET Core 2.0 and .NET Framework 4.7.1 appl
     <RepositoryType>Copyright 2018</RepositoryType>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\Wacton.Desu.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Resources\Desu.ico" />
     <None Remove="Resources\Desu.png" />
