@@ -12,7 +12,7 @@
 Targets .NET Standard 2.0 for use in .NET Core 2.0 and .NET Framework 4.7.1 applications.</Description>
     <PackageProjectUrl>https://gitlab.com/Wacton/Desu</PackageProjectUrl>
     <RepositoryUrl>https://gitlab.com/Wacton/Desu</RepositoryUrl>
-    <PackageIconUrl>https://gitlab.com/Wacton/Desu/blob/master/Desu/Resources/Desu.ico</PackageIconUrl>
+    <PackageIconUrl>https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu_64.png</PackageIconUrl>
     <PackageLicenseUrl>https://gitlab.com/Wacton/Desu/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>Japanese kanji dictionary JMdict JMnedict KANJIDIC RADKFILE KRADFILE KanjiVG EDICT radicals romaji</PackageTags>
     <PackageReleaseNotes>Targets .NET Standard 2.0.  Can be used in .NET Core 2.0 and .NET Framework 4.7.1 applications.</PackageReleaseNotes>
