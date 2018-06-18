@@ -24,8 +24,6 @@ Targets .NET Standard 2.0 for use in .NET Core 2.0 and .NET Framework 4.7.1 appl
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Desu.ico" />
-    <None Remove="Resources\Desu.png" />
     <None Remove="Resources\JMdict.zip" />
     <None Remove="Resources\JMnedict.zip" />
     <None Remove="Resources\kanjidic2.zip" />
@@ -33,11 +31,6 @@ Targets .NET Standard 2.0 for use in .NET Core 2.0 and .NET Framework 4.7.1 appl
     <None Remove="Resources\kradfile" />
     <None Remove="Resources\kradfile2" />
     <None Remove="Resources\radkfilex" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Resources\Desu.ico" />
-    <Content Include="Resources\Desu.png" />
   </ItemGroup>
 
   <ItemGroup>
