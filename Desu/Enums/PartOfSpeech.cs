@@ -63,6 +63,7 @@
         public static readonly PartOfSpeech Verb2ZuLower = new PartOfSpeech("Verb2ZuLower", "Nidan verb (lower class) with `zu' ending (archaic)", "Verb (nidan, lower, zu) [archaic]");
         public static readonly PartOfSpeech Verb4Bu = new PartOfSpeech("Verb4Bu", "Yodan verb with `bu' ending (archaic)", "Verb (yodan, bu) [archaic]");
         public static readonly PartOfSpeech Verb4Fu = new PartOfSpeech("Verb4Fu", "Yodan verb with `hu/fu' ending (archaic)", "Verb (yodan, hu/fu) [archaic]");
+        public static readonly PartOfSpeech Verb4Gu = new PartOfSpeech("Verb4Gu", "Yodan verb with `gu' ending (archaic)", "Verb (yodan, gu) [archaic]");
         public static readonly PartOfSpeech Verb4Ku = new PartOfSpeech("Verb4Ku", "Yodan verb with `ku' ending (archaic)", "Verb (yodan, ku) [archaic]");
         public static readonly PartOfSpeech Verb4Mu = new PartOfSpeech("Verb4Mu", "Yodan verb with `mu' ending (archaic)", "Verb (yodan, mu) [archaic]");
         public static readonly PartOfSpeech Verb4Ru = new PartOfSpeech("Verb4Ru", "Yodan verb with `ru' ending (archaic)", "Verb (yodan, ru) [archaic]");

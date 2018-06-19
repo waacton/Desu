@@ -21,6 +21,7 @@
         public static readonly Miscellaneous Poetical = new Miscellaneous("Poetical", "poetical term");
         public static readonly Miscellaneous Polite = new Miscellaneous("Polite", "polite (teineigo) language");
         public static readonly Miscellaneous Proverb = new Miscellaneous("Proverb", "proverb");
+        public static readonly Miscellaneous Quotation = new Miscellaneous("Quotation", "quotation");
         public static readonly Miscellaneous Rare = new Miscellaneous("Rare", "rare");
         public static readonly Miscellaneous Sensitive = new Miscellaneous("Sensitive", "sensitive");
         public static readonly Miscellaneous Slang = new Miscellaneous("Slang", "slang");
