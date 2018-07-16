@@ -45,12 +45,17 @@
 
             var japaneseDictionaryCreationDate = japaneseDictionary.CreationDate;
             OutputLine($"JMdict created: {japaneseDictionaryCreationDate.ToShortDateString()}");
+            OutputLine($"JMdict entries: {japaneseEntries.Count}");
+            OutputLine("---");
 
             var kanjiDictionaryCreationDate = kanjiDictionary.CreationDate;
             OutputLine($"kanjidict2 created: {kanjiDictionaryCreationDate.ToShortDateString()}");
+            OutputLine($"kanjidict2 entries: {kanjiEntries.Count}");
+            OutputLine("---");
 
             var nameDictionaryCreationDate = nameDictionary.CreationDate;
             OutputLine($"JMnedict created: {nameDictionaryCreationDate.ToShortDateString()}");
+            OutputLine($"JMnedict entries: {nameEntries.Count}");
 
             var transliterator = new Transliterator();
 
