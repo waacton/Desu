@@ -39,6 +39,7 @@
 
         private static readonly Dictionary<string, Dialect> Dialects = GetAll<Dialect>().ToDictionary(dialect => dialect.Code, dialect => dialect);
         private static readonly Dictionary<string, Field> Fields = GetAll<Field>().ToDictionary(field => field.Code, field => field);
+        private static readonly Dictionary<string, GlossType> GlossTypes = GetAll<GlossType>().ToDictionary(glossType => glossType.Code, glossType => glossType);
         private static readonly Dictionary<string, KanjiInformation> KanjiInformations = GetAll<KanjiInformation>().ToDictionary(information => information.Code, information => information);
         private static readonly Dictionary<string, Miscellaneous> Miscellanea = GetAll<Miscellaneous>().ToDictionary(miscellaneous => miscellaneous.Code, miscellaneous => miscellaneous);
         private static readonly Dictionary<string, PartOfSpeech> PartsOfSpeech = GetAll<PartOfSpeech>().ToDictionary(partOfSpeech => partOfSpeech.Code, partOfSpeech => partOfSpeech);
@@ -75,12 +76,12 @@
 
         private static void AddGloss(List<Gloss> list, EntryElementData data)
         {
-            list.Add(new Gloss(data.Content, Languages[data.LanguageAttribute], data.GlossGenderAttribute));
+            list.Add(new Gloss(data.Content, Languages[data.LanguageAttribute], data.GlossTypeAttribute == null ? null : GlossTypes[data.GlossTypeAttribute], data.GlossGenderAttribute));
         }
 
         private static void AddLoanwordGloss(List<LoanwordGloss> list, EntryElementData data)
         {
-            list.Add(new LoanwordGloss(data.Content, Languages[data.LanguageAttribute], data.GlossGenderAttribute, data.LoanwordTypeAttribute != null, data.LoanwordWaseiAttribute != null));
+            list.Add(new LoanwordGloss(data.Content, Languages[data.LanguageAttribute], data.GlossTypeAttribute == null ? null : GlossTypes[data.GlossTypeAttribute], data.GlossGenderAttribute, data.LoanwordTypeAttribute != null, data.LoanwordWaseiAttribute != null));
         }
     }
 }

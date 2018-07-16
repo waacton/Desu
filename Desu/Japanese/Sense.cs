@@ -53,7 +53,7 @@
 
         public override string ToString()
         {
-            return this.Glosses.First(gloss => gloss.Language.Equals(Language.English)).ToString();
+            return this.Glosses.First().ToString();
         }
     }
 }
