@@ -15,7 +15,7 @@ Targets .NET Standard 2.0 for use in .NET Core 2.0 and .NET Framework 4.7.1 appl
     <PackageIconUrl>https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu_64.png</PackageIconUrl>
     <PackageLicenseUrl>https://gitlab.com/Wacton/Desu/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>Japanese kanji dictionary JMdict JMnedict KANJIDIC RADKFILE KRADFILE KanjiVG EDICT radicals romaji</PackageTags>
-    <PackageReleaseNotes>Library update after JMdict senses were split by language</PackageReleaseNotes>
+    <PackageReleaseNotes>Added gloss type as part of JMDict 1.09, and improved handling of senses after JMdict sense-splitting</PackageReleaseNotes>
     <RepositoryType></RepositoryType>
   </PropertyGroup>
 
