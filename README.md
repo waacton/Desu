@@ -9,6 +9,7 @@ Can be installed as a [NuGet package](https://www.nuget.org/packages/Wacton.Desu
 Install-Package Wacton.Desu
 ```
 <br>
+
 **Japanese dictionary** *(JMdict)*:
 
 Create a ```JapaneseDictionary``` and ```GetEntries()```
@@ -19,6 +20,7 @@ var japaneseDictionary = new JapaneseDictionary();
 var japaneseEntries = japaneseDictionary.GetEntries();
 ```
 <br>
+
 **Proper name dictionary** *(JMnedict)*:
 
 Create a ```NameDictionary``` and ```GetEntries()```
@@ -29,6 +31,7 @@ var nameDictionary = new NameDictionary();
 var nameEntries = nameDictionary.GetEntries();
 ```
 <br>
+
 **Kanji dictionary** *(KANJIDIC + KRADFILE + KanjiVG)*: 
 
 Create a ```KanjiDictionary``` and ```GetEntries()```
@@ -39,6 +42,7 @@ var kanjiDictionary = new KanjiDictionary();
 var kanjiEntries = kanjiDictionary.GetEntries();
 ```
 <br>
+
 **Radical lookup** *(RADKFILE/KRADFILE)*:
 
 Create a ```RadicalLookup``` and either ```GetKanjiToRadicals()``` or ```GetRadicalToKanjis()```
@@ -50,6 +54,7 @@ var kanjiToRadicals = radicalLookup.GetKanjiToRadicals();
 var radicalToKanjis = radicalLookup.GetRadicalToKanjis();
 ```
 <br>
+
 **Stroke lookup** *(KanjiVG)*:
 
 Create a ```StrokeLookup``` and ```GetKanjiToStrokes()```
@@ -60,8 +65,8 @@ var strokeLookup = new StrokeLookup();
 var kanjiToStrokes = strokeLookup.GetKanjiToStrokes();
 ```
 <br>
-**Romaji transliteration**:
 
+**Romaji transliteration**:
 Create a ```Transliterator``` and ```GetRomaji()```
 ```c#
 using Wacton.Desu.Romaji;
