@@ -1,5 +1,5 @@
 # Desu
-Wacton.Desu is a Japanese and kanji dictionary .NET library built upon [JMdict](http://www.edrdg.org/jmdict/edict_doc.html), [JMnedict](http://www.edrdg.org/enamdict/enamdict_doc.html), [KANJIDIC] (http://www.edrdg.org/kanjidic/kanjidic.html), [RADKFILE/KRADFILE] (http://users.monash.edu/~jwb/kradinf.html), and [KanjiVG] (http://kanjivg.tagaini.net/). 📚🇯🇵
+Wacton.Desu is a Japanese and kanji dictionary .NET library built upon [JMdict](http://www.edrdg.org/jmdict/edict_doc.html), [JMnedict](http://www.edrdg.org/enamdict/enamdict_doc.html), [KANJIDIC](http://www.edrdg.org/kanjidic/kanjidic.html), [RADKFILE/KRADFILE](http://users.monash.edu/~jwb/kradinf.html), and [KanjiVG](http://kanjivg.tagaini.net/). 📚🇯🇵
 <br>
 The data structure uses object representations where possible.  Please refer to the above projects for detailed definitions of the properties.
 <br><br>
