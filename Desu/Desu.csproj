@@ -5,7 +5,7 @@
     <ApplicationIcon>Resources\Desu.ico</ApplicationIcon>
     <AssemblyName>Wacton.Desu</AssemblyName>
     <RootNamespace>Wacton.Desu</RootNamespace>
-    <Version>4.1.0</Version>
+    <Version>5.0.0</Version>
     <Authors>William Acton</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Japanese and kanji dictionary .NET library built upon JMdict, JMnedict, KANJIDIC, RADKFILE/KRADFILE, and KanjiVG.
@@ -15,7 +15,7 @@ Targets .NET Standard 2.0 for use in .NET Core 2.0 and .NET Framework 4.7.1 appl
     <PackageIconUrl>https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu_64.png</PackageIconUrl>
     <PackageLicenseUrl>https://gitlab.com/Wacton/Desu/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>Japanese kanji dictionary JMdict JMnedict KANJIDIC RADKFILE KRADFILE KanjiVG EDICT radicals romaji</PackageTags>
-    <PackageReleaseNotes>Added gloss type as part of JMDict 1.09, and improved handling of senses after JMdict sense-splitting</PackageReleaseNotes>
+    <PackageReleaseNotes>Update vs-i part-of-speech marker</PackageReleaseNotes>
     <RepositoryType></RepositoryType>
   </PropertyGroup>
 

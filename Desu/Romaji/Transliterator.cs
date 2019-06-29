@@ -121,6 +121,7 @@
              * also: currently no entries contain a kurikaeshi [except the actual kurikaeshi entry, which just confuses things], so ignoring
              */
 
+#pragma warning disable IDE0017 // Simplify object initialization
             var syllable = new Syllable();
             syllable.Sokuon = LookupTransliteration(this.sokuons, kanaCharacters, ref i);
             syllable.Kana = LookupTransliteration(this.kanas, kanaCharacters, ref i);
@@ -129,6 +130,7 @@
             syllable.Tokushuon = LookupTransliteration(this.tokushuons, kanaCharacters, ref i);
             syllable.Chouon = LookupTransliteration(this.chouons, kanaCharacters, ref i);
             return syllable;
+#pragma warning restore IDE0017 // Simplify object initialization
         }
 
         private static T LookupTransliteration<T>(IReadOnlyDictionary<char, T> dictionary, string kanaCharacters, ref int index)
@@ -136,12 +138,12 @@
             var character = GetCharacter(kanaCharacters, index);
             if (!character.HasValue)
             {
-                return default(T);
+                return default;
             }
 
             if (!dictionary.ContainsKey(character.Value))
             {
-                return default(T);
+                return default;
             }
 
             index++;

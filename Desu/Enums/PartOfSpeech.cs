@@ -87,7 +87,7 @@
         public static readonly PartOfSpeech VerbNuIrregular = new PartOfSpeech("VerbNuIrregular", "irregular nu verb", "Verb (nu, irregular)");
         public static readonly PartOfSpeech VerbRuIrregular = new PartOfSpeech("VerbRuIrregular", "irregular ru verb, plain form ends with -ri", "Verb (ru, irregular) [plain form ends -ri]");
         public static readonly PartOfSpeech VerbSu = new PartOfSpeech("VerbSu", "su verb - precursor to the modern suru", "Verb (su) [precursor to modern suru]");
-        public static readonly PartOfSpeech VerbSuruIrregular = new PartOfSpeech("VerbSuruIrregular", "suru verb - irregular", "Verb (suru, irregular)");
+        public static readonly PartOfSpeech VerbSuruIncluded = new PartOfSpeech("VerbSuruIncluded", "suru verb - included", "Verb (suru, included)");
         public static readonly PartOfSpeech VerbSuruSpecial = new PartOfSpeech("VerbSuruSpecial", "suru verb - special class", "Verb (suru, special)");
         public static readonly PartOfSpeech VerbTransitive = new PartOfSpeech("VerbTransitive", "transitive verb", "Verb (transitive)");
 
