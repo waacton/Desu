@@ -18,6 +18,7 @@ Targets .NET Standard 2.0 for use in .NET Core 2.0 and .NET Framework 4.7.1 appl
     <PackageReleaseNotes>Add new Miscellaneous tags</PackageReleaseNotes>
     <RepositoryType></RepositoryType>
     <LangVersion>7.1</LangVersion>
+    <Copyright>William Acton</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
