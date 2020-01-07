@@ -10,13 +10,15 @@
     <Grid x:Name="Grid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
         <TextBlock Grid.Row="0" Text="{Binding Text}" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Text="{Binding Meanings}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <ItemsControl Grid.Row="1" ItemsSource="{Binding Strokes}" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <ItemsControl Grid.Row="2" ItemsSource="{Binding Strokes}" HorizontalAlignment="Center" VerticalAlignment="Center">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas Height="109" Width="109" />
@@ -29,6 +31,6 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
         
-        <Button Content="Next" Grid.Row="2" Click="ButtonBase_OnClick" />
+        <Button Content="Next" Grid.Row="3" Click="ButtonBase_OnClick" />
     </Grid>
 </Window>

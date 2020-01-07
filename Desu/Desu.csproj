@@ -17,6 +17,7 @@ Targets .NET Standard 2.0 for use in .NET Core 2.0 and .NET Framework 4.7.1 appl
     <PackageTags>Japanese kanji dictionary JMdict JMnedict KANJIDIC RADKFILE KRADFILE KanjiVG EDICT radicals romaji</PackageTags>
     <PackageReleaseNotes>Update vs-i part-of-speech marker</PackageReleaseNotes>
     <RepositoryType></RepositoryType>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

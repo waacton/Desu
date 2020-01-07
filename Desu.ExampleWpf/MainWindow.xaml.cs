@@ -31,6 +31,7 @@
         }
 
         public string Text => this.currentEntry.Literal;
+        public string Meanings => this.GetEnglishMeanings();
 
         public ObservableCollection<Geometry> Strokes { get; set; }
 
@@ -55,12 +56,22 @@
             }
 
             this.OnPropertyChanged(nameof(this.Text));
+            this.OnPropertyChanged(nameof(this.Meanings));
             this.OnPropertyChanged(nameof(this.Strokes));
         }
 
         private int GetRandomIndex()
         {
             return this.random.Next(0, this.kanjiEntries.Count - 1);
+        }
+
+        private string GetEnglishMeanings()
+        {
+            var englishMeanings = this.currentEntry.Meanings
+                .Where(meaning => meaning.Language == Wacton.Desu.Enums.Language.English)
+                .Select(meaning => meaning.Term);
+
+            return string.Join(" | ", englishMeanings);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

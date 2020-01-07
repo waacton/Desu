@@ -8,6 +8,7 @@
     <RootNamespace>Wacton.Desu.ExampleConsole</RootNamespace>
     <Authors>William Acton</Authors>
     <Company>William Acton</Company>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
