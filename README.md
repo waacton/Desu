@@ -91,7 +91,7 @@ Source File URL: http://www.edrdg.org/jmdict/j_jmdict.html *(JMdict.gz)*
 **JMnedict** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
-Source File URL: http://www.edrdg.org/enamdict/enamdict_doc.html *(JMnedict.gz)*  
+Source File URL: http://www.edrdg.org/enamdict/enamdict_doc.html *(JMnedict.xml.gz)*  
 
 **KANJIDIC2** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
