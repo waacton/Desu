@@ -1,9 +1,10 @@
 ﻿namespace Wacton.Desu.ExampleConsole
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
-
+    using System.Text;
     using Wacton.Desu.Enums;
     using Wacton.Desu.Japanese;
     using Wacton.Desu.Kanji;
@@ -18,6 +19,7 @@
             var kanjiDictionaryStopwatch = new Stopwatch();
             var nameDictionaryStopwatch = new Stopwatch();
 
+            Console.OutputEncoding = Encoding.UTF8;
             OutputLine("Getting dictionaries...");
 
             japaneseDictionaryStopwatch.Start();
@@ -36,31 +38,31 @@
             nameDictionaryStopwatch.Stop();
 
             OutputLine("____________________");
-
             OutputLine($"Time to parse JMdict: {japaneseDictionaryStopwatch.Elapsed}");
             OutputLine($"Time to parse kanjidict2: {kanjiDictionaryStopwatch.Elapsed}");
             OutputLine($"Time to parse JMnedict: {nameDictionaryStopwatch.Elapsed}");
 
-            OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
 
             var japaneseDictionaryCreationDate = japaneseDictionary.CreationDate;
+            OutputLine("____________________");
             OutputLine($"JMdict created: {japaneseDictionaryCreationDate.ToShortDateString()}");
             OutputLine($"JMdict entries: {japaneseEntries.Count}");
-            OutputLine("---");
 
             var kanjiDictionaryCreationDate = kanjiDictionary.CreationDate;
+            OutputLine("____________________");
             OutputLine($"kanjidict2 created: {kanjiDictionaryCreationDate.ToShortDateString()}");
             OutputLine($"kanjidict2 entries: {kanjiEntries.Count}");
-            OutputLine("---");
 
             var nameDictionaryCreationDate = nameDictionary.CreationDate;
+            OutputLine("____________________");
             OutputLine($"JMnedict created: {nameDictionaryCreationDate.ToShortDateString()}");
             OutputLine($"JMnedict entries: {nameEntries.Count}");
 
             var transliterator = new Transliterator();
-
             var random = new Random();
-            for (var i = 0; i < 100; i++)
+
+            var isFinished = false;
+            while (!isFinished)
             {
                 OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
 
@@ -90,13 +92,11 @@
                     var kanjiMeaning = !kanjiEntry.Meanings.Any() ? string.Empty : kanjiEntry.Meanings.First(meaning => meaning.Language.Equals(Language.English)).Term;
                     OutputLine($"{literal} -> {radicalDecomposition} ({kanjiMeaning})");
                 }
+
+                OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
+                OutputLine(string.Empty);
+                Console.ReadKey();
             }
-
-            OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
-
-            Console.WriteLine();
-            Console.WriteLine("Press any key to finish");
-            Console.ReadKey();
         }
 
         private static void OutputLine(string text)

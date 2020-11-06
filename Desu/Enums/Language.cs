@@ -49,7 +49,6 @@
         public static readonly Language Mongolian = new Language("Mongolian", "mon", "mn");
         public static readonly Language Mapudungun = new Language("Mapudungun", "arn");
         public static readonly Language Norwegian = new Language("Norwegian", "nor", "no");
-        public static readonly Language Ottoman = new Language("Ottoman", "ota");
         public static readonly Language Persian = new Language("Persian", "per", "fa");
         public static readonly Language Polish = new Language("Polish", "pol", "pl");
         public static readonly Language Portuguese = new Language("Portuguese", "por", "pt");

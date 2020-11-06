@@ -10,6 +10,7 @@
         public static readonly Miscellaneous Derogatory = new Miscellaneous("Derogatory", "derogatory");
         public static readonly Miscellaneous Familiar = new Miscellaneous("Familiar", "familiar language");
         public static readonly Miscellaneous Female = new Miscellaneous("Female", "female term or language");
+        public static readonly Miscellaneous Historical = new Miscellaneous("Historical", "historical term");
         public static readonly Miscellaneous Honorific = new Miscellaneous("Honorific", "honorific or respectful (sonkeigo) language");
         public static readonly Miscellaneous Humble = new Miscellaneous("Humble", "humble (kenjougo) language");
         public static readonly Miscellaneous Idiomatic = new Miscellaneous("Idiomatic", "idiomatic expression");
@@ -22,6 +23,7 @@
         public static readonly Miscellaneous Obsolete = new Miscellaneous("Obsolete", "obsolete term");
         public static readonly Miscellaneous Onomatopoeic = new Miscellaneous("Onomatopoeic", "onomatopoeic or mimetic word");
         public static readonly Miscellaneous Person = new Miscellaneous("Person", "full name of a particular person");
+        public static readonly Miscellaneous Place = new Miscellaneous("Place", "place name");
         public static readonly Miscellaneous Poetical = new Miscellaneous("Poetical", "poetical term");
         public static readonly Miscellaneous Polite = new Miscellaneous("Polite", "polite (teineigo) language");
         public static readonly Miscellaneous Proverb = new Miscellaneous("Proverb", "proverb");
@@ -31,6 +33,7 @@
         public static readonly Miscellaneous Slang = new Miscellaneous("Slang", "slang");
         public static readonly Miscellaneous UsuallyKanaAlone = new Miscellaneous("UsuallyKanaAlone", "word usually written using kana alone");
         public static readonly Miscellaneous Vulgar = new Miscellaneous("Vulgar", "vulgar expression or word");
+        public static readonly Miscellaneous Work = new Miscellaneous("Work", "work of art, literature, music, etc. name");
         public static readonly Miscellaneous Yojijukugo = new Miscellaneous("Yojijukugo", "yojijukugo");
 
         public string Code { get; }
