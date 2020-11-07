@@ -92,7 +92,8 @@
 
         public bool Equals(Enumeration other)
         {
-            return this.Value.Equals(other.Value);
+            return this.GetType().ToString() == other.GetType().ToString() 
+                && this.Value.Equals(other.Value);
         }
 
         public override string ToString() => this.DisplayName;

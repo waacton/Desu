@@ -2,17 +2,21 @@
 {
     public class QueryCodeType : Enumeration
     {
-        public static readonly QueryCodeType SKIP = new QueryCodeType("SKIP", "skip");
-        public static readonly QueryCodeType SpahnHadamitzky = new QueryCodeType("Spahn & Hadamitzky", "sh_desc");
-        public static readonly QueryCodeType FourCorner = new QueryCodeType("Four Corner", "four_corner");
-        public static readonly QueryCodeType DeRoo = new QueryCodeType("De Roo", "deroo");
+        public static readonly QueryCodeType SKIP = new QueryCodeType(nameof(SKIP), "skip", "SKIP");
+        public static readonly QueryCodeType SpahnHadamitzky = new QueryCodeType(nameof(SpahnHadamitzky), "sh_desc", "Spahn & Hadamitzky");
+        public static readonly QueryCodeType FourCorner = new QueryCodeType(nameof(FourCorner), "four_corner", "Four Corner");
+        public static readonly QueryCodeType DeRoo = new QueryCodeType(nameof(DeRoo), "deroo", "De Roo");
 
         public string Code { get; }
+        public string Description { get; }
 
-        public QueryCodeType(string displayName, string code)
+        public QueryCodeType(string displayName, string code, string description)
             : base(displayName)
         {
             this.Code = code;
+            this.Description = description;
         }
+
+        public override string ToString() => this.Description;
     }
 }

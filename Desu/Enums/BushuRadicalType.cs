@@ -2,8 +2,8 @@
 {
     public class BushuRadicalType : Enumeration
     {
-        public static readonly BushuRadicalType Classical = new BushuRadicalType("Classical", "classical");
-        public static readonly BushuRadicalType Nelson = new BushuRadicalType("Nelson", "nelson_c");
+        public static readonly BushuRadicalType Classical = new BushuRadicalType(nameof(Classical), "classical");
+        public static readonly BushuRadicalType Nelson = new BushuRadicalType(nameof(Nelson), "nelson_c");
 
         public string Code { get; }
 
