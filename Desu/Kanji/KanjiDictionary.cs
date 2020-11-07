@@ -34,7 +34,12 @@
         /// <summary>
         /// Returns the entries of the kanji dictionary
         /// </summary>
-        public IEnumerable<IKanjiEntry> GetEntries()
+        public IEnumerable<IKanjiEntry> GetEntries() => ParseEntries();
+
+        /// <summary>
+        /// Returns the entries of the kanji dictionary
+        /// </summary>
+        public static IEnumerable<IKanjiEntry> ParseEntries()
         {
             return EmbeddedResources.ReadStream(Resource.KanjiDictionary, ParseDictionary);
         }
@@ -83,7 +88,10 @@
             return entries;
         }
 
-        private static DateTime ParseCreationDate()
+        /// <summary>
+        /// Returns the creation date of the dictionary file
+        /// </summary>
+        public static DateTime ParseCreationDate()
         {
             return EmbeddedResources.ReadStream(Resource.KanjiDictionary, ParseCreationDate);
         }

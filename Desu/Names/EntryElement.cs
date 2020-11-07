@@ -26,8 +26,6 @@
         public static readonly EntryElement CrossReference = new EntryElement("CrossReference", "xref", (entry, data) => AddContent(entry.GetTranslations().Last().GetCrossReferences(), data));
         public static readonly EntryElement Transcription = new EntryElement("Transcription", "trans_det", (entry, data) => AddContent(entry.GetTranslations().Last().GetTranscriptions(), data));
 
-        private static readonly Dictionary<string, Language> Languages = GetAll<Language>().ToDictionary(language => language.ThreeLetterCode, language => language);
-
         private static readonly Dictionary<string, KanjiInformation> KanjiInformations = GetAll<KanjiInformation>().ToDictionary(information => information.Code, information => information);
         private static readonly Dictionary<string, NameType> NameTypes = GetAll<NameType>().ToDictionary(nameType => nameType.Code, nameType => nameType);
         private static readonly Dictionary<string, Priority> Priorities = GetAll<Priority>().ToDictionary(priority => priority.Code, priority => priority);

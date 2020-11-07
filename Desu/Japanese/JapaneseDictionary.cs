@@ -34,7 +34,12 @@
         /// <summary>
         /// Returns the entries of the Japanese dictionary
         /// </summary>
-        public IEnumerable<IJapaneseEntry> GetEntries()
+        public IEnumerable<IJapaneseEntry> GetEntries() => ParseEntries();
+
+        /// <summary>
+        /// Returns the entries of the Japanese dictionary
+        /// </summary>
+        public static IEnumerable<IJapaneseEntry> ParseEntries()
         {
             return EmbeddedResources.ReadStream(Resource.JapaneseDictionary, ParseDictionary);
         }
@@ -89,7 +94,10 @@
             return entries;
         }
 
-        private static DateTime ParseCreationDate()
+        /// <summary>
+        /// Returns the creation date of the dictionary file
+        /// </summary>
+        public static DateTime ParseCreationDate()
         {
             return EmbeddedResources.ReadStream(Resource.JapaneseDictionary, ParseCreationDate);
         }

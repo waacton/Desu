@@ -34,7 +34,12 @@
         /// <summary>
         /// Returns the entries of the proper names dictionary
         /// </summary>
-        public IEnumerable<INameEntry> GetEntries()
+        public IEnumerable<INameEntry> GetEntries() => ParseEntries();
+
+        /// <summary>
+        /// Returns the entries of the proper names dictionary
+        /// </summary>
+        public static IEnumerable<INameEntry> ParseEntries()
         {
             return EmbeddedResources.ReadStream(Resource.NameDictionary, ParseDictionary);
         }
@@ -89,7 +94,10 @@
             return entries;
         }
 
-        private static DateTime ParseCreationDate()
+        /// <summary>
+        /// Returns the creation date of the dictionary file
+        /// </summary>
+        public static DateTime ParseCreationDate()
         {
             return EmbeddedResources.ReadStream(Resource.NameDictionary, ParseCreationDate);
         }
