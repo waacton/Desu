@@ -13,5 +13,13 @@
             this.IsPartial = isPartial;
             this.IsWasei = isWasei;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is LoanwordGloss gloss &&
+                   base.Equals(obj) &&
+                   IsPartial == gloss.IsPartial &&
+                   IsWasei == gloss.IsWasei;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.Japanese
 {
+    using System.Collections.Generic;
     using Wacton.Desu.Enums;
 
     public class Gloss
@@ -22,6 +23,15 @@
         public override string ToString()
         {
             return $"{this.Language}: {this.Term}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Gloss gloss &&
+                   Term == gloss.Term &&
+                   EqualityComparer<Language>.Default.Equals(Language, gloss.Language) &&
+                   EqualityComparer<GlossType>.Default.Equals(Type, gloss.Type) &&
+                   Gender == gloss.Gender;
         }
     }
 }
