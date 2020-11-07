@@ -19,7 +19,11 @@
 
         public override string ToString()
         {
-            return $"{this.Type}: {this.Value}{(this.SkipMisclassification != null ? $" (Misclass: {this.SkipMisclassification})" : string.Empty)}";
+            string misclassification = this.SkipMisclassification == null || this.SkipMisclassification == SkipMisclassification.None
+                ? string.Empty
+                : $" (Misclass: {this.SkipMisclassification})";
+
+            return $"{this.Type}: {this.Value}{misclassification}";
         }
     }
 }

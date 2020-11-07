@@ -176,7 +176,7 @@
 
         private static void AddQueryCode(KanjiEntry entry, CharacterElementData data)
         {
-            SkipMisclassification skipMisclassification = null;
+            SkipMisclassification skipMisclassification = SkipMisclassification.None;
             var queryCodeType = QueryCodeTypes[data.QueryCodeTypeAttribute];
             if (queryCodeType.Equals(QueryCodeType.SKIP) && !string.IsNullOrEmpty(data.SkipMisclassificationAttribute))
             {
