@@ -14,7 +14,12 @@
         /// <summary>
         /// Returns the lookup of kanji to radicals
         /// </summary>
-        public IDictionary<string, List<string>> GetKanjiToRadicals()
+        public IDictionary<string, List<string>> GetKanjiToRadicals() => ParseKanjiToRadicals();
+
+        /// <summary>
+        /// Returns the lookup of kanji to radicals
+        /// </summary>
+        public static IDictionary<string, List<string>> ParseKanjiToRadicals()
         {
             var kradfile1 = EmbeddedResources.ReadStream(Resource.KanjiToRadicals1, ParseKanjiToRadicals);
             var kradfile2 = EmbeddedResources.ReadStream(Resource.KanjiToRadicals2, ParseKanjiToRadicals);
@@ -24,7 +29,12 @@
         /// <summary>
         /// Returns the lookup of radical to kanjis
         /// </summary>
-        public IDictionary<string, List<string>> GetRadicalToKanjis()
+        public IDictionary<string, List<string>> GetRadicalToKanjis() => ParseRadicalToKanjis();
+
+        /// <summary>
+        /// Returns the lookup of radical to kanjis
+        /// </summary>
+        public static IDictionary<string, List<string>> ParseRadicalToKanjis()
         {
             return EmbeddedResources.ReadStream(Resource.RadicalToKanjis, ParseRadicalToKanjis);
         }

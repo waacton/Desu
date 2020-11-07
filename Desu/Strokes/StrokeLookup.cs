@@ -17,7 +17,12 @@
         /// <summary>
         /// Returns the lookup of kanji to strokes
         /// </summary>
-        public IDictionary<string, List<string>> GetKanjiToStrokes()
+        public IDictionary<string, List<string>> GetKanjiToStrokes() => ParseKanjiToStrokes();
+
+        /// <summary>
+        /// Returns the lookup of kanji to strokes
+        /// </summary>
+        public static IDictionary<string, List<string>> ParseKanjiToStrokes()
         {
             return EmbeddedResources.ReadStream(Resource.KanjiStrokes, ParseDictionary);
         }
