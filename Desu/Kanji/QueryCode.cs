@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.Kanji
 {
+    using System.Collections.Generic;
     using Wacton.Desu.Enums;
 
     public class QueryCode : IQueryCode
@@ -24,6 +25,14 @@
                 : $" (Misclass: {this.SkipMisclassification})";
 
             return $"{this.Type}: {this.Value}{misclassification}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is QueryCode code &&
+                   EqualityComparer<QueryCodeType>.Default.Equals(Type, code.Type) &&
+                   EqualityComparer<SkipMisclassification>.Default.Equals(SkipMisclassification, code.SkipMisclassification) &&
+                   Value == code.Value;
         }
     }
 }
