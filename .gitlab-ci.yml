@@ -10,7 +10,7 @@ build:
         - "dotnet build Desu"
     artifacts:
       paths:
-        - bin/
+        - Desu/bin/
 
 test:
     stage: test
