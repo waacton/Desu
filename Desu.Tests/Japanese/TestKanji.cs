@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Wacton.Desu.Enums;
 using Wacton.Desu.Japanese;
 
-namespace Wacton.Desu.Tests
+namespace Wacton.Desu.Tests.Japanese
 {
     public class TestKanji : IKanji
     {

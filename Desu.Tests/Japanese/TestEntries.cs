@@ -3,7 +3,7 @@ using System.Linq;
 using Wacton.Desu.Enums;
 using Wacton.Desu.Japanese;
 
-namespace Wacton.Desu.Tests.Utils
+namespace Wacton.Desu.Tests.Japanese
 {
     public static class TestEntries
     {

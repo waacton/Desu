@@ -6,6 +6,8 @@
 
     using Wacton.Desu.Enums;
 
+    // TODO: ke_inf, ke_pri, re_restr, re_inf, re_pri are all currently unused in the Name dictionary (though they are used in the Japanese dictionary)
+    // - consider either removing them, or merging the two IKanji/IReading objects together
     public class EntryElement : Enumeration
     {
         public static readonly EntryElement Sequence = new EntryElement("Sequence", "ent_seq", (entry, data) => entry.Sequence = int.Parse(data.Content));
