@@ -99,10 +99,11 @@ namespace Wacton.Desu.Tests
         [Test]
         public void Languages()
         {
-            var usedEnums = Enumerable.Concat(
-                japaneseEntries.SelectMany(x => x.Senses).SelectMany(x => x.Glosses).Select(x => x.Language),
-                japaneseEntries.SelectMany(x => x.Senses).SelectMany(x => x.LoanwordSources).Select(x => x.Language)
-                ).Distinct();
+            var usedEnums =
+                japaneseEntries.SelectMany(x => x.Senses).SelectMany(x => x.Glosses).Select(x => x.Language).Concat(
+                japaneseEntries.SelectMany(x => x.Senses).SelectMany(x => x.LoanwordSources).Select(x => x.Language).Concat(
+                kanjiEntries.SelectMany(x => x.Meanings).Select(x => x.Language)
+                )).Distinct();
 
             AssertNoUnusedEnums(usedEnums);
             AssertUnusedEnumDetected(usedEnums, new Language(_, _));
