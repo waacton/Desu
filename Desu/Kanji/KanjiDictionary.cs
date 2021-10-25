@@ -67,21 +67,24 @@
                 while (!isEndOfEntry)
                 {
                     reader.Read();
-                    if (reader.NodeType == XmlNodeType.Element)
+                    switch (reader.NodeType)
                     {
-                        var elementCode = reader.Name;
-                        if (!characterElements.ContainsKey(elementCode))
+                        case XmlNodeType.Element:
                         {
-                            continue;
-                        }
+                            var elementCode = reader.Name;
+                            if (!characterElements.ContainsKey(elementCode))
+                            {
+                                continue;
+                            }
 
-                        var characterElement = characterElements[elementCode];
-                        var characterElementData = CharacterElementData.FromXmlReader(reader);
-                        characterElement.AddDataToEntry(dictionaryEntry, characterElementData);
-                    }
-                    else if (reader.NodeType == XmlNodeType.EndElement)
-                    {
-                        isEndOfEntry = reader.Name.Equals(CharacterTag);
+                            var characterElement = characterElements[elementCode];
+                            var characterElementData = CharacterElementData.FromXmlReader(reader);
+                            characterElement.AddDataToEntry(dictionaryEntry, characterElementData);
+                            break;
+                        }
+                        case XmlNodeType.EndElement:
+                            isEndOfEntry = reader.Name.Equals(CharacterTag);
+                            break;
                     }
                 }
 

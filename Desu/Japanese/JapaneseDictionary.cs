@@ -67,31 +67,30 @@
                 while (!isEndOfEntry)
                 {
                     reader.Read();
-                    if (reader.NodeType == XmlNodeType.Element)
+                    switch (reader.NodeType)
                     {
-                        var elementCode = reader.Name;
-                        if (!entryElements.ContainsKey(elementCode))
+                        case XmlNodeType.Element:
                         {
-                            continue;
-                        }
+                            var elementCode = reader.Name;
+                            if (!entryElements.ContainsKey(elementCode))
+                            {
+                                continue;
+                            }
 
-                        var entryElement = entryElements[elementCode];
-                        if (!entryElement.ExpectsContent)
-                        {
-                            entryElement.AddDataToEntry(dictionaryEntry, null);
-                            continue;
-                        }
+                            var entryElement = entryElements[elementCode];
+                            if (!entryElement.ExpectsContent)
+                            {
+                                entryElement.AddDataToEntry(dictionaryEntry, null);
+                                continue;
+                            }
 
-                        var entryElementData = EntryElementData.FromXmlReader(reader);
-                        if (entryElementData.Content == "tm")
-                        {
-                            var x = 1;
+                            var entryElementData = EntryElementData.FromXmlReader(reader);
+                            entryElement.AddDataToEntry(dictionaryEntry, entryElementData);
+                            break;
                         }
-                        entryElement.AddDataToEntry(dictionaryEntry, entryElementData);
-                    }
-                    else if (reader.NodeType == XmlNodeType.EndElement)
-                    {
-                        isEndOfEntry = reader.Name.Equals(EntryTag);
+                        case XmlNodeType.EndElement:
+                            isEndOfEntry = reader.Name.Equals(EntryTag);
+                            break;
                     }
                 }
 

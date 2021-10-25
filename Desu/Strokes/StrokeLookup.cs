@@ -49,14 +49,17 @@
                 while (!isEndOfEntry)
                 {
                     reader.Read();
-                    if (reader.NodeType == XmlNodeType.Element && reader.Name == PathElement)
+                    switch (reader.NodeType)
                     {
-                        var dataAttribute = reader.GetAttribute(DataAttribute);
-                        dictionaryEntries[currentIdAttribute].Add(dataAttribute);
-                    }
-                    else if (reader.NodeType == XmlNodeType.EndElement)
-                    {
-                        isEndOfEntry = reader.Name.Equals(KanjiElement);
+                        case XmlNodeType.Element when reader.Name == PathElement:
+                        {
+                            var dataAttribute = reader.GetAttribute(DataAttribute);
+                            dictionaryEntries[currentIdAttribute].Add(dataAttribute);
+                            break;
+                        }
+                        case XmlNodeType.EndElement:
+                            isEndOfEntry = reader.Name.Equals(KanjiElement);
+                            break;
                     }
                 }
             }
