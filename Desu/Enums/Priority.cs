@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    // for details see https://www.edrdg.org/jmdictdb/cgi-bin/edhelp.py?svc=jmdict&sid=#kwabbr (Freq)
     public class Priority : Enumeration
     {
         public static readonly Priority Loanword1 = new Priority(nameof(Loanword1), "gai1");

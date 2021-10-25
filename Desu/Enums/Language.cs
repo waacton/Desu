@@ -1,7 +1,6 @@
 ﻿namespace Wacton.Desu.Enums
 {
-    // http://edrdg.org/jmdictdb/cgi-bin/edhelp.py?svc=jmdict&sid=#kwabbr
-
+    // for details see http://edrdg.org/jmdictdb/cgi-bin/edhelp.py?svc=jmdict&sid=#kwabbr (Lang)
     public class Language : Enumeration
     {
         public static readonly Language Afrikaans = new Language(nameof(Afrikaans), "afr", "af");

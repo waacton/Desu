@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    // for details see https://www.edrdg.org/jmdictdb/cgi-bin/edhelp.py?svc=jmdict&sid=#kwabbr (Pos)
     public class PartOfSpeech : Enumeration
     {
         public static readonly PartOfSpeech AdjectiveI = new PartOfSpeech(nameof(AdjectiveI), "adjective (keiyoushi)", "Adjective (i)");
@@ -24,13 +25,13 @@
         public static readonly PartOfSpeech Counter = new PartOfSpeech(nameof(Counter), "counter", "Counter");
         public static readonly PartOfSpeech Expression = new PartOfSpeech(nameof(Expression), "expressions (phrases, clauses, etc.)", "Expression");
         public static readonly PartOfSpeech Interjection = new PartOfSpeech(nameof(Interjection), "interjection (kandoushi)", "Interjection");
-        public static readonly PartOfSpeech NounAdverbial = new PartOfSpeech(nameof(NounAdverbial), "adverbial noun (fukushitekimeishi)", "Noun (adverbial)");
+        // no longer used? - public static readonly PartOfSpeech NounAdverbial = new PartOfSpeech(nameof(NounAdverbial), "adverbial noun (fukushitekimeishi)", "Noun (adverbial)");
         public static readonly PartOfSpeech NounCommon = new PartOfSpeech(nameof(NounCommon), "noun (common) (futsuumeishi)", "Noun (common)");
         public static readonly PartOfSpeech NounNo = new PartOfSpeech(nameof(NounNo), "nouns which may take the genitive case particle 'no'", "Noun (may take 'no' genitive case particle)");
         public static readonly PartOfSpeech NounPrefix = new PartOfSpeech(nameof(NounPrefix), "noun, used as a prefix", "Noun (used as prefix)");
         public static readonly PartOfSpeech NounSuffix = new PartOfSpeech(nameof(NounSuffix), "noun, used as a suffix", "Noun (used as suffix)");
         public static readonly PartOfSpeech NounSuru = new PartOfSpeech(nameof(NounSuru), "noun or participle which takes the aux. verb suru", "Noun (takes 'suru' aux. verb)");
-        public static readonly PartOfSpeech NounTemporal = new PartOfSpeech(nameof(NounTemporal), "noun (temporal) (jisoumeishi)", "Noun (temporal)");
+        // no longer used? - public static readonly PartOfSpeech NounTemporal = new PartOfSpeech(nameof(NounTemporal), "noun (temporal) (jisoumeishi)", "Noun (temporal)");
         public static readonly PartOfSpeech Numeric = new PartOfSpeech(nameof(Numeric), "numeric", "Numeric");
         public static readonly PartOfSpeech Particle = new PartOfSpeech(nameof(Particle), "particle", "Particle");
         public static readonly PartOfSpeech Prefix = new PartOfSpeech(nameof(Prefix), "prefix", "Prefix");

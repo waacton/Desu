@@ -71,7 +71,7 @@
                 .Where(meaning => meaning.Language == Wacton.Desu.Enums.Language.English)
                 .Select(meaning => meaning.Term);
 
-            return string.Join(" | ", englishMeanings);
+            return string.Join(" · ", englishMeanings);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

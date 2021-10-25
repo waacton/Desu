@@ -20,6 +20,15 @@
             this.Initialise();
         }
 
+        /// <summary>
+        /// Returns the romaji transliteration of a string of kana characters.  Throws a TransliterationException if the string contains a non-kana character. 
+        /// </summary>
+        public static string ToRomaji(string kanaCharacters)
+        {
+            var transliterator = new Transliterator();
+            return transliterator.GetRomaji(kanaCharacters);
+        }
+
         private void Initialise()
         {
             foreach (var kana in Enumeration.GetAll<Kana>())

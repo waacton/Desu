@@ -1,7 +1,9 @@
 ﻿namespace Wacton.Desu.Enums
 {
+    // for details see https://www.edrdg.org/jmdictdb/cgi-bin/edhelp.py?svc=jmdict&sid=#kwabbr (Dial)
     public class Dialect : Enumeration
     {
+        public static readonly Dialect Brazilian = new Dialect(nameof(Brazilian), "Brazilian");
         public static readonly Dialect Hokkaido = new Dialect(nameof(Hokkaido), "Hokkaido-ben");
         public static readonly Dialect Kansai = new Dialect(nameof(Kansai), "Kansai-ben");
         public static readonly Dialect Kantou = new Dialect(nameof(Kantou), "Kantou-ben");

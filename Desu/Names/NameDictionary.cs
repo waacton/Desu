@@ -8,6 +8,9 @@
     using Wacton.Desu.Enums;
     using Wacton.Desu.Resources;
 
+    /// <summary>
+    /// A dictionary of Japanese proper names (source: JMnedict)
+    /// </summary>
     public class NameDictionary : INameDictionary
     {
         private static readonly string EntryTag = "entry";

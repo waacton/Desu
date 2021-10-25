@@ -6,6 +6,9 @@
 
     using Wacton.Desu.Resources;
 
+    /// <summary>
+    /// A lookup of kanji characters to strokes (source: KanjiVG)
+    /// </summary>
     public class StrokeLookup : IStrokeLookup
     {
         private static readonly string KanjiElement = "kanji";

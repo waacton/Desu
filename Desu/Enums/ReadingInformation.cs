@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.Enums
 {
+    // for details see https://www.edrdg.org/jmdictdb/cgi-bin/edhelp.py?svc=jmdict&sid=#kwabbr (Rinf)
     public class ReadingInformation : Enumeration
     {
         public static readonly ReadingInformation GikunOrJukujikun = new ReadingInformation(nameof(GikunOrJukujikun), "gikun (meaning as reading) or jukujikun (special kanji reading)");

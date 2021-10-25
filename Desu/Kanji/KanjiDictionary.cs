@@ -8,6 +8,9 @@
     using Wacton.Desu.Enums;
     using Wacton.Desu.Resources;
 
+    /// <summary>
+    /// A dictionary of kanji characters (source: kanjidic2)
+    /// </summary>
     public class KanjiDictionary : IKanjiDictionary
     {
         private static readonly string CharacterTag = "character";

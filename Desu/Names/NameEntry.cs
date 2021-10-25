@@ -34,21 +34,21 @@
 
         public override string ToString()
         {
-            var stringbuilder = new StringBuilder();
-            stringbuilder.Append($"#{this.Sequence} :: ");
+            var stringBuilder = new StringBuilder();
+            stringBuilder.Append($"#{this.Sequence} :: ");
 
             foreach (var kanji in this.Kanjis)
             {
-                stringbuilder.Append(kanji.Text + " | ");
+                stringBuilder.Append(kanji.Text + " · ");
             }
 
             foreach (var reading in this.Readings)
             {
-                stringbuilder.Append(reading.Text + " | ");
+                stringBuilder.Append(reading.Text + " · ");
             }
 
-            stringbuilder.Append(this.Translations.First());
-            return stringbuilder.ToString();
+            stringBuilder.Append(this.Translations.First());
+            return stringBuilder.ToString();
         }
     }
 }

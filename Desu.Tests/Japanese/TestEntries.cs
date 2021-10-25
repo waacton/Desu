@@ -283,9 +283,12 @@ namespace Wacton.Desu.Tests.Japanese
             var sense1 = new TestSense
             {
                 PartsOfSpeech = new List<PartOfSpeech> { PartOfSpeech("noun (common) (futsuumeishi)") },
-                Miscellanea = new List<Miscellaneous> { Miscellaneous("word usually written using kana alone"), Miscellaneous("colloquialism") },
+                Miscellanea = new List<Miscellaneous> { Miscellaneous("word usually written using kana alone") },
                 LoanwordSources = new List<LoanwordGloss> { new LoanwordGloss("with corona", Language("eng"), null, null, false, true) },
-                Glosses = new List<Gloss> { new Gloss("coexisting with the coronavirus", Language("eng"), null, null) }
+                Glosses = new List<Gloss> {
+                    new Gloss("coexisting with the coronavirus", Language("eng"), null, null),
+                    new Gloss("life during the COVID-19 pandemic", Language("eng"), null, null)
+                }
             };
 
             var testEntry = new TestEntry
@@ -448,7 +451,6 @@ namespace Wacton.Desu.Tests.Japanese
                 CrossReferences = new List<string> { "攻め・2", "受け・5" },
                 Antonyms = new List<string> { "猫・6" },
                 Miscellanea = new List<Miscellaneous> { Miscellaneous("colloquialism") },
-                Informations = new List<string> { "often abbr. 凸 on gay SNS sites" },
                 Glosses = new List<Gloss> { new Gloss("dominant partner of a homosexual relationship", Language("eng"), null, null) }
             };
 

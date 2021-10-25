@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.Enums
 {
+    // for details see https://www.edrdg.org/jmdictdb/cgi-bin/edhelp.py?svc=jmdict&sid=#kwabbr (Misc)
     public class Miscellaneous : Enumeration
     {
         public static readonly Miscellaneous Abbreviation = new Miscellaneous(nameof(Abbreviation), "abbreviation");
@@ -10,13 +11,14 @@
         public static readonly Miscellaneous Derogatory = new Miscellaneous(nameof(Derogatory), "derogatory");
         public static readonly Miscellaneous Familiar = new Miscellaneous(nameof(Familiar), "familiar language");
         public static readonly Miscellaneous Female = new Miscellaneous(nameof(Female), "female term or language");
+        public static readonly Miscellaneous Formal = new Miscellaneous(nameof(Formal), "formal or literary term");
         public static readonly Miscellaneous Historical = new Miscellaneous(nameof(Historical), "historical term");
         public static readonly Miscellaneous Honorific = new Miscellaneous(nameof(Honorific), "honorific or respectful (sonkeigo) language");
         public static readonly Miscellaneous Humble = new Miscellaneous(nameof(Humble), "humble (kenjougo) language");
         public static readonly Miscellaneous Idiomatic = new Miscellaneous(nameof(Idiomatic), "idiomatic expression");
         public static readonly Miscellaneous Internet = new Miscellaneous(nameof(Internet), "Internet slang");
         public static readonly Miscellaneous Jocular = new Miscellaneous(nameof(Jocular), "jocular, humorous term");
-        public static readonly Miscellaneous Literary = new Miscellaneous(nameof(Literary), "literary or formal term");
+        public static readonly Miscellaneous Legend = new Miscellaneous(nameof(Legend), "legend");
         public static readonly Miscellaneous Male = new Miscellaneous(nameof(Male), "male term or language");
         public static readonly Miscellaneous Manga = new Miscellaneous(nameof(Manga), "manga slang");
         public static readonly Miscellaneous Obscure = new Miscellaneous(nameof(Obscure), "obscure term");

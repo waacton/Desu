@@ -91,21 +91,21 @@
 
         public override string ToString()
         {
-            var stringbuilder = new StringBuilder();
+            var stringBuilder = new StringBuilder();
 
             foreach (var hiragana in this.dict[Syllabary.Hiragana])
             {
-                stringbuilder.Append(hiragana.Value);
+                stringBuilder.Append(hiragana.Value);
             }
 
-            stringbuilder.Append('|');
+            stringBuilder.Append('|');
 
             foreach (var katakana in this.dict[Syllabary.Katakana])
             {
-                stringbuilder.Append(katakana.Value);
+                stringBuilder.Append(katakana.Value);
             }
 
-            return $"{this.DisplayName} ({stringbuilder})";
+            return $"{this.DisplayName} ({stringBuilder})";
         }
     }
 }

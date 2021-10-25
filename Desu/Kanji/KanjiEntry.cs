@@ -69,8 +69,8 @@
 
         public override string ToString()
         {
-            var english = string.Join(" | ", this.Meanings.Where(meaning => meaning.Language.Equals(Language.English)).Select(meaning => meaning.Term));
-            return $"{this.Literal}{(string.IsNullOrEmpty(english) ? string.Empty : " | " + english)}";
+            var english = string.Join(" · ", this.Meanings.Where(meaning => meaning.Language.Equals(Language.English)).Select(meaning => meaning.Term));
+            return $"{this.Literal}{(string.IsNullOrEmpty(english) ? string.Empty : " · " + english)}";
         }
     }
 }

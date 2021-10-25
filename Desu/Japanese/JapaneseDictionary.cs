@@ -8,6 +8,9 @@
     using Wacton.Desu.Enums;
     using Wacton.Desu.Resources;
 
+    /// <summary>
+    /// A dictionary of Japanese words and phrases (source: JMdict)
+    /// </summary>
     public class JapaneseDictionary : IJapaneseDictionary
     {
         private static readonly string EntryTag = "entry";
@@ -80,6 +83,10 @@
                         }
 
                         var entryElementData = EntryElementData.FromXmlReader(reader);
+                        if (entryElementData.Content == "tm")
+                        {
+                            var x = 1;
+                        }
                         entryElement.AddDataToEntry(dictionaryEntry, entryElementData);
                     }
                     else if (reader.NodeType == XmlNodeType.EndElement)

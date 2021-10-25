@@ -7,6 +7,9 @@
 
     using Wacton.Desu.Resources;
 
+    /// <summary>
+    /// A lookup between kanji characters and radicals (sources: kradfile, kradfile2, radkfilex)
+    /// </summary>
     public class RadicalLookup : IRadicalLookup
     {
         private static readonly string HeaderEnd = "###########################################################";

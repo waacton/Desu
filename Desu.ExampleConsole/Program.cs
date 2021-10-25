@@ -1,7 +1,6 @@
 ﻿namespace Wacton.Desu.ExampleConsole
 {
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
     using System.Text;
@@ -64,7 +63,7 @@
             var isFinished = false;
             while (!isFinished)
             {
-                OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
+                OutputStartEntry();
 
                 var index = random.Next(0, japaneseEntries.Count);
                 var japaneseEntry = japaneseEntries[index];
@@ -76,6 +75,7 @@
                 var firstKanji = japaneseEntry.Kanjis.FirstOrDefault()?.Text;
                 if (firstKanji == null)
                 {
+                    OutputEndEntry();
                     continue;
                 }
 
@@ -93,10 +93,17 @@
                     OutputLine($"{literal} -> {radicalDecomposition} ({kanjiMeaning})");
                 }
 
-                OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
-                OutputLine(string.Empty);
-                Console.ReadKey();
+                OutputEndEntry();
             }
+        }
+
+        private static void OutputStartEntry() => OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
+
+        private static void OutputEndEntry()
+        {
+            OutputLine("~~~ ~~~ ~~~ ~~~ ~~~");
+            OutputLine(string.Empty);
+            Console.ReadKey();
         }
 
         private static void OutputLine(string text)

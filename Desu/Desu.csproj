@@ -5,11 +5,11 @@
     <ApplicationIcon>Resources\Desu.ico</ApplicationIcon>
     <AssemblyName>Wacton.Desu</AssemblyName>
     <RootNamespace>Wacton.Desu</RootNamespace>
-    <Version>5.1.0</Version>
+    <Version>6.0.0</Version>
     <Authors>William Acton</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Japanese and kanji dictionary .NET library built upon JMdict, JMnedict, KANJIDIC, RADKFILE/KRADFILE, and KanjiVG.
-Targets .NET Standard 2.0 for use in .NET Core 2.0 and .NET Framework 4.7.1 applications.</Description>
+Targets .NET Standard 2.0 for use in .NET Core 2.0+ and .NET Framework 4.7.1+ applications.</Description>
     <PackageProjectUrl>https://gitlab.com/Wacton/Desu</PackageProjectUrl>
     <RepositoryUrl>https://gitlab.com/Wacton/Desu</RepositoryUrl>
     <PackageIconUrl>https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu_64.png</PackageIconUrl>
