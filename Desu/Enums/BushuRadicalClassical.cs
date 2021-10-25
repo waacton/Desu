@@ -4,6 +4,8 @@
 
     using Wacton.Desu.Kanji;
 
+    // for details see https://www.edrdg.org/wiki/index.php/KANJIDIC_Project#Content_.26_Format (radical)
+    // and also https://en.wikipedia.org/wiki/List_of_kanji_radicals_by_stroke_count
     public class BushuRadicalClassical : Enumeration, IBushuRadical
     {
         public static readonly BushuRadicalClassical Radical001 = new BushuRadicalClassical(nameof(Radical001), 1, "一");

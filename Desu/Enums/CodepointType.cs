@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.Enums
 {
+    // for details see https://www.edrdg.org/wiki/index.php/KANJIDIC_Project#Content_.26_Format (codepoint)
     public class CodepointType : Enumeration
     {
         public static readonly CodepointType JIS208 = new CodepointType(nameof(JIS208), "jis208", "JIS X 0208-1997");

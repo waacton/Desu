@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.Enums
 {
+    // for details see https://www.edrdg.org/wiki/index.php/KANJIDIC_Project#Content_.26_Format (misc)
     public class VariantType : Enumeration
     {
         public static readonly VariantType JIS208 = new VariantType(nameof(JIS208), "jis208", "JIS X 0208");

@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.Enums
 {
+    // for details see https://www.edrdg.org/wiki/index.php/KANJIDIC_Project#Content_.26_Format (misc)
     public class Grade : Enumeration
     {
         public static readonly Grade None = new Grade(nameof(None), -1);

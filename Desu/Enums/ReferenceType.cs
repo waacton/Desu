@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.Enums
 {
+    // for details see https://www.edrdg.org/wiki/index.php/KANJIDIC_Project#Content_.26_Format (dic_number)
     public class ReferenceType : Enumeration
     {
         public static readonly ReferenceType Nelson_Classic = new ReferenceType(nameof(Nelson_Classic), "nelson_c", "Nelson: \"Modern Reader's Japanese-English Character Dictionary\"");

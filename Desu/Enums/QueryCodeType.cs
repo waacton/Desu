@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.Enums
 {
+    // for details see https://www.edrdg.org/wiki/index.php/KANJIDIC_Project#Content_.26_Format (query_code)
     public class QueryCodeType : Enumeration
     {
         public static readonly QueryCodeType SKIP = new QueryCodeType(nameof(SKIP), "skip", "SKIP");

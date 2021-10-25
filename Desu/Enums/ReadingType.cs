@@ -1,5 +1,6 @@
 ﻿namespace Wacton.Desu.Enums
 {
+    // for details see https://www.edrdg.org/wiki/index.php/KANJIDIC_Project#Content_.26_Format (rmgroup)
     public class ReadingType : Enumeration
     {
         public static readonly ReadingType Pinyin = new ReadingType(nameof(Pinyin), "pinyin");
