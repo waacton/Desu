@@ -10,9 +10,6 @@ namespace Wacton.Desu.Tests.Names
         public IEnumerable<KanjiInformation> Informations { get; set; } = new List<KanjiInformation>();
         public IEnumerable<Priority> Priorities { get; set; } = new List<Priority>();
 
-        public override string ToString()
-        {
-            return this.Text;
-        }
+        public override string ToString() => Text;
     }
 }

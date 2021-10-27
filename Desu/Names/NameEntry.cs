@@ -4,33 +4,21 @@
     using System.Linq;
     using System.Text;
 
-    public class NameEntry : INameEntry
+    internal class NameEntry : INameEntry
     {
         public int Sequence { get; set; }
 
-        private readonly List<Kanji> kanjis = new List<Kanji>();
-        public List<Kanji> GetKanjis() => this.kanjis;
-        public IEnumerable<IKanji> Kanjis => this.GetKanjis();
-        internal void StartNewKanji()
-        {
-            this.kanjis.Add(new Kanji());
-        }
+        internal readonly List<Kanji> KanjisList = new List<Kanji>();
+        public IEnumerable<IKanji> Kanjis => KanjisList;
+        internal void StartNewKanji() => KanjisList.Add(new Kanji());
 
-        private readonly List<Reading> readings = new List<Reading>();
-        public List<Reading> GetReadings() => this.readings;
-        public IEnumerable<IReading> Readings => this.GetReadings();
-        internal void StartNewReading()
-        {
-            this.readings.Add(new Reading());
-        }
+        internal readonly List<Reading> ReadingsList = new List<Reading>();
+        public IEnumerable<IReading> Readings => ReadingsList;
+        internal void StartNewReading() => ReadingsList.Add(new Reading());
 
-        private readonly List<Translation> translations = new List<Translation>();
-        public List<Translation> GetTranslations() => this.translations;
-        public IEnumerable<ITranslation> Translations => this.GetTranslations();
-        internal void StartNewSense()
-        {
-            this.translations.Add(new Translation());
-        }
+        internal readonly List<Translation> TranslationsList = new List<Translation>();
+        public IEnumerable<ITranslation> Translations => TranslationsList;
+        internal void StartNewTranslation() => TranslationsList.Add(new Translation());
 
         public override string ToString()
         {

@@ -1,18 +1,19 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Wacton.Desu.Names;
 using Wacton.Desu.Tests.Names;
 
 namespace Wacton.Desu.Tests
 {
-    public class NameEntry
+    public class NameEntryAsync
     {
         private IEnumerable<INameEntry> nameEntries;
 
         [OneTimeSetUp]
-        public void Setup()
+        public async Task Setup()
         {
-            nameEntries = NameDictionary.ParseEntries();
+            nameEntries = await NameDictionary.ParseEntriesAsync();
         }
 
         [Test]

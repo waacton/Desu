@@ -66,6 +66,35 @@ namespace Wacton.Desu.Tests.Names
             return testEntry;
         }
 
+        public static TestEntry 国労()
+        {
+            var kanji1 = new TestKanji
+            {
+                Text = "国労"
+            };
+
+            var reading1 = new TestReading
+            {
+                Text = "こくろう"
+            };
+
+            var translation1 = new TestTranslation
+            {
+                NameTypes = new List<NameType> { NameType("organization name") },
+                Transcriptions = new List<string> { "National Railway Workers' Union" }
+            };
+
+            var testEntry = new TestEntry
+            {
+                Sequence = 1657560,
+                Kanjis = new List<IKanji> { kanji1 },
+                Readings = new List<IReading> { reading1 },
+                Translations = new List<ITranslation> { translation1 }
+            };
+
+            return testEntry;
+        }
+
         private static NameType NameType(string code) => Enumeration.GetAll<NameType>().Single(x => x.Code == code);
     }
 }

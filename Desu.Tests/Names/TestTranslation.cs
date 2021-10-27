@@ -11,9 +11,6 @@ namespace Wacton.Desu.Tests.Names
         public IEnumerable<string> CrossReferences { get; set; } = new List<string>();
         public IEnumerable<string> Transcriptions { get; set; } = new List<string>();
 
-        public override string ToString()
-        {
-            return this.Transcriptions.First();
-        }
+        public override string ToString() => Transcriptions.First();
     }
 }

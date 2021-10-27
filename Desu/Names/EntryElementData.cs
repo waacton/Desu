@@ -1,8 +1,9 @@
 ﻿namespace Wacton.Desu.Names
 {
+    using System.Threading.Tasks;
     using System.Xml;
 
-    public class EntryElementData
+    internal class EntryElementData
     {
         public string Content { get; private set; }
 
@@ -16,9 +17,16 @@
             return entryElementData;
         }
 
-        public override string ToString()
+        public static async Task<EntryElementData> FromXmlReaderAsync(XmlReader reader)
         {
-            return this.Content;
+            var entryElementData = new EntryElementData
+            {
+                Content = await reader.ReadElementContentAsStringAsync()
+            };
+
+            return entryElementData;
         }
+
+        public override string ToString() => this.Content;
     }
 }

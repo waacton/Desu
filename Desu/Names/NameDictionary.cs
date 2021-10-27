@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
     using System.Xml;
 
     using Wacton.Desu.Enums;
@@ -13,8 +14,9 @@
     /// </summary>
     public class NameDictionary : INameDictionary
     {
-        private static readonly string EntryTag = "entry";
-        private static readonly string CreationDatePrefix = "JMnedict created: ";
+        private const string EntryTag = "entry";
+        private const string CreationDatePrefix = "JMnedict created: ";
+        private static readonly Dictionary<string, EntryElement> EntryElements = Enumeration.GetAll<EntryElement>().ToDictionary(element => element.Code, element => element);
 
         private DateTime creationDate = DateTime.MinValue;
 
@@ -25,12 +27,12 @@
         {
             get
             {
-                if (this.creationDate == DateTime.MinValue)
+                if (creationDate == DateTime.MinValue)
                 {
-                    this.creationDate = ParseCreationDate();
+                    creationDate = ParseCreationDate();
                 }
 
-                return this.creationDate;
+                return creationDate;
             }
         }
 
@@ -40,6 +42,11 @@
         public IEnumerable<INameEntry> GetEntries() => ParseEntries();
 
         /// <summary>
+        /// Returns the entries of the proper names dictionary asynchronously
+        /// </summary>
+        public async Task<IEnumerable<INameEntry>> GetEntriesAsync() => await ParseEntriesAsync();
+
+        /// <summary>
         /// Returns the entries of the proper names dictionary
         /// </summary>
         public static IEnumerable<INameEntry> ParseEntries()
@@ -47,58 +54,122 @@
             return EmbeddedResources.ReadStream(Resource.NameDictionary, ParseDictionary);
         }
 
+        /// <summary>
+        /// Returns the entries of the proper names dictionary asynchronously
+        /// </summary>
+        public static async Task<IEnumerable<INameEntry>> ParseEntriesAsync()
+        {
+            return await EmbeddedResources.ReadStreamAsync(Resource.NameDictionary, ParseDictionaryAsync);
+        }
+
         private static IEnumerable<INameEntry> ParseDictionary(XmlReader reader)
         {
             var entries = new List<INameEntry>();
-            var entryElements = Enumeration.GetAll<EntryElement>().ToDictionary(element => element.Code, element => element);
 
             reader.MoveToContent();
             while (reader.Read())
             {
-                if (!reader.IsStartElement() || reader.Name != EntryTag)
+                if (!IsReaderAtStartOfEntry(reader))
                 {
                     continue;
                 }
 
-                // now within an entry, can now create data entry
-                // keep reading until the end entry tag is reached
-                var dictionaryEntry = new NameEntry();
-                var isEndOfEntry = false;
-                while (!isEndOfEntry)
-                {
-                    reader.Read();
-                    switch (reader.NodeType)
-                    {
-                        case XmlNodeType.Element:
-                        {
-                            var elementCode = reader.Name;
-                            if (!entryElements.ContainsKey(elementCode))
-                            {
-                                continue;
-                            }
-
-                            var entryElement = entryElements[elementCode];
-                            if (!entryElement.ExpectsContent)
-                            {
-                                entryElement.AddDataToEntry(dictionaryEntry, null);
-                                continue;
-                            }
-
-                            var entryElementData = EntryElementData.FromXmlReader(reader);
-                            entryElement.AddDataToEntry(dictionaryEntry, entryElementData);
-                            break;
-                        }
-                        case XmlNodeType.EndElement:
-                            isEndOfEntry = reader.Name.Equals(EntryTag);
-                            break;
-                    }
-                }
-
+                var dictionaryEntry = ReadEntry(reader);
                 entries.Add(dictionaryEntry);
             }
 
             return entries;
         }
+
+        private static async Task<IEnumerable<INameEntry>> ParseDictionaryAsync(XmlReader reader)
+        {
+            var entries = new List<INameEntry>();
+
+            await reader.MoveToContentAsync();
+            while (await reader.ReadAsync())
+            {
+                if (!IsReaderAtStartOfEntry(reader))
+                {
+                    continue;
+                }
+
+                var dictionaryEntry = await ReadEntryAsync(reader);
+                entries.Add(dictionaryEntry);
+            }
+
+            return entries;
+        }
+
+        private static NameEntry ReadEntry(XmlReader reader)
+        {
+            var dictionaryEntry = new NameEntry();
+            while (!IsReaderAtEndOfEntry(reader))
+            {
+                reader.Read();
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    ProcessXmlElement(reader, dictionaryEntry);
+                }
+            }
+
+            return dictionaryEntry;
+        }
+
+        private static async Task<NameEntry> ReadEntryAsync(XmlReader reader)
+        {
+            var dictionaryEntry = new NameEntry();
+            while (!IsReaderAtEndOfEntry(reader))
+            {
+                await reader.ReadAsync();
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    await ProcessXmlElementAsync(reader, dictionaryEntry);
+                }
+            }
+
+            return dictionaryEntry;
+        }
+
+        private static void ProcessXmlElement(XmlReader reader, NameEntry dictionaryEntry)
+        {
+            var elementCode = reader.Name;
+            if (!EntryElements.ContainsKey(elementCode))
+            {
+                return;
+            }
+
+            var entryElement = EntryElements[elementCode];
+            if (!entryElement.ExpectsContent)
+            {
+                entryElement.AddDataToEntry(dictionaryEntry, null);
+                return;
+            }
+
+            var entryElementData = EntryElementData.FromXmlReader(reader);
+            entryElement.AddDataToEntry(dictionaryEntry, entryElementData);
+        }
+
+        private static async Task ProcessXmlElementAsync(XmlReader reader, NameEntry dictionaryEntry)
+        {
+            var elementCode = reader.Name;
+            if (!EntryElements.ContainsKey(elementCode))
+            {
+                return;
+            }
+
+            var entryElement = EntryElements[elementCode];
+            if (!entryElement.ExpectsContent)
+            {
+                entryElement.AddDataToEntry(dictionaryEntry, null);
+                return;
+            }
+
+            var entryElementData = await EntryElementData.FromXmlReaderAsync(reader);
+            entryElement.AddDataToEntry(dictionaryEntry, entryElementData);
+        }
+
+        private static bool IsReaderAtStartOfEntry(XmlReader reader) => reader.NodeType == XmlNodeType.Element && reader.Name == EntryTag;
+        private static bool IsReaderAtEndOfEntry(XmlReader reader) => reader.NodeType == XmlNodeType.EndElement && reader.Name == EntryTag;
 
         /// <summary>
         /// Returns the creation date of the dictionary file
@@ -108,25 +179,56 @@
             return EmbeddedResources.ReadStream(Resource.NameDictionary, ParseCreationDate);
         }
 
+        /// <summary>
+        /// Returns the creation date of the dictionary file asynchronously
+        /// </summary>
+        public static async Task<DateTime> ParseCreationDateAsync()
+        {
+            return await EmbeddedResources.ReadStreamAsync(Resource.NameDictionary, ParseCreationDateAsync);
+        }
+
         private static DateTime ParseCreationDate(XmlReader reader)
         {
             while (reader.Read())
             {
-                if (reader.NodeType != XmlNodeType.Comment)
+                var (success, dateTime) = TryGetDateTime(reader);
+                if (success)
                 {
-                    continue;
+                    return dateTime;
                 }
-
-                if (!reader.Value.Contains(CreationDatePrefix))
-                {
-                    continue;
-                }
-
-                var commentSplit = reader.Value.Split(new[] { CreationDatePrefix }, StringSplitOptions.RemoveEmptyEntries);
-                return DateTime.Parse(commentSplit[1]);
             }
 
             return DateTime.MinValue;
+        }
+
+        private static async Task<DateTime> ParseCreationDateAsync(XmlReader reader)
+        {
+            while (await reader.ReadAsync())
+            {
+                var (success, dateTime) = TryGetDateTime(reader);
+                if (success)
+                {
+                    return dateTime;
+                }
+            }
+
+            return DateTime.MinValue;
+        }
+
+        private static (bool success, DateTime dateTime) TryGetDateTime(XmlReader reader)
+        {
+            if (reader.NodeType != XmlNodeType.Comment)
+            {
+                return (false, DateTime.MinValue);
+            }
+
+            if (!reader.Value.Contains(CreationDatePrefix))
+            {
+                return (false, DateTime.MinValue);
+            }
+
+            var commentSplit = reader.Value.Split(new[] { CreationDatePrefix }, StringSplitOptions.RemoveEmptyEntries);
+            return (true, DateTime.Parse(commentSplit[1]));
         }
     }
 }
