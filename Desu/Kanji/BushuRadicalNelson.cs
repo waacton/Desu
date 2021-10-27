@@ -1,9 +1,10 @@
 ﻿namespace Wacton.Desu.Kanji
 {
     using System.Collections.Generic;
+
     using Wacton.Desu.Enums;
 
-    public class BushuRadicalNelson : IBushuRadical
+    internal class BushuRadicalNelson : IBushuRadical
     {
         public BushuRadicalType Type => BushuRadicalType.Nelson;
         public string Radical => null;
@@ -11,13 +12,10 @@
 
         public BushuRadicalNelson(int number)
         {
-            this.Number = number;
+            Number = number;
         }
 
-        public override string ToString()
-        {
-            return $"{this.Type} #{this.Number}";
-        }
+        public override string ToString() => $"{Type} #{Number}";
 
         public override bool Equals(object obj)
         {

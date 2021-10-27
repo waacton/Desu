@@ -1,18 +1,19 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Wacton.Desu.Kanji;
 using Wacton.Desu.Tests.Kanji;
 
 namespace Wacton.Desu.Tests
 {
-    public class KanjiEntry
+    public class KanjiEntryAsync
     {
         private IEnumerable<IKanjiEntry> kanjiEntries;
 
         [OneTimeSetUp]
-        public void Setup()
+        public async Task Setup()
         {
-            kanjiEntries = KanjiDictionary.ParseEntries();
+            kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
         }
 
         [Test]

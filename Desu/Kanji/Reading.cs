@@ -1,9 +1,10 @@
 ﻿namespace Wacton.Desu.Kanji
 {
     using System.Collections.Generic;
+
     using Wacton.Desu.Enums;
 
-    public class Reading : IReading
+    internal class Reading : IReading
     {
         public ReadingType Type { get; }
 
@@ -11,14 +12,11 @@
 
         public Reading(ReadingType readingType, string value)
         {
-            this.Type = readingType;
-            this.Value = value;
+            Type = readingType;
+            Value = value;
         }
 
-        public override string ToString()
-        {
-            return $"{this.Type}: {this.Value}";
-        }
+        public override string ToString() => $"{Type}: {Value}";
 
         public override bool Equals(object obj)
         {

@@ -1,9 +1,10 @@
 ﻿namespace Wacton.Desu.Kanji
 {
     using System.Collections.Generic;
+
     using Wacton.Desu.Enums;
 
-    public class QueryCode : IQueryCode
+    internal class QueryCode : IQueryCode
     {
         public QueryCodeType Type { get; }
 
@@ -13,18 +14,18 @@
 
         public QueryCode(QueryCodeType codepointType, string value, SkipMisclassification skipMisclassification = null)
         {
-            this.Type = codepointType;
-            this.SkipMisclassification = skipMisclassification;
-            this.Value = value;
+            Type = codepointType;
+            SkipMisclassification = skipMisclassification;
+            Value = value;
         }
 
         public override string ToString()
         {
-            string misclassification = this.SkipMisclassification == null || this.SkipMisclassification == SkipMisclassification.None
+            var misclassification = SkipMisclassification == null || SkipMisclassification == SkipMisclassification.None
                 ? string.Empty
-                : $" (Misclass: {this.SkipMisclassification})";
+                : $" (Misclass: {SkipMisclassification})";
 
-            return $"{this.Type}: {this.Value}{misclassification}";
+            return $"{Type}: {Value}{misclassification}";
         }
 
         public override bool Equals(object obj)

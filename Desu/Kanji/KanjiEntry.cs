@@ -5,72 +5,60 @@
 
     using Wacton.Desu.Enums;
 
-    public class KanjiEntry : IKanjiEntry
+    internal class KanjiEntry : IKanjiEntry
     {
         public string Literal { get; set; }
 
-        private readonly List<string> radicalDecomposition = new List<string>();
-        public List<string> GetRadicalDecompositions() => this.radicalDecomposition;
-        public IEnumerable<string> RadicalDecomposition => this.GetRadicalDecompositions();
+        internal readonly List<string> RadicalDecompositionList = new List<string>();
+        public IEnumerable<string> RadicalDecomposition => RadicalDecompositionList;
 
-        private readonly List<Codepoint> codepoints = new List<Codepoint>();
-        public List<Codepoint> GetCodepoints() => this.codepoints;
-        public IEnumerable<ICodepoint> Codepoints => this.GetCodepoints();
+        internal readonly List<Codepoint> CodepointsList = new List<Codepoint>();
+        public IEnumerable<ICodepoint> Codepoints => CodepointsList;
 
-        private readonly List<string> strokePaths = new List<string>();
-        public List<string> GetStrokePaths() => this.strokePaths;
-        public IEnumerable<string> StrokePaths => this.GetStrokePaths();
+        internal readonly List<string> StrokePathsList = new List<string>();
+        public IEnumerable<string> StrokePaths => StrokePathsList;
 
-        private readonly List<IBushuRadical> bushuRadicals = new List<IBushuRadical>();
-        public List<IBushuRadical> GetBushuRadicals() => this.bushuRadicals;
-        public IEnumerable<IBushuRadical> BushuRadicals => this.GetBushuRadicals();
+        internal readonly List<IBushuRadical> BushuRadicalsList = new List<IBushuRadical>();
+        public IEnumerable<IBushuRadical> BushuRadicals => BushuRadicalsList;
 
-        public bool IsBushuRadical => this.bushuRadicals.Single(radical => radical.Type.Equals(BushuRadicalType.Classical)).Radical.Equals(this.Literal);
+        public bool IsBushuRadical => BushuRadicalsList.Single(radical => radical.Type.Equals(BushuRadicalType.Classical)).Radical.Equals(Literal);
 
         public Grade Grade { get; set; } = Grade.None;
 
         public int StrokeCount { get; set; }
 
-        private readonly List<int> strokeCommonMiscounts = new List<int>();
-        public List<int> GetStrokeMiscounts() => this.strokeCommonMiscounts;
-        public IEnumerable<int> StrokeCommonMiscounts => this.GetStrokeMiscounts();
+        internal readonly List<int> StrokeCommonMiscountsList = new List<int>();
+        public IEnumerable<int> StrokeCommonMiscounts => StrokeCommonMiscountsList;
 
-        private readonly List<Variant> variants = new List<Variant>();
-        public List<Variant> GetVariants() => this.variants;
-        public IEnumerable<IVariant> Variants => this.GetVariants();
+        internal readonly List<Variant> VariantsList = new List<Variant>();
+        public IEnumerable<IVariant> Variants => VariantsList;
 
         public int? Frequency { get; set; }
 
-        private readonly List<string> radicalNames = new List<string>();
-        public List<string> GetRadicalNames() => this.radicalNames;
-        public IEnumerable<string> RadicalNames => this.GetRadicalNames();
+        internal readonly List<string> RadicalNamesList = new List<string>();
+        public IEnumerable<string> RadicalNames => RadicalNamesList;
 
         public int? JLPT { get; set; }
 
-        private readonly List<Reference> references = new List<Reference>();
-        public List<Reference> GetReferences() => this.references;
-        public IEnumerable<IReference> References => this.GetReferences();
+        internal readonly List<Reference> ReferencesList = new List<Reference>();
+        public IEnumerable<IReference> References => ReferencesList;
 
-        private readonly List<QueryCode> queryCodes = new List<QueryCode>();
-        public List<QueryCode> GetQueryCodes() => this.queryCodes;
-        public IEnumerable<IQueryCode> QueryCodes => this.GetQueryCodes();
+        internal readonly List<QueryCode> QueryCodesList = new List<QueryCode>();
+        public IEnumerable<IQueryCode> QueryCodes => QueryCodesList;
 
-        private readonly List<Reading> readings = new List<Reading>();
-        public List<Reading> GetReadings() => this.readings;
-        public IEnumerable<IReading> Readings => this.GetReadings();
+        internal readonly List<Reading> ReadingsList = new List<Reading>();
+        public IEnumerable<IReading> Readings => ReadingsList;
 
-        private readonly List<Meaning> meanings = new List<Meaning>();
-        public List<Meaning> GetMeanings() => this.meanings;
-        public IEnumerable<IMeaning> Meanings => this.GetMeanings();
+        internal readonly List<Meaning> MeaningsList = new List<Meaning>();
+        public IEnumerable<IMeaning> Meanings => MeaningsList;
 
-        private readonly List<string> nanoris = new List<string>();
-        public List<string> GetNanoris() => this.nanoris;
-        public IEnumerable<string> Nanoris => this.GetNanoris();
+        internal readonly List<string> NanorisList = new List<string>();
+        public IEnumerable<string> Nanoris => NanorisList;
 
         public override string ToString()
         {
-            var english = string.Join(" · ", this.Meanings.Where(meaning => meaning.Language.Equals(Language.English)).Select(meaning => meaning.Term));
-            return $"{this.Literal}{(string.IsNullOrEmpty(english) ? string.Empty : " · " + english)}";
+            var english = string.Join(" · ", Meanings.Where(meaning => meaning.Language.Equals(Language.English)).Select(meaning => meaning.Term));
+            return $"{Literal}{(string.IsNullOrEmpty(english) ? string.Empty : " · " + english)}";
         }
     }
 }

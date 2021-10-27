@@ -1,19 +1,20 @@
 ﻿namespace Wacton.Desu.Kanji
 {
+    using System.Threading.Tasks;
     using System.Xml;
 
-    public class CharacterElementData
+    internal class CharacterElementData
     {
-        private static readonly string CodepointTypeTag = "cp_type";
-        private static readonly string RadicalTypeTag = "rad_type";
-        private static readonly string VariantTypeTag = "var_type";
-        private static readonly string ReferenceTypeTag = "dr_type";
-        private static readonly string ReferenceVolumeTag = "m_vol";
-        private static readonly string ReferencePageTag = "m_page";
-        private static readonly string QueryCodeTypeTag = "qc_type";
-        private static readonly string SkipMisclassificationTag = "skip_misclass";
-        private static readonly string ReadingTypeTag = "r_type";
-        private static readonly string LanguageTag = "m_lang";
+        private const string CodepointTypeTag = "cp_type";
+        private const string RadicalTypeTag = "rad_type";
+        private const string VariantTypeTag = "var_type";
+        private const string ReferenceTypeTag = "dr_type";
+        private const string ReferenceVolumeTag = "m_vol";
+        private const string ReferencePageTag = "m_page";
+        private const string QueryCodeTypeTag = "qc_type";
+        private const string SkipMisclassificationTag = "skip_misclass";
+        private const string ReadingTypeTag = "r_type";
+        private const string LanguageTag = "m_lang";
 
         public string Content { get; private set; }
 
@@ -47,9 +48,27 @@
 
             return characterElementData;
         }
-        public override string ToString()
+
+        public static async Task<CharacterElementData> FromXmlReaderAsync(XmlReader reader)
         {
-            return this.Content;
+            var characterElementData = new CharacterElementData
+            {
+                CodepointTypeAttribute = reader.GetAttribute(CodepointTypeTag),
+                RadicalTypeAttribute = reader.GetAttribute(RadicalTypeTag),
+                VariantTypeAttribute = reader.GetAttribute(VariantTypeTag),
+                ReferenceTypeAttribute = reader.GetAttribute(ReferenceTypeTag),
+                ReferenceVolumeAttribute = reader.GetAttribute(ReferenceVolumeTag),
+                ReferencePageAttribute = reader.GetAttribute(ReferencePageTag),
+                QueryCodeTypeAttribute = reader.GetAttribute(QueryCodeTypeTag),
+                SkipMisclassificationAttribute = reader.GetAttribute(SkipMisclassificationTag),
+                ReadingTypeAttribute = reader.GetAttribute(ReadingTypeTag),
+                LanguageAttribute = reader.GetAttribute(LanguageTag),
+                Content = await reader.ReadElementContentAsStringAsync()
+            };
+
+            return characterElementData;
         }
+
+        public override string ToString() => Content;
     }
 }

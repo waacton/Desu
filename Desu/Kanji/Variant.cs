@@ -1,9 +1,10 @@
 ﻿namespace Wacton.Desu.Kanji
 {
     using System.Collections.Generic;
+
     using Wacton.Desu.Enums;
 
-    public class Variant : IVariant
+    internal class Variant : IVariant
     {
         public VariantType Type { get; }
 
@@ -11,14 +12,11 @@
 
         public Variant(VariantType variantType, string value)
         {
-            this.Type = variantType;
-            this.Value = value;
+            Type = variantType;
+            Value = value;
         }
 
-        public override string ToString()
-        {
-            return $"{this.Type}: {this.Value}";
-        }
+        public override string ToString() => $"{Type}: {Value}";
 
         public override bool Equals(object obj)
         {

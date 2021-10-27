@@ -248,6 +248,111 @@ namespace Wacton.Desu.Tests.Kanji
             };
         }
 
+        public static TestEntry 亜()
+        {
+            return new TestEntry
+            {
+                Literal = "亜",
+                RadicalDecomposition = new List<string> { "｜", "一", "口" },
+                Codepoints = new List<Codepoint> {
+                    new Codepoint(CodepointType("ucs"), "4e9c"),
+                    new Codepoint(CodepointType("jis208"), "16-01")
+                },
+                StrokePaths = new List<string> {
+                    "M23.38,21.68c2.99,0.65,5.98,0.58,9.01,0.33c13.11-1.04,30.12-2.73,45.99-3.15c2.81-0.07,5.73-0.07,8.5,0.53",
+                    "M20,43.14c1.19,0.96,1.48,1.7,1.82,3.1c1.31,5.39,2.44,12.96,3.43,19.51c0.3,2,0.57,3.56,0.81,5",
+                    "M22.75,45.54c23-2.79,41.54-4.46,60.89-5.84c3.48-0.25,6.74,0.45,5.39,5.54c-1.26,4.77-3.41,11.01-5.27,16.76",
+                    "M26.5,67c19.64-1.66,31.34-2.67,50.25-3.8c2.63-0.25,5.26-0.28,7.89-0.09",
+                    "M42.12,24c1.09,1.56,1.57,3.23,1.46,5.01c0,7.22,0.03,50.43,0.03,58.99",
+                    "M62.62,22.75c0.91,1.63,1.32,3.09,1.21,4.88c0,8.29,0.03,52.17,0.03,58.88",
+                    "M15.88,89.23c3.62,0.65,7.25,0.71,10.62,0.49c18.61-1.21,42.5-2.34,60.12-2.56c3.21-0.04,6.34,0.23,9.5,0.91"
+                },
+                BushuRadicals = new List<IBushuRadical> { BushuRadicalClassical(7), new BushuRadicalNelson(1) },
+                Grade = Grade(8),
+                StrokeCount = 7,
+                Variants = new List<Variant> { new Variant(VariantType("jis208"), "48-19") },
+                Frequency = 1509,
+                JLPT = 1,
+                References = new List<Reference> {
+                    new Reference(ReferenceType("nelson_c"), "43"),
+                    new Reference(ReferenceType("nelson_n"), "81"),
+                    new Reference(ReferenceType("halpern_njecd"), "3540"),
+                    new Reference(ReferenceType("halpern_kkd"), "4354"),
+                    new Reference(ReferenceType("halpern_kkld"), "2204"),
+                    new Reference(ReferenceType("halpern_kkld_2ed"), "2966"),
+                    new Reference(ReferenceType("heisig"), "1809"),
+                    new Reference(ReferenceType("heisig6"), "1950"),
+                    new Reference(ReferenceType("gakken"), "1331"),
+                    new Reference(ReferenceType("oneill_names"), "525"),
+                    new Reference(ReferenceType("oneill_kk"), "1788"),
+                    new Reference(ReferenceType("moro"), "272 (vol 1, pg 0525)"),
+                    new Reference(ReferenceType("henshall"), "997"),
+                    new Reference(ReferenceType("sh_kk"), "1616"),
+                    new Reference(ReferenceType("sh_kk2"), "1724"),
+                    new Reference(ReferenceType("jf_cards"), "1032"),
+                    new Reference(ReferenceType("tutt_cards"), "1092"),
+                    new Reference(ReferenceType("kanji_in_context"), "1818"),
+                    new Reference(ReferenceType("kodansha_compact"), "35"),
+                    new Reference(ReferenceType("maniette"), "1827")
+                },
+                QueryCodes = new List<QueryCode> {
+                    new QueryCode(QueryCodeType("skip"), "4-7-1", SkipMisclassification(string.Empty)),
+                    new QueryCode(QueryCodeType("sh_desc"), "0a7.14"),
+                    new QueryCode(QueryCodeType("four_corner"), "1010.6"),
+                    new QueryCode(QueryCodeType("deroo"), "3273")
+                },
+                Readings = new List<Reading> {
+                    new Reading(ReadingType("pinyin"), "ya4"),
+                    new Reading(ReadingType("korean_r"), "a"),
+                    new Reading(ReadingType("korean_h"), "아"),
+                    new Reading(ReadingType("ja_on"), "ア"),
+                    new Reading(ReadingType("ja_kun"), "つ.ぐ")
+                },
+                Meanings = new List<Meaning> {
+                    new Meaning(Language("en"), "Asia"),
+                    new Meaning(Language("en"), "rank next"),
+                    new Meaning(Language("en"), "come after"),
+                    new Meaning(Language("en"), "-ous"),
+                    new Meaning(Language("fr"), "Asie"),
+                    new Meaning(Language("fr"), "suivant"),
+                    new Meaning(Language("fr"), "sub-"),
+                    new Meaning(Language("fr"), "sous-"),
+                    new Meaning(Language("es"), "pref. para indicar"),
+                    new Meaning(Language("es"), "venir después de"),
+                    new Meaning(Language("es"), "Asia"),
+                    new Meaning(Language("pt"), "Ásia"),
+                    new Meaning(Language("pt"), "próxima"),
+                    new Meaning(Language("pt"), "o que vem depois"),
+                    new Meaning(Language("pt"), "-ous")
+                },
+                Nanoris = new List<string> { "や", "つぎ", "つぐ" }
+            };
+        }
+
+        public static TestEntry 頻()
+        {
+            return new TestEntry
+            {
+                Literal = "頻",
+                Codepoints = new List<Codepoint> {
+                    new Codepoint(CodepointType("ucs"), "FA6A"),
+                    new Codepoint(CodepointType("jis213"), "1-93-91")
+                },
+                BushuRadicals = new List<IBushuRadical> { BushuRadicalClassical(181) },
+                StrokeCount = 16,
+                Variants = new List<Variant> { new Variant(VariantType("jis208"), "41-49") },
+                References = new List<Reference> {
+                    new Reference(ReferenceType("nelson_n"), "6631"),
+                    new Reference(ReferenceType("halpern_njecd"), "1613"),
+                    new Reference(ReferenceType("halpern_kkd"), "2038"),
+                    new Reference(ReferenceType("moro"), "43519")
+                },
+                Readings = new List<Reading> {
+                    new Reading(ReadingType("ja_on"), "ヒン"),
+                }
+            };
+        }
+
         private static CodepointType CodepointType(string code) => Enumeration.GetAll<CodepointType>().Single(x => x.Code == code);
         private static BushuRadicalClassical BushuRadicalClassical(int code) => Enumeration.GetAll<BushuRadicalClassical>().Single(x => x.Number == code);
         private static Grade Grade(int code) => Enumeration.GetAll<Grade>().Single(x => x.Number == code);

@@ -1,9 +1,10 @@
 ﻿namespace Wacton.Desu.Kanji
 {
     using System.Collections.Generic;
+
     using Wacton.Desu.Enums;
 
-    public class Reference : IReference
+    internal class Reference : IReference
     {
         public ReferenceType Type { get; }
 
@@ -11,14 +12,11 @@
 
         public Reference(ReferenceType referenceType, string value)
         {
-            this.Type = referenceType;
-            this.Value = value;
+            Type = referenceType;
+            Value = value;
         }
 
-        public override string ToString()
-        {
-            return $"{this.Type}: {this.Value}";
-        }
+        public override string ToString() => $"{Type}: {Value}";
 
         public override bool Equals(object obj)
         {

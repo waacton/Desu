@@ -8,7 +8,7 @@
     using Wacton.Desu.Radicals;
     using Wacton.Desu.Strokes;
 
-    public class CharacterElement : Enumeration
+    internal class CharacterElement : Enumeration
     {
         public static readonly CharacterElement Literal = new CharacterElement("Literal", "literal", AddLiteral);
 
@@ -43,8 +43,8 @@
         private static readonly Dictionary<string, SkipMisclassification> SkipMisclassifications = GetAll<SkipMisclassification>().ToDictionary(skipMisclassification => skipMisclassification.Code, skipMisclassification => skipMisclassification);
         private static readonly Dictionary<string, ReadingType> ReadingTypes = GetAll<ReadingType>().ToDictionary(readingType => readingType.Code, readingType => readingType);
 
-        private static readonly IDictionary<string, List<string>> RadicalLookup = new RadicalLookup().GetKanjiToRadicals();
-        private static readonly IDictionary<string, List<string>> StrokeLookup = new StrokeLookup().GetKanjiToStrokes();
+        private static readonly IDictionary<string, IEnumerable<string>> RadicalLookup = Radicals.RadicalLookup.ParseKanjiToRadicals();
+        private static readonly IDictionary<string, IEnumerable<string>> StrokeLookup = Strokes.StrokeLookup.ParseKanjiToStrokes();
 
         public string Code { get; }
 
@@ -53,13 +53,13 @@
         public CharacterElement(string displayName, string code, Action<KanjiEntry, CharacterElementData> addDataToEntryAction = null)
             : base(displayName)
         {
-            this.Code = code;
+            Code = code;
             this.addDataToEntryAction = addDataToEntryAction ?? ((entry, data) => { });
         }
 
         internal void AddDataToEntry(KanjiEntry entry, CharacterElementData data)
         {
-            this.addDataToEntryAction(entry, data);
+            addDataToEntryAction(entry, data);
         }
 
         private static void AddLiteral(KanjiEntry entry, CharacterElementData data)
@@ -70,14 +70,14 @@
                 ? RadicalLookup[entry.Literal]
                 : new List<string>();
 
-            var radicals = entry.GetRadicalDecompositions();
+            var radicals = entry.RadicalDecompositionList;
             radicals.AddRange(radicalDecomposition);
         }
 
         private static void AddCodepoint(KanjiEntry entry, CharacterElementData data)
         {
             var codepoint = new Codepoint(CodepointTypes[data.CodepointTypeAttribute], data.Content);
-            entry.GetCodepoints().Add(codepoint);
+            entry.CodepointsList.Add(codepoint);
 
             if (!codepoint.Type.Equals(CodepointType.Unicode))
             {
@@ -90,7 +90,7 @@
                 return;
             }
 
-            var entryStrokePaths = entry.GetStrokePaths();
+            var entryStrokePaths = entry.StrokePathsList;
             entryStrokePaths.AddRange(StrokeLookup[fiveLetterUnicode]);
         }
 
@@ -110,7 +110,7 @@
                 bushuRadical = new BushuRadicalNelson(radicalNumber);
             }
 
-            entry.GetBushuRadicals().Add(bushuRadical);
+            entry.BushuRadicalsList.Add(bushuRadical);
         }
 
         private static void AddGrade(KanjiEntry entry, CharacterElementData data)
@@ -128,13 +128,13 @@
             }
             else
             {
-                entry.GetStrokeMiscounts().Add(strokeCount);
+                entry.StrokeCommonMiscountsList.Add(strokeCount);
             }
         }
 
         private static void AddVariant(KanjiEntry entry, CharacterElementData data)
         {
-            entry.GetVariants().Add(new Variant(VariantTypes[data.VariantTypeAttribute], data.Content));
+            entry.VariantsList.Add(new Variant(VariantTypes[data.VariantTypeAttribute], data.Content));
         }
 
         private static void AddFrequency(KanjiEntry entry, CharacterElementData data)
@@ -144,7 +144,7 @@
 
         private static void AddRadicalName(KanjiEntry entry, CharacterElementData data)
         {
-            entry.GetRadicalNames().Add(data.Content);
+            entry.RadicalNamesList.Add(data.Content);
         }
 
         private static void AddJLPT(KanjiEntry entry, CharacterElementData data)
@@ -171,7 +171,7 @@
                 content = $"{content} ({string.Join(", ", additionalContents)})";
             }
 
-            entry.GetReferences().Add(new Reference(ReferenceTypes[data.ReferenceTypeAttribute], content));
+            entry.ReferencesList.Add(new Reference(ReferenceTypes[data.ReferenceTypeAttribute], content));
         }
 
         private static void AddQueryCode(KanjiEntry entry, CharacterElementData data)
@@ -185,12 +185,12 @@
                     : SkipMisclassification.None;
             }
 
-            entry.GetQueryCodes().Add(new QueryCode(QueryCodeTypes[data.QueryCodeTypeAttribute], data.Content, skipMisclassification));
+            entry.QueryCodesList.Add(new QueryCode(QueryCodeTypes[data.QueryCodeTypeAttribute], data.Content, skipMisclassification));
         }
 
         private static void AddReading(KanjiEntry entry, CharacterElementData data)
         {
-            entry.GetReadings().Add(new Reading(ReadingTypes[data.ReadingTypeAttribute], data.Content));
+            entry.ReadingsList.Add(new Reading(ReadingTypes[data.ReadingTypeAttribute], data.Content));
         }
 
         private static void AddMeaning(KanjiEntry entry, CharacterElementData data)
@@ -199,12 +199,12 @@
                 ? Language.English
                 : Languages[data.LanguageAttribute];
 
-            entry.GetMeanings().Add(new Meaning(language, data.Content));
+            entry.MeaningsList.Add(new Meaning(language, data.Content));
         }
 
         private static void AddNanori(KanjiEntry entry, CharacterElementData data)
         {
-            entry.GetNanoris().Add(data.Content);
+            entry.NanorisList.Add(data.Content);
         }
     }
 }

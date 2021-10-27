@@ -1,9 +1,10 @@
 ﻿namespace Wacton.Desu.Kanji
 {
     using System.Collections.Generic;
+
     using Wacton.Desu.Enums;
 
-    public class Meaning : IMeaning
+    internal class Meaning : IMeaning
     {
         public Language Language { get; }
 
@@ -11,14 +12,11 @@
 
         public Meaning(Language language, string term)
         {
-            this.Language = language;
-            this.Term = term;
+            Language = language;
+            Term = term;
         }
 
-        public override string ToString()
-        {
-            return $"{this.Language}: {this.Term}";
-        }
+        public override string ToString() => $"{Language}: {Term}";
 
         public override bool Equals(object obj)
         {
