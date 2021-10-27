@@ -496,6 +496,35 @@ namespace Wacton.Desu.Tests.Japanese
             return testEntry;
         }
 
+        public static TestEntry ヽ()
+        {
+            var reading1 = new TestReading
+            {
+                Text = "ヽ",
+            };
+
+            var sense1 = new TestSense
+            {
+                PartsOfSpeech = new List<PartOfSpeech> { PartOfSpeech("unclassified") },
+                CrossReferences = new List<string> { "一の字点" },
+                Glosses = new List<Gloss> { new Gloss("repetition mark in katakana", Language("eng"), GlossType("expl"), null) }
+            };
+
+            var sense2 = new TestSense
+            {
+                Glosses = new List<Gloss> { new Gloss("hitotsuten 一つ点: teken dat herhaling van het voorafgaande katakana-schriftteken aangeeft", Language("dut"), null, null) }
+            };
+
+            var testEntry = new TestEntry
+            {
+                Sequence = 1000000,
+                Readings = new List<IReading> { reading1 },
+                Senses = new List<ISense> { sense1, sense2 }
+            };
+
+            return testEntry;
+        }
+
         private static Dialect Dialect(string code) => Enumeration.GetAll<Dialect>().Single(x => x.Code == code);
         private static Field Field(string code) => Enumeration.GetAll<Field>().Single(x => x.Code == code);
         private static GlossType GlossType(string code) => Enumeration.GetAll<GlossType>().Single(x => x.Code == code);

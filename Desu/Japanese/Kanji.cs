@@ -4,21 +4,16 @@
 
     using Wacton.Desu.Enums;
 
-    public class Kanji : IKanji
+    internal class Kanji : IKanji
     {
         public string Text { get; set; }
 
-        private readonly List<KanjiInformation> informations = new List<KanjiInformation>();
-        public List<KanjiInformation> GetInformations() => this.informations;
-        public IEnumerable<KanjiInformation> Informations => this.GetInformations();
+        internal readonly List<KanjiInformation> InformationsList = new List<KanjiInformation>();
+        public IEnumerable<KanjiInformation> Informations => InformationsList;
 
-        private readonly List<Priority> priorities = new List<Priority>();
-        public List<Priority> GetPriorities() => this.priorities;
-        public IEnumerable<Priority> Priorities => this.GetPriorities();
+        internal readonly List<Priority> PrioritiesList = new List<Priority>();
+        public IEnumerable<Priority> Priorities => PrioritiesList;
 
-        public override string ToString()
-        {
-            return this.Text;
-        }
+        public override string ToString() => Text;
     }
 }

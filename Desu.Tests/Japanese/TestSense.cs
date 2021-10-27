@@ -15,13 +15,10 @@ namespace Wacton.Desu.Tests.Japanese
         public IEnumerable<Field> Fields { get; set; } = new List<Field>();
         public IEnumerable<Miscellaneous> Miscellanea { get; set; } = new List<Miscellaneous>();
         public IEnumerable<string> Informations { get; set; } = new List<string>();
-        public IEnumerable<LoanwordGloss> LoanwordSources { get; set; } = new List<LoanwordGloss>();
+        public IEnumerable<ILoanwordGloss> LoanwordSources { get; set; } = new List<LoanwordGloss>();
         public IEnumerable<Dialect> Dialects { get; set; } = new List<Dialect>();
-        public IEnumerable<Gloss> Glosses { get; set; } = new List<Gloss>();
+        public IEnumerable<IGloss> Glosses { get; set; } = new List<Gloss>();
 
-        public override string ToString()
-        {
-            return this.Glosses.First().ToString();
-        }
+        public override string ToString() => Glosses.First().ToString();
     }
 }

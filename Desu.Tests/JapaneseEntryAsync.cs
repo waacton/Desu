@@ -1,18 +1,19 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Wacton.Desu.Japanese;
 using Wacton.Desu.Tests.Japanese;
 
 namespace Wacton.Desu.Tests
 {
-    public class JapaneseEntry
+    public class JapaneseEntryAsync
     {
         private IEnumerable<IJapaneseEntry> japaneseEntries;
 
         [OneTimeSetUp]
-        public void Setup()
+        public async Task Setup()
         {
-            japaneseEntries = JapaneseDictionary.ParseEntries();
+            japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
         }
 
         [Test]

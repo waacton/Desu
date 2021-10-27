@@ -2,7 +2,7 @@
 {
     using Wacton.Desu.Enums;
 
-    public class LoanwordGloss : Gloss
+    internal class LoanwordGloss : Gloss, ILoanwordGloss
     {
         public bool IsPartial { get; }
 		public bool IsWasei { get; }

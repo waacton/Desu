@@ -5,55 +5,41 @@
 
     using Wacton.Desu.Enums;
 
-    public class Sense : ISense
+    internal class Sense : ISense
     {
-        private readonly List<string> kanjiRestriction = new List<string>();
-        public List<string> GetKanjiRestriction() => this.kanjiRestriction; 
-        public IEnumerable<string> KanjiRestriction => this.GetKanjiRestriction();
+        internal readonly List<string> KanjiRestrictionList = new List<string>();
+        public IEnumerable<string> KanjiRestriction => KanjiRestrictionList;
 
-        private readonly List<string> readingRestriction = new List<string>();
-        public List<string> GetReadingRestriction() => this.readingRestriction;
-        public IEnumerable<string> ReadingRestriction => this.GetReadingRestriction();
+        internal readonly List<string> ReadingRestrictionList = new List<string>();
+        public IEnumerable<string> ReadingRestriction => ReadingRestrictionList;
 
-        private readonly List<PartOfSpeech> partsOfSpeech = new List<PartOfSpeech>();
-        public List<PartOfSpeech> GetPartsOfSpeech() => this.partsOfSpeech;
-        public IEnumerable<PartOfSpeech> PartsOfSpeech => this.GetPartsOfSpeech();
+        internal readonly List<PartOfSpeech> PartsOfSpeechList = new List<PartOfSpeech>();
+        public IEnumerable<PartOfSpeech> PartsOfSpeech => PartsOfSpeechList;
 
-        private readonly List<string> crossReferences = new List<string>();
-        public List<string> GetCrossReferences() => this.crossReferences;
-        public IEnumerable<string> CrossReferences => this.GetCrossReferences();
+        internal readonly List<string> CrossReferencesList = new List<string>();
+        public IEnumerable<string> CrossReferences => CrossReferencesList;
 
-        private readonly List<string> antonyms = new List<string>();
-        public List<string> GetAntonyms() => this.antonyms;
-        public IEnumerable<string> Antonyms => this.GetAntonyms();
+        internal readonly List<string> AntonymsList = new List<string>();
+        public IEnumerable<string> Antonyms => AntonymsList;
 
-        private readonly List<Field> fields = new List<Field>();
-        public List<Field> GetFields() => this.fields;
-        public IEnumerable<Field> Fields => this.GetFields();
+        internal readonly List<Field> FieldsList = new List<Field>();
+        public IEnumerable<Field> Fields => FieldsList;
 
-        private readonly List<Miscellaneous> miscellanea = new List<Miscellaneous>();
-        public List<Miscellaneous> GetMiscellanea() => this.miscellanea;
-        public IEnumerable<Miscellaneous> Miscellanea => this.GetMiscellanea();
+        internal readonly List<Miscellaneous> MiscellaneaList = new List<Miscellaneous>();
+        public IEnumerable<Miscellaneous> Miscellanea => MiscellaneaList;
 
-        private readonly List<string> informations = new List<string>();
-        public List<string> GetInformations() => this.informations;
-        public IEnumerable<string> Informations => this.GetInformations();
+        internal readonly List<string> InformationsList = new List<string>();
+        public IEnumerable<string> Informations => InformationsList;
 
-        private readonly List<LoanwordGloss> loanwordSources = new List<LoanwordGloss>();
-        public List<LoanwordGloss> GetLoanwordSources() => this.loanwordSources;
-        public IEnumerable<LoanwordGloss> LoanwordSources => this.GetLoanwordSources();
+        internal readonly List<LoanwordGloss> LoanwordSourcesList = new List<LoanwordGloss>();
+        public IEnumerable<ILoanwordGloss> LoanwordSources => LoanwordSourcesList;
 
-        private readonly List<Dialect> dialects = new List<Dialect>();
-        public List<Dialect> GetDialects() => this.dialects;
-        public IEnumerable<Dialect> Dialects => this.GetDialects();
+        internal readonly List<Dialect> DialectsList = new List<Dialect>();
+        public IEnumerable<Dialect> Dialects => DialectsList;
 
-        private readonly List<Gloss> glosses = new List<Gloss>();
-        public List<Gloss> GetGlosses() => this.glosses;
-        public IEnumerable<Gloss> Glosses => this.GetGlosses();
+        internal readonly List<Gloss> GlossesList = new List<Gloss>();
+        public IEnumerable<IGloss> Glosses => GlossesList;
 
-        public override string ToString()
-        {
-            return this.Glosses.First().ToString();
-        }
+        public override string ToString() => Glosses.First().ToString();
     }
 }

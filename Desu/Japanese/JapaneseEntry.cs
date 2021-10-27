@@ -6,50 +6,38 @@
 
     using Wacton.Desu.Enums;
 
-    public class JapaneseEntry : IJapaneseEntry
+    internal class JapaneseEntry : IJapaneseEntry
     {
         public int Sequence { get; set; }
 
-        private readonly List<Kanji> kanjis = new List<Kanji>();
-        public List<Kanji> GetKanjis() => this.kanjis;
-        public IEnumerable<IKanji> Kanjis => this.GetKanjis();
-        internal void StartNewKanji()
-        {
-            this.kanjis.Add(new Kanji());
-        }
+        internal readonly List<Kanji> KanjisList = new List<Kanji>();
+        public IEnumerable<IKanji> Kanjis => KanjisList;
+        internal void StartNewKanji() => KanjisList.Add(new Kanji());
 
-        private readonly List<Reading> readings = new List<Reading>();
-        public List<Reading> GetReadings() => this.readings;
-        public IEnumerable<IReading> Readings => this.GetReadings();
-        internal void StartNewReading()
-        {
-            this.readings.Add(new Reading());
-        }
+        internal readonly List<Reading> ReadingsList = new List<Reading>();
+        public IEnumerable<IReading> Readings => ReadingsList;
+        internal void StartNewReading() => ReadingsList.Add(new Reading());
 
-        private readonly List<Sense> senses = new List<Sense>();
-        public List<Sense> GetSenses() => this.senses;
-        public IEnumerable<ISense> Senses => this.GetSenses();
-        internal void StartNewSense()
-        {
-            this.senses.Add(new Sense());
-        }
+        internal readonly List<Sense> SensesList = new List<Sense>();
+        public IEnumerable<ISense> Senses => SensesList;
+        internal void StartNewSense() => SensesList.Add(new Sense());
 
         public override string ToString()
         {
             var stringBuilder = new StringBuilder();
-            stringBuilder.Append($"#{this.Sequence} :: ");
+            stringBuilder.Append($"#{Sequence} :: ");
 
-            foreach (var kanji in this.Kanjis)
+            foreach (var kanji in Kanjis)
             {
                 stringBuilder.Append(kanji.Text + " · ");
             }
 
-            foreach (var reading in this.Readings)
+            foreach (var reading in Readings)
             {
                 stringBuilder.Append(reading.Text + " · ");
             }
 
-            stringBuilder.Append(this.Senses.First().Glosses.First(gloss => gloss.Language.Equals(Language.English)).Term);
+            stringBuilder.Append(Senses.First().Glosses.First(gloss => gloss.Language.Equals(Language.English)).Term);
             return stringBuilder.ToString();
         }
     }

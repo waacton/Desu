@@ -12,9 +12,6 @@ namespace Wacton.Desu.Tests.Japanese
         public IEnumerable<ReadingInformation> Informations { get; set; } = new List<ReadingInformation>();
         public IEnumerable<Priority> Priorities { get; set; } = new List<Priority>();
 
-        public override string ToString()
-        {
-            return this.Text;
-        }
+        public override string ToString() => Text;
     }
 }

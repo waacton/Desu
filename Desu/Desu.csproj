@@ -60,4 +60,11 @@ Targets .NET Standard 2.0 for use in .NET Core 2.0+ and .NET Framework 4.7.1+ ap
     </EmbeddedResource>
   </ItemGroup>
 
+	<!-- enables test module to access internal classes and methods -->
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>$(AssemblyName).Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
 </Project>
