@@ -4,7 +4,7 @@
 
     using Wacton.Desu.Kanas;
 
-    public class Syllable
+    internal class Syllable
     {
         public Kana Kana;
         public Kurikaeshi Kurikaeshi;
@@ -13,31 +13,31 @@
         public Youon Youon;
         public Tokushuon Tokushuon;
 
-        private bool HasKana => this.Kana != null;
-        private bool HasKurikaeshi => this.Kurikaeshi != null;
-        private bool HasChouon => this.Chouon != null;
-        private bool HasSokuon => this.Sokuon != null;
-        private bool HasYouon => this.Youon != null;
-        private bool HasTokushuon => this.Tokushuon != null;
+        private bool HasKana => Kana != null;
+        private bool HasKurikaeshi => Kurikaeshi != null;
+        private bool HasChouon => Chouon != null;
+        private bool HasSokuon => Sokuon != null;
+        private bool HasYouon => Youon != null;
+        private bool HasTokushuon => Tokushuon != null;
 
         public string GetKanaCharacters(Syllabary syllabary)
         {
-            var sokuon = this.HasSokuon ? this.Sokuon.GetCharacter(syllabary).ToString() : string.Empty;
-            var kana = this.HasKana ? this.Kana.GetCharacter(syllabary).ToString() : string.Empty;
-            var kurikaeshi = this.HasKurikaeshi ? this.Kurikaeshi.GetCharacter(syllabary).ToString() : string.Empty;
-            var youon = this.HasYouon ? this.Youon.GetCharacter(syllabary).ToString() : string.Empty;
-            var tokushon = this.HasTokushuon ? this.Tokushuon.GetCharacter(syllabary).ToString() : string.Empty;
-            var chouon = this.HasChouon ? this.Chouon.GetCharacter(syllabary).ToString() : string.Empty;
+            var sokuon = HasSokuon ? Sokuon.GetCharacter(syllabary).ToString() : string.Empty;
+            var kana = HasKana ? Kana.GetCharacter(syllabary).ToString() : string.Empty;
+            var kurikaeshi = HasKurikaeshi ? Kurikaeshi.GetCharacter(syllabary).ToString() : string.Empty;
+            var youon = HasYouon ? Youon.GetCharacter(syllabary).ToString() : string.Empty;
+            var tokushuon = HasTokushuon ? Tokushuon.GetCharacter(syllabary).ToString() : string.Empty;
+            var chouon = HasChouon ? Chouon.GetCharacter(syllabary).ToString() : string.Empty;
 
-            return $"{sokuon}{kana}{kurikaeshi}{youon}{tokushon}{chouon}";
+            return $"{sokuon}{kana}{kurikaeshi}{youon}{tokushuon}{chouon}";
         }
 
         public string GetRomaji()
         {
             string romaji;
-            if (!this.HasKana)
+            if (!HasKana)
             {
-                if (this.HasSokuon)
+                if (HasSokuon)
                 {
                     romaji = "'";
                 }
@@ -48,22 +48,22 @@
             }
             else
             {
-                if (this.HasYouon && this.HasTokushuon)
+                if (HasYouon && HasTokushuon)
                 {
                     throw new InvalidOperationException("Unable to represent in romaji a syllable that contains youon and tokushuon");
                 }
 
-                if (!this.HasYouon && !this.HasTokushuon)
+                if (!HasYouon && !HasTokushuon)
                 {
-                    romaji = this.Kana.GetRomaji(this.HasChouon, this.HasSokuon);
+                    romaji = Kana.GetRomaji(HasChouon, HasSokuon);
                 }
-                else if (this.HasYouon)
+                else if (HasYouon)
                 {
-                    romaji = this.Kana.GetRomaji(this.Youon, this.HasChouon, this.HasSokuon);
+                    romaji = Kana.GetRomaji(Youon, HasChouon, HasSokuon);
                 }
                 else
                 {
-                    romaji = this.Kana.GetRomaji(this.Tokushuon, this.HasChouon, this.HasSokuon);
+                    romaji = Kana.GetRomaji(Tokushuon, HasChouon, HasSokuon);
                 }
             }
 
@@ -72,9 +72,9 @@
 
         public override string ToString()
         {
-            var hiraganaCharacters = this.GetKanaCharacters(Syllabary.Hiragana);
-            var katakanaCharacters = this.GetKanaCharacters(Syllabary.Katakana);
-            var romaji = this.GetRomaji();
+            var hiraganaCharacters = GetKanaCharacters(Syllabary.Hiragana);
+            var katakanaCharacters = GetKanaCharacters(Syllabary.Katakana);
+            var romaji = GetRomaji();
             if (string.IsNullOrEmpty(romaji))
             {
                 romaji = "no romaji available";

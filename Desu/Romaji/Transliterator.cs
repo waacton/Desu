@@ -5,6 +5,9 @@
     using Wacton.Desu.Enums;
     using Wacton.Desu.Kanas;
 
+    /// <summary>
+    /// A transliterator from kana characters to rōmaji
+    /// </summary>
     public class Transliterator
     {
         private readonly Dictionary<char, Kana> kanas = new Dictionary<char, Kana>();
@@ -17,7 +20,7 @@
 
         public Transliterator()
         {
-            this.Initialise();
+            Initialise();
         }
 
         /// <summary>
@@ -33,45 +36,45 @@
         {
             foreach (var kana in Enumeration.GetAll<Kana>())
             {
-                this.kanas.Add(kana.GetCharacter(Syllabary.Hiragana), kana);
-                this.kanas.Add(kana.GetCharacter(Syllabary.Katakana), kana);
+                kanas.Add(kana.GetCharacter(Syllabary.Hiragana), kana);
+                kanas.Add(kana.GetCharacter(Syllabary.Katakana), kana);
             }
 
             foreach (var youon in Enumeration.GetAll<Youon>())
             {
-                this.youons.Add(youon.GetCharacter(Syllabary.Hiragana), youon);
-                this.youons.Add(youon.GetCharacter(Syllabary.Katakana), youon);
+                youons.Add(youon.GetCharacter(Syllabary.Hiragana), youon);
+                youons.Add(youon.GetCharacter(Syllabary.Katakana), youon);
             }
 
             foreach (var chouon in Enumeration.GetAll<Chouon>())
             {
-                this.chouons.Add(chouon.GetCharacter(Syllabary.Hiragana), chouon);
+                chouons.Add(chouon.GetCharacter(Syllabary.Hiragana), chouon);
                 //this.chouons.Add(chouon.GetCharacter(KanaSyllabary.Katakana), chouon); - chouon is the same in both syllabaries
             }
 
             foreach (var tokushuon in Enumeration.GetAll<Tokushuon>())
             {
-                this.tokushuons.Add(tokushuon.GetCharacter(Syllabary.Hiragana), tokushuon);
-                this.tokushuons.Add(tokushuon.GetCharacter(Syllabary.Katakana), tokushuon);
+                tokushuons.Add(tokushuon.GetCharacter(Syllabary.Hiragana), tokushuon);
+                tokushuons.Add(tokushuon.GetCharacter(Syllabary.Katakana), tokushuon);
             }
 
             foreach (var sokuon in Enumeration.GetAll<Sokuon>())
             {
-                this.sokuons.Add(sokuon.GetCharacter(Syllabary.Hiragana), sokuon);
-                this.sokuons.Add(sokuon.GetCharacter(Syllabary.Katakana), sokuon);
+                sokuons.Add(sokuon.GetCharacter(Syllabary.Hiragana), sokuon);
+                sokuons.Add(sokuon.GetCharacter(Syllabary.Katakana), sokuon);
             }
 
             foreach (var kurikaeshi in Enumeration.GetAll<Kurikaeshi>())
             {
-                this.kurikaeshis.Add(kurikaeshi.GetCharacter(Syllabary.Hiragana), kurikaeshi);
-                this.kurikaeshis.Add(kurikaeshi.GetCharacter(Syllabary.Katakana), kurikaeshi);
+                kurikaeshis.Add(kurikaeshi.GetCharacter(Syllabary.Hiragana), kurikaeshi);
+                kurikaeshis.Add(kurikaeshi.GetCharacter(Syllabary.Katakana), kurikaeshi);
             }
 
-            this.punctuations.Add(' ', " ");
-            this.punctuations.Add('　', " ");
-            this.punctuations.Add('・', "-");
-            this.punctuations.Add('、', ", ");
-            this.punctuations.Add('〜', "~");
+            punctuations.Add(' ', " ");
+            punctuations.Add('　', " ");
+            punctuations.Add('・', "-");
+            punctuations.Add('、', ", ");
+            punctuations.Add('〜', "~");
         }
 
         /// <summary>
@@ -89,7 +92,7 @@
             var i = 0;
             while (i < kanaCharacters.Length)
             {
-                var punctuation = this.ObtainPunctuation(kanaCharacters, ref i);
+                var punctuation = ObtainPunctuation(kanaCharacters, ref i);
                 if (!string.IsNullOrEmpty(punctuation))
                 {
                     syllables.Add(punctuation);
@@ -98,7 +101,7 @@
 
                 // if romaji for this syllable is null, bail out
                 // no point in dealing with the other syllables if part of the word is "null"
-                var syllable = this.ObtainNextSyllable(kanaCharacters, ref i);
+                var syllable = ObtainNextSyllable(kanaCharacters, ref i);
                 var romaji = syllable.GetRomaji();
                 if (string.IsNullOrEmpty(romaji))
                 {
@@ -119,7 +122,7 @@
 
         private string ObtainPunctuation(string kanaCharacters, ref int i)
         {
-            return LookupTransliteration(this.punctuations, kanaCharacters, ref i);
+            return LookupTransliteration(punctuations, kanaCharacters, ref i);
         }
 
         private Syllable ObtainNextSyllable(string kanaCharacters, ref int i)
@@ -132,12 +135,12 @@
 
 #pragma warning disable IDE0017 // Simplify object initialization
             var syllable = new Syllable();
-            syllable.Sokuon = LookupTransliteration(this.sokuons, kanaCharacters, ref i);
-            syllable.Kana = LookupTransliteration(this.kanas, kanaCharacters, ref i);
+            syllable.Sokuon = LookupTransliteration(sokuons, kanaCharacters, ref i);
+            syllable.Kana = LookupTransliteration(kanas, kanaCharacters, ref i);
             //syllable.Kurikaeshi = LookupTransliteration(kanaCharacters, ref i, this.kurikaeshis); 
-            syllable.Youon = LookupTransliteration(this.youons, kanaCharacters, ref i);
-            syllable.Tokushuon = LookupTransliteration(this.tokushuons, kanaCharacters, ref i);
-            syllable.Chouon = LookupTransliteration(this.chouons, kanaCharacters, ref i);
+            syllable.Youon = LookupTransliteration(youons, kanaCharacters, ref i);
+            syllable.Tokushuon = LookupTransliteration(tokushuons, kanaCharacters, ref i);
+            syllable.Chouon = LookupTransliteration(chouons, kanaCharacters, ref i);
             return syllable;
 #pragma warning restore IDE0017 // Simplify object initialization
         }

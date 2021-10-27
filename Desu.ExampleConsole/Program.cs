@@ -4,6 +4,7 @@
     using System.Diagnostics;
     using System.Linq;
     using System.Text;
+
     using Wacton.Desu.Enums;
     using Wacton.Desu.Japanese;
     using Wacton.Desu.Kanji;
@@ -60,8 +61,7 @@
             var transliterator = new Transliterator();
             var random = new Random();
 
-            var isFinished = false;
-            while (!isFinished)
+            while (true)
             {
                 OutputStartEntry();
 
