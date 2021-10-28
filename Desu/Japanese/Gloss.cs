@@ -1,10 +1,10 @@
 ﻿namespace Wacton.Desu.Japanese
 {
+    using System;
     using System.Collections.Generic;
-
     using Wacton.Desu.Enums;
 
-    internal class Gloss : IGloss
+    internal class Gloss : IGloss, IEquatable<Gloss>
     {
         public string Term { get; }
         public Language Language { get; }
@@ -23,13 +23,30 @@
 
         public override string ToString() => $"{this.Language}: {this.Term}";
 
+        /* ---------- auto-generated ---------- */
+
         public override bool Equals(object obj)
         {
-            return obj is Gloss gloss &&
-                   Term == gloss.Term &&
-                   EqualityComparer<Language>.Default.Equals(Language, gloss.Language) &&
-                   EqualityComparer<GlossType>.Default.Equals(Type, gloss.Type) &&
-                   Gender == gloss.Gender;
+            return Equals(obj as Gloss);
+        }
+
+        public bool Equals(Gloss other)
+        {
+            return other != null &&
+                   Term == other.Term &&
+                   EqualityComparer<Language>.Default.Equals(Language, other.Language) &&
+                   EqualityComparer<GlossType>.Default.Equals(Type, other.Type) &&
+                   Gender == other.Gender;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = -467913249;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Term);
+            hashCode = hashCode * -1521134295 + EqualityComparer<Language>.Default.GetHashCode(Language);
+            hashCode = hashCode * -1521134295 + EqualityComparer<GlossType>.Default.GetHashCode(Type);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Gender);
+            return hashCode;
         }
     }
 }

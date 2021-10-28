@@ -1,10 +1,10 @@
 ﻿namespace Wacton.Desu.Kanji
 {
+    using System;
     using System.Collections.Generic;
-
     using Wacton.Desu.Enums;
 
-    internal class QueryCode : IQueryCode
+    internal class QueryCode : IQueryCode, IEquatable<QueryCode>
     {
         public QueryCodeType Type { get; }
 
@@ -28,12 +28,28 @@
             return $"{Type}: {Value}{misclassification}";
         }
 
+        /* ---------- auto-generated ---------- */
+
         public override bool Equals(object obj)
         {
-            return obj is QueryCode code &&
-                   EqualityComparer<QueryCodeType>.Default.Equals(Type, code.Type) &&
-                   EqualityComparer<SkipMisclassification>.Default.Equals(SkipMisclassification, code.SkipMisclassification) &&
-                   Value == code.Value;
+            return Equals(obj as QueryCode);
+        }
+
+        public bool Equals(QueryCode other)
+        {
+            return other != null &&
+                   EqualityComparer<QueryCodeType>.Default.Equals(Type, other.Type) &&
+                   EqualityComparer<SkipMisclassification>.Default.Equals(SkipMisclassification, other.SkipMisclassification) &&
+                   Value == other.Value;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = -199580984;
+            hashCode = hashCode * -1521134295 + EqualityComparer<QueryCodeType>.Default.GetHashCode(Type);
+            hashCode = hashCode * -1521134295 + EqualityComparer<SkipMisclassification>.Default.GetHashCode(SkipMisclassification);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Value);
+            return hashCode;
         }
     }
 }
