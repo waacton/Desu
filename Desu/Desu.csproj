@@ -9,16 +9,18 @@
     <Authors>William Acton</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Japanese and kanji dictionary .NET library built upon JMdict, JMnedict, KANJIDIC, RADKFILE/KRADFILE, and KanjiVG.
-Targets .NET Standard 2.0 for use in .NET Core 2.0+ and .NET Framework 4.7.1+ applications.</Description>
+Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framework 4.6.1+ applications.</Description>
     <PackageProjectUrl>https://gitlab.com/Wacton/Desu</PackageProjectUrl>
     <RepositoryUrl>https://gitlab.com/Wacton/Desu</RepositoryUrl>
-    <PackageIconUrl>https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu_64.png</PackageIconUrl>
-    <PackageLicenseUrl>https://gitlab.com/Wacton/Desu/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageTags>Japanese kanji dictionary JMdict JMnedict KANJIDIC RADKFILE KRADFILE KanjiVG EDICT radicals romaji</PackageTags>
-    <PackageReleaseNotes>Add new Miscellaneous tags</PackageReleaseNotes>
+    <PackageReleaseNotes>Add asynchronous API</PackageReleaseNotes>
     <RepositoryType></RepositoryType>
     <LangVersion>7.1</LangVersion>
     <Copyright>William Acton</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>Desu_64.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -33,6 +35,14 @@ Targets .NET Standard 2.0 for use in .NET Core 2.0+ and .NET Framework 4.7.1+ ap
     <None Remove="Resources\kradfile" />
     <None Remove="Resources\kradfile2" />
     <None Remove="Resources\radkfilex" />
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Resources\Desu_64.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
