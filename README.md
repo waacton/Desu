@@ -68,8 +68,8 @@ var romaji = transliterator.GetRomaji("です"); // romaji == "desu"
 ```
 <br>
 
-_**Notes:** This is a large library due to the embedded resource files._
-_They can take a few seconds to parse so it is recommended to use the asynchronous API where possible._
+_**Notes:** This is a large library due to the embedded resource files and can take a few seconds to parse._
+_Since parsing the resources are [I/O-bound operations](https://docs.microsoft.com/en-us/dotnet/csharp/async) it is recommended to use the asynchronous API._
 _Example usages can be found in the [Desu.ExampleConsole](https://gitlab.com/Wacton/Desu/tree/master/Desu.ExampleConsole) and [Desu.ExampleWpf](https://gitlab.com/Wacton/Desu/tree/master/Desu.ExampleWpf) projects._
 _(The Japanese dictionary contains ~200k entries, and the proper name dictionary contains ~750k entries.)_
 <br>

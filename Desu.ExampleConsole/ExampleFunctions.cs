@@ -1,7 +1,6 @@
 ﻿namespace Wacton.Desu.ExampleConsole
 {
     using System.Collections.Generic;
-
     using Wacton.Desu.Japanese;
     using Wacton.Desu.Kanji;
     using Wacton.Desu.Names;
@@ -24,19 +23,6 @@
             return japaneseEntries;
         }
 
-        public static IEnumerable<IKanjiEntry> GetKanjiEntries()
-        {
-            var kanjiDictionary = new KanjiDictionary();
-            var kanjiEntries = kanjiDictionary.GetEntries();
-            return kanjiEntries;
-        }
-
-        public static IEnumerable<IKanjiEntry> ParseKanjiEntries()
-        {
-            var kanjiEntries = KanjiDictionary.ParseEntries();
-            return kanjiEntries;
-        }
-
         public static IEnumerable<INameEntry> GetNameEntries()
         {
             var nameDictionary = new NameDictionary();
@@ -50,40 +36,53 @@
             return nameEntries;
         }
 
-        public static IDictionary<string, List<string>> GetKanjiToRadicals()
+        public static IEnumerable<IKanjiEntry> GetKanjiEntries()
+        {
+            var kanjiDictionary = new KanjiDictionary();
+            var kanjiEntries = kanjiDictionary.GetEntries();
+            return kanjiEntries;
+        }
+
+        public static IEnumerable<IKanjiEntry> ParseKanjiEntries()
+        {
+            var kanjiEntries = KanjiDictionary.ParseEntries();
+            return kanjiEntries;
+        }
+
+        public static IDictionary<string, IEnumerable<string>> GetKanjiToRadicals()
         {
             var radicalLookup = new RadicalLookup();
             var kanjiToRadicals = radicalLookup.GetKanjiToRadicals();
             return kanjiToRadicals;
         }
 
-        public static IDictionary<string, List<string>> ParseKanjiToRadicals()
+        public static IDictionary<string, IEnumerable<string>> ParseKanjiToRadicals()
         {
             var kanjiToRadicals = RadicalLookup.ParseKanjiToRadicals();
             return kanjiToRadicals;
         }
 
-        public static IDictionary<string, List<string>> GetRadicalToKanjis()
+        public static IDictionary<string, IEnumerable<string>> GetRadicalToKanjis()
         {
             var radicalLookup = new RadicalLookup();
             var radicalToKanjis = radicalLookup.GetRadicalToKanjis();
             return radicalToKanjis;
         }
 
-        public static IDictionary<string, List<string>> ParseRadicalToKanjis()
+        public static IDictionary<string, IEnumerable<string>> ParseRadicalToKanjis()
         {
             var radicalToKanjis = RadicalLookup.ParseRadicalToKanjis();
             return radicalToKanjis;
         }
 
-        public static IDictionary<string, List<string>> GetKanjiToStrokes()
+        public static IDictionary<string, IEnumerable<string>> GetKanjiToStrokes()
         {
             var strokeLookup = new StrokeLookup();
             var kanjiToStrokes = strokeLookup.GetKanjiToStrokes();
             return kanjiToStrokes;
         }
 
-        public static IDictionary<string, List<string>> ParseKanjiToStrokes()
+        public static IDictionary<string, IEnumerable<string>> ParseKanjiToStrokes()
         {
             var kanjiToStrokes = StrokeLookup.ParseKanjiToStrokes();
             return kanjiToStrokes;

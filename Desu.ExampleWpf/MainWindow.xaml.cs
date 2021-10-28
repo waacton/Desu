@@ -23,8 +23,7 @@
 
         public MainWindow()
         {
-            var kanjiDictionary = new KanjiDictionary();
-            this.kanjiEntries = kanjiDictionary.GetEntries().ToList();
+            this.kanjiEntries = KanjiDictionary.ParseEntries().ToList();
             this.UpdateKanji();
 
             InitializeComponent();
