@@ -14,6 +14,7 @@
 
     public class Program
     {
+        private const bool GenerateExampleJson = false;
         private const bool UseAsync = true;
         private static readonly Random Random = new Random();
         private static readonly Transliterator Transliterator = new Transliterator();
@@ -22,6 +23,16 @@
         {
             Console.OutputEncoding = Encoding.UTF8;
             OutputLine("Getting dictionaries...");
+
+            if (GenerateExampleJson)
+            {
+                await SaveAsJson.JapaneseEntry();
+                await SaveAsJson.NameEntry();
+                await SaveAsJson.KanjiEntry();
+                await SaveAsJson.RadicalFromKanjiEntry();
+                await SaveAsJson.RadicalToKanjiEntry();
+                await SaveAsJson.StrokeEntry();
+            }
 
             if (UseAsync)
             {
