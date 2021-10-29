@@ -16,7 +16,7 @@ namespace Wacton.Desu.Tests.Kanji
                     new Codepoint(CodepointType("ucs"), "4BC2"), 
                     new Codepoint(CodepointType("jis213"), "2-93-6") 
                 },
-                BushuRadicals = new List<IBushuRadical> { BushuRadicalClassical(187) },
+                IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(187) },
                 StrokeCount = 34,
                 Readings = new List<Reading> { new Reading(ReadingType("pinyin"), "ji2") },
                 Meanings = new List<Meaning> { 
@@ -50,8 +50,8 @@ namespace Wacton.Desu.Tests.Kanji
                     "M29.9,83.97c15.85-2.47,37.68-4.54,47.51-5.19",
                     "M51.74,33.62c0.88,0.88,1.12,2.34,1.12,4.18c0,8.33-0.03,39.33-0.03,45.7c0,10.5,2.17,12.53,20.42,12.53c17.25,0,19.25-1.28,19.39-11.87"
                 },
-                BushuRadicals = new List<IBushuRadical> { BushuRadicalClassical(213) },
-                IsBushuRadical = true,
+                IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(213) },
+                IsIndexRadical = true,
                 Grade = Grade(8),
                 StrokeCount = 11,
                 Variants = new List<Variant> { new Variant(VariantType("jis208"), "83-93") },
@@ -128,7 +128,7 @@ namespace Wacton.Desu.Tests.Kanji
                     "M55.05,77.76c3.57-0.4,8.54-0.82,13.49-1.38c0.92-0.1,1.85-0.21,2.76-0.33",
                     "M84.41,51.32c0.06,0.29,0.79,1.51,0.85,3.35c0.27,8.83-0.17,32.16-0.17,35.17c0,10.41-5.34,1.91-6.85-0.81"
                 },
-                BushuRadicals = new List<IBushuRadical> { BushuRadicalClassical(57) },
+                IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(57) },
                 StrokeCount = 13,
                 References = new List<Reference> { new Reference(ReferenceType("nelson_n"), "1701") },
                 QueryCodes = new List<QueryCode> { 
@@ -179,7 +179,7 @@ namespace Wacton.Desu.Tests.Kanji
                     new Codepoint(CodepointType("ucs"), "9c39"),
                     new Codepoint(CodepointType("jis208"), "19-79") 
                 },
-                BushuRadicals = new List<IBushuRadical> { BushuRadicalClassical(195) },
+                IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(195) },
                 StrokeCount = 23,
                 StrokeCommonMiscounts = new List<int> { 22 },
                 References = new List<Reference> {
@@ -220,8 +220,8 @@ namespace Wacton.Desu.Tests.Kanji
                     "M48.14,35.78c0.46,0.05,2.9,0.45,4.19,0.32c5.79-0.58,16.07-2.7,22.14-4.16c4.17-1,5.35,1.14,4.29,3.86C72.92,50.68,43.51,87.09,17.5,94.75",
                     "M24.25,30.5c2.25,0,4.41,1.74,4.99,2.73C42,55,66.5,79.75,83.33,89.86c3.99,2.4,6.61,4.28,10.17,5.14"
                 },
-                BushuRadicals = new List<IBushuRadical> { BushuRadicalClassical(35), new BushuRadicalNelson(34) },
-                IsBushuRadical = true,
+                IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(35), new IndexRadicalNelson(34) },
+                IsIndexRadical = true,
                 StrokeCount = 3,
                 RadicalNames = new List<string> { "すいにょう" },
                 References = new List<Reference> { 
@@ -267,7 +267,7 @@ namespace Wacton.Desu.Tests.Kanji
                     "M62.62,22.75c0.91,1.63,1.32,3.09,1.21,4.88c0,8.29,0.03,52.17,0.03,58.88",
                     "M15.88,89.23c3.62,0.65,7.25,0.71,10.62,0.49c18.61-1.21,42.5-2.34,60.12-2.56c3.21-0.04,6.34,0.23,9.5,0.91"
                 },
-                BushuRadicals = new List<IBushuRadical> { BushuRadicalClassical(7), new BushuRadicalNelson(1) },
+                IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(7), new IndexRadicalNelson(1) },
                 Grade = Grade(8),
                 StrokeCount = 7,
                 Variants = new List<Variant> { new Variant(VariantType("jis208"), "48-19") },
@@ -338,7 +338,7 @@ namespace Wacton.Desu.Tests.Kanji
                     new Codepoint(CodepointType("ucs"), "FA6A"),
                     new Codepoint(CodepointType("jis213"), "1-93-91")
                 },
-                BushuRadicals = new List<IBushuRadical> { BushuRadicalClassical(181) },
+                IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(181) },
                 StrokeCount = 16,
                 Variants = new List<Variant> { new Variant(VariantType("jis208"), "41-49") },
                 References = new List<Reference> {
@@ -354,7 +354,7 @@ namespace Wacton.Desu.Tests.Kanji
         }
 
         private static CodepointType CodepointType(string code) => Enumeration.GetAll<CodepointType>().Single(x => x.Code == code);
-        private static BushuRadicalClassical BushuRadicalClassical(int code) => Enumeration.GetAll<BushuRadicalClassical>().Single(x => x.Number == code);
+        private static IndexRadicalKangxi IndexRadicalKangxi(int code) => Enumeration.GetAll<IndexRadicalKangxi>().Single(x => x.Number == code);
         private static Grade Grade(int code) => Enumeration.GetAll<Grade>().Single(x => x.Number == code);
         private static Language Language(string code) => Enumeration.GetAll<Language>().Single(x => x.TwoLetterCode == code);
         private static QueryCodeType QueryCodeType(string code) => Enumeration.GetAll<QueryCodeType>().Single(x => x.Code == code);

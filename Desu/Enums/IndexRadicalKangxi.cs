@@ -1,0 +1,244 @@
+﻿namespace Wacton.Desu.Enums
+{
+    using System.Collections.Generic;
+
+    using Wacton.Desu.Kanji;
+
+    // for details see https://www.edrdg.org/wiki/index.php/KANJIDIC_Project#Content_.26_Format (radical)
+    // and also https://en.wikipedia.org/wiki/List_of_kanji_radicals_by_stroke_count
+    public class IndexRadicalKangxi : Enumeration, IIndexRadical
+    {
+        public static readonly IndexRadicalKangxi Radical001 = new IndexRadicalKangxi(nameof(Radical001), 1, "一");
+        public static readonly IndexRadicalKangxi Radical002 = new IndexRadicalKangxi(nameof(Radical002), 2, "丨");
+        public static readonly IndexRadicalKangxi Radical003 = new IndexRadicalKangxi(nameof(Radical003), 3, "丶");
+        public static readonly IndexRadicalKangxi Radical004 = new IndexRadicalKangxi(nameof(Radical004), 4, "丿");
+        public static readonly IndexRadicalKangxi Radical005 = new IndexRadicalKangxi(nameof(Radical005), 5, "乙", new List<string> { "乚" });
+        public static readonly IndexRadicalKangxi Radical006 = new IndexRadicalKangxi(nameof(Radical006), 6, "亅");
+        public static readonly IndexRadicalKangxi Radical007 = new IndexRadicalKangxi(nameof(Radical007), 7, "二");
+        public static readonly IndexRadicalKangxi Radical008 = new IndexRadicalKangxi(nameof(Radical008), 8, "亠");
+        public static readonly IndexRadicalKangxi Radical009 = new IndexRadicalKangxi(nameof(Radical009), 9, "人", new List<string> { "亻", "𠆢" });
+        public static readonly IndexRadicalKangxi Radical010 = new IndexRadicalKangxi(nameof(Radical010), 10, "儿");
+        public static readonly IndexRadicalKangxi Radical011 = new IndexRadicalKangxi(nameof(Radical011), 11, "入", new List<string> { "𠆢" });
+        public static readonly IndexRadicalKangxi Radical012 = new IndexRadicalKangxi(nameof(Radical012), 12, "八", new List<string> { "ハ" });
+        public static readonly IndexRadicalKangxi Radical013 = new IndexRadicalKangxi(nameof(Radical013), 13, "冂");
+        public static readonly IndexRadicalKangxi Radical014 = new IndexRadicalKangxi(nameof(Radical014), 14, "冖");
+        public static readonly IndexRadicalKangxi Radical015 = new IndexRadicalKangxi(nameof(Radical015), 15, "冫");
+        public static readonly IndexRadicalKangxi Radical016 = new IndexRadicalKangxi(nameof(Radical016), 16, "几");
+        public static readonly IndexRadicalKangxi Radical017 = new IndexRadicalKangxi(nameof(Radical017), 17, "凵");
+        public static readonly IndexRadicalKangxi Radical018 = new IndexRadicalKangxi(nameof(Radical018), 18, "刀", new List<string> { "刂", "⺈" });
+        public static readonly IndexRadicalKangxi Radical019 = new IndexRadicalKangxi(nameof(Radical019), 19, "力");
+        public static readonly IndexRadicalKangxi Radical020 = new IndexRadicalKangxi(nameof(Radical020), 20, "勹");
+        public static readonly IndexRadicalKangxi Radical021 = new IndexRadicalKangxi(nameof(Radical021), 21, "匕");
+        public static readonly IndexRadicalKangxi Radical022 = new IndexRadicalKangxi(nameof(Radical022), 22, "匚");
+        public static readonly IndexRadicalKangxi Radical023 = new IndexRadicalKangxi(nameof(Radical023), 23, "亡", new List<string> { "匸" });
+        public static readonly IndexRadicalKangxi Radical024 = new IndexRadicalKangxi(nameof(Radical024), 24, "十");
+        public static readonly IndexRadicalKangxi Radical025 = new IndexRadicalKangxi(nameof(Radical025), 25, "卜", new List<string> { "⼘", "⺊" });
+        public static readonly IndexRadicalKangxi Radical026 = new IndexRadicalKangxi(nameof(Radical026), 26, "卩", new List<string> { "㔾" });
+        public static readonly IndexRadicalKangxi Radical027 = new IndexRadicalKangxi(nameof(Radical027), 27, "厂");
+        public static readonly IndexRadicalKangxi Radical028 = new IndexRadicalKangxi(nameof(Radical028), 28, "厶");
+        public static readonly IndexRadicalKangxi Radical029 = new IndexRadicalKangxi(nameof(Radical029), 29, "又");
+        public static readonly IndexRadicalKangxi Radical030 = new IndexRadicalKangxi(nameof(Radical030), 30, "口");
+        public static readonly IndexRadicalKangxi Radical031 = new IndexRadicalKangxi(nameof(Radical031), 31, "囗");
+        public static readonly IndexRadicalKangxi Radical032 = new IndexRadicalKangxi(nameof(Radical032), 32, "土");
+        public static readonly IndexRadicalKangxi Radical033 = new IndexRadicalKangxi(nameof(Radical033), 33, "士");
+        public static readonly IndexRadicalKangxi Radical034 = new IndexRadicalKangxi(nameof(Radical034), 34, "夂");
+        public static readonly IndexRadicalKangxi Radical035 = new IndexRadicalKangxi(nameof(Radical035), 35, "夊");
+        public static readonly IndexRadicalKangxi Radical036 = new IndexRadicalKangxi(nameof(Radical036), 36, "夕");
+        public static readonly IndexRadicalKangxi Radical037 = new IndexRadicalKangxi(nameof(Radical037), 37, "大");
+        public static readonly IndexRadicalKangxi Radical038 = new IndexRadicalKangxi(nameof(Radical038), 38, "女");
+        public static readonly IndexRadicalKangxi Radical039 = new IndexRadicalKangxi(nameof(Radical039), 39, "子");
+        public static readonly IndexRadicalKangxi Radical040 = new IndexRadicalKangxi(nameof(Radical040), 40, "宀");
+        public static readonly IndexRadicalKangxi Radical041 = new IndexRadicalKangxi(nameof(Radical041), 41, "寸");
+        public static readonly IndexRadicalKangxi Radical042 = new IndexRadicalKangxi(nameof(Radical042), 42, "小", new List<string> { "⺌", " ⺍" });
+        public static readonly IndexRadicalKangxi Radical043 = new IndexRadicalKangxi(nameof(Radical043), 43, "尢", new List<string> { "尤", "尣" });
+        public static readonly IndexRadicalKangxi Radical044 = new IndexRadicalKangxi(nameof(Radical044), 44, "尸");
+        public static readonly IndexRadicalKangxi Radical045 = new IndexRadicalKangxi(nameof(Radical045), 45, "屮");
+        public static readonly IndexRadicalKangxi Radical046 = new IndexRadicalKangxi(nameof(Radical046), 46, "山");
+        public static readonly IndexRadicalKangxi Radical047 = new IndexRadicalKangxi(nameof(Radical047), 47, "巛", new List<string> { "川", "巜" });
+        public static readonly IndexRadicalKangxi Radical048 = new IndexRadicalKangxi(nameof(Radical048), 48, "工");
+        public static readonly IndexRadicalKangxi Radical049 = new IndexRadicalKangxi(nameof(Radical049), 49, "已", new List<string> { "己", "巳" });
+        public static readonly IndexRadicalKangxi Radical050 = new IndexRadicalKangxi(nameof(Radical050), 50, "巾");
+        public static readonly IndexRadicalKangxi Radical051 = new IndexRadicalKangxi(nameof(Radical051), 51, "干");
+        public static readonly IndexRadicalKangxi Radical052 = new IndexRadicalKangxi(nameof(Radical052), 52, "幺");
+        public static readonly IndexRadicalKangxi Radical053 = new IndexRadicalKangxi(nameof(Radical053), 53, "广");
+        public static readonly IndexRadicalKangxi Radical054 = new IndexRadicalKangxi(nameof(Radical054), 54, "廴");
+        public static readonly IndexRadicalKangxi Radical055 = new IndexRadicalKangxi(nameof(Radical055), 55, "廾");
+        public static readonly IndexRadicalKangxi Radical056 = new IndexRadicalKangxi(nameof(Radical056), 56, "弋");
+        public static readonly IndexRadicalKangxi Radical057 = new IndexRadicalKangxi(nameof(Radical057), 57, "弓");
+        public static readonly IndexRadicalKangxi Radical058 = new IndexRadicalKangxi(nameof(Radical058), 58, "彐", new List<string> { "彑" });
+        public static readonly IndexRadicalKangxi Radical059 = new IndexRadicalKangxi(nameof(Radical059), 59, "彡");
+        public static readonly IndexRadicalKangxi Radical060 = new IndexRadicalKangxi(nameof(Radical060), 60, "彳");
+        public static readonly IndexRadicalKangxi Radical061 = new IndexRadicalKangxi(nameof(Radical061), 61, "心", new List<string> { "忄", "⺗" });
+        public static readonly IndexRadicalKangxi Radical062 = new IndexRadicalKangxi(nameof(Radical062), 62, "戈");
+        public static readonly IndexRadicalKangxi Radical063 = new IndexRadicalKangxi(nameof(Radical063), 63, "戸", new List<string> { "戶", "户" });
+        public static readonly IndexRadicalKangxi Radical064 = new IndexRadicalKangxi(nameof(Radical064), 64, "手", new List<string> { "扌", "龵" });
+        public static readonly IndexRadicalKangxi Radical065 = new IndexRadicalKangxi(nameof(Radical065), 65, "支");
+        public static readonly IndexRadicalKangxi Radical066 = new IndexRadicalKangxi(nameof(Radical066), 66, "攵", new List<string> { "攴" });
+        public static readonly IndexRadicalKangxi Radical067 = new IndexRadicalKangxi(nameof(Radical067), 67, "文");
+        public static readonly IndexRadicalKangxi Radical068 = new IndexRadicalKangxi(nameof(Radical068), 68, "斗");
+        public static readonly IndexRadicalKangxi Radical069 = new IndexRadicalKangxi(nameof(Radical069), 69, "斤");
+        public static readonly IndexRadicalKangxi Radical070 = new IndexRadicalKangxi(nameof(Radical070), 70, "方");
+        public static readonly IndexRadicalKangxi Radical071 = new IndexRadicalKangxi(nameof(Radical071), 71, "无", new List<string> { "旡" });
+        public static readonly IndexRadicalKangxi Radical072 = new IndexRadicalKangxi(nameof(Radical072), 72, "日");
+        public static readonly IndexRadicalKangxi Radical073 = new IndexRadicalKangxi(nameof(Radical073), 73, "曰");
+        public static readonly IndexRadicalKangxi Radical074 = new IndexRadicalKangxi(nameof(Radical074), 74, "月", new List<string> { "⺝" });
+        public static readonly IndexRadicalKangxi Radical075 = new IndexRadicalKangxi(nameof(Radical075), 75, "木");
+        public static readonly IndexRadicalKangxi Radical076 = new IndexRadicalKangxi(nameof(Radical076), 76, "欠");
+        public static readonly IndexRadicalKangxi Radical077 = new IndexRadicalKangxi(nameof(Radical077), 77, "止");
+        public static readonly IndexRadicalKangxi Radical078 = new IndexRadicalKangxi(nameof(Radical078), 78, "歹", new List<string> { "歺" });
+        public static readonly IndexRadicalKangxi Radical079 = new IndexRadicalKangxi(nameof(Radical079), 79, "殳");
+        public static readonly IndexRadicalKangxi Radical080 = new IndexRadicalKangxi(nameof(Radical080), 80, "毋", new List<string> { "母", "⺟" });
+        public static readonly IndexRadicalKangxi Radical081 = new IndexRadicalKangxi(nameof(Radical081), 81, "比");
+        public static readonly IndexRadicalKangxi Radical082 = new IndexRadicalKangxi(nameof(Radical082), 82, "毛");
+        public static readonly IndexRadicalKangxi Radical083 = new IndexRadicalKangxi(nameof(Radical083), 83, "氏");
+        public static readonly IndexRadicalKangxi Radical084 = new IndexRadicalKangxi(nameof(Radical084), 84, "气");
+        public static readonly IndexRadicalKangxi Radical085 = new IndexRadicalKangxi(nameof(Radical085), 85, "水", new List<string> { "氵", "氺" });
+        public static readonly IndexRadicalKangxi Radical086 = new IndexRadicalKangxi(nameof(Radical086), 86, "火", new List<string> { "灬" });
+        public static readonly IndexRadicalKangxi Radical087 = new IndexRadicalKangxi(nameof(Radical087), 87, "爪", new List<string> { "爫", "⺥", "⺤" });
+        public static readonly IndexRadicalKangxi Radical088 = new IndexRadicalKangxi(nameof(Radical088), 88, "父");
+        public static readonly IndexRadicalKangxi Radical089 = new IndexRadicalKangxi(nameof(Radical089), 89, "爻");
+        public static readonly IndexRadicalKangxi Radical090 = new IndexRadicalKangxi(nameof(Radical090), 90, "爿", new List<string> { "丬" });
+        public static readonly IndexRadicalKangxi Radical091 = new IndexRadicalKangxi(nameof(Radical091), 91, "片");
+        public static readonly IndexRadicalKangxi Radical092 = new IndexRadicalKangxi(nameof(Radical092), 92, "牙");
+        public static readonly IndexRadicalKangxi Radical093 = new IndexRadicalKangxi(nameof(Radical093), 93, "牛", new List<string> { "牜", " ⺧" });
+        public static readonly IndexRadicalKangxi Radical094 = new IndexRadicalKangxi(nameof(Radical094), 94, "犬", new List<string> { "犭" });
+        public static readonly IndexRadicalKangxi Radical095 = new IndexRadicalKangxi(nameof(Radical095), 95, "玄");
+        public static readonly IndexRadicalKangxi Radical096 = new IndexRadicalKangxi(nameof(Radical096), 96, "王", new List<string> { "玉", " 玊", " ⺩" });
+        public static readonly IndexRadicalKangxi Radical097 = new IndexRadicalKangxi(nameof(Radical097), 97, "瓜");
+        public static readonly IndexRadicalKangxi Radical098 = new IndexRadicalKangxi(nameof(Radical098), 98, "瓦");
+        public static readonly IndexRadicalKangxi Radical099 = new IndexRadicalKangxi(nameof(Radical099), 99, "甘");
+        public static readonly IndexRadicalKangxi Radical100 = new IndexRadicalKangxi(nameof(Radical100), 100, "生");
+        public static readonly IndexRadicalKangxi Radical101 = new IndexRadicalKangxi(nameof(Radical101), 101, "用", new List<string> { "甩" });
+        public static readonly IndexRadicalKangxi Radical102 = new IndexRadicalKangxi(nameof(Radical102), 102, "田");
+        public static readonly IndexRadicalKangxi Radical103 = new IndexRadicalKangxi(nameof(Radical103), 103, "疋", new List<string> { "⺪" });
+        public static readonly IndexRadicalKangxi Radical104 = new IndexRadicalKangxi(nameof(Radical104), 104, "疒");
+        public static readonly IndexRadicalKangxi Radical105 = new IndexRadicalKangxi(nameof(Radical105), 105, "癶");
+        public static readonly IndexRadicalKangxi Radical106 = new IndexRadicalKangxi(nameof(Radical106), 106, "白");
+        public static readonly IndexRadicalKangxi Radical107 = new IndexRadicalKangxi(nameof(Radical107), 107, "皮");
+        public static readonly IndexRadicalKangxi Radical108 = new IndexRadicalKangxi(nameof(Radical108), 108, "皿");
+        public static readonly IndexRadicalKangxi Radical109 = new IndexRadicalKangxi(nameof(Radical109), 109, "目");
+        public static readonly IndexRadicalKangxi Radical110 = new IndexRadicalKangxi(nameof(Radical110), 110, "矛");
+        public static readonly IndexRadicalKangxi Radical111 = new IndexRadicalKangxi(nameof(Radical111), 111, "矢");
+        public static readonly IndexRadicalKangxi Radical112 = new IndexRadicalKangxi(nameof(Radical112), 112, "石");
+        public static readonly IndexRadicalKangxi Radical113 = new IndexRadicalKangxi(nameof(Radical113), 113, "示", new List<string> { "礻" });
+        public static readonly IndexRadicalKangxi Radical114 = new IndexRadicalKangxi(nameof(Radical114), 114, "禸");
+        public static readonly IndexRadicalKangxi Radical115 = new IndexRadicalKangxi(nameof(Radical115), 115, "禾");
+        public static readonly IndexRadicalKangxi Radical116 = new IndexRadicalKangxi(nameof(Radical116), 116, "穴");
+        public static readonly IndexRadicalKangxi Radical117 = new IndexRadicalKangxi(nameof(Radical117), 117, "立");
+        public static readonly IndexRadicalKangxi Radical118 = new IndexRadicalKangxi(nameof(Radical118), 118, "竹", new List<string> { "⺮" });
+        public static readonly IndexRadicalKangxi Radical119 = new IndexRadicalKangxi(nameof(Radical119), 119, "米");
+        public static readonly IndexRadicalKangxi Radical120 = new IndexRadicalKangxi(nameof(Radical120), 120, "糸", new List<string> { "糹" });
+        public static readonly IndexRadicalKangxi Radical121 = new IndexRadicalKangxi(nameof(Radical121), 121, "缶");
+        public static readonly IndexRadicalKangxi Radical122 = new IndexRadicalKangxi(nameof(Radical122), 122, "罒", new List<string> { "网", "罓", "⺲", "⺳" });
+        public static readonly IndexRadicalKangxi Radical123 = new IndexRadicalKangxi(nameof(Radical123), 123, "羊", new List<string> { "⺶", "⺷" });
+        public static readonly IndexRadicalKangxi Radical124 = new IndexRadicalKangxi(nameof(Radical124), 124, "羽");
+        public static readonly IndexRadicalKangxi Radical125 = new IndexRadicalKangxi(nameof(Radical125), 125, "耂", new List<string> { "老", "⺹" });
+        public static readonly IndexRadicalKangxi Radical126 = new IndexRadicalKangxi(nameof(Radical126), 126, "而");
+        public static readonly IndexRadicalKangxi Radical127 = new IndexRadicalKangxi(nameof(Radical127), 127, "耒");
+        public static readonly IndexRadicalKangxi Radical128 = new IndexRadicalKangxi(nameof(Radical128), 128, "耳");
+        public static readonly IndexRadicalKangxi Radical129 = new IndexRadicalKangxi(nameof(Radical129), 129, "聿", new List<string> { "⺻" });
+        public static readonly IndexRadicalKangxi Radical130 = new IndexRadicalKangxi(nameof(Radical130), 130, "肉", new List<string> { "⺼", "月" });
+        public static readonly IndexRadicalKangxi Radical131 = new IndexRadicalKangxi(nameof(Radical131), 131, "臣");
+        public static readonly IndexRadicalKangxi Radical132 = new IndexRadicalKangxi(nameof(Radical132), 132, "自");
+        public static readonly IndexRadicalKangxi Radical133 = new IndexRadicalKangxi(nameof(Radical133), 133, "至");
+        public static readonly IndexRadicalKangxi Radical134 = new IndexRadicalKangxi(nameof(Radical134), 134, "臼");
+        public static readonly IndexRadicalKangxi Radical135 = new IndexRadicalKangxi(nameof(Radical135), 135, "舌");
+        public static readonly IndexRadicalKangxi Radical136 = new IndexRadicalKangxi(nameof(Radical136), 136, "舛");
+        public static readonly IndexRadicalKangxi Radical137 = new IndexRadicalKangxi(nameof(Radical137), 137, "舟");
+        public static readonly IndexRadicalKangxi Radical138 = new IndexRadicalKangxi(nameof(Radical138), 138, "艮");
+        public static readonly IndexRadicalKangxi Radical139 = new IndexRadicalKangxi(nameof(Radical139), 139, "色");
+        public static readonly IndexRadicalKangxi Radical140 = new IndexRadicalKangxi(nameof(Radical140), 140, "艹", new List<string> { "艸", "䒑" });
+        public static readonly IndexRadicalKangxi Radical141 = new IndexRadicalKangxi(nameof(Radical141), 141, "虍");
+        public static readonly IndexRadicalKangxi Radical142 = new IndexRadicalKangxi(nameof(Radical142), 142, "虫");
+        public static readonly IndexRadicalKangxi Radical143 = new IndexRadicalKangxi(nameof(Radical143), 143, "血");
+        public static readonly IndexRadicalKangxi Radical144 = new IndexRadicalKangxi(nameof(Radical144), 144, "行");
+        public static readonly IndexRadicalKangxi Radical145 = new IndexRadicalKangxi(nameof(Radical145), 145, "衣", new List<string> { "衤" });
+        public static readonly IndexRadicalKangxi Radical146 = new IndexRadicalKangxi(nameof(Radical146), 146, "西", new List<string> { "襾", "覀" });
+        public static readonly IndexRadicalKangxi Radical147 = new IndexRadicalKangxi(nameof(Radical147), 147, "見");
+        public static readonly IndexRadicalKangxi Radical148 = new IndexRadicalKangxi(nameof(Radical148), 148, "角");
+        public static readonly IndexRadicalKangxi Radical149 = new IndexRadicalKangxi(nameof(Radical149), 149, "言", new List<string> { "訁" });
+        public static readonly IndexRadicalKangxi Radical150 = new IndexRadicalKangxi(nameof(Radical150), 150, "谷");
+        public static readonly IndexRadicalKangxi Radical151 = new IndexRadicalKangxi(nameof(Radical151), 151, "豆");
+        public static readonly IndexRadicalKangxi Radical152 = new IndexRadicalKangxi(nameof(Radical152), 152, "豕");
+        public static readonly IndexRadicalKangxi Radical153 = new IndexRadicalKangxi(nameof(Radical153), 153, "豸");
+        public static readonly IndexRadicalKangxi Radical154 = new IndexRadicalKangxi(nameof(Radical154), 154, "貝");
+        public static readonly IndexRadicalKangxi Radical155 = new IndexRadicalKangxi(nameof(Radical155), 155, "赤");
+        public static readonly IndexRadicalKangxi Radical156 = new IndexRadicalKangxi(nameof(Radical156), 156, "走", new List<string> { "赱" });
+        public static readonly IndexRadicalKangxi Radical157 = new IndexRadicalKangxi(nameof(Radical157), 157, "足", new List<string> { "⻊" });
+        public static readonly IndexRadicalKangxi Radical158 = new IndexRadicalKangxi(nameof(Radical158), 158, "身");
+        public static readonly IndexRadicalKangxi Radical159 = new IndexRadicalKangxi(nameof(Radical159), 159, "車");
+        public static readonly IndexRadicalKangxi Radical160 = new IndexRadicalKangxi(nameof(Radical160), 160, "辛");
+        public static readonly IndexRadicalKangxi Radical161 = new IndexRadicalKangxi(nameof(Radical161), 161, "辰");
+        public static readonly IndexRadicalKangxi Radical162 = new IndexRadicalKangxi(nameof(Radical162), 162, "⻌", new List<string> { "辵", "辶" });
+        public static readonly IndexRadicalKangxi Radical163 = new IndexRadicalKangxi(nameof(Radical163), 163, "阝", new List<string> { "邑", "⻏" });
+        public static readonly IndexRadicalKangxi Radical164 = new IndexRadicalKangxi(nameof(Radical164), 164, "酉");
+        public static readonly IndexRadicalKangxi Radical165 = new IndexRadicalKangxi(nameof(Radical165), 165, "釆");
+        public static readonly IndexRadicalKangxi Radical166 = new IndexRadicalKangxi(nameof(Radical166), 166, "里");
+        public static readonly IndexRadicalKangxi Radical167 = new IndexRadicalKangxi(nameof(Radical167), 167, "金", new List<string> { "釒" });
+        public static readonly IndexRadicalKangxi Radical168 = new IndexRadicalKangxi(nameof(Radical168), 168, "長", new List<string> { "镸" });
+        public static readonly IndexRadicalKangxi Radical169 = new IndexRadicalKangxi(nameof(Radical169), 169, "門");
+        public static readonly IndexRadicalKangxi Radical170 = new IndexRadicalKangxi(nameof(Radical170), 170, "阝", new List<string> { "阜", "⻖" });
+        public static readonly IndexRadicalKangxi Radical171 = new IndexRadicalKangxi(nameof(Radical171), 171, "隶");
+        public static readonly IndexRadicalKangxi Radical172 = new IndexRadicalKangxi(nameof(Radical172), 172, "隹");
+        public static readonly IndexRadicalKangxi Radical173 = new IndexRadicalKangxi(nameof(Radical173), 173, "雨", new List<string> { "⻗" });
+        public static readonly IndexRadicalKangxi Radical174 = new IndexRadicalKangxi(nameof(Radical174), 174, "青", new List<string> { "靑" });
+        public static readonly IndexRadicalKangxi Radical175 = new IndexRadicalKangxi(nameof(Radical175), 175, "非");
+        public static readonly IndexRadicalKangxi Radical176 = new IndexRadicalKangxi(nameof(Radical176), 176, "面", new List<string> { "靣" });
+        public static readonly IndexRadicalKangxi Radical177 = new IndexRadicalKangxi(nameof(Radical177), 177, "革");
+        public static readonly IndexRadicalKangxi Radical178 = new IndexRadicalKangxi(nameof(Radical178), 178, "韋");
+        public static readonly IndexRadicalKangxi Radical179 = new IndexRadicalKangxi(nameof(Radical179), 179, "韭");
+        public static readonly IndexRadicalKangxi Radical180 = new IndexRadicalKangxi(nameof(Radical180), 180, "音");
+        public static readonly IndexRadicalKangxi Radical181 = new IndexRadicalKangxi(nameof(Radical181), 181, "頁");
+        public static readonly IndexRadicalKangxi Radical182 = new IndexRadicalKangxi(nameof(Radical182), 182, "風", new List<string> { "𠘨" });
+        public static readonly IndexRadicalKangxi Radical183 = new IndexRadicalKangxi(nameof(Radical183), 183, "飛");
+        public static readonly IndexRadicalKangxi Radical184 = new IndexRadicalKangxi(nameof(Radical184), 184, "食", new List<string> { "飠" });
+        public static readonly IndexRadicalKangxi Radical185 = new IndexRadicalKangxi(nameof(Radical185), 185, "首");
+        public static readonly IndexRadicalKangxi Radical186 = new IndexRadicalKangxi(nameof(Radical186), 186, "香");
+        public static readonly IndexRadicalKangxi Radical187 = new IndexRadicalKangxi(nameof(Radical187), 187, "馬");
+        public static readonly IndexRadicalKangxi Radical188 = new IndexRadicalKangxi(nameof(Radical188), 188, "骨");
+        public static readonly IndexRadicalKangxi Radical189 = new IndexRadicalKangxi(nameof(Radical189), 189, "高", new List<string> { "髙" });
+        public static readonly IndexRadicalKangxi Radical190 = new IndexRadicalKangxi(nameof(Radical190), 190, "髟");
+        public static readonly IndexRadicalKangxi Radical191 = new IndexRadicalKangxi(nameof(Radical191), 191, "鬥");
+        public static readonly IndexRadicalKangxi Radical192 = new IndexRadicalKangxi(nameof(Radical192), 192, "鬯");
+        public static readonly IndexRadicalKangxi Radical193 = new IndexRadicalKangxi(nameof(Radical193), 193, "鬲");
+        public static readonly IndexRadicalKangxi Radical194 = new IndexRadicalKangxi(nameof(Radical194), 194, "鬼");
+        public static readonly IndexRadicalKangxi Radical195 = new IndexRadicalKangxi(nameof(Radical195), 195, "魚");
+        public static readonly IndexRadicalKangxi Radical196 = new IndexRadicalKangxi(nameof(Radical196), 196, "鳥");
+        public static readonly IndexRadicalKangxi Radical197 = new IndexRadicalKangxi(nameof(Radical197), 197, "鹵");
+        public static readonly IndexRadicalKangxi Radical198 = new IndexRadicalKangxi(nameof(Radical198), 198, "鹿");
+        public static readonly IndexRadicalKangxi Radical199 = new IndexRadicalKangxi(nameof(Radical199), 199, "麦", new List<string> { "麥" });
+        public static readonly IndexRadicalKangxi Radical200 = new IndexRadicalKangxi(nameof(Radical200), 200, "麻");
+        public static readonly IndexRadicalKangxi Radical201 = new IndexRadicalKangxi(nameof(Radical201), 201, "黄", new List<string> { "黃" });
+        public static readonly IndexRadicalKangxi Radical202 = new IndexRadicalKangxi(nameof(Radical202), 202, "黍");
+        public static readonly IndexRadicalKangxi Radical203 = new IndexRadicalKangxi(nameof(Radical203), 203, "黒", new List<string> { "黑" });
+        public static readonly IndexRadicalKangxi Radical204 = new IndexRadicalKangxi(nameof(Radical204), 204, "黹");
+        public static readonly IndexRadicalKangxi Radical205 = new IndexRadicalKangxi(nameof(Radical205), 205, "黽");
+        public static readonly IndexRadicalKangxi Radical206 = new IndexRadicalKangxi(nameof(Radical206), 206, "鼎");
+        public static readonly IndexRadicalKangxi Radical207 = new IndexRadicalKangxi(nameof(Radical207), 207, "鼓");
+        public static readonly IndexRadicalKangxi Radical208 = new IndexRadicalKangxi(nameof(Radical208), 208, "鼠");
+        public static readonly IndexRadicalKangxi Radical209 = new IndexRadicalKangxi(nameof(Radical209), 209, "鼻");
+        public static readonly IndexRadicalKangxi Radical210 = new IndexRadicalKangxi(nameof(Radical210), 210, "齊");
+        public static readonly IndexRadicalKangxi Radical211 = new IndexRadicalKangxi(nameof(Radical211), 211, "歯", new List<string> { "齒" });
+        public static readonly IndexRadicalKangxi Radical212 = new IndexRadicalKangxi(nameof(Radical212), 212, "竜", new List<string> { "龍" });
+        public static readonly IndexRadicalKangxi Radical213 = new IndexRadicalKangxi(nameof(Radical213), 213, "亀", new List<string> { "龜" });
+        public static readonly IndexRadicalKangxi Radical214 = new IndexRadicalKangxi(nameof(Radical214), 214, "龠");
+
+        public IndexRadicalType Type => IndexRadicalType.Kangxi;
+        public int Number { get; }
+        public string Radical { get; }
+        public IEnumerable<string> Variants { get; } 
+
+        public IndexRadicalKangxi(string displayName, int number, string radical, IEnumerable<string> variants = null)
+            : base(displayName)
+        {
+            this.Radical = radical;
+            this.Number = number;
+            this.Variants = variants ?? new List<string>();
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Type} #{this.Number.ToString().PadLeft(3, '0')} ({this.Radical})";
+        }
+    }
+}

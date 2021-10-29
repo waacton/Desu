@@ -10,8 +10,8 @@
         IEnumerable<string> RadicalDecomposition { get; }
         IEnumerable<ICodepoint> Codepoints { get; }
         IEnumerable<string> StrokePaths { get; }
-        IEnumerable<IBushuRadical> BushuRadicals { get; }
-        bool IsBushuRadical { get; }
+        IEnumerable<IIndexRadical> IndexRadicals { get; }
+        bool IsIndexRadical { get; }
         Grade Grade { get; }
         int StrokeCount { get; }
         IEnumerable<int> StrokeCommonMiscounts { get; }

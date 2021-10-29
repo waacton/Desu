@@ -22,10 +22,10 @@
         public static async Task Main()
         {
             Console.OutputEncoding = Encoding.UTF8;
-            OutputLine("Getting dictionaries...");
 
             if (GenerateExampleJson)
             {
+                OutputLine("Generating example JSON files...");
                 await SaveAsJson.JapaneseEntry();
                 await SaveAsJson.NameEntry();
                 await SaveAsJson.KanjiEntry();
@@ -34,6 +34,7 @@
                 await SaveAsJson.StrokeEntry();
             }
 
+            OutputLine("Getting dictionaries...");
             if (UseAsync)
             {
                 await RunAsync();

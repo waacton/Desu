@@ -18,10 +18,10 @@
         internal readonly List<string> StrokePathsList = new List<string>();
         public IEnumerable<string> StrokePaths => StrokePathsList;
 
-        internal readonly List<IBushuRadical> BushuRadicalsList = new List<IBushuRadical>();
-        public IEnumerable<IBushuRadical> BushuRadicals => BushuRadicalsList;
+        internal readonly List<IIndexRadical> IndexRadicalsList = new List<IIndexRadical>();
+        public IEnumerable<IIndexRadical> IndexRadicals => IndexRadicalsList;
 
-        public bool IsBushuRadical => BushuRadicalsList.Single(radical => radical.Type.Equals(BushuRadicalType.Classical)).Radical.Equals(Literal);
+        public bool IsIndexRadical => IndexRadicalsList.Single(radical => radical.Type.Equals(IndexRadicalType.Kangxi)).Radical.Equals(Literal);
 
         public Grade Grade { get; set; } = Grade.None;
 

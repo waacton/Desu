@@ -34,8 +34,8 @@
         private static readonly Dictionary<string, Language> Languages = GetAll<Language>().Where(language => language.TwoLetterCode != null).ToDictionary(language => language.TwoLetterCode, language => language);
 
         private static readonly Dictionary<string, CodepointType> CodepointTypes = GetAll<CodepointType>().ToDictionary(codepointType => codepointType.Code, codepointType => codepointType);
-        private static readonly Dictionary<string, BushuRadicalType> RadicalTypes = GetAll<BushuRadicalType>().ToDictionary(radicalType => radicalType.Code, radicalType => radicalType);
-        private static readonly Dictionary<int, BushuRadicalClassical> ClassicalBushuRadicals = GetAll<BushuRadicalClassical>().ToDictionary(classicalBushuRadical => classicalBushuRadical.Number, classicalBushuRadical => classicalBushuRadical);
+        private static readonly Dictionary<string, IndexRadicalType> RadicalTypes = GetAll<IndexRadicalType>().ToDictionary(radicalType => radicalType.Code, radicalType => radicalType);
+        private static readonly Dictionary<int, IndexRadicalKangxi> KangxiIndexRadicals = GetAll<IndexRadicalKangxi>().ToDictionary(kangxiIndexRadical => kangxiIndexRadical.Number, kangxiIndexRadical => kangxiIndexRadical);
         private static readonly Dictionary<int, Grade> Grades = GetAll<Grade>().ToDictionary(grade => grade.Number, grade => grade);
         private static readonly Dictionary<string, VariantType> VariantTypes = GetAll<VariantType>().ToDictionary(variantType => variantType.Code, variantType => variantType);
         private static readonly Dictionary<string, ReferenceType> ReferenceTypes = GetAll<ReferenceType>().ToDictionary(referenceType => referenceType.Code, referenceType => referenceType);
@@ -96,21 +96,21 @@
 
         private static void AddRadical(KanjiEntry entry, CharacterElementData data)
         {
-            IBushuRadical bushuRadical;
+            IIndexRadical indexRadical;
 
             var radicalType = RadicalTypes[data.RadicalTypeAttribute];
             var radicalNumber = int.Parse(data.Content);
 
-            if (radicalType.Equals(BushuRadicalType.Classical))
+            if (radicalType.Equals(IndexRadicalType.Kangxi))
             {
-                bushuRadical = ClassicalBushuRadicals.ContainsKey(radicalNumber) ? ClassicalBushuRadicals[radicalNumber] : null;
+                indexRadical = KangxiIndexRadicals.ContainsKey(radicalNumber) ? KangxiIndexRadicals[radicalNumber] : null;
             }
             else
             {
-                bushuRadical = new BushuRadicalNelson(radicalNumber);
+                indexRadical = new IndexRadicalNelson(radicalNumber);
             }
 
-            entry.BushuRadicalsList.Add(bushuRadical);
+            entry.IndexRadicalsList.Add(indexRadical);
         }
 
         private static void AddGrade(KanjiEntry entry, CharacterElementData data)

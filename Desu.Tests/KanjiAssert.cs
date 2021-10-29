@@ -20,8 +20,8 @@ namespace Wacton.Desu.Tests
             Assert.That(first.RadicalDecomposition, Is.EqualTo(second.RadicalDecomposition));
             Assert.That(first.Codepoints, Is.EqualTo(second.Codepoints));
             Assert.That(first.StrokePaths, Is.EqualTo(second.StrokePaths));
-            Assert.That(first.BushuRadicals, Is.EqualTo(second.BushuRadicals));
-            Assert.That(first.IsBushuRadical, Is.EqualTo(second.IsBushuRadical));
+            Assert.That(first.IndexRadicals, Is.EqualTo(second.IndexRadicals));
+            Assert.That(first.IsIndexRadical, Is.EqualTo(second.IsIndexRadical));
             Assert.That(first.Grade, Is.EqualTo(second.Grade));
             Assert.That(first.StrokeCount, Is.EqualTo(second.StrokeCount));
             Assert.That(first.StrokeCommonMiscounts, Is.EqualTo(second.StrokeCommonMiscounts));

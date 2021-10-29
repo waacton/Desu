@@ -13,8 +13,8 @@ namespace Wacton.Desu.Tests.Kanji
         public IEnumerable<string> RadicalDecomposition { get; set; } = new List<string>();
         public IEnumerable<ICodepoint> Codepoints { get; set; } = new List<ICodepoint>();
         public IEnumerable<string> StrokePaths { get; set; } = new List<string>();
-        public IEnumerable<IBushuRadical> BushuRadicals { get; set; } = new List<IBushuRadical>();
-        public bool IsBushuRadical { get; set; } = false;
+        public IEnumerable<IIndexRadical> IndexRadicals { get; set; } = new List<IIndexRadical>();
+        public bool IsIndexRadical { get; set; } = false;
         public Grade Grade { get; set; } = Grade.None;
         public int StrokeCount { get; set; }
         public IEnumerable<int> StrokeCommonMiscounts { get; set; } = new List<int>();

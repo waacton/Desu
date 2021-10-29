@@ -25,19 +25,19 @@ namespace Wacton.Desu.Tests
         }
 
         [Test]
-        public void BushuRadicalClassicals()
+        public void IndexRadicalKangxis()
         {
-            var usedEnums = kanjiEntries.SelectMany(x => x.BushuRadicals).OfType<BushuRadicalClassical>().Distinct();
+            var usedEnums = kanjiEntries.SelectMany(x => x.IndexRadicals).OfType<IndexRadicalKangxi>().Distinct();
             AssertNoUnusedEnums(usedEnums);
-            AssertUnusedEnumDetected(usedEnums, new BushuRadicalClassical(_, 0, _));
+            AssertUnusedEnumDetected(usedEnums, new IndexRadicalKangxi(_, 0, _));
         }
 
         [Test]
-        public void BushuRadicalTypes()
+        public void IndexRadicalTypes()
         {
-            var usedEnums = kanjiEntries.SelectMany(x => x.BushuRadicals).Select(x => x.Type).Distinct();
+            var usedEnums = kanjiEntries.SelectMany(x => x.IndexRadicals).Select(x => x.Type).Distinct();
             AssertNoUnusedEnums(usedEnums);
-            AssertUnusedEnumDetected(usedEnums, new BushuRadicalType(_, _));
+            AssertUnusedEnumDetected(usedEnums, new IndexRadicalType(_, _));
         }
 
         [Test]

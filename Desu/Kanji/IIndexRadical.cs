@@ -2,9 +2,9 @@
 {
     using Wacton.Desu.Enums;
 
-    public interface IBushuRadical
+    public interface IIndexRadical
     {
-        BushuRadicalType Type { get; }
+        IndexRadicalType Type { get; }
         string Radical { get; }
         int Number { get; }
     }
