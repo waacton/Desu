@@ -23,14 +23,11 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
 ```json
 {
     "Sequence": 1175570,
-    "Kanjis":
-    [
+    "Kanjis": [
         {
             "Text": "円",
-            "Informations":
-            [],
-            "Priorities":
-            [
+            "Informations": [],
+            "Priorities": [
                 {
                     "Code": "ichi1",
                     "Value": 2,
@@ -50,29 +47,23 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
         },
         {
             "Text": "圓",
-            "Informations":
-            [
+            "Informations": [
                 {
                     "Code": "word containing out-dated kanji or kanji usage",
                     "Value": 4,
                     "DisplayName": "OutdatedKanji"
                 }
             ],
-            "Priorities":
-            []
+            "Priorities": []
         }
     ],
-    "Readings":
-    [
+    "Readings": [
         {
             "Text": "えん",
             "IsTrueKanjiReading": true,
-            "Restriction":
-            [],
-            "Informations":
-            [],
-            "Priorities":
-            [
+            "Restriction": [],
+            "Informations": [],
+            "Priorities": [
                 {
                     "Code": "ichi1",
                     "Value": 2,
@@ -91,15 +82,11 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         }
     ],
-    "Senses":
-    [
+    "Senses": [
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [
                 {
                     "Code": "noun (common) (futsuumeishi)",
                     "Description": "Noun (common)",
@@ -107,26 +94,17 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                     "DisplayName": "NounCommon"
                 }
             ],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "yen (Japanese monetary unit)",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "eng",
                         "TwoLetterCode": "en",
                         "Value": 15,
@@ -138,12 +116,9 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [
                 {
                     "Code": "noun (common) (futsuumeishi)",
                     "Description": "Noun (common)",
@@ -151,26 +126,17 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                     "DisplayName": "NounCommon"
                 }
             ],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "circle",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "eng",
                         "TwoLetterCode": "en",
                         "Value": 15,
@@ -182,32 +148,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "cirkel",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "dut",
                         "TwoLetterCode": "nl",
                         "Value": 14,
@@ -218,8 +172,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "rondte",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "dut",
                         "TwoLetterCode": "nl",
                         "Value": 14,
@@ -231,32 +184,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "{muntw.} yen",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "dut",
                         "TwoLetterCode": "nl",
                         "Value": 14,
@@ -268,32 +209,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "yen",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "fre",
                         "TwoLetterCode": "fr",
                         "Value": 20,
@@ -304,8 +233,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "unité monétaire japonaise",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "fre",
                         "TwoLetterCode": "fr",
                         "Value": 20,
@@ -317,32 +245,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "cercle",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "fre",
                         "TwoLetterCode": "fr",
                         "Value": 20,
@@ -354,32 +270,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "Kreis",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "ger",
                         "TwoLetterCode": "de",
                         "Value": 22,
@@ -390,8 +294,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "Kugel",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "ger",
                         "TwoLetterCode": "de",
                         "Value": 22,
@@ -403,32 +306,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "Kreis",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "ger",
                         "TwoLetterCode": "de",
                         "Value": 22,
@@ -440,32 +331,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "Yen",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "ger",
                         "TwoLetterCode": "de",
                         "Value": 22,
@@ -476,8 +355,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "￥",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "ger",
                         "TwoLetterCode": "de",
                         "Value": 22,
@@ -489,32 +367,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "karika",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "hun",
                         "TwoLetterCode": "hu",
                         "Value": 29,
@@ -525,8 +391,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "kerület",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "hun",
                         "TwoLetterCode": "hu",
                         "Value": 29,
@@ -537,8 +402,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "körvonal",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "hun",
                         "TwoLetterCode": "hu",
                         "Value": 29,
@@ -549,8 +413,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "körzet",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "hun",
                         "TwoLetterCode": "hu",
                         "Value": 29,
@@ -562,32 +425,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "иена",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "rus",
                         "TwoLetterCode": "ru",
                         "Value": 49,
@@ -598,8 +449,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "круг",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "rus",
                         "TwoLetterCode": "ru",
                         "Value": 49,
@@ -611,32 +461,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "jen (japonska denarna enota)",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "slv",
                         "TwoLetterCode": "sl",
                         "Value": 52,
@@ -647,8 +485,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "okrogla oblika{図形}",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "slv",
                         "TwoLetterCode": "sl",
                         "Value": 52,
@@ -659,8 +496,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "yen (valuta){貨幣}",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "slv",
                         "TwoLetterCode": "sl",
                         "Value": 52,
@@ -671,8 +507,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "jen {jap. denarna enota}",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "slv",
                         "TwoLetterCode": "sl",
                         "Value": 52,
@@ -684,32 +519,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "Yen",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "spa",
                         "TwoLetterCode": "es",
                         "Value": 54,
@@ -720,8 +543,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "Yenes",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "spa",
                         "TwoLetterCode": "es",
                         "Value": 54,
@@ -732,8 +554,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "dinero",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "spa",
                         "TwoLetterCode": "es",
                         "Value": 54,
@@ -745,32 +566,20 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
             ]
         },
         {
-            "KanjiRestriction":
-            [],
-            "ReadingRestriction":
-            [],
-            "PartsOfSpeech":
-            [],
-            "CrossReferences":
-            [],
-            "Antonyms":
-            [],
-            "Fields":
-            [],
-            "Miscellanea":
-            [],
-            "Informations":
-            [],
-            "LoanwordSources":
-            [],
-            "Dialects":
-            [],
-            "Glosses":
-            [
+            "KanjiRestriction": [],
+            "ReadingRestriction": [],
+            "PartsOfSpeech": [],
+            "CrossReferences": [],
+            "Antonyms": [],
+            "Fields": [],
+            "Miscellanea": [],
+            "Informations": [],
+            "LoanwordSources": [],
+            "Dialects": [],
+            "Glosses": [
                 {
                     "Term": "círculo",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "spa",
                         "TwoLetterCode": "es",
                         "Value": 54,
@@ -781,8 +590,7 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
                 },
                 {
                     "Term": "redondel",
-                    "Language":
-                    {
+                    "Language": {
                         "ThreeLetterCode": "spa",
                         "TwoLetterCode": "es",
                         "Value": 54,
@@ -812,34 +620,25 @@ var nameEntries = await NameDictionary.ParseEntriesAsync();
 ```json
 {
     "Sequence": 5142901,
-    "Kanjis":
-    [
+    "Kanjis": [
         {
             "Text": "円",
-            "Informations":
-            [],
-            "Priorities":
-            []
+            "Informations": [],
+            "Priorities": []
         }
     ],
-    "Readings":
-    [
+    "Readings": [
         {
             "Text": "えん",
             "IsTrueKanjiReading": true,
-            "Restriction":
-            [],
-            "Informations":
-            [],
-            "Priorities":
-            []
+            "Restriction": [],
+            "Informations": [],
+            "Priorities": []
         }
     ],
-    "Translations":
-    [
+    "Translations": [
         {
-            "NameTypes":
-            [
+            "NameTypes": [
                 {
                     "Code": "female given name or forename",
                     "Value": 5,
@@ -851,10 +650,8 @@ var nameEntries = await NameDictionary.ParseEntriesAsync();
                     "DisplayName": "Surname"
                 }
             ],
-            "CrossReferences":
-            [],
-            "Transcriptions":
-            [
+            "CrossReferences": [],
+            "Transcriptions": [
                 "En"
             ]
         }
@@ -878,18 +675,15 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
 ```json
 {
     "Literal": "円",
-    "RadicalDecomposition":
-    [
+    "RadicalDecomposition": [
         "冂",
         "亠",
         "一",
         "｜"
     ],
-    "Codepoints":
-    [
+    "Codepoints": [
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "ucs",
                 "Description": "Unicode 4.0",
                 "Value": 3,
@@ -898,8 +692,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "5186"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "jis208",
                 "Description": "JIS X 0208-1997",
                 "Value": 0,
@@ -908,45 +701,37 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "17-63"
         }
     ],
-    "StrokePaths":
-    [
+    "StrokePaths": [
         "M21.75,19.8c0.91,0.91,1.47,3.23,1.5,5.45c0.2,13.9,0.03,47.69,0.03,62.5c0,2-0.03,4.99-0.03,6",
         "M24.06,21.56c15.07-1.68,49.46-5.58,57.92-6.31c2.9-0.25,4.78,1.88,4.78,4.27c0,13.48,0,53.21,0,67.48c0,9.75-4.25,6.5-8.5,1.5",
         "M52.25,20.75c0.88,0.88,1.5,2,1.5,3.71c0,6.76,0,27.54,0,31.04",
         "M24.75,59.75c14.62-1.75,43-4.25,60.5-5.25"
     ],
-    "IndexRadicals":
-    [
+    "IndexRadicals": [
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "classical",
                 "Value": 0,
                 "DisplayName": "Kangxi"
             },
             "Number": 13,
             "Radical": "冂",
-            "Variants":
-            [],
+            "Variants": [],
             "Value": 12,
             "DisplayName": "Radical013"
         }
     ],
     "IsIndexRadical": false,
-    "Grade":
-    {
+    "Grade": {
         "Number": 1,
         "Value": 1,
         "DisplayName": "One"
     },
     "StrokeCount": 4,
-    "StrokeCommonMiscounts":
-    [],
-    "Variants":
-    [
+    "StrokeCommonMiscounts": [],
+    "Variants": [
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "jis208",
                 "Description": "JIS X 0208",
                 "Value": 0,
@@ -956,14 +741,11 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
         }
     ],
     "Frequency": 69,
-    "RadicalNames":
-    [],
+    "RadicalNames": [],
     "JLPT": 4,
-    "References":
-    [
+    "References": [
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "nelson_c",
                 "Description": "Nelson: \"Modern Reader's Japanese-English Character Dictionary\"",
                 "Value": 0,
@@ -972,8 +754,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "617"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "nelson_n",
                 "Description": "Nelson: \"The New Nelson Japanese-English Character Dictionary\"",
                 "Value": 1,
@@ -982,8 +763,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "385"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "halpern_njecd",
                 "Description": "Halpern: \"New Japanese-English Character Dictionary\"",
                 "Value": 2,
@@ -992,8 +772,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "2955"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "halpern_kkd",
                 "Description": "Halpern: \"Kodansha Kanji Dictionary\"",
                 "Value": 5,
@@ -1002,8 +781,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "3673"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "halpern_kkld",
                 "Description": "Halpern: \"Kanji Learners Dictionary\"",
                 "Value": 3,
@@ -1012,8 +790,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "1875"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "halpern_kkld_2ed",
                 "Description": "Halpern: \"Kanji Learners Dictionary\", 2nd Edition",
                 "Value": 4,
@@ -1022,8 +799,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "2555"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "heisig",
                 "Description": "Heisig: \"Remembering The Kanji\"",
                 "Value": 6,
@@ -1032,8 +808,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "1811"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "heisig6",
                 "Description": "Heisig: \"Remembering The Kanji\", 6th Edition",
                 "Value": 7,
@@ -1042,8 +817,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "1952"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "gakken",
                 "Description": "Gakken: \"A New Dictionary Of Kanji Usage\"",
                 "Value": 8,
@@ -1052,8 +826,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "2"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "oneill_names",
                 "Description": "O'Neill: \"Japanese Names\"",
                 "Value": 9,
@@ -1062,8 +835,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "78"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "oneill_kk",
                 "Description": "O'Neill: \"Essential Kanji\"",
                 "Value": 10,
@@ -1072,8 +844,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "159"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "moro",
                 "Description": "Morohashi: \"Daikanwajiten\"",
                 "Value": 11,
@@ -1082,8 +853,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "1513 (vol 2, pg 0110)"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "henshall",
                 "Description": "Henshall: \"A Guide To Remembering Japanese Characters\"",
                 "Value": 12,
@@ -1092,8 +862,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "4"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "sh_kk",
                 "Description": "Spahn & Hadamitzky: \"The Kanji Dictionary\"",
                 "Value": 13,
@@ -1102,8 +871,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "13"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "sh_kk2",
                 "Description": "Spahn & Hadamitzky: \"The Kanji Dictionary\", 2nd Edition",
                 "Value": 14,
@@ -1112,8 +880,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "13"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "sakade",
                 "Description": "Sakade: \"A Guide To Reading And Writing Japanese\"",
                 "Value": 15,
@@ -1122,8 +889,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "48"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "jf_cards",
                 "Description": "Japanese Kanji Flashcards (Hodges & Okazaki)",
                 "Value": 16,
@@ -1132,8 +898,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "20"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "henshall3",
                 "Description": "Henshall, Seeley & De Groot: \"A Guide To Reading And Writing Japanese\", 3rd Edition",
                 "Value": 17,
@@ -1142,8 +907,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "50"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "tutt_cards",
                 "Description": "Tuttle Flash Cards (Kask)",
                 "Value": 18,
@@ -1152,8 +916,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "25"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "crowley",
                 "Description": "Crowley: \"The Kanji Way to Japanese Language Power\"",
                 "Value": 19,
@@ -1162,8 +925,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "260"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "kanji_in_context",
                 "Description": "Nishiguchi & Kono: \"Kanji In Context\"",
                 "Value": 20,
@@ -1172,8 +934,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "14"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "busy_people",
                 "Description": "AJALT: \"Japanese For Busy People\"",
                 "Value": 21,
@@ -1182,8 +943,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "2.12"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "kodansha_compact",
                 "Description": "\"Kodansha's Compact Kanji Guide\"",
                 "Value": 22,
@@ -1192,8 +952,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "159"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "maniette",
                 "Description": "Maniette: \"Les Kanjis Dans La Tête\"",
                 "Value": 23,
@@ -1202,18 +961,15 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "185"
         }
     ],
-    "QueryCodes":
-    [
+    "QueryCodes": [
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "skip",
                 "Description": "SKIP",
                 "Value": 0,
                 "DisplayName": "SKIP"
             },
-            "SkipMisclassification":
-            {
+            "SkipMisclassification": {
                 "Code": "",
                 "Value": 0,
                 "DisplayName": "None"
@@ -1221,8 +977,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "3-2-2"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "sh_desc",
                 "Description": "Spahn & Hadamitzky",
                 "Value": 1,
@@ -1232,8 +987,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "2r2.1"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "four_corner",
                 "Description": "Four Corner",
                 "Value": 2,
@@ -1243,8 +997,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "7722.0"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "deroo",
                 "Description": "De Roo",
                 "Value": 3,
@@ -1254,11 +1007,9 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "3645"
         }
     ],
-    "Readings":
-    [
+    "Readings": [
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "pinyin",
                 "Value": 0,
                 "DisplayName": "Pinyin"
@@ -1266,8 +1017,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "yuan2"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "korean_r",
                 "Value": 1,
                 "DisplayName": "KoreanRomanized"
@@ -1275,8 +1025,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "weon"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "korean_h",
                 "Value": 2,
                 "DisplayName": "KoreanHangul"
@@ -1284,8 +1033,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "원"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "ja_on",
                 "Value": 3,
                 "DisplayName": "JapaneseOn"
@@ -1293,8 +1041,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "エン"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "ja_kun",
                 "Value": 4,
                 "DisplayName": "JapaneseKun"
@@ -1302,8 +1049,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "まる.い"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "ja_kun",
                 "Value": 4,
                 "DisplayName": "JapaneseKun"
@@ -1311,8 +1057,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "まる"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "ja_kun",
                 "Value": 4,
                 "DisplayName": "JapaneseKun"
@@ -1320,8 +1065,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "まど"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "ja_kun",
                 "Value": 4,
                 "DisplayName": "JapaneseKun"
@@ -1329,8 +1073,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "まど.か"
         },
         {
-            "Type":
-            {
+            "Type": {
                 "Code": "ja_kun",
                 "Value": 4,
                 "DisplayName": "JapaneseKun"
@@ -1338,11 +1081,9 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Value": "まろ.やか"
         }
     ],
-    "Meanings":
-    [
+    "Meanings": [
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "eng",
                 "TwoLetterCode": "en",
                 "Value": 15,
@@ -1351,8 +1092,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "circle"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "eng",
                 "TwoLetterCode": "en",
                 "Value": 15,
@@ -1361,8 +1101,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "yen"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "eng",
                 "TwoLetterCode": "en",
                 "Value": 15,
@@ -1371,8 +1110,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "round"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "fre",
                 "TwoLetterCode": "fr",
                 "Value": 20,
@@ -1381,8 +1119,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "cercle"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "fre",
                 "TwoLetterCode": "fr",
                 "Value": 20,
@@ -1391,8 +1128,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "yen"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "fre",
                 "TwoLetterCode": "fr",
                 "Value": 20,
@@ -1401,8 +1137,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "rond"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "spa",
                 "TwoLetterCode": "es",
                 "Value": 54,
@@ -1411,8 +1146,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "circular"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "spa",
                 "TwoLetterCode": "es",
                 "Value": 54,
@@ -1421,8 +1155,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "redondo"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "spa",
                 "TwoLetterCode": "es",
                 "Value": 54,
@@ -1431,8 +1164,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "yen"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "por",
                 "TwoLetterCode": "pt",
                 "Value": 47,
@@ -1441,8 +1173,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "círculo"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "por",
                 "TwoLetterCode": "pt",
                 "Value": 47,
@@ -1451,8 +1182,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "iene"
         },
         {
-            "Language":
-            {
+            "Language": {
                 "ThreeLetterCode": "por",
                 "TwoLetterCode": "pt",
                 "Value": 47,
@@ -1461,8 +1191,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
             "Term": "redondo"
         }
     ],
-    "Nanoris":
-    [
+    "Nanoris": [
         "つぶら",
         "のぶ",
         "まどか",
