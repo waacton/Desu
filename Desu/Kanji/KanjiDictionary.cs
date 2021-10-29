@@ -42,12 +42,12 @@
         public IEnumerable<IKanjiEntry> GetEntries() => ParseEntries();
 
         /// <summary>
-        /// Returns the entries of the kanji dictionary
+        /// Returns the entries of the kanji dictionary asynchronously
         /// </summary>
         public async Task<IEnumerable<IKanjiEntry>> GetEntriesAsync() => await ParseEntriesAsync();
 
         /// <summary>
-        /// Returns the entries of the kanji dictionary asynchronously
+        /// Returns the entries of the kanji dictionary
         /// </summary>
         public static IEnumerable<IKanjiEntry> ParseEntries()
         {
@@ -60,6 +60,25 @@
         public static async Task<IEnumerable<IKanjiEntry>> ParseEntriesAsync()
         {
             return await EmbeddedResources.ReadStreamAsync(Resource.KanjiDictionary, ParseDictionaryAsync);
+        }
+
+        private static IEnumerable<IKanjiEntry> ParseDictionary(XmlReader reader)
+        {
+            var entries = new List<IKanjiEntry>();
+
+            reader.MoveToContent();
+            while (reader.Read())
+            {
+                if (!IsReaderAtStartOfEntry(reader))
+                {
+                    continue;
+                }
+
+                var dictionaryEntry = ReadEntry(reader);
+                entries.Add(dictionaryEntry);
+            }
+
+            return entries;
         }
 
         private static async Task<IEnumerable<IKanjiEntry>> ParseDictionaryAsync(XmlReader reader)
@@ -81,6 +100,21 @@
             return entries;
         }
 
+        private static KanjiEntry ReadEntry(XmlReader reader)
+        {
+            var dictionaryEntry = new KanjiEntry();
+            while (!IsReaderAtEndOfEntry(reader))
+            {
+                reader.Read();
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    ProcessXmlElement(reader, dictionaryEntry);
+                }
+            }
+
+            return dictionaryEntry;
+        }
+
         private static async Task<KanjiEntry> ReadEntryAsync(XmlReader reader)
         {
             var dictionaryEntry = new KanjiEntry();
@@ -96,6 +130,19 @@
             return dictionaryEntry;
         }
 
+        private static void ProcessXmlElement(XmlReader reader, KanjiEntry dictionaryEntry)
+        {
+            var elementCode = reader.Name;
+            if (!CharacterElements.ContainsKey(elementCode))
+            {
+                return;
+            }
+
+            var characterElement = CharacterElements[elementCode];
+            var characterElementData = CharacterElementData.FromXmlReader(reader);
+            characterElement.AddDataToEntry(dictionaryEntry, characterElementData);
+        }
+
         private static async Task ProcessXmlElementAsync(XmlReader reader, KanjiEntry dictionaryEntry)
         {
             var elementCode = reader.Name;
@@ -107,53 +154,6 @@
             var characterElement = CharacterElements[elementCode];
             var characterElementData = await CharacterElementData.FromXmlReaderAsync(reader);
             characterElement.AddDataToEntry(dictionaryEntry, characterElementData);
-        }
-
-        private static IEnumerable<IKanjiEntry> ParseDictionary(XmlReader reader)
-        {
-            var entries = new List<IKanjiEntry>();
-            var characterElements = Enumeration.GetAll<CharacterElement>().ToDictionary(element => element.Code, element => element);
-
-            reader.MoveToContent();
-            while (reader.Read())
-            {
-                if (!reader.IsStartElement() || reader.Name != CharacterTag)
-                {
-                    continue;
-                }
-
-                // now within an entry, can now create data entry
-                // keep reading until the end entry tag is reached
-                var dictionaryEntry = new KanjiEntry();
-                var isEndOfEntry = false;
-                while (!isEndOfEntry)
-                {
-                    reader.Read();
-                    switch (reader.NodeType)
-                    {
-                        case XmlNodeType.Element:
-                        {
-                            var elementCode = reader.Name;
-                            if (!characterElements.ContainsKey(elementCode))
-                            {
-                                continue;
-                            }
-
-                            var characterElement = characterElements[elementCode];
-                            var characterElementData = CharacterElementData.FromXmlReader(reader);
-                            characterElement.AddDataToEntry(dictionaryEntry, characterElementData);
-                            break;
-                        }
-                        case XmlNodeType.EndElement:
-                            isEndOfEntry = reader.Name.Equals(CharacterTag);
-                            break;
-                    }
-                }
-
-                entries.Add(dictionaryEntry);
-            }
-
-            return entries;
         }
 
         private static bool IsReaderAtStartOfEntry(XmlReader reader) => reader.NodeType == XmlNodeType.Element && reader.Name == CharacterTag;
