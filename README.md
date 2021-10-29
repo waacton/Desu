@@ -1,4 +1,4 @@
-# <img src="https://gitlab.com/Wacton/Desu/raw/master/Desu/Resources/Desu.png" width="32" height="32"> Desu
+# <img src="https://gitlab.com/Wacton/Desu/raw/main/Desu/Resources/Desu.png" width="32" height="32"> Desu
 Wacton.Desu is a Japanese and kanji dictionary .NET library built upon [JMdict](https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project), [JMnedict](http://www.edrdg.org/enamdict/enamdict_doc.html), [KANJIDIC](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project), [RADKFILE/KRADFILE](http://nihongo.monash.edu/kradinf.html), and [KanjiVG](http://kanjivg.tagaini.net/). 
 <br>
 The data structure uses object representations where possible.  Please refer to the above projects for detailed definitions of the properties.
@@ -70,7 +70,7 @@ var romaji = transliterator.GetRomaji("です"); // romaji == "desu"
 
 _**Notes:** This is a large library due to the embedded resource files and can take a few seconds to parse._
 _Since parsing the resources are [I/O-bound operations](https://docs.microsoft.com/en-us/dotnet/csharp/async) it is recommended to use the asynchronous API._
-_Example usages can be found in the [Desu.ExampleConsole](https://gitlab.com/Wacton/Desu/tree/master/Desu.ExampleConsole) and [Desu.ExampleWpf](https://gitlab.com/Wacton/Desu/tree/master/Desu.ExampleWpf) projects._
+_Example usages can be found in the [Desu.ExampleConsole](https://gitlab.com/Wacton/Desu/tree/main/Desu.ExampleConsole) and [Desu.ExampleWpf](https://gitlab.com/Wacton/Desu/tree/main/Desu.ExampleWpf) projects._
 _(The Japanese dictionary contains ~200k entries, and the proper name dictionary contains ~750k entries.)_
 <br>
 
