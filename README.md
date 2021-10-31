@@ -1202,7 +1202,7 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
 </details>
 <br>
 
-**Radical lookup** - kanji to radical (KRADFILE)
+**Radical lookup** - kanji to radicals (KRADFILE)
 ```c#
 using Wacton.Desu.Radicals;
 ...
