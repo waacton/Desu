@@ -1,7 +1,7 @@
 # <img src="https://gitlab.com/Wacton/Desu/raw/main/Desu/Resources/Desu.png" width="32" height="32"> Desu
-Wacton.Desu is a Japanese and kanji dictionary .NET library built upon [JMdict](https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project), [JMnedict](http://www.edrdg.org/enamdict/enamdict_doc.html), [KANJIDIC](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project), [RADKFILE/KRADFILE](http://nihongo.monash.edu/kradinf.html), and [KanjiVG](http://kanjivg.tagaini.net/). 
-<br>
-The data structure uses object representations where possible.  Please refer to the above projects for detailed definitions of the properties.
+Wacton.Desu is a Japanese and kanji dictionary .NET library built upon [JMdict](https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project), [JMnedict](http://www.edrdg.org/enamdict/enamdict_doc.html), [KANJIDIC](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project), [RADKFILE/KRADFILE](http://nihongo.monash.edu/kradinf.html), and [KanjiVG](http://kanjivg.tagaini.net/). The data structure uses object representations where possible.  Please refer to projects themselves for detailed definitions of the schema and properties.
+<br><br>
+Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framework 4.6.1+ applications.
 
 ## How to use 📚🇯🇵
 Can be installed as a [NuGet package](https://www.nuget.org/packages/Wacton.Desu/) [![NuGet](https://img.shields.io/nuget/v/Wacton.Desu.svg?maxAge=2592000)](https://www.nuget.org/packages/Wacton.Desu/)
