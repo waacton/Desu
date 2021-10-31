@@ -1,4 +1,4 @@
-image: mcr.microsoft.com/dotnet/core/sdk:latest
+image: mcr.microsoft.com/dotnet/sdk:latest
 
 stages:
     - build
@@ -15,4 +15,4 @@ build:
 test:
     stage: test
     script: 
-        - "dotnet test"
+        - "dotnet test --verbosity normal"
