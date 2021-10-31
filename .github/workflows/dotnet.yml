@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: [ github-workflows ]
+    branches: [ main ]
   pull_request:
-    branches: [ github-workflows ]
+    branches: [ main ]
 
 jobs:
   build:
