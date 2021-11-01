@@ -1316,8 +1316,5 @@ Source File URL: https://github.com/KanjiVG/kanjivg/releases/download/r20160426/
 
 ---
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-<img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-</a>
-<br>
-<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Wacton.Desu</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://gitlab.com/Wacton/Desu" property="cc:attributionName" rel="cc:attributionURL">William Acton</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+[Wacton.Desu](https://gitlab.com/Wacton/desu) by William Acton is licensed under the [GNU General Public License v3.0](https://gitlab.com/Wacton/desu/-/blob/main/LICENSE).<br>
+See [Creative Commons](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software) and [GNU](https://www.gnu.org/licenses/license-list.en.html#ccbysa) for details about the one-way compatibility between CC BY-SA 4.0 and GNU GPLv3.
