@@ -1279,37 +1279,37 @@ _(The Japanese dictionary contains ~200k entries, and the proper name dictionary
 ## Attributions 🙇
 This library uses the following files in conformance to their respective licences:
 
-**JMdict** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+**JMdict** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/JMdict.gz _(JMdict)_
 
-**JMnedict** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+**JMnedict** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/JMnedict.xml.gz _(JMnedict.xml)_
 
-**KANJIDIC2** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+**KANJIDIC2** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/kanjidic2.xml.gz _(kanjidic2.xml)_  
 
-**KRADFILE** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+**KRADFILE** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/kradzip.zip  _(kradfile)_
 
-**KRADFILE2** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+**KRADFILE2** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright James Rose  
 Licence URL: http://www.kanjicafe.com/kradfile_license.htm  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/kradzip.zip  _(kradfile2)_ 
 
-**RADKFILEX** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+**RADKFILEX** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/kradzip.zip  _(radkfilex)_  
 
-**KanjiVG** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
+**KanjiVG** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright Ulrich Apel  
 Licence URL: http://kanjivg.tagaini.net/  
 Source File URL: https://github.com/KanjiVG/kanjivg/releases/download/r20160426/kanjivg-20160426.xml.gz  _(kanjivg.xml)_  
@@ -1317,3 +1317,5 @@ Source File URL: https://github.com/KanjiVG/kanjivg/releases/download/r20160426/
 ---
 
 [Wacton.Desu](https://gitlab.com/Wacton/desu) by William Acton is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+
+Adaptations of CC BY-SA 3.0 materials may only be licensed under [CC BY-SA 3.0 or a later version of the license](https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses/). Since Creative Commons [recommend against using their licenses for software](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software), adaptations of Wacton.Desu can be licensed under [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) due to its [one-way compatibility with CC BY-SA 4.0](https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses/).
