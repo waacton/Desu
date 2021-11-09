@@ -42,6 +42,7 @@
 # The mappings of the characters used to the characters in the Unicode,
 # mostly in the, "CJK Radicals Supplement" and "KangXi Radicals", are below.
 #
+# TODO: update these with correct unicode values
 # 化 2E85
 # 个 2F09
 # 并 none available - upside-down ハ
@@ -63,6 +64,7 @@
 # 初 2EC2
 # 買 2EB2
 # 滴 5547
+# 乞 20089 (new)
 # 
 # Jim Breen, Tokyo, January 2001
 #            Melbourne, July 2001
