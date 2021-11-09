@@ -1,7 +1,7 @@
 # <img src="https://gitlab.com/Wacton/Desu/raw/main/Desu/Resources/Desu.png" width="32" height="32"> Desu
-Wacton.Desu is a Japanese and kanji dictionary .NET library built upon [JMdict](https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project), [JMnedict](http://www.edrdg.org/enamdict/enamdict_doc.html), [KANJIDIC](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project), [RADKFILE/KRADFILE](http://nihongo.monash.edu/kradinf.html), and [KanjiVG](http://kanjivg.tagaini.net/). 
-<br>
-The data structure uses object representations where possible.  Please refer to the above projects for detailed definitions of the properties.
+Wacton.Desu is a Japanese and kanji dictionary .NET library built upon [JMdict](https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project), [JMnedict](http://www.edrdg.org/enamdict/enamdict_doc.html), [KANJIDIC](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project), [RADKFILE/KRADFILE](http://nihongo.monash.edu/kradinf.html), and [KanjiVG](http://kanjivg.tagaini.net/). The data structure uses object representations where possible.  Please refer to the projects themselves for detailed definitions of the schema and properties.
+<br><br>
+Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framework 4.6.1+ applications.
 
 ## How to use 📚🇯🇵
 Can be installed as a [NuGet package](https://www.nuget.org/packages/Wacton.Desu/) [![NuGet](https://img.shields.io/nuget/v/Wacton.Desu.svg?maxAge=2592000)](https://www.nuget.org/packages/Wacton.Desu/)
@@ -1279,37 +1279,43 @@ _(The Japanese dictionary contains ~200k entries, and the proper name dictionary
 ## Attributions 🙇
 This library uses the following files in conformance to their respective licences:
 
-**JMdict** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
-Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
+**JMdict** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright © Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/JMdict.gz _(JMdict)_
 
-**JMnedict** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
-Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
+**JMnedict** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright © Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/JMnedict.xml.gz _(JMnedict.xml)_
 
-**KANJIDIC2** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
-Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
+**KANJIDIC2** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright © Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/kanjidic2.xml.gz _(kanjidic2.xml)_  
 
-**KRADFILE** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
-Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
+**KRADFILE** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright © Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/kradzip.zip  _(kradfile)_
 
-**KRADFILE2** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
-Copyright James Rose  
+**KRADFILE2** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright © James Rose  
 Licence URL: http://www.kanjicafe.com/kradfile_license.htm  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/kradzip.zip  _(kradfile2)_ 
 
-**RADKFILEX** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
-Copyright Jim Breen & The Electronic Dictionary Research and Development Group  
+**RADKFILEX** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright © Jim Breen & The Electronic Dictionary Research and Development Group  
 Licence URL: http://www.edrdg.org/edrdg/licence.html  
 Source File URL: http://ftp.edrdg.org/pub/Nihongo/kradzip.zip  _(radkfilex)_  
 
-**KanjiVG** ([CC BY-SA 3](https://creativecommons.org/licenses/by-sa/3.0/))  
-Copyright Ulrich Apel  
+**KanjiVG** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
+Copyright © Ulrich Apel  
 Licence URL: http://kanjivg.tagaini.net/  
 Source File URL: https://github.com/KanjiVG/kanjivg/releases/download/r20160426/kanjivg-20160426.xml.gz  _(kanjivg.xml)_  
+
+---
+
+[Wacton.Desu](https://gitlab.com/Wacton/desu) is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/), copyright © 2016-2021 William Acton.
+
+Adaptations of CC BY-SA 3.0 materials may only be licensed under [CC BY-SA 3.0 or a later version of the license](https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses/). Since Creative Commons [recommend against using their licenses for software](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software), usages of Wacton.Desu can be licensed under [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) due to its [one-way compatibility with CC BY-SA 4.0](https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses/) (e.g. [Wacton.Japangolin](https://gitlab.com/Wacton/Japangolin)).
