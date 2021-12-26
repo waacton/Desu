@@ -38,7 +38,7 @@
     <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Desu.ico</ApplicationIcon>
+    <ApplicationIcon>..\Desu\Resources\Desu.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -100,9 +100,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Desu.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Desu\Desu.csproj">

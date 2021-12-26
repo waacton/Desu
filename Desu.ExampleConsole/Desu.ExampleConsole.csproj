@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <ApplicationIcon>Desu.ico</ApplicationIcon>
     <AssemblyName>Wacton.Desu.ExampleConsole</AssemblyName>
     <RootNamespace>Wacton.Desu.ExampleConsole</RootNamespace>
     <Authors>William Acton</Authors>
     <Company>William Acton</Company>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>10</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
