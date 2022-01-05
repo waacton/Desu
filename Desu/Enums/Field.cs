@@ -53,6 +53,7 @@
         public static readonly Field Music = new Field(nameof(Music), "music");
         public static readonly Field Ornithology = new Field(nameof(Ornithology), "ornithology");
         public static readonly Field Paleontology = new Field(nameof(Paleontology), "paleontology");
+        public static readonly Field Pathology = new Field(nameof(Pathology), "pathology");
         public static readonly Field Pharmacy = new Field(nameof(Pharmacy), "pharmacy");
         public static readonly Field Philosophy = new Field(nameof(Philosophy), "philosophy");
         public static readonly Field Photography = new Field(nameof(Photography), "photography");

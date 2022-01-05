@@ -32,6 +32,12 @@ namespace Wacton.Desu.Tests
 
         [Test]
         public void 九百() => JapaneseAssert.AssertEntry(TestEntries.九百(), japaneseEntries);
+        
+        [Test]
+        public void 蘇格蘭() => JapaneseAssert.AssertEntry(TestEntries.蘇格蘭(), japaneseEntries);
+        
+        [Test]
+        public void 羊水() => JapaneseAssert.AssertEntry(TestEntries.羊水(), japaneseEntries);
 
         [Test]
         public void タチ() => JapaneseAssert.AssertEntry(TestEntries.タチ(), japaneseEntries);

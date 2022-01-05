@@ -8,6 +8,7 @@
         public static readonly KanjiInformation IrregularKanji = new KanjiInformation(nameof(IrregularKanji), "word containing irregular kanji usage");
         public static readonly KanjiInformation IrregularOkurigana = new KanjiInformation(nameof(IrregularOkurigana), "irregular okurigana usage");
         public static readonly KanjiInformation OutdatedKanji = new KanjiInformation(nameof(OutdatedKanji), "word containing out-dated kanji or kanji usage");
+        public static readonly KanjiInformation RarelyUsedKanji = new KanjiInformation(nameof(RarelyUsedKanji), "rarely-used kanji form");
 
         public string Code { get; }
 
