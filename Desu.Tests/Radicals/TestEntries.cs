@@ -9,12 +9,14 @@ namespace Wacton.Desu.Tests.Radicals
         public static IEnumerable<string> Kanji䯂() => null;
         public static IEnumerable<string> Kanji亀() => AsArray("亀 田 勹 乙");
         public static IEnumerable<string> Kanji彁() => AsArray("弓 口 亅 一");
-        public static IEnumerable<string> Kanji鰹() => AsArray("魚 臣 田 土 又 杰");
+        public static IEnumerable<string> Kanji鰹() => AsArray("魚 臣 田 土 又 ⺣");
         public static IEnumerable<string> Kanji夊() => AsArray("夂");
+        public static IEnumerable<string> Kanji買() => AsArray("貝 目 ハ ⺲");
+        public static IEnumerable<string> Kanji乞() => AsArray("ノ 一 乙 人 𠂉");
         public static IEnumerable<string> Kanji亜() => AsArray("｜ 一 口");
-        public static IEnumerable<string> Kanji熙() => AsArray("杰 已 匚 口");
+        public static IEnumerable<string> Kanji熙() => AsArray("⺣ 已 匚 口");
         public static IEnumerable<string> Kanji丂() => AsArray("一 勹");
-        public static IEnumerable<string> Kanji龥() => AsArray("一 ｜ 亅 个 ハ 冂 口 廾 目 冊 貝 頁 龠");
+        public static IEnumerable<string> Kanji龥() => AsArray("一 ｜ 亅 𠆢 ハ 冂 口 廾 目 冊 貝 頁 龠");
 
         public static IEnumerable<string> Radical一() => AsArray(
             "亜唖阿姶悪芦或袷夷椅畏異遺井郁一芋蔭陰右窺丑云雲盈益榎円延援演塩汚央岡下" +
@@ -106,14 +108,47 @@ namespace Wacton.Desu.Tests.Radicals
 
         public static IEnumerable<string> Radical亀() => AsArray("穐竃亀縄蝿龝鬮龜蘒");
         public static IEnumerable<string> Radical鬯() => AsArray("鬱鬯");
+
+        public static IEnumerable<string> Radical買() => null;
+        public static IEnumerable<string> RadicalU2EB2() => AsArray( // ⺲
+            "欝鰻壊懐環還罫憲罪爵曙署薯燭鐸濁置聴徳寧罵買罰罷蔑慢漫蔓夢羅會儚曼嚀嚼囑" +
+            "圜堽壞寰屬幔廳廰懌懷罹擇擺檜楞檸澤濘獪獨獰甍睾矚縵繹繪罘罟罠罨罩罧罸羂羆" +
+            "羃羈羇聹聽膾薈薨蘰蘿蜀襪覽觸詈諫謾譯賣躅邏釋鏝鐶鑒鑼韈饅驛髑鬘鬟鰊鰥鱠鶫" +
+            "黷儇儜儸劅劚匵噣囉圛墁夣嫚嬛嶧幭幰懁懜擉擐擥攞斁斣曎槾櫝櫰欏歝殬殰潨瀆瀗" +
+            "熳爝獧玀瓌瘝皭眔眾睪瞢矒篾籜籮糫繯罒罛罜罝罡罣罤罥罦罭罱罽罾罿翾臅蕒薥藚" +
+            "藼蘀蠉蠋蠛蠲衊褱襗襡譞譼讟轘遝醳釂鐲鑟钃闤韇韤饠鱞鱰"
+        );
+
+        public static IEnumerable<string> Radical乞() => null;
+        public static IEnumerable<string> RadicalU20089() => AsArray( // 𠂉
+            "挨医液塩卸箇悔改晦海笠乾勧敢歓潅監竿管簡艦観鑑巌旗気汽擬疑吃杵救笈許禦教" +
+            "矯驚凝筋矩櫛啓敬警激権厳故午御乞侯候喉攻作策笹撒散算纂孜施竺嫉疾篠赦修傷" +
+            "廠称笑飾笥数政整籍節栴旋箭族第短箪知智痴致蜘竹筑徴懲敵笛徹撤轍迭鉄等答筒" +
+            "篤敦乍薙迩年敗梅矧箔箱箸肇筈筏繁範簸微筆敏敷符侮撫舞蕪復腹複覆幣弊蔽瞥箆" +
+            "篇簿倣放牧枚毎迄箕無弥矢薮悠遊濫藍覧履旅臨簾篭俟做傚傲儖儼飭厰簒啣嗷嗾嘸" +
+            "噬嚴埃塲塰嫩寳尓屹嶷巖幤廡忤怎愍愎愾慯憮攬攵攷收攸畋效敖敕敘敞敝數斂斃變" +
+            "旃旆旄旌旒旛暾暼條椥橄檠檄檻欖欸殤毓气氛氤氣游滸滌澂瀲熬燉猴珎癡瞰矣矮礙" +
+            "竅竢笂笏笊笆笳笘笙笞笵笨笶筐筺笄筍笋筌筅筵筥筴筧筰筱筬筮箝箘箟箍箜箚箋箒" +
+            "箏筝箙篋篁篌篏箴篆篝篩簑簔篦篥籠簀簇簓篳篷簗簍篶簣簧簪簟簷簫簽籌籃籔籏籀" +
+            "籐籘籟籤籖籥籬絛綮緻繖繿纜翳聟肄脩膂膓莓葹蓚蔟藪薇蝮蝣螯螫袮襤覈覽觴訖誨" +
+            "贅踟輹遨邀醫釐鏃鐓鑒雉霰馥鰒鰲鶩鹽黴鼇鼈"
+        );
+
         public static IEnumerable<string> Radical龠() => AsArray("籥鑰龠瀹爚禴籲鸙龡龢龣龥");
         public static IEnumerable<string> Radical䯂() => null;
 
         private static IEnumerable<string> AsArray(string input)
         {
-            var split = input.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-            var withoutSpaces = string.Join("", split);
-            return withoutSpaces.ToCharArray().Select(x => x.ToString());
+            if (input.Contains(' '))
+            {
+                // list of radicals, e.g. "亀 田 勹 乙"
+                return input.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            }
+
+            // list of kanji, e.g. "穐竃亀縄蝿龝鬮龜蘒"
+            // will fail if any kanji is > 2 bytes as each char is 16-bit [Unicode UTF-16]
+            // asanything beyond u+FFFF (e.g. 𠆢 radical) requires multiple characters to represent it
+            return input.ToCharArray().Select(x => x.ToString());
         }
 
     }

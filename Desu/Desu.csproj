@@ -15,12 +15,13 @@ Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framewor
     <PackageIconUrl></PackageIconUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageTags>Japanese kanji dictionary JMdict JMnedict KANJIDIC RADKFILE KRADFILE KanjiVG EDICT radicals romaji</PackageTags>
-    <PackageReleaseNotes>Add asynchronous API</PackageReleaseNotes>
+    <PackageReleaseNotes>Map radical glyphs to appropriate unicode characters and remove duplicates from kanji/radical lookups </PackageReleaseNotes>
     <RepositoryType></RepositoryType>
     <LangVersion>7.1</LangVersion>
     <Copyright>William Acton</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>Desu_64.png</PackageIcon>
+    <PackageVersion>6.1.0</PackageVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

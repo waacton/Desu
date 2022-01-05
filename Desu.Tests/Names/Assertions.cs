@@ -1,25 +1,24 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
-using Wacton.Desu.Japanese;
-using Wacton.Desu.Tests.Japanese;
+using Wacton.Desu.Names;
 
-namespace Wacton.Desu.Tests
+namespace Wacton.Desu.Tests.Names
 {
-    public static class JapaneseAssert
+    public class Assertions
     {
-        public static void AssertEntry(TestEntry testEntry, IEnumerable<IJapaneseEntry> japaneseEntries)
+        public static void AssertEntry(TestEntry testEntry, IEnumerable<INameEntry> nameEntries)
         {
-            var entry = japaneseEntries.Single(x => x.Sequence == testEntry.Sequence);
+            var entry = nameEntries.Single(x => x.Sequence == testEntry.Sequence);
             AssertEntriesAreEqual(entry, testEntry);
         }
 
-        private static void AssertEntriesAreEqual(IJapaneseEntry first, IJapaneseEntry second)
+        private static void AssertEntriesAreEqual(INameEntry first, INameEntry second)
         {
             Assert.That(first.Sequence, Is.EqualTo(second.Sequence));
             AssertKanjisAreEqual(first.Kanjis, second.Kanjis);
             AssertReadingsAreEqual(first.Readings, second.Readings);
-            AssertSensesAreEqual(first.Senses, second.Senses);
+            AssertTranslationsAreEqual(first.Translations, second.Translations);
         }
 
         private static void AssertKanjisAreEqual(IEnumerable<IKanji> firstList, IEnumerable<IKanji> secondList)
@@ -53,18 +52,17 @@ namespace Wacton.Desu.Tests
                 var second = secondList.ElementAt(i);
 
                 Assert.That(first.Text, Is.EqualTo(second.Text));
-                Assert.That(first.IsTrueKanjiReading, Is.EqualTo(second.IsTrueKanjiReading));
                 Assert.That(first.Restriction, Is.EqualTo(second.Restriction));
                 Assert.That(first.Informations, Is.EqualTo(second.Informations));
                 Assert.That(first.Priorities, Is.EqualTo(second.Priorities));
             }
         }
 
-        private static void AssertSensesAreEqual(IEnumerable<ISense> firstList, IEnumerable<ISense> secondList)
+        private static void AssertTranslationsAreEqual(IEnumerable<ITranslation> firstList, IEnumerable<ITranslation> secondList)
         {
             if (firstList.Count() != secondList.Count())
             {
-                Assert.Fail("Senses are different lengths");
+                Assert.Fail("Translations are different lengths");
             }
 
             for (var i = 0; i < firstList.Count(); i++)
@@ -72,17 +70,9 @@ namespace Wacton.Desu.Tests
                 var first = firstList.ElementAt(i);
                 var second = secondList.ElementAt(i);
 
-                Assert.That(first.KanjiRestriction, Is.EqualTo(second.KanjiRestriction));
-                Assert.That(first.ReadingRestriction, Is.EqualTo(second.ReadingRestriction));
-                Assert.That(first.PartsOfSpeech, Is.EqualTo(second.PartsOfSpeech));
+                Assert.That(first.NameTypes, Is.EqualTo(second.NameTypes));
                 Assert.That(first.CrossReferences, Is.EqualTo(second.CrossReferences));
-                Assert.That(first.Antonyms, Is.EqualTo(second.Antonyms));
-                Assert.That(first.Fields, Is.EqualTo(second.Fields));
-                Assert.That(first.Miscellanea, Is.EqualTo(second.Miscellanea));
-                Assert.That(first.Informations, Is.EqualTo(second.Informations));
-                Assert.That(first.LoanwordSources, Is.EqualTo(second.LoanwordSources));
-                Assert.That(first.Dialects, Is.EqualTo(second.Dialects));
-                Assert.That(first.Glosses, Is.EqualTo(second.Glosses));
+                Assert.That(first.Transcriptions, Is.EqualTo(second.Transcriptions));
             }
         }
     }

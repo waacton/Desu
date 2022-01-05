@@ -2,9 +2,9 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace Wacton.Desu.Tests
+namespace Wacton.Desu.Tests.Strokes
 {
-    public static class StrokeAssert
+    public static class Assertions
     {
         public static void AssertList(IEnumerable<string> expectedList, Func<IEnumerable<string>> actualListFunc)
         {

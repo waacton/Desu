@@ -155,7 +155,7 @@ namespace Wacton.Desu.Tests.Kanji
             return new TestEntry
             {
                 Literal = "鰹",
-                RadicalDecomposition = new List<string> { "魚", "臣", "田", "土", "又", "杰" },
+                RadicalDecomposition = new List<string> { "魚", "臣", "田", "土", "又", "⺣" },
                 StrokePaths = new List<string> {
                     "M23.5,13.5c0.12,1.44-0.32,2.84-0.82,4.19C20,23.5,16.62,30,10.24,36.87",
                     "M23.14,20.88c1.61,0,8.42-0.75,11.99-1.25c2.97-0.42,4.11,1.28,2.55,3.98c-2.84,4.91-4.77,9.54-9.48,17.35",

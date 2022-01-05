@@ -96,6 +96,7 @@
             var lineElements = line.Split(new[] { ':', ' ' }, StringSplitOptions.RemoveEmptyEntries);
             var kanji = lineElements.First();
             var radicals = lineElements.Skip(1).ToList();
+            radicals = GlyphMap.Replace(radicals);
             return (kanji, radicals);
         }
 
@@ -142,7 +143,7 @@
             {
                 if (line.StartsWith("$"))
                 {
-                    currentRadical = line.Split(' ')[1];
+                    currentRadical = GetRadicalKey(line);
                     dictionary.Add(currentRadical, new List<string>());
                 }
                 else
@@ -174,7 +175,7 @@
             {
                 if (line.StartsWith("$"))
                 {
-                    currentRadical = line.Split(' ')[1];
+                    currentRadical = GetRadicalKey(line);
                     dictionary.Add(currentRadical, new List<string>());
                 }
                 else
@@ -187,6 +188,12 @@
             }
 
             return ToEnumerableValues(dictionary);
+        }
+
+        private static string GetRadicalKey(string line)
+        {
+            var radical = line.Split(' ')[1];
+            return GlyphMap.Replace(radical);
         }
 
         private static Dictionary<string, IEnumerable<string>> ToEnumerableValues(Dictionary<string, List<string>> dictionary)

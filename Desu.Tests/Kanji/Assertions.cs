@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Wacton.Desu.Kanji;
-using Wacton.Desu.Tests.Kanji;
 
-namespace Wacton.Desu.Tests
+namespace Wacton.Desu.Tests.Kanji
 {
-    public static class KanjiAssert
+    public static class Assertions
     {
         public static void AssertEntry(TestEntry testEntry, IEnumerable<IKanjiEntry> kanjiEntries)
         {

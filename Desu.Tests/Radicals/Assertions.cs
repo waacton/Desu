@@ -2,9 +2,9 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace Wacton.Desu.Tests
+namespace Wacton.Desu.Tests.Radicals
 {
-    public static class RadicalAssert
+    public static class Assertions
     {
         public static void AssertList(IEnumerable<string> expectedList, Func<IEnumerable<string>> actualListFunc)
         {

@@ -17,12 +17,12 @@ namespace Wacton.Desu.Tests
         }
 
         [Test]
-        public void 国語研究所() => NameAssert.AssertEntry(TestEntries.国語研究所(), nameEntries);
+        public void 国語研究所() => Assertions.AssertEntry(TestEntries.国語研究所(), nameEntries);
 
         [Test]
-        public void ガラパゴス() => NameAssert.AssertEntry(TestEntries.ガラパゴス(), nameEntries);
+        public void ガラパゴス() => Assertions.AssertEntry(TestEntries.ガラパゴス(), nameEntries);
 
         [Test]
-        public void 国労() => NameAssert.AssertEntry(TestEntries.国労(), nameEntries); // first entry in JMnedict
+        public void 国労() => Assertions.AssertEntry(TestEntries.国労(), nameEntries); // first entry in JMnedict
     }
 }

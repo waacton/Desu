@@ -17,36 +17,36 @@ namespace Wacton.Desu.Tests
         }
 
         [Test]
-        public void 食べる() => JapaneseAssert.AssertEntry(TestEntries.食べる(), japaneseEntries);
+        public void 食べる() => Assertions.AssertEntry(TestEntries.食べる(), japaneseEntries);
 
         [Test]
-        public void 々() => JapaneseAssert.AssertEntry(TestEntries.々(), japaneseEntries);
+        public void 々() => Assertions.AssertEntry(TestEntries.々(), japaneseEntries);
 
         [Test]
-        public void βカロテン() => JapaneseAssert.AssertEntry(TestEntries.βカロテン(), japaneseEntries);
+        public void βカロテン() => Assertions.AssertEntry(TestEntries.βカロテン(), japaneseEntries);
 
         [Test]
-        public void Withコロナ() => JapaneseAssert.AssertEntry(TestEntries.Withコロナ(), japaneseEntries);
+        public void Withコロナ() => Assertions.AssertEntry(TestEntries.Withコロナ(), japaneseEntries);
 
         [Test]
-        public void サーターアンダギー() => JapaneseAssert.AssertEntry(TestEntries.サーターアンダギー(), japaneseEntries);
+        public void サーターアンダギー() => Assertions.AssertEntry(TestEntries.サーターアンダギー(), japaneseEntries);
 
         [Test]
-        public void 九百() => JapaneseAssert.AssertEntry(TestEntries.九百(), japaneseEntries);
+        public void 九百() => Assertions.AssertEntry(TestEntries.九百(), japaneseEntries);
         
         [Test]
-        public void 蘇格蘭() => JapaneseAssert.AssertEntry(TestEntries.蘇格蘭(), japaneseEntries);
+        public void 蘇格蘭() => Assertions.AssertEntry(TestEntries.蘇格蘭(), japaneseEntries);
         
         [Test]
-        public void 羊水() => JapaneseAssert.AssertEntry(TestEntries.羊水(), japaneseEntries);
+        public void 羊水() => Assertions.AssertEntry(TestEntries.羊水(), japaneseEntries);
 
         [Test]
-        public void タチ() => JapaneseAssert.AssertEntry(TestEntries.タチ(), japaneseEntries);
+        public void タチ() => Assertions.AssertEntry(TestEntries.タチ(), japaneseEntries);
 
         [Test]
-        public void コンビナートキャンペーン() => JapaneseAssert.AssertEntry(TestEntries.コンビナートキャンペーン(), japaneseEntries);
+        public void コンビナートキャンペーン() => Assertions.AssertEntry(TestEntries.コンビナートキャンペーン(), japaneseEntries);
 
         [Test]
-        public void ヽ() => JapaneseAssert.AssertEntry(TestEntries.ヽ(), japaneseEntries); // first entry in JMdict
+        public void ヽ() => Assertions.AssertEntry(TestEntries.ヽ(), japaneseEntries); // first entry in JMdict
     }
 }
