@@ -279,6 +279,11 @@ namespace Wacton.Desu.Tests.Japanese
             {
                 Text = "ウィズコロナ",
             };
+            
+            var reading2 = new TestReading
+            {
+                Text = "ウイズコロナ",
+            };
 
             var sense1 = new TestSense
             {
@@ -295,7 +300,7 @@ namespace Wacton.Desu.Tests.Japanese
             {
                 Sequence = 2845709,
                 Kanjis = new List<IKanji> { kanji1 },
-                Readings = new List<IReading> { reading1 },
+                Readings = new List<IReading> { reading1, reading2 },
                 Senses = new List<ISense> { sense1 }
             };
 
@@ -433,6 +438,118 @@ namespace Wacton.Desu.Tests.Japanese
                 Kanjis = new List<IKanji> { kanji1, kanji2, kanji3, kanji4 },
                 Readings = new List<IReading> { reading1, reading2 },
                 Senses = new List<ISense> { sense1, sense2, sense3, sense4, sense5 }
+            };
+
+            return testEntry;
+        }
+        
+        public static TestEntry 蘇格蘭()
+        {
+            var kanji1 = new TestKanji
+            {
+                Text = "蘇格蘭",
+                Informations = new List<KanjiInformation> {
+                    KanjiInformation("ateji (phonetic) reading"),
+                    KanjiInformation("rarely-used kanji form")
+                }
+            };
+            
+            var reading1 = new TestReading
+            {
+                Text = "スコットランド",
+            };
+
+            var sense1 = new TestSense
+            {
+                PartsOfSpeech = new List<PartOfSpeech> { PartOfSpeech("noun (common) (futsuumeishi)") },
+                Miscellanea = new List<Miscellaneous> { Miscellaneous("word usually written using kana alone") },
+                Glosses = new List<Gloss> { new Gloss("Scotland", Language("eng"), null, null) }
+            };
+
+            var sense2 = new TestSense
+            {
+                Glosses = new List<Gloss> {
+                    new Gloss("Schotland", Language("dut"), null, null),
+                    new Gloss("{afk.} Sch.", Language("dut"), null, null)
+                }
+            };
+
+            var sense3 = new TestSense
+            {
+                Glosses = new List<Gloss> {
+                    new Gloss("Schottland (Nordteil Großbritanniens einschl. der Hebriden, Orkney- und Shetland-Inseln)", Language("ger"), null, null),
+                }
+            };
+
+            var sense4 = new TestSense
+            {
+                Glosses = new List<Gloss> { new Gloss("Шотландия", Language("rus"), null, null) }
+            };
+
+            var sense5 = new TestSense
+            {
+                Glosses = new List<Gloss> { new Gloss("escocia", Language("spa"), null, null) }
+            };
+            
+            var sense6 = new TestSense
+            {
+                Glosses = new List<Gloss> { new Gloss("Skottland", Language("swe"), null, null) }
+            };
+
+            var testEntry = new TestEntry
+            {
+                Sequence = 1069140,
+                Kanjis = new List<IKanji> { kanji1 },
+                Readings = new List<IReading> { reading1 },
+                Senses = new List<ISense> { sense1, sense2, sense3, sense4, sense5, sense6 }
+            };
+
+            return testEntry;
+        }
+        
+        public static TestEntry 羊水()
+        {
+            var kanji1 = new TestKanji
+            {
+                Text = "羊水",
+                Priorities = new List<Priority> { Priority("news2"), Priority("nf33") }
+            };
+            
+            var reading1 = new TestReading
+            {
+                Text = "ようすい",
+                Priorities = new List<Priority> { Priority("news2"), Priority("nf33") }
+            };
+
+            var sense1 = new TestSense
+            {
+                PartsOfSpeech = new List<PartOfSpeech> { PartOfSpeech("noun (common) (futsuumeishi)") },
+                Fields = new List<Field> { Field("pathology") },
+                Glosses = new List<Gloss> { new Gloss("amniotic fluid", Language("eng"), null, null) }
+            };
+
+            var sense2 = new TestSense
+            {
+                Glosses = new List<Gloss> {
+                    new Gloss("Fruchtwasser", Language("ger"), null, null),
+                    new Gloss("Amnionflüssigkeit", Language("ger"), null, null),
+                    new Gloss("Liquor amnii", Language("ger"), null, null)
+                }
+            };
+
+            var sense3 = new TestSense
+            {
+                Glosses = new List<Gloss> {
+                    new Gloss("fostervatten", Language("swe"), null, null),
+                }
+            };
+
+            var testEntry = new TestEntry
+            {
+                Sequence = 1662330,
+                Kanjis = new List<IKanji> { kanji1 },
+                Readings = new List<IReading> { reading1 },
+                Senses = new List<ISense> { sense1, sense2, sense3 }
             };
 
             return testEntry;

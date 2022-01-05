@@ -12,6 +12,7 @@
         public static readonly NameType Fiction = new NameType(nameof(Fiction), "fiction");
         public static readonly NameType Given = new NameType(nameof(Given), "given name or forename, gender not specified");
         public static readonly NameType Group = new NameType(nameof(Group), "group");
+        public static readonly NameType Legend = new NameType(nameof(Legend), "legend");
         public static readonly NameType Male = new NameType(nameof(Male), "male given name or forename");
         public static readonly NameType Mythology = new NameType(nameof(Mythology), "mythology");
         public static readonly NameType Object = new NameType(nameof(Object), "object");

@@ -14,10 +14,13 @@ namespace Wacton.Desu.Tests.Kanji
                 Literal = "䯂",
                 Codepoints = new List<Codepoint> { 
                     new Codepoint(CodepointType("ucs"), "4BC2"), 
-                    new Codepoint(CodepointType("jis213"), "2-93-6") 
+                    new Codepoint(CodepointType("jis213"), "2-93-06") 
                 },
                 IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(187) },
                 StrokeCount = 34,
+                QueryCodes = new List<QueryCode> {
+                    new QueryCode(QueryCodeType("skip"), "2-30-4", SkipMisclassification(string.Empty))
+                },
                 Readings = new List<Reading> { new Reading(ReadingType("pinyin"), "ji2") },
                 Meanings = new List<Meaning> { 
                     new Meaning(Language("en"), "numerous"),
@@ -35,7 +38,7 @@ namespace Wacton.Desu.Tests.Kanji
                 RadicalDecomposition = new List<string> { "亀", "田", "勹", "乙" },
                 Codepoints = new List<Codepoint> {
                     new Codepoint(CodepointType("ucs"), "4e80"),
-                    new Codepoint(CodepointType("jis208"), "21-21")
+                    new Codepoint(CodepointType("jis208"), "1-21-21")
                 },
                 StrokePaths = new List<string> {
                     "M43.25,11.25c0.15,1.12,0.01,2.07-0.65,3C39,19.38,32.38,25.62,20.75,31.5",
@@ -50,11 +53,11 @@ namespace Wacton.Desu.Tests.Kanji
                     "M29.9,83.97c15.85-2.47,37.68-4.54,47.51-5.19",
                     "M51.74,33.62c0.88,0.88,1.12,2.34,1.12,4.18c0,8.33-0.03,39.33-0.03,45.7c0,10.5,2.17,12.53,20.42,12.53c17.25,0,19.25-1.28,19.39-11.87"
                 },
-                IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(213) },
-                IsIndexRadical = true,
+                IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(5), new IndexRadicalNelson(213) },
+                IsIndexRadical = false,
                 Grade = Grade(8),
                 StrokeCount = 11,
-                Variants = new List<Variant> { new Variant(VariantType("jis208"), "83-93") },
+                Variants = new List<Variant> { new Variant(VariantType("jis208"), "1-83-93") },
                 Frequency = 1353,
                 JLPT = 1,
                 References = new List<Reference> { 
@@ -88,6 +91,8 @@ namespace Wacton.Desu.Tests.Kanji
                     new Reading(ReadingType("korean_r"), "gyun"),
                     new Reading(ReadingType("korean_h"), "귀"),
                     new Reading(ReadingType("korean_h"), "균"),
+                    new Reading(ReadingType("vietnam"), "Quy"),
+                    new Reading(ReadingType("vietnam"), "Qui"),
                     new Reading(ReadingType("ja_on"), "キ"),
                     new Reading(ReadingType("ja_on"), "キュウ"),
                     new Reading(ReadingType("ja_on"), "キン"),
@@ -111,7 +116,7 @@ namespace Wacton.Desu.Tests.Kanji
                 RadicalDecomposition = new List<string> { "弓", "口", "亅", "一" },
                 Codepoints = new List<Codepoint> {
                     new Codepoint(CodepointType("ucs"), "5f41"),
-                    new Codepoint(CodepointType("jis208"), "55-27") 
+                    new Codepoint(CodepointType("jis208"), "1-55-27") 
                 },
                 StrokePaths = new List<string> {
                     "M12.5,18.59c0.72,1.38,2.49,1.6,3.69,1.54C19,20,29.75,17.25,33.46,16.35c2.44-0.59,3.7,1.34,2.74,3.39c-0.95,2.04-3.31,11.03-3.96,14.01",
@@ -137,10 +142,11 @@ namespace Wacton.Desu.Tests.Kanji
                     new QueryCode(QueryCodeType("four_corner"), "1122.1")
                 },
                 Readings = new List<Reading> { 
+                    new Reading(ReadingType("vietnam"), "Ca"),
                     new Reading(ReadingType("ja_on"), "カ"),
                     new Reading(ReadingType("ja_on"), "セイ")
                 },
-                Meanings = new List<Meaning> { new Meaning(Language("en"), "(no known meaning; S&H uses jabberwocky words)") }
+                Meanings = new List<Meaning> { new Meaning(Language("en"), "(phantom kanji)") }
             };
         }
 
@@ -149,7 +155,7 @@ namespace Wacton.Desu.Tests.Kanji
             return new TestEntry
             {
                 Literal = "鰹",
-                RadicalDecomposition = new List<string> { "魚", "臣", "田", "土", "又", "杰" },
+                RadicalDecomposition = new List<string> { "魚", "臣", "田", "土", "又", "⺣" },
                 StrokePaths = new List<string> {
                     "M23.5,13.5c0.12,1.44-0.32,2.84-0.82,4.19C20,23.5,16.62,30,10.24,36.87",
                     "M23.14,20.88c1.61,0,8.42-0.75,11.99-1.25c2.97-0.42,4.11,1.28,2.55,3.98c-2.84,4.91-4.77,9.54-9.48,17.35",
@@ -177,7 +183,7 @@ namespace Wacton.Desu.Tests.Kanji
                 },
                 Codepoints = new List<Codepoint> {
                     new Codepoint(CodepointType("ucs"), "9c39"),
-                    new Codepoint(CodepointType("jis208"), "19-79") 
+                    new Codepoint(CodepointType("jis208"), "1-19-79") 
                 },
                 IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(195) },
                 StrokeCount = 23,
@@ -198,6 +204,7 @@ namespace Wacton.Desu.Tests.Kanji
                     new Reading(ReadingType("pinyin"), "jian1"),
                     new Reading(ReadingType("korean_r"), "gyeon"),
                     new Reading(ReadingType("korean_h"), "견"),
+                    new Reading(ReadingType("vietnam"), "Kiên"),
                     new Reading(ReadingType("ja_on"), "ケン"),
                     new Reading(ReadingType("ja_kun"), "かつお")
                 },
@@ -213,7 +220,7 @@ namespace Wacton.Desu.Tests.Kanji
                 RadicalDecomposition = new List<string> { "夂" },
                 Codepoints = new List<Codepoint> {
                     new Codepoint(CodepointType("ucs"), "590a"),
-                    new Codepoint(CodepointType("jis208"), "52-74") 
+                    new Codepoint(CodepointType("jis208"), "1-52-74") 
                 },
                 StrokePaths = new List<string> {
                     "M52.54,13.75c0.09,1.14,0.19,2.93-0.18,4.57c-2.2,9.63-14.33,31.25-31.61,44.18",
@@ -241,6 +248,7 @@ namespace Wacton.Desu.Tests.Kanji
                     new Reading(ReadingType("pinyin"), "sui1"),
                     new Reading(ReadingType("korean_r"), "soe"),
                     new Reading(ReadingType("korean_h"), "쇠"),
+                    new Reading(ReadingType("vietnam"), "Tuy"),
                     new Reading(ReadingType("ja_on"), "スイ"),
                     new Reading(ReadingType("ja_kun"), "ゆき")
                 },
@@ -256,7 +264,7 @@ namespace Wacton.Desu.Tests.Kanji
                 RadicalDecomposition = new List<string> { "｜", "一", "口" },
                 Codepoints = new List<Codepoint> {
                     new Codepoint(CodepointType("ucs"), "4e9c"),
-                    new Codepoint(CodepointType("jis208"), "16-01")
+                    new Codepoint(CodepointType("jis208"), "1-16-01")
                 },
                 StrokePaths = new List<string> {
                     "M23.38,21.68c2.99,0.65,5.98,0.58,9.01,0.33c13.11-1.04,30.12-2.73,45.99-3.15c2.81-0.07,5.73-0.07,8.5,0.53",
@@ -270,7 +278,7 @@ namespace Wacton.Desu.Tests.Kanji
                 IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(7), new IndexRadicalNelson(1) },
                 Grade = Grade(8),
                 StrokeCount = 7,
-                Variants = new List<Variant> { new Variant(VariantType("jis208"), "48-19") },
+                Variants = new List<Variant> { new Variant(VariantType("jis208"), "1-48-19") },
                 Frequency = 1509,
                 JLPT = 1,
                 References = new List<Reference> {
@@ -305,6 +313,8 @@ namespace Wacton.Desu.Tests.Kanji
                     new Reading(ReadingType("pinyin"), "ya4"),
                     new Reading(ReadingType("korean_r"), "a"),
                     new Reading(ReadingType("korean_h"), "아"),
+                    new Reading(ReadingType("vietnam"), "A"),
+                    new Reading(ReadingType("vietnam"), "Á"),
                     new Reading(ReadingType("ja_on"), "ア"),
                     new Reading(ReadingType("ja_kun"), "つ.ぐ")
                 },
@@ -340,12 +350,15 @@ namespace Wacton.Desu.Tests.Kanji
                 },
                 IndexRadicals = new List<IIndexRadical> { IndexRadicalKangxi(181) },
                 StrokeCount = 16,
-                Variants = new List<Variant> { new Variant(VariantType("jis208"), "41-49") },
+                Variants = new List<Variant> { new Variant(VariantType("jis208"), "1-41-49") },
                 References = new List<Reference> {
                     new Reference(ReferenceType("nelson_n"), "6631"),
                     new Reference(ReferenceType("halpern_njecd"), "1613"),
                     new Reference(ReferenceType("halpern_kkd"), "2038"),
                     new Reference(ReferenceType("moro"), "43519")
+                },
+                QueryCodes = new List<QueryCode> {
+                    new QueryCode(QueryCodeType("skip"), "1-7-9", SkipMisclassification(string.Empty))
                 },
                 Readings = new List<Reading> {
                     new Reading(ReadingType("ja_on"), "ヒン"),

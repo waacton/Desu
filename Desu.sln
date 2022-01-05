@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desu", "Desu\Desu.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desu.ExampleConsole", "Desu.ExampleConsole\Desu.ExampleConsole.csproj", "{6E3E5FA8-2C28-49D4-BDC2-6FA62363285C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desu.Tests", "Desu.Tests\Desu.Tests.csproj", "{F3EE801C-4EB5-4CD8-8136-0642D55532B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desu.Tests", "Desu.Tests\Desu.Tests.csproj", "{F3EE801C-4EB5-4CD8-8136-0642D55532B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{0FB583A6-DE51-493C-AF13-4AF63D2EFF71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadkfileGenerator", "Tools\RadkfileGenerator\RadkfileGenerator.csproj", "{BFBC80C0-12A0-4495-AF7B-136EAB65F6C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{F3EE801C-4EB5-4CD8-8136-0642D55532B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3EE801C-4EB5-4CD8-8136-0642D55532B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3EE801C-4EB5-4CD8-8136-0642D55532B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFBC80C0-12A0-4495-AF7B-136EAB65F6C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBC80C0-12A0-4495-AF7B-136EAB65F6C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBC80C0-12A0-4495-AF7B-136EAB65F6C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBC80C0-12A0-4495-AF7B-136EAB65F6C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BFBC80C0-12A0-4495-AF7B-136EAB65F6C9} = {0FB583A6-DE51-493C-AF13-4AF63D2EFF71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21D4D70A-1CB1-48BF-B76B-DB817610695A}
