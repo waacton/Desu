@@ -22,586 +22,586 @@ var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
 
 ```json
 {
-    "Sequence": 1175570,
-    "Kanjis": [
+  "Sequence": 1175570,
+  "Kanjis": [
+    {
+      "Text": "円",
+      "Informations": [],
+      "Priorities": [
         {
-            "Text": "円",
-            "Informations": [],
-            "Priorities": [
-                {
-                    "Code": "ichi1",
-                    "Value": 2,
-                    "DisplayName": "Ichimango1"
-                },
-                {
-                    "Code": "news1",
-                    "Value": 4,
-                    "DisplayName": "Newspaper1"
-                },
-                {
-                    "Code": "nf05",
-                    "Value": 10,
-                    "DisplayName": "Frequency5"
-                }
-            ]
+          "Code": "ichi1",
+          "Value": 2,
+          "DisplayName": "Ichimango1"
         },
         {
-            "Text": "圓",
-            "Informations": [
-                {
-                    "Code": "word containing out-dated kanji or kanji usage",
-                    "Value": 4,
-                    "DisplayName": "OutdatedKanji"
-                }
-            ],
-            "Priorities": []
+          "Code": "news1",
+          "Value": 4,
+          "DisplayName": "Newspaper1"
+        },
+        {
+          "Code": "nf05",
+          "Value": 10,
+          "DisplayName": "Frequency5"
         }
-    ],
-    "Readings": [
+      ]
+    },
+    {
+      "Text": "圓",
+      "Informations": [
         {
-            "Text": "えん",
-            "IsTrueKanjiReading": true,
-            "Restriction": [],
-            "Informations": [],
-            "Priorities": [
-                {
-                    "Code": "ichi1",
-                    "Value": 2,
-                    "DisplayName": "Ichimango1"
-                },
-                {
-                    "Code": "news1",
-                    "Value": 4,
-                    "DisplayName": "Newspaper1"
-                },
-                {
-                    "Code": "nf05",
-                    "Value": 10,
-                    "DisplayName": "Frequency5"
-                }
-            ]
+          "Code": "word containing out-dated kanji or kanji usage",
+          "Value": 4,
+          "DisplayName": "OutdatedKanji"
         }
-    ],
-    "Senses": [
+      ],
+      "Priorities": []
+    }
+  ],
+  "Readings": [
+    {
+      "Text": "えん",
+      "IsTrueKanjiReading": true,
+      "Restriction": [],
+      "Informations": [],
+      "Priorities": [
         {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [
-                {
-                    "Code": "noun (common) (futsuumeishi)",
-                    "Description": "Noun (common)",
-                    "Value": 19,
-                    "DisplayName": "NounCommon"
-                }
-            ],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "yen (Japanese monetary unit)",
-                    "Language": {
-                        "ThreeLetterCode": "eng",
-                        "TwoLetterCode": "en",
-                        "Value": 15,
-                        "DisplayName": "English"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
+          "Code": "ichi1",
+          "Value": 2,
+          "DisplayName": "Ichimango1"
         },
         {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [
-                {
-                    "Code": "noun (common) (futsuumeishi)",
-                    "Description": "Noun (common)",
-                    "Value": 19,
-                    "DisplayName": "NounCommon"
-                }
-            ],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "circle",
-                    "Language": {
-                        "ThreeLetterCode": "eng",
-                        "TwoLetterCode": "en",
-                        "Value": 15,
-                        "DisplayName": "English"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
+          "Code": "news1",
+          "Value": 4,
+          "DisplayName": "Newspaper1"
         },
         {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "cirkel",
-                    "Language": {
-                        "ThreeLetterCode": "dut",
-                        "TwoLetterCode": "nl",
-                        "Value": 14,
-                        "DisplayName": "Dutch"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "rondte",
-                    "Language": {
-                        "ThreeLetterCode": "dut",
-                        "TwoLetterCode": "nl",
-                        "Value": 14,
-                        "DisplayName": "Dutch"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "{muntw.} yen",
-                    "Language": {
-                        "ThreeLetterCode": "dut",
-                        "TwoLetterCode": "nl",
-                        "Value": 14,
-                        "DisplayName": "Dutch"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "yen",
-                    "Language": {
-                        "ThreeLetterCode": "fre",
-                        "TwoLetterCode": "fr",
-                        "Value": 20,
-                        "DisplayName": "French"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "unité monétaire japonaise",
-                    "Language": {
-                        "ThreeLetterCode": "fre",
-                        "TwoLetterCode": "fr",
-                        "Value": 20,
-                        "DisplayName": "French"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "cercle",
-                    "Language": {
-                        "ThreeLetterCode": "fre",
-                        "TwoLetterCode": "fr",
-                        "Value": 20,
-                        "DisplayName": "French"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "Kreis",
-                    "Language": {
-                        "ThreeLetterCode": "ger",
-                        "TwoLetterCode": "de",
-                        "Value": 22,
-                        "DisplayName": "German"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "Kugel",
-                    "Language": {
-                        "ThreeLetterCode": "ger",
-                        "TwoLetterCode": "de",
-                        "Value": 22,
-                        "DisplayName": "German"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "Kreis",
-                    "Language": {
-                        "ThreeLetterCode": "ger",
-                        "TwoLetterCode": "de",
-                        "Value": 22,
-                        "DisplayName": "German"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "Yen",
-                    "Language": {
-                        "ThreeLetterCode": "ger",
-                        "TwoLetterCode": "de",
-                        "Value": 22,
-                        "DisplayName": "German"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "￥",
-                    "Language": {
-                        "ThreeLetterCode": "ger",
-                        "TwoLetterCode": "de",
-                        "Value": 22,
-                        "DisplayName": "German"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "karika",
-                    "Language": {
-                        "ThreeLetterCode": "hun",
-                        "TwoLetterCode": "hu",
-                        "Value": 29,
-                        "DisplayName": "Hungarian"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "kerület",
-                    "Language": {
-                        "ThreeLetterCode": "hun",
-                        "TwoLetterCode": "hu",
-                        "Value": 29,
-                        "DisplayName": "Hungarian"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "körvonal",
-                    "Language": {
-                        "ThreeLetterCode": "hun",
-                        "TwoLetterCode": "hu",
-                        "Value": 29,
-                        "DisplayName": "Hungarian"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "körzet",
-                    "Language": {
-                        "ThreeLetterCode": "hun",
-                        "TwoLetterCode": "hu",
-                        "Value": 29,
-                        "DisplayName": "Hungarian"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "иена",
-                    "Language": {
-                        "ThreeLetterCode": "rus",
-                        "TwoLetterCode": "ru",
-                        "Value": 49,
-                        "DisplayName": "Russian"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "круг",
-                    "Language": {
-                        "ThreeLetterCode": "rus",
-                        "TwoLetterCode": "ru",
-                        "Value": 49,
-                        "DisplayName": "Russian"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "jen (japonska denarna enota)",
-                    "Language": {
-                        "ThreeLetterCode": "slv",
-                        "TwoLetterCode": "sl",
-                        "Value": 52,
-                        "DisplayName": "Slovenian"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "okrogla oblika{図形}",
-                    "Language": {
-                        "ThreeLetterCode": "slv",
-                        "TwoLetterCode": "sl",
-                        "Value": 52,
-                        "DisplayName": "Slovenian"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "yen (valuta){貨幣}",
-                    "Language": {
-                        "ThreeLetterCode": "slv",
-                        "TwoLetterCode": "sl",
-                        "Value": 52,
-                        "DisplayName": "Slovenian"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "jen {jap. denarna enota}",
-                    "Language": {
-                        "ThreeLetterCode": "slv",
-                        "TwoLetterCode": "sl",
-                        "Value": 52,
-                        "DisplayName": "Slovenian"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "Yen",
-                    "Language": {
-                        "ThreeLetterCode": "spa",
-                        "TwoLetterCode": "es",
-                        "Value": 54,
-                        "DisplayName": "Spanish"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "Yenes",
-                    "Language": {
-                        "ThreeLetterCode": "spa",
-                        "TwoLetterCode": "es",
-                        "Value": 54,
-                        "DisplayName": "Spanish"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "dinero",
-                    "Language": {
-                        "ThreeLetterCode": "spa",
-                        "TwoLetterCode": "es",
-                        "Value": 54,
-                        "DisplayName": "Spanish"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
-        },
-        {
-            "KanjiRestriction": [],
-            "ReadingRestriction": [],
-            "PartsOfSpeech": [],
-            "CrossReferences": [],
-            "Antonyms": [],
-            "Fields": [],
-            "Miscellanea": [],
-            "Informations": [],
-            "LoanwordSources": [],
-            "Dialects": [],
-            "Glosses": [
-                {
-                    "Term": "círculo",
-                    "Language": {
-                        "ThreeLetterCode": "spa",
-                        "TwoLetterCode": "es",
-                        "Value": 54,
-                        "DisplayName": "Spanish"
-                    },
-                    "Type": null,
-                    "Gender": null
-                },
-                {
-                    "Term": "redondel",
-                    "Language": {
-                        "ThreeLetterCode": "spa",
-                        "TwoLetterCode": "es",
-                        "Value": 54,
-                        "DisplayName": "Spanish"
-                    },
-                    "Type": null,
-                    "Gender": null
-                }
-            ]
+          "Code": "nf05",
+          "Value": 10,
+          "DisplayName": "Frequency5"
         }
-    ]
+      ]
+    }
+  ],
+  "Senses": [
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [
+        {
+          "Code": "noun (common) (futsuumeishi)",
+          "Description": "Noun (common)",
+          "Value": 19,
+          "DisplayName": "NounCommon"
+        }
+      ],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "yen (Japanese monetary unit)",
+          "Language": {
+            "ThreeLetterCode": "eng",
+            "TwoLetterCode": "en",
+            "Value": 15,
+            "DisplayName": "English"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [
+        {
+          "Code": "noun (common) (futsuumeishi)",
+          "Description": "Noun (common)",
+          "Value": 19,
+          "DisplayName": "NounCommon"
+        }
+      ],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "circle",
+          "Language": {
+            "ThreeLetterCode": "eng",
+            "TwoLetterCode": "en",
+            "Value": 15,
+            "DisplayName": "English"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "cirkel",
+          "Language": {
+            "ThreeLetterCode": "dut",
+            "TwoLetterCode": "nl",
+            "Value": 14,
+            "DisplayName": "Dutch"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "rondte",
+          "Language": {
+            "ThreeLetterCode": "dut",
+            "TwoLetterCode": "nl",
+            "Value": 14,
+            "DisplayName": "Dutch"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "{muntw.} yen",
+          "Language": {
+            "ThreeLetterCode": "dut",
+            "TwoLetterCode": "nl",
+            "Value": 14,
+            "DisplayName": "Dutch"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "yen",
+          "Language": {
+            "ThreeLetterCode": "fre",
+            "TwoLetterCode": "fr",
+            "Value": 20,
+            "DisplayName": "French"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "unité monétaire japonaise",
+          "Language": {
+            "ThreeLetterCode": "fre",
+            "TwoLetterCode": "fr",
+            "Value": 20,
+            "DisplayName": "French"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "cercle",
+          "Language": {
+            "ThreeLetterCode": "fre",
+            "TwoLetterCode": "fr",
+            "Value": 20,
+            "DisplayName": "French"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "Kreis",
+          "Language": {
+            "ThreeLetterCode": "ger",
+            "TwoLetterCode": "de",
+            "Value": 22,
+            "DisplayName": "German"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "Kugel",
+          "Language": {
+            "ThreeLetterCode": "ger",
+            "TwoLetterCode": "de",
+            "Value": 22,
+            "DisplayName": "German"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "Kreis",
+          "Language": {
+            "ThreeLetterCode": "ger",
+            "TwoLetterCode": "de",
+            "Value": 22,
+            "DisplayName": "German"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "Yen",
+          "Language": {
+            "ThreeLetterCode": "ger",
+            "TwoLetterCode": "de",
+            "Value": 22,
+            "DisplayName": "German"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "￥",
+          "Language": {
+            "ThreeLetterCode": "ger",
+            "TwoLetterCode": "de",
+            "Value": 22,
+            "DisplayName": "German"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "karika",
+          "Language": {
+            "ThreeLetterCode": "hun",
+            "TwoLetterCode": "hu",
+            "Value": 29,
+            "DisplayName": "Hungarian"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "kerület",
+          "Language": {
+            "ThreeLetterCode": "hun",
+            "TwoLetterCode": "hu",
+            "Value": 29,
+            "DisplayName": "Hungarian"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "körvonal",
+          "Language": {
+            "ThreeLetterCode": "hun",
+            "TwoLetterCode": "hu",
+            "Value": 29,
+            "DisplayName": "Hungarian"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "körzet",
+          "Language": {
+            "ThreeLetterCode": "hun",
+            "TwoLetterCode": "hu",
+            "Value": 29,
+            "DisplayName": "Hungarian"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "иена",
+          "Language": {
+            "ThreeLetterCode": "rus",
+            "TwoLetterCode": "ru",
+            "Value": 49,
+            "DisplayName": "Russian"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "круг",
+          "Language": {
+            "ThreeLetterCode": "rus",
+            "TwoLetterCode": "ru",
+            "Value": 49,
+            "DisplayName": "Russian"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "jen (japonska denarna enota)",
+          "Language": {
+            "ThreeLetterCode": "slv",
+            "TwoLetterCode": "sl",
+            "Value": 52,
+            "DisplayName": "Slovenian"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "okrogla oblika{図形}",
+          "Language": {
+            "ThreeLetterCode": "slv",
+            "TwoLetterCode": "sl",
+            "Value": 52,
+            "DisplayName": "Slovenian"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "yen (valuta){貨幣}",
+          "Language": {
+            "ThreeLetterCode": "slv",
+            "TwoLetterCode": "sl",
+            "Value": 52,
+            "DisplayName": "Slovenian"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "jen {jap. denarna enota}",
+          "Language": {
+            "ThreeLetterCode": "slv",
+            "TwoLetterCode": "sl",
+            "Value": 52,
+            "DisplayName": "Slovenian"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "Yen",
+          "Language": {
+            "ThreeLetterCode": "spa",
+            "TwoLetterCode": "es",
+            "Value": 54,
+            "DisplayName": "Spanish"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "Yenes",
+          "Language": {
+            "ThreeLetterCode": "spa",
+            "TwoLetterCode": "es",
+            "Value": 54,
+            "DisplayName": "Spanish"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "dinero",
+          "Language": {
+            "ThreeLetterCode": "spa",
+            "TwoLetterCode": "es",
+            "Value": 54,
+            "DisplayName": "Spanish"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    },
+    {
+      "KanjiRestriction": [],
+      "ReadingRestriction": [],
+      "PartsOfSpeech": [],
+      "CrossReferences": [],
+      "Antonyms": [],
+      "Fields": [],
+      "Miscellanea": [],
+      "Informations": [],
+      "LoanwordSources": [],
+      "Dialects": [],
+      "Glosses": [
+        {
+          "Term": "círculo",
+          "Language": {
+            "ThreeLetterCode": "spa",
+            "TwoLetterCode": "es",
+            "Value": 54,
+            "DisplayName": "Spanish"
+          },
+          "Type": null,
+          "Gender": null
+        },
+        {
+          "Term": "redondel",
+          "Language": {
+            "ThreeLetterCode": "spa",
+            "TwoLetterCode": "es",
+            "Value": 54,
+            "DisplayName": "Spanish"
+          },
+          "Type": null,
+          "Gender": null
+        }
+      ]
+    }
+  ]
 }
 ```
 </details>
@@ -619,43 +619,43 @@ var nameEntries = await NameDictionary.ParseEntriesAsync();
 
 ```json
 {
-    "Sequence": 5142901,
-    "Kanjis": [
+  "Sequence": 5142901,
+  "Kanjis": [
+    {
+      "Text": "円",
+      "Informations": [],
+      "Priorities": []
+    }
+  ],
+  "Readings": [
+    {
+      "Text": "えん",
+      "IsTrueKanjiReading": true,
+      "Restriction": [],
+      "Informations": [],
+      "Priorities": []
+    }
+  ],
+  "Translations": [
+    {
+      "NameTypes": [
         {
-            "Text": "円",
-            "Informations": [],
-            "Priorities": []
-        }
-    ],
-    "Readings": [
+          "Code": "female given name or forename",
+          "Value": 5,
+          "DisplayName": "Female"
+        },
         {
-            "Text": "えん",
-            "IsTrueKanjiReading": true,
-            "Restriction": [],
-            "Informations": [],
-            "Priorities": []
+          "Code": "family or surname",
+          "Value": 20,
+          "DisplayName": "Surname"
         }
-    ],
-    "Translations": [
-        {
-            "NameTypes": [
-                {
-                    "Code": "female given name or forename",
-                    "Value": 5,
-                    "DisplayName": "Female"
-                },
-                {
-                    "Code": "family or surname",
-                    "Value": 19,
-                    "DisplayName": "Surname"
-                }
-            ],
-            "CrossReferences": [],
-            "Transcriptions": [
-                "En"
-            ]
-        }
-    ]
+      ],
+      "CrossReferences": [],
+      "Transcriptions": [
+        "En"
+      ]
+    }
+  ]
 }
 ```
 </details>
@@ -674,529 +674,537 @@ var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
 
 ```json
 {
-    "Literal": "円",
-    "RadicalDecomposition": [
-        "冂",
-        "亠",
-        "一",
-        "｜"
-    ],
-    "Codepoints": [
-        {
-            "Type": {
-                "Code": "ucs",
-                "Description": "Unicode 4.0",
-                "Value": 3,
-                "DisplayName": "Unicode"
-            },
-            "Value": "5186"
-        },
-        {
-            "Type": {
-                "Code": "jis208",
-                "Description": "JIS X 0208-1997",
-                "Value": 0,
-                "DisplayName": "JIS208"
-            },
-            "Value": "17-63"
-        }
-    ],
-    "StrokePaths": [
-        "M21.75,19.8c0.91,0.91,1.47,3.23,1.5,5.45c0.2,13.9,0.03,47.69,0.03,62.5c0,2-0.03,4.99-0.03,6",
-        "M24.06,21.56c15.07-1.68,49.46-5.58,57.92-6.31c2.9-0.25,4.78,1.88,4.78,4.27c0,13.48,0,53.21,0,67.48c0,9.75-4.25,6.5-8.5,1.5",
-        "M52.25,20.75c0.88,0.88,1.5,2,1.5,3.71c0,6.76,0,27.54,0,31.04",
-        "M24.75,59.75c14.62-1.75,43-4.25,60.5-5.25"
-    ],
-    "IndexRadicals": [
-        {
-            "Type": {
-                "Code": "classical",
-                "Value": 0,
-                "DisplayName": "Kangxi"
-            },
-            "Number": 13,
-            "Radical": "冂",
-            "Variants": [],
-            "Value": 12,
-            "DisplayName": "Radical013"
-        }
-    ],
-    "IsIndexRadical": false,
-    "Grade": {
-        "Number": 1,
-        "Value": 1,
-        "DisplayName": "One"
+  "Literal": "円",
+  "RadicalDecomposition": [
+    "冂",
+    "亠",
+    "一",
+    "｜"
+  ],
+  "Codepoints": [
+    {
+      "Type": {
+        "Code": "ucs",
+        "Description": "Unicode 4.0",
+        "Value": 3,
+        "DisplayName": "Unicode"
+      },
+      "Value": "5186"
     },
-    "StrokeCount": 4,
-    "StrokeCommonMiscounts": [],
-    "Variants": [
-        {
-            "Type": {
-                "Code": "jis208",
-                "Description": "JIS X 0208",
-                "Value": 0,
-                "DisplayName": "JIS208"
-            },
-            "Value": "52-04"
-        }
-    ],
-    "Frequency": 69,
-    "RadicalNames": [],
-    "JLPT": 4,
-    "References": [
-        {
-            "Type": {
-                "Code": "nelson_c",
-                "Description": "Nelson: \"Modern Reader's Japanese-English Character Dictionary\"",
-                "Value": 0,
-                "DisplayName": "Nelson_Classic"
-            },
-            "Value": "617"
-        },
-        {
-            "Type": {
-                "Code": "nelson_n",
-                "Description": "Nelson: \"The New Nelson Japanese-English Character Dictionary\"",
-                "Value": 1,
-                "DisplayName": "Nelson_New"
-            },
-            "Value": "385"
-        },
-        {
-            "Type": {
-                "Code": "halpern_njecd",
-                "Description": "Halpern: \"New Japanese-English Character Dictionary\"",
-                "Value": 2,
-                "DisplayName": "Halpern_NJECD"
-            },
-            "Value": "2955"
-        },
-        {
-            "Type": {
-                "Code": "halpern_kkd",
-                "Description": "Halpern: \"Kodansha Kanji Dictionary\"",
-                "Value": 5,
-                "DisplayName": "Halpern_KKD"
-            },
-            "Value": "3673"
-        },
-        {
-            "Type": {
-                "Code": "halpern_kkld",
-                "Description": "Halpern: \"Kanji Learners Dictionary\"",
-                "Value": 3,
-                "DisplayName": "Halpern_KLD"
-            },
-            "Value": "1875"
-        },
-        {
-            "Type": {
-                "Code": "halpern_kkld_2ed",
-                "Description": "Halpern: \"Kanji Learners Dictionary\", 2nd Edition",
-                "Value": 4,
-                "DisplayName": "Halpern_KLD_2"
-            },
-            "Value": "2555"
-        },
-        {
-            "Type": {
-                "Code": "heisig",
-                "Description": "Heisig: \"Remembering The Kanji\"",
-                "Value": 6,
-                "DisplayName": "Heisig"
-            },
-            "Value": "1811"
-        },
-        {
-            "Type": {
-                "Code": "heisig6",
-                "Description": "Heisig: \"Remembering The Kanji\", 6th Edition",
-                "Value": 7,
-                "DisplayName": "Heisig_6"
-            },
-            "Value": "1952"
-        },
-        {
-            "Type": {
-                "Code": "gakken",
-                "Description": "Gakken: \"A New Dictionary Of Kanji Usage\"",
-                "Value": 8,
-                "DisplayName": "Gakken"
-            },
-            "Value": "2"
-        },
-        {
-            "Type": {
-                "Code": "oneill_names",
-                "Description": "O'Neill: \"Japanese Names\"",
-                "Value": 9,
-                "DisplayName": "ONeill_Names"
-            },
-            "Value": "78"
-        },
-        {
-            "Type": {
-                "Code": "oneill_kk",
-                "Description": "O'Neill: \"Essential Kanji\"",
-                "Value": 10,
-                "DisplayName": "ONeill_Kanji"
-            },
-            "Value": "159"
-        },
-        {
-            "Type": {
-                "Code": "moro",
-                "Description": "Morohashi: \"Daikanwajiten\"",
-                "Value": 11,
-                "DisplayName": "Morohashi"
-            },
-            "Value": "1513 (vol 2, pg 0110)"
-        },
-        {
-            "Type": {
-                "Code": "henshall",
-                "Description": "Henshall: \"A Guide To Remembering Japanese Characters\"",
-                "Value": 12,
-                "DisplayName": "Henshall"
-            },
-            "Value": "4"
-        },
-        {
-            "Type": {
-                "Code": "sh_kk",
-                "Description": "Spahn & Hadamitzky: \"The Kanji Dictionary\"",
-                "Value": 13,
-                "DisplayName": "SpahnHadamitzky"
-            },
-            "Value": "13"
-        },
-        {
-            "Type": {
-                "Code": "sh_kk2",
-                "Description": "Spahn & Hadamitzky: \"The Kanji Dictionary\", 2nd Edition",
-                "Value": 14,
-                "DisplayName": "SpahnHadamitzky_2"
-            },
-            "Value": "13"
-        },
-        {
-            "Type": {
-                "Code": "sakade",
-                "Description": "Sakade: \"A Guide To Reading And Writing Japanese\"",
-                "Value": 15,
-                "DisplayName": "Sakade"
-            },
-            "Value": "48"
-        },
-        {
-            "Type": {
-                "Code": "jf_cards",
-                "Description": "Japanese Kanji Flashcards (Hodges & Okazaki)",
-                "Value": 16,
-                "DisplayName": "JapaneseFlashcards"
-            },
-            "Value": "20"
-        },
-        {
-            "Type": {
-                "Code": "henshall3",
-                "Description": "Henshall, Seeley & De Groot: \"A Guide To Reading And Writing Japanese\", 3rd Edition",
-                "Value": 17,
-                "DisplayName": "HenshallSeeleyDeGroot"
-            },
-            "Value": "50"
-        },
-        {
-            "Type": {
-                "Code": "tutt_cards",
-                "Description": "Tuttle Flash Cards (Kask)",
-                "Value": 18,
-                "DisplayName": "TuttleFlashcards"
-            },
-            "Value": "25"
-        },
-        {
-            "Type": {
-                "Code": "crowley",
-                "Description": "Crowley: \"The Kanji Way to Japanese Language Power\"",
-                "Value": 19,
-                "DisplayName": "Crowley"
-            },
-            "Value": "260"
-        },
-        {
-            "Type": {
-                "Code": "kanji_in_context",
-                "Description": "Nishiguchi & Kono: \"Kanji In Context\"",
-                "Value": 20,
-                "DisplayName": "KanjiContext"
-            },
-            "Value": "14"
-        },
-        {
-            "Type": {
-                "Code": "busy_people",
-                "Description": "AJALT: \"Japanese For Busy People\"",
-                "Value": 21,
-                "DisplayName": "BusyPeople"
-            },
-            "Value": "2.12"
-        },
-        {
-            "Type": {
-                "Code": "kodansha_compact",
-                "Description": "\"Kodansha's Compact Kanji Guide\"",
-                "Value": 22,
-                "DisplayName": "KodenshaCompact"
-            },
-            "Value": "159"
-        },
-        {
-            "Type": {
-                "Code": "maniette",
-                "Description": "Maniette: \"Les Kanjis Dans La Tête\"",
-                "Value": 23,
-                "DisplayName": "Maniette"
-            },
-            "Value": "185"
-        }
-    ],
-    "QueryCodes": [
-        {
-            "Type": {
-                "Code": "skip",
-                "Description": "SKIP",
-                "Value": 0,
-                "DisplayName": "SKIP"
-            },
-            "SkipMisclassification": {
-                "Code": "",
-                "Value": 0,
-                "DisplayName": "None"
-            },
-            "Value": "3-2-2"
-        },
-        {
-            "Type": {
-                "Code": "sh_desc",
-                "Description": "Spahn & Hadamitzky",
-                "Value": 1,
-                "DisplayName": "SpahnHadamitzky"
-            },
-            "SkipMisclassification": null,
-            "Value": "2r2.1"
-        },
-        {
-            "Type": {
-                "Code": "four_corner",
-                "Description": "Four Corner",
-                "Value": 2,
-                "DisplayName": "FourCorner"
-            },
-            "SkipMisclassification": null,
-            "Value": "7722.0"
-        },
-        {
-            "Type": {
-                "Code": "deroo",
-                "Description": "De Roo",
-                "Value": 3,
-                "DisplayName": "DeRoo"
-            },
-            "SkipMisclassification": null,
-            "Value": "3645"
-        }
-    ],
-    "Readings": [
-        {
-            "Type": {
-                "Code": "pinyin",
-                "Value": 0,
-                "DisplayName": "Pinyin"
-            },
-            "Value": "yuan2"
-        },
-        {
-            "Type": {
-                "Code": "korean_r",
-                "Value": 1,
-                "DisplayName": "KoreanRomanized"
-            },
-            "Value": "weon"
-        },
-        {
-            "Type": {
-                "Code": "korean_h",
-                "Value": 2,
-                "DisplayName": "KoreanHangul"
-            },
-            "Value": "원"
-        },
-        {
-            "Type": {
-                "Code": "ja_on",
-                "Value": 3,
-                "DisplayName": "JapaneseOn"
-            },
-            "Value": "エン"
-        },
-        {
-            "Type": {
-                "Code": "ja_kun",
-                "Value": 4,
-                "DisplayName": "JapaneseKun"
-            },
-            "Value": "まる.い"
-        },
-        {
-            "Type": {
-                "Code": "ja_kun",
-                "Value": 4,
-                "DisplayName": "JapaneseKun"
-            },
-            "Value": "まる"
-        },
-        {
-            "Type": {
-                "Code": "ja_kun",
-                "Value": 4,
-                "DisplayName": "JapaneseKun"
-            },
-            "Value": "まど"
-        },
-        {
-            "Type": {
-                "Code": "ja_kun",
-                "Value": 4,
-                "DisplayName": "JapaneseKun"
-            },
-            "Value": "まど.か"
-        },
-        {
-            "Type": {
-                "Code": "ja_kun",
-                "Value": 4,
-                "DisplayName": "JapaneseKun"
-            },
-            "Value": "まろ.やか"
-        }
-    ],
-    "Meanings": [
-        {
-            "Language": {
-                "ThreeLetterCode": "eng",
-                "TwoLetterCode": "en",
-                "Value": 15,
-                "DisplayName": "English"
-            },
-            "Term": "circle"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "eng",
-                "TwoLetterCode": "en",
-                "Value": 15,
-                "DisplayName": "English"
-            },
-            "Term": "yen"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "eng",
-                "TwoLetterCode": "en",
-                "Value": 15,
-                "DisplayName": "English"
-            },
-            "Term": "round"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "fre",
-                "TwoLetterCode": "fr",
-                "Value": 20,
-                "DisplayName": "French"
-            },
-            "Term": "cercle"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "fre",
-                "TwoLetterCode": "fr",
-                "Value": 20,
-                "DisplayName": "French"
-            },
-            "Term": "yen"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "fre",
-                "TwoLetterCode": "fr",
-                "Value": 20,
-                "DisplayName": "French"
-            },
-            "Term": "rond"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "spa",
-                "TwoLetterCode": "es",
-                "Value": 54,
-                "DisplayName": "Spanish"
-            },
-            "Term": "circular"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "spa",
-                "TwoLetterCode": "es",
-                "Value": 54,
-                "DisplayName": "Spanish"
-            },
-            "Term": "redondo"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "spa",
-                "TwoLetterCode": "es",
-                "Value": 54,
-                "DisplayName": "Spanish"
-            },
-            "Term": "yen"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "por",
-                "TwoLetterCode": "pt",
-                "Value": 47,
-                "DisplayName": "Portuguese"
-            },
-            "Term": "círculo"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "por",
-                "TwoLetterCode": "pt",
-                "Value": 47,
-                "DisplayName": "Portuguese"
-            },
-            "Term": "iene"
-        },
-        {
-            "Language": {
-                "ThreeLetterCode": "por",
-                "TwoLetterCode": "pt",
-                "Value": 47,
-                "DisplayName": "Portuguese"
-            },
-            "Term": "redondo"
-        }
-    ],
-    "Nanoris": [
-        "つぶら",
-        "のぶ",
-        "まどか",
-        "みつ"
-    ]
+    {
+      "Type": {
+        "Code": "jis208",
+        "Description": "JIS X 0208-1997",
+        "Value": 0,
+        "DisplayName": "JIS208"
+      },
+      "Value": "1-17-63"
+    }
+  ],
+  "StrokePaths": [
+    "M21.75,19.8c0.91,0.91,1.47,3.23,1.5,5.45c0.2,13.9,0.03,47.69,0.03,62.5c0,2-0.03,4.99-0.03,6",
+    "M24.06,21.56c15.07-1.68,49.46-5.58,57.92-6.31c2.9-0.25,4.78,1.88,4.78,4.27c0,13.48,0,53.21,0,67.48c0,9.75-4.25,6.5-8.5,1.5",
+    "M52.25,20.75c0.88,0.88,1.5,2,1.5,3.71c0,6.76,0,27.54,0,31.04",
+    "M24.75,59.75c14.62-1.75,43-4.25,60.5-5.25"
+  ],
+  "IndexRadicals": [
+    {
+      "Type": {
+        "Code": "classical",
+        "Value": 0,
+        "DisplayName": "Kangxi"
+      },
+      "Number": 13,
+      "Radical": "冂",
+      "Variants": [],
+      "Value": 12,
+      "DisplayName": "Radical013"
+    }
+  ],
+  "IsIndexRadical": false,
+  "Grade": {
+    "Number": 1,
+    "Value": 1,
+    "DisplayName": "One"
+  },
+  "StrokeCount": 4,
+  "StrokeCommonMiscounts": [],
+  "Variants": [
+    {
+      "Type": {
+        "Code": "jis208",
+        "Description": "JIS X 0208",
+        "Value": 0,
+        "DisplayName": "JIS208"
+      },
+      "Value": "1-52-04"
+    }
+  ],
+  "Frequency": 69,
+  "RadicalNames": [],
+  "JLPT": 4,
+  "References": [
+    {
+      "Type": {
+        "Code": "nelson_c",
+        "Description": "Nelson: \"Modern Reader's Japanese-English Character Dictionary\"",
+        "Value": 0,
+        "DisplayName": "Nelson_Classic"
+      },
+      "Value": "617"
+    },
+    {
+      "Type": {
+        "Code": "nelson_n",
+        "Description": "Nelson: \"The New Nelson Japanese-English Character Dictionary\"",
+        "Value": 1,
+        "DisplayName": "Nelson_New"
+      },
+      "Value": "385"
+    },
+    {
+      "Type": {
+        "Code": "halpern_njecd",
+        "Description": "Halpern: \"New Japanese-English Character Dictionary\"",
+        "Value": 2,
+        "DisplayName": "Halpern_NJECD"
+      },
+      "Value": "2955"
+    },
+    {
+      "Type": {
+        "Code": "halpern_kkd",
+        "Description": "Halpern: \"Kodansha Kanji Dictionary\"",
+        "Value": 5,
+        "DisplayName": "Halpern_KKD"
+      },
+      "Value": "3673"
+    },
+    {
+      "Type": {
+        "Code": "halpern_kkld",
+        "Description": "Halpern: \"Kanji Learners Dictionary\"",
+        "Value": 3,
+        "DisplayName": "Halpern_KLD"
+      },
+      "Value": "1875"
+    },
+    {
+      "Type": {
+        "Code": "halpern_kkld_2ed",
+        "Description": "Halpern: \"Kanji Learners Dictionary\", 2nd Edition",
+        "Value": 4,
+        "DisplayName": "Halpern_KLD_2"
+      },
+      "Value": "2555"
+    },
+    {
+      "Type": {
+        "Code": "heisig",
+        "Description": "Heisig: \"Remembering The Kanji\"",
+        "Value": 6,
+        "DisplayName": "Heisig"
+      },
+      "Value": "1811"
+    },
+    {
+      "Type": {
+        "Code": "heisig6",
+        "Description": "Heisig: \"Remembering The Kanji\", 6th Edition",
+        "Value": 7,
+        "DisplayName": "Heisig_6"
+      },
+      "Value": "1952"
+    },
+    {
+      "Type": {
+        "Code": "gakken",
+        "Description": "Gakken: \"A New Dictionary Of Kanji Usage\"",
+        "Value": 8,
+        "DisplayName": "Gakken"
+      },
+      "Value": "2"
+    },
+    {
+      "Type": {
+        "Code": "oneill_names",
+        "Description": "O'Neill: \"Japanese Names\"",
+        "Value": 9,
+        "DisplayName": "ONeill_Names"
+      },
+      "Value": "78"
+    },
+    {
+      "Type": {
+        "Code": "oneill_kk",
+        "Description": "O'Neill: \"Essential Kanji\"",
+        "Value": 10,
+        "DisplayName": "ONeill_Kanji"
+      },
+      "Value": "159"
+    },
+    {
+      "Type": {
+        "Code": "moro",
+        "Description": "Morohashi: \"Daikanwajiten\"",
+        "Value": 11,
+        "DisplayName": "Morohashi"
+      },
+      "Value": "1513 (vol 2, pg 0110)"
+    },
+    {
+      "Type": {
+        "Code": "henshall",
+        "Description": "Henshall: \"A Guide To Remembering Japanese Characters\"",
+        "Value": 12,
+        "DisplayName": "Henshall"
+      },
+      "Value": "4"
+    },
+    {
+      "Type": {
+        "Code": "sh_kk",
+        "Description": "Spahn & Hadamitzky: \"The Kanji Dictionary\"",
+        "Value": 13,
+        "DisplayName": "SpahnHadamitzky"
+      },
+      "Value": "13"
+    },
+    {
+      "Type": {
+        "Code": "sh_kk2",
+        "Description": "Spahn & Hadamitzky: \"The Kanji Dictionary\", 2nd Edition",
+        "Value": 14,
+        "DisplayName": "SpahnHadamitzky_2"
+      },
+      "Value": "13"
+    },
+    {
+      "Type": {
+        "Code": "sakade",
+        "Description": "Sakade: \"A Guide To Reading And Writing Japanese\"",
+        "Value": 15,
+        "DisplayName": "Sakade"
+      },
+      "Value": "48"
+    },
+    {
+      "Type": {
+        "Code": "jf_cards",
+        "Description": "Japanese Kanji Flashcards (Hodges & Okazaki)",
+        "Value": 16,
+        "DisplayName": "JapaneseFlashcards"
+      },
+      "Value": "20"
+    },
+    {
+      "Type": {
+        "Code": "henshall3",
+        "Description": "Henshall, Seeley & De Groot: \"A Guide To Reading And Writing Japanese\", 3rd Edition",
+        "Value": 17,
+        "DisplayName": "HenshallSeeleyDeGroot"
+      },
+      "Value": "50"
+    },
+    {
+      "Type": {
+        "Code": "tutt_cards",
+        "Description": "Tuttle Flash Cards (Kask)",
+        "Value": 18,
+        "DisplayName": "TuttleFlashcards"
+      },
+      "Value": "25"
+    },
+    {
+      "Type": {
+        "Code": "crowley",
+        "Description": "Crowley: \"The Kanji Way to Japanese Language Power\"",
+        "Value": 19,
+        "DisplayName": "Crowley"
+      },
+      "Value": "260"
+    },
+    {
+      "Type": {
+        "Code": "kanji_in_context",
+        "Description": "Nishiguchi & Kono: \"Kanji In Context\"",
+        "Value": 20,
+        "DisplayName": "KanjiContext"
+      },
+      "Value": "14"
+    },
+    {
+      "Type": {
+        "Code": "busy_people",
+        "Description": "AJALT: \"Japanese For Busy People\"",
+        "Value": 21,
+        "DisplayName": "BusyPeople"
+      },
+      "Value": "2.12"
+    },
+    {
+      "Type": {
+        "Code": "kodansha_compact",
+        "Description": "\"Kodansha's Compact Kanji Guide\"",
+        "Value": 22,
+        "DisplayName": "KodenshaCompact"
+      },
+      "Value": "159"
+    },
+    {
+      "Type": {
+        "Code": "maniette",
+        "Description": "Maniette: \"Les Kanjis Dans La Tête\"",
+        "Value": 23,
+        "DisplayName": "Maniette"
+      },
+      "Value": "185"
+    }
+  ],
+  "QueryCodes": [
+    {
+      "Type": {
+        "Code": "skip",
+        "Description": "SKIP",
+        "Value": 0,
+        "DisplayName": "SKIP"
+      },
+      "SkipMisclassification": {
+        "Code": "",
+        "Value": 0,
+        "DisplayName": "None"
+      },
+      "Value": "3-2-2"
+    },
+    {
+      "Type": {
+        "Code": "sh_desc",
+        "Description": "Spahn & Hadamitzky",
+        "Value": 1,
+        "DisplayName": "SpahnHadamitzky"
+      },
+      "SkipMisclassification": null,
+      "Value": "2r2.1"
+    },
+    {
+      "Type": {
+        "Code": "four_corner",
+        "Description": "Four Corner",
+        "Value": 2,
+        "DisplayName": "FourCorner"
+      },
+      "SkipMisclassification": null,
+      "Value": "7722.0"
+    },
+    {
+      "Type": {
+        "Code": "deroo",
+        "Description": "De Roo",
+        "Value": 3,
+        "DisplayName": "DeRoo"
+      },
+      "SkipMisclassification": null,
+      "Value": "3645"
+    }
+  ],
+  "Readings": [
+    {
+      "Type": {
+        "Code": "pinyin",
+        "Value": 0,
+        "DisplayName": "Pinyin"
+      },
+      "Value": "yuan2"
+    },
+    {
+      "Type": {
+        "Code": "korean_r",
+        "Value": 1,
+        "DisplayName": "KoreanRomanized"
+      },
+      "Value": "weon"
+    },
+    {
+      "Type": {
+        "Code": "korean_h",
+        "Value": 2,
+        "DisplayName": "KoreanHangul"
+      },
+      "Value": "원"
+    },
+    {
+      "Type": {
+        "Code": "vietnam",
+        "Value": 3,
+        "DisplayName": "Vietnam"
+      },
+      "Value": "Viên"
+    },
+    {
+      "Type": {
+        "Code": "ja_on",
+        "Value": 4,
+        "DisplayName": "JapaneseOn"
+      },
+      "Value": "エン"
+    },
+    {
+      "Type": {
+        "Code": "ja_kun",
+        "Value": 5,
+        "DisplayName": "JapaneseKun"
+      },
+      "Value": "まる.い"
+    },
+    {
+      "Type": {
+        "Code": "ja_kun",
+        "Value": 5,
+        "DisplayName": "JapaneseKun"
+      },
+      "Value": "まる"
+    },
+    {
+      "Type": {
+        "Code": "ja_kun",
+        "Value": 5,
+        "DisplayName": "JapaneseKun"
+      },
+      "Value": "まど"
+    },
+    {
+      "Type": {
+        "Code": "ja_kun",
+        "Value": 5,
+        "DisplayName": "JapaneseKun"
+      },
+      "Value": "まど.か"
+    },
+    {
+      "Type": {
+        "Code": "ja_kun",
+        "Value": 5,
+        "DisplayName": "JapaneseKun"
+      },
+      "Value": "まろ.やか"
+    }
+  ],
+  "Meanings": [
+    {
+      "Language": {
+        "ThreeLetterCode": "eng",
+        "TwoLetterCode": "en",
+        "Value": 15,
+        "DisplayName": "English"
+      },
+      "Term": "circle"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "eng",
+        "TwoLetterCode": "en",
+        "Value": 15,
+        "DisplayName": "English"
+      },
+      "Term": "yen"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "eng",
+        "TwoLetterCode": "en",
+        "Value": 15,
+        "DisplayName": "English"
+      },
+      "Term": "round"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "fre",
+        "TwoLetterCode": "fr",
+        "Value": 20,
+        "DisplayName": "French"
+      },
+      "Term": "cercle"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "fre",
+        "TwoLetterCode": "fr",
+        "Value": 20,
+        "DisplayName": "French"
+      },
+      "Term": "yen"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "fre",
+        "TwoLetterCode": "fr",
+        "Value": 20,
+        "DisplayName": "French"
+      },
+      "Term": "rond"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "spa",
+        "TwoLetterCode": "es",
+        "Value": 54,
+        "DisplayName": "Spanish"
+      },
+      "Term": "circular"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "spa",
+        "TwoLetterCode": "es",
+        "Value": 54,
+        "DisplayName": "Spanish"
+      },
+      "Term": "redondo"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "spa",
+        "TwoLetterCode": "es",
+        "Value": 54,
+        "DisplayName": "Spanish"
+      },
+      "Term": "yen"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "por",
+        "TwoLetterCode": "pt",
+        "Value": 47,
+        "DisplayName": "Portuguese"
+      },
+      "Term": "círculo"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "por",
+        "TwoLetterCode": "pt",
+        "Value": 47,
+        "DisplayName": "Portuguese"
+      },
+      "Term": "iene"
+    },
+    {
+      "Language": {
+        "ThreeLetterCode": "por",
+        "TwoLetterCode": "pt",
+        "Value": 47,
+        "DisplayName": "Portuguese"
+      },
+      "Term": "redondo"
+    }
+  ],
+  "Nanoris": [
+    "つぶら",
+    "のぶ",
+    "まどか",
+    "みつ"
+  ]
 }
 ```
 </details>

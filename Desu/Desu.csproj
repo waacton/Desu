@@ -5,7 +5,7 @@
     <ApplicationIcon>Resources\Desu.ico</ApplicationIcon>
     <AssemblyName>Wacton.Desu</AssemblyName>
     <RootNamespace>Wacton.Desu</RootNamespace>
-    <Version>6.0.0</Version>
+    <Version>6.1.0</Version>
     <Authors>William Acton</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Japanese and kanji dictionary .NET library built upon JMdict, JMnedict, KANJIDIC, RADKFILE/KRADFILE, and KanjiVG.
@@ -15,7 +15,7 @@ Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framewor
     <PackageIconUrl></PackageIconUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageTags>Japanese kanji dictionary JMdict JMnedict KANJIDIC RADKFILE KRADFILE KanjiVG EDICT radicals romaji</PackageTags>
-    <PackageReleaseNotes>Map radical glyphs to appropriate unicode characters and remove duplicates from kanji/radical lookups </PackageReleaseNotes>
+    <PackageReleaseNotes>Remove duplicate radicals and replace approximate glyphs</PackageReleaseNotes>
     <RepositoryType></RepositoryType>
     <LangVersion>7.1</LangVersion>
     <Copyright>William Acton</Copyright>
