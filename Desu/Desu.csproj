@@ -12,12 +12,9 @@
 Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framework 4.6.1+ applications.</Description>
     <PackageProjectUrl>https://gitlab.com/Wacton/Desu</PackageProjectUrl>
     <RepositoryUrl>https://gitlab.com/Wacton/Desu</RepositoryUrl>
-    <PackageIconUrl></PackageIconUrl>
-    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageTags>Japanese kanji dictionary JMdict JMnedict KANJIDIC RADKFILE KRADFILE KanjiVG EDICT radicals romaji</PackageTags>
     <PackageReleaseNotes>Remove duplicate radicals and replace approximate glyphs</PackageReleaseNotes>
-    <RepositoryType></RepositoryType>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>7.3</LangVersion>
     <Copyright>William Acton</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>Desu_64.png</PackageIcon>
@@ -71,7 +68,7 @@ Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framewor
     </EmbeddedResource>
   </ItemGroup>
 
-	<!-- enables test module to access internal classes and methods -->
+  <!-- enables test module to access internal classes and methods -->
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
       <_Parameter1>$(AssemblyName).Tests</_Parameter1>

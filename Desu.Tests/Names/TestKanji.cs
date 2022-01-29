@@ -1,15 +1,14 @@
-﻿using System.Collections.Generic;
+﻿namespace Wacton.Desu.Tests.Names;
+
+using System.Collections.Generic;
 using Wacton.Desu.Enums;
 using Wacton.Desu.Names;
 
-namespace Wacton.Desu.Tests.Names
+public class TestKanji : IKanji
 {
-    public class TestKanji : IKanji
-    {
-        public string Text { get; set; }
-        public IEnumerable<KanjiInformation> Informations { get; set; } = new List<KanjiInformation>();
-        public IEnumerable<Priority> Priorities { get; set; } = new List<Priority>();
+    public string Text { get; init; }
+    public IEnumerable<KanjiInformation> Informations { get; init; } = new List<KanjiInformation>();
+    public IEnumerable<Priority> Priorities { get; init; } = new List<Priority>();
 
-        public override string ToString() => Text;
-    }
+    public override string ToString() => Text;
 }

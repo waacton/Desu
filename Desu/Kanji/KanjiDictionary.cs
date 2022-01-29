@@ -23,6 +23,7 @@
         /// <summary>
         /// The creation date of the dictionary file
         /// </summary>
+        [Obsolete("This will be removed in version 7, use static ParseCreationDate or ParseCreationDateAsync instead")]
         public DateTime CreationDate
         {
             get
@@ -39,11 +40,13 @@
         /// <summary>
         /// Returns the entries of the kanji dictionary
         /// </summary>
+        [Obsolete("This will be removed in version 7, use static ParseEntries instead")]
         public IEnumerable<IKanjiEntry> GetEntries() => ParseEntries();
 
         /// <summary>
         /// Returns the entries of the kanji dictionary asynchronously
         /// </summary>
+        [Obsolete("This will be removed in version 7, use static ParseEntriesAsync instead")]
         public async Task<IEnumerable<IKanjiEntry>> GetEntriesAsync() => await ParseEntriesAsync();
 
         /// <summary>

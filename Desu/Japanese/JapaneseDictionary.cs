@@ -17,12 +17,13 @@
         private const string EntryTag = "entry";
         private const string CreationDatePrefix = "JMdict created: ";
         private static readonly Dictionary<string, EntryElement> EntryElements = Enumeration.GetAll<EntryElement>().ToDictionary(element => element.Code, element => element);
-
+ 
         private DateTime creationDate = DateTime.MinValue;
 
         /// <summary>
         /// The creation date of the dictionary file
         /// </summary>
+        [Obsolete("This will be removed in version 7, use static ParseCreationDate or ParseCreationDateAsync instead")]
         public DateTime CreationDate
         {
             get
@@ -39,11 +40,13 @@
         /// <summary>
         /// Returns the entries of the Japanese dictionary
         /// </summary>
+        [Obsolete("This will be removed in version 7, use static ParseEntries instead")]
         public IEnumerable<IJapaneseEntry> GetEntries() => ParseEntries();
 
         /// <summary>
         /// Returns the entries of the Japanese dictionary asynchronously
         /// </summary>
+        [Obsolete("This will be removed in version 7, use static ParseEntriesAsync instead")]
         public async Task<IEnumerable<IJapaneseEntry>> GetEntriesAsync() => await ParseEntriesAsync();
 
         /// <summary>

@@ -23,6 +23,7 @@
         /// <summary>
         /// The creation date of the dictionary file
         /// </summary>
+        [Obsolete("This will be removed in version 7, use static ParseCreationDate or ParseCreationDateAsync instead")]
         public DateTime CreationDate
         {
             get
@@ -39,11 +40,13 @@
         /// <summary>
         /// Returns the entries of the proper names dictionary
         /// </summary>
+        [Obsolete("This will be removed in version 7, use static ParseEntries instead")]
         public IEnumerable<INameEntry> GetEntries() => ParseEntries();
 
         /// <summary>
         /// Returns the entries of the proper names dictionary asynchronously
         /// </summary>
+        [Obsolete("This will be removed in version 7, use static ParseEntriesAsync instead")]
         public async Task<IEnumerable<INameEntry>> GetEntriesAsync() => await ParseEntriesAsync();
 
         /// <summary>

@@ -1,37 +1,36 @@
-﻿using System.Collections.Generic;
+﻿namespace Wacton.Desu.Tests.Names;
+
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Wacton.Desu.Names;
 
-namespace Wacton.Desu.Tests.Names
+public class TestEntry : INameEntry
 {
-    public class TestEntry : INameEntry
+    public int Sequence { get; init; }
+
+    public IEnumerable<IKanji> Kanjis { get; init; } = new List<IKanji>();
+
+    public IEnumerable<IReading> Readings { get; init; } = new List<IReading>();
+
+    public IEnumerable<ITranslation> Translations { get; init; } = new List<ITranslation>();
+
+    public override string ToString()
     {
-        public int Sequence { get; set; }
+        var stringBuilder = new StringBuilder();
+        stringBuilder.Append($"#{Sequence} :: ");
 
-        public IEnumerable<IKanji> Kanjis { get; set; } = new List<IKanji>();
-
-        public IEnumerable<IReading> Readings { get; set; } = new List<IReading>();
-
-        public IEnumerable<ITranslation> Translations { get; set; } = new List<ITranslation>();
-
-        public override string ToString()
+        foreach (var kanji in Kanjis)
         {
-            var stringBuilder = new StringBuilder();
-            stringBuilder.Append($"#{Sequence} :: ");
-
-            foreach (var kanji in Kanjis)
-            {
-                stringBuilder.Append(kanji.Text + " · ");
-            }
-
-            foreach (var reading in Readings)
-            {
-                stringBuilder.Append(reading.Text + " · ");
-            }
-
-            stringBuilder.Append(Translations.First());
-            return stringBuilder.ToString();
+            stringBuilder.Append(kanji.Text + " · ");
         }
+
+        foreach (var reading in Readings)
+        {
+            stringBuilder.Append(reading.Text + " · ");
+        }
+
+        stringBuilder.Append(Translations.First());
+        return stringBuilder.ToString();
     }
 }

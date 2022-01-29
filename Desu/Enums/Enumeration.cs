@@ -4,10 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-
-    /// <summary>
-    /// Taken from Wacton.Tovarisch 1.1.0
-    /// </summary>
+    
     public abstract class Enumeration : IEquatable<Enumeration>
     {
         private static readonly Dictionary<string, int> EnumValues = new Dictionary<string, int>();
@@ -17,10 +14,10 @@
 
         protected Enumeration(string displayName)
         {
-            var enumId = this.GetType().ToString();
+            var enumId = GetType().ToString();
             IncrementEnumCounter(enumId);
-            this.Value = EnumValues[enumId];
-            this.DisplayName = displayName;
+            Value = EnumValues[enumId];
+            DisplayName = displayName;
         }
 
         private static void IncrementEnumCounter(string enumId)
@@ -54,48 +51,23 @@
                 return false;
             }
 
-            var typeMatches = this.GetType().Equals(obj.GetType());
-            var valueMatches = this.Value.Equals(otherValue.Value);
+            var typeMatches = GetType().Equals(obj.GetType());
+            var valueMatches = Value.Equals(otherValue.Value);
 
             return typeMatches && valueMatches;
         }
 
         public override int GetHashCode()
         {
-            return this.Value.GetHashCode();
-        }
-
-        public static T FromValue<T>(int value) where T : Enumeration, new()
-        {
-            var matchingItem = Parse<T, int>(value, "value", item => item.Value == value);
-            return matchingItem;
-        }
-
-        public static T FromDisplayName<T>(string displayName) where T : Enumeration, new()
-        {
-            var matchingItem = Parse<T, string>(displayName, "display name", item => item.DisplayName == displayName);
-            return matchingItem;
-        }
-
-        private static T Parse<T, K>(K value, string description, Func<T, bool> predicate) where T : Enumeration, new()
-        {
-            var matchingItem = GetAll<T>().FirstOrDefault(predicate);
-
-            if (matchingItem == null)
-            {
-                var message = string.Format("'{0}' is not a valid {1} in {2}", value, description, typeof(T));
-                throw new FormatException(message);
-            }
-
-            return matchingItem;
+            return Value.GetHashCode();
         }
 
         public bool Equals(Enumeration other)
         {
-            return this.GetType().ToString() == other.GetType().ToString() 
-                && this.Value.Equals(other.Value);
+            return GetType().ToString() == other.GetType().ToString() 
+                && Value.Equals(other.Value);
         }
 
-        public override string ToString() => this.DisplayName;
+        public override string ToString() => DisplayName;
     }
 }

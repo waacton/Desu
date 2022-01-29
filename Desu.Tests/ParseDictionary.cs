@@ -1,152 +1,151 @@
-﻿using NUnit.Framework;
+﻿namespace Wacton.Desu.Tests;
+
 using System;
 using System.Threading.Tasks;
+using NUnit.Framework;
 using Wacton.Desu.Japanese;
 using Wacton.Desu.Kanji;
 using Wacton.Desu.Names;
 using Wacton.Desu.Radicals;
 using Wacton.Desu.Strokes;
 
-namespace Wacton.Desu.Tests
+public class ParseDictionary
 {
-    public class ParseDictionary
+    [Test]
+    public void Japanese()
     {
-        [Test]
-        public void Japanese()
+        try
         {
-            try
-            {
-                JapaneseDictionary.ParseEntries();
-                JapaneseDictionary.ParseCreationDate();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            JapaneseDictionary.ParseEntries();
+            JapaneseDictionary.ParseCreationDate();
         }
-
-        [Test]
-        public async Task JapaneseAsync()
+        catch (Exception e)
         {
-            try
-            {
-                await JapaneseDictionary.ParseEntriesAsync();
-                await JapaneseDictionary.ParseCreationDateAsync();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            Assert.Fail(e.Message);
         }
+    }
 
-        [Test]
-        public void Name()
+    [Test]
+    public async Task JapaneseAsync()
+    {
+        try
         {
-            try
-            {
-                NameDictionary.ParseEntries();
-                NameDictionary.ParseCreationDate();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            await JapaneseDictionary.ParseEntriesAsync();
+            await JapaneseDictionary.ParseCreationDateAsync();
         }
-
-        [Test]
-        public async Task NameAsync()
+        catch (Exception e)
         {
-            try
-            {
-                await NameDictionary.ParseEntriesAsync();
-                await NameDictionary.ParseCreationDateAsync();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            Assert.Fail(e.Message);
         }
+    }
 
-        [Test]
-        public void Kanji()
+    [Test]
+    public void Name()
+    {
+        try
         {
-            try
-            {
-                KanjiDictionary.ParseEntries();
-                KanjiDictionary.ParseCreationDate();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            NameDictionary.ParseEntries();
+            NameDictionary.ParseCreationDate();
         }
-
-        [Test]
-        public async Task KanjiAsync()
+        catch (Exception e)
         {
-            try
-            {
-                await KanjiDictionary.ParseEntriesAsync();
-                await KanjiDictionary.ParseCreationDateAsync();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            Assert.Fail(e.Message);
         }
+    }
 
-        [Test]
-        public void Radical()
+    [Test]
+    public async Task NameAsync()
+    {
+        try
         {
-            try
-            {
-                RadicalLookup.ParseKanjiToRadicals();
-                RadicalLookup.ParseRadicalToKanjis();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            await NameDictionary.ParseEntriesAsync();
+            await NameDictionary.ParseCreationDateAsync();
         }
-
-        [Test]
-        public async Task RadicalAsync()
+        catch (Exception e)
         {
-            try
-            {
-                await RadicalLookup.ParseKanjiToRadicalsAsync();
-                await RadicalLookup.ParseRadicalToKanjisAsync();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            Assert.Fail(e.Message);
         }
+    }
 
-        [Test]
-        public void Stroke()
+    [Test]
+    public void Kanji()
+    {
+        try
         {
-            try
-            {
-                StrokeLookup.ParseKanjiToStrokes();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            KanjiDictionary.ParseEntries();
+            KanjiDictionary.ParseCreationDate();
         }
-
-        [Test]
-        public async Task StrokeAsync()
+        catch (Exception e)
         {
-            try
-            {
-                await StrokeLookup.ParseKanjiToStrokesAsync();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
+            Assert.Fail(e.Message);
+        }
+    }
+
+    [Test]
+    public async Task KanjiAsync()
+    {
+        try
+        {
+            await KanjiDictionary.ParseEntriesAsync();
+            await KanjiDictionary.ParseCreationDateAsync();
+        }
+        catch (Exception e)
+        {
+            Assert.Fail(e.Message);
+        }
+    }
+
+    [Test]
+    public void Radical()
+    {
+        try
+        {
+            RadicalLookup.ParseKanjiToRadicals();
+            RadicalLookup.ParseRadicalToKanjis();
+        }
+        catch (Exception e)
+        {
+            Assert.Fail(e.Message);
+        }
+    }
+
+    [Test]
+    public async Task RadicalAsync()
+    {
+        try
+        {
+            await RadicalLookup.ParseKanjiToRadicalsAsync();
+            await RadicalLookup.ParseRadicalToKanjisAsync();
+        }
+        catch (Exception e)
+        {
+            Assert.Fail(e.Message);
+        }
+    }
+
+    [Test]
+    public void Stroke()
+    {
+        try
+        {
+            StrokeLookup.ParseKanjiToStrokes();
+        }
+        catch (Exception e)
+        {
+            Assert.Fail(e.Message);
+        }
+    }
+
+    [Test]
+    public async Task StrokeAsync()
+    {
+        try
+        {
+            await StrokeLookup.ParseKanjiToStrokesAsync();
+        }
+        catch (Exception e)
+        {
+            Assert.Fail(e.Message);
         }
     }
 }

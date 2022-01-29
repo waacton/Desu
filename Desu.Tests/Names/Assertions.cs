@@ -1,79 +1,48 @@
-﻿using NUnit.Framework;
+﻿namespace Wacton.Desu.Tests.Names;
+
 using System.Collections.Generic;
 using System.Linq;
 using Wacton.Desu.Names;
+using Wacton.Desu.Tests.Utils;
 
-namespace Wacton.Desu.Tests.Names
+public static class Assertions
 {
-    public class Assertions
+    public static void AssertEntry(TestEntry testEntry, IEnumerable<INameEntry> nameEntries)
     {
-        public static void AssertEntry(TestEntry testEntry, IEnumerable<INameEntry> nameEntries)
-        {
-            var entry = nameEntries.Single(x => x.Sequence == testEntry.Sequence);
-            AssertEntriesAreEqual(entry, testEntry);
-        }
+        var entry = nameEntries.Single(x => x.Sequence == testEntry.Sequence);
+        AssertEntryEquality(entry, testEntry);
+    }
 
-        private static void AssertEntriesAreEqual(INameEntry first, INameEntry second)
-        {
-            Assert.That(first.Sequence, Is.EqualTo(second.Sequence));
-            AssertKanjisAreEqual(first.Kanjis, second.Kanjis);
-            AssertReadingsAreEqual(first.Readings, second.Readings);
-            AssertTranslationsAreEqual(first.Translations, second.Translations);
-        }
+    public static void AssertEntryEquality(INameEntry first, INameEntry second)
+    {
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Sequence);
+        AssertUtils.AssertListEquality(first.Kanjis, second.Kanjis, AssertKanjiEquality);
+        AssertUtils.AssertListEquality(first.Readings, second.Readings, AssertReadingEquality);
+        AssertUtils.AssertListEquality(first.Translations, second.Translations, AssertTranslationEquality);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.ToString());
+    }
 
-        private static void AssertKanjisAreEqual(IEnumerable<IKanji> firstList, IEnumerable<IKanji> secondList)
-        {
-            if (firstList.Count() != secondList.Count())
-            {
-                Assert.Fail("Kanjis are different lengths");
-            }
+    private static void AssertKanjiEquality(IKanji first, IKanji second)
+    {
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Informations);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Priorities);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.ToString());
+    }
 
-            for (var i = 0; i < firstList.Count(); i++)
-            {
-                var first = firstList.ElementAt(i);
-                var second = secondList.ElementAt(i);
+    private static void AssertReadingEquality(IReading first, IReading second)
+    {
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Text);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Restriction);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Informations);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Priorities);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.ToString());
+    }
 
-                Assert.That(first.Text, Is.EqualTo(second.Text));
-                Assert.That(first.Informations, Is.EqualTo(second.Informations));
-                Assert.That(first.Priorities, Is.EqualTo(second.Priorities));
-            }
-        }
-
-        private static void AssertReadingsAreEqual(IEnumerable<IReading> firstList, IEnumerable<IReading> secondList)
-        {
-            if (firstList.Count() != secondList.Count())
-            {
-                Assert.Fail("Readings are different lengths");
-            }
-
-            for (var i = 0; i < firstList.Count(); i++)
-            {
-                var first = firstList.ElementAt(i);
-                var second = secondList.ElementAt(i);
-
-                Assert.That(first.Text, Is.EqualTo(second.Text));
-                Assert.That(first.Restriction, Is.EqualTo(second.Restriction));
-                Assert.That(first.Informations, Is.EqualTo(second.Informations));
-                Assert.That(first.Priorities, Is.EqualTo(second.Priorities));
-            }
-        }
-
-        private static void AssertTranslationsAreEqual(IEnumerable<ITranslation> firstList, IEnumerable<ITranslation> secondList)
-        {
-            if (firstList.Count() != secondList.Count())
-            {
-                Assert.Fail("Translations are different lengths");
-            }
-
-            for (var i = 0; i < firstList.Count(); i++)
-            {
-                var first = firstList.ElementAt(i);
-                var second = secondList.ElementAt(i);
-
-                Assert.That(first.NameTypes, Is.EqualTo(second.NameTypes));
-                Assert.That(first.CrossReferences, Is.EqualTo(second.CrossReferences));
-                Assert.That(first.Transcriptions, Is.EqualTo(second.Transcriptions));
-            }
-        }
+    private static void AssertTranslationEquality(ITranslation first, ITranslation second)
+    {
+        AssertUtils.AssertPropertyEquality(first, second, x => x.NameTypes);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.CrossReferences);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Transcriptions);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.ToString());
     }
 }

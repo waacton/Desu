@@ -1,38 +1,38 @@
-﻿using NUnit.Framework;
+﻿namespace Wacton.Desu.Tests.Kanji;
+
 using System.Collections.Generic;
 using System.Linq;
 using Wacton.Desu.Kanji;
+using Wacton.Desu.Tests.Utils;
 
-namespace Wacton.Desu.Tests.Kanji
+public static class Assertions
 {
-    public static class Assertions
+    public static void AssertEntry(TestEntry testEntry, IEnumerable<IKanjiEntry> kanjiEntries)
     {
-        public static void AssertEntry(TestEntry testEntry, IEnumerable<IKanjiEntry> kanjiEntries)
-        {
-            var entry = kanjiEntries.Single(x => x.Literal == testEntry.Literal);
-            AssertEntriesAreEqual(entry, testEntry);
-        }
+        var entry = kanjiEntries.Single(x => x.Literal == testEntry.Literal);
+        AssertEntryEquality(entry, testEntry);
+    }
 
-        private static void AssertEntriesAreEqual(IKanjiEntry first, IKanjiEntry second)
-        {
-            Assert.That(first.Literal, Is.EqualTo(second.Literal));
-            Assert.That(first.RadicalDecomposition, Is.EqualTo(second.RadicalDecomposition));
-            Assert.That(first.Codepoints, Is.EqualTo(second.Codepoints));
-            Assert.That(first.StrokePaths, Is.EqualTo(second.StrokePaths));
-            Assert.That(first.IndexRadicals, Is.EqualTo(second.IndexRadicals));
-            Assert.That(first.IsIndexRadical, Is.EqualTo(second.IsIndexRadical));
-            Assert.That(first.Grade, Is.EqualTo(second.Grade));
-            Assert.That(first.StrokeCount, Is.EqualTo(second.StrokeCount));
-            Assert.That(first.StrokeCommonMiscounts, Is.EqualTo(second.StrokeCommonMiscounts));
-            Assert.That(first.Variants, Is.EqualTo(second.Variants));
-            Assert.That(first.Frequency, Is.EqualTo(second.Frequency));
-            Assert.That(first.RadicalNames, Is.EqualTo(second.RadicalNames));
-            Assert.That(first.JLPT, Is.EqualTo(second.JLPT));
-            Assert.That(first.References, Is.EqualTo(second.References));
-            Assert.That(first.QueryCodes, Is.EqualTo(second.QueryCodes));
-            Assert.That(first.Readings, Is.EqualTo(second.Readings));
-            Assert.That(first.Meanings, Is.EqualTo(second.Meanings));
-            Assert.That(first.Nanoris, Is.EqualTo(second.Nanoris));
-        }
+    public static void AssertEntryEquality(IKanjiEntry first, IKanjiEntry second)
+    {
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Literal);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.RadicalDecomposition);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Codepoints);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.StrokePaths);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.IndexRadicals);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.IsIndexRadical);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Grade);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.StrokeCount);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.StrokeCommonMiscounts);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Variants);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Frequency);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.RadicalNames);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.JLPT);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.References);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.QueryCodes);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Readings);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Meanings);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.Nanoris);
+        AssertUtils.AssertPropertyEquality(first, second, x => x.ToString());
     }
 }
