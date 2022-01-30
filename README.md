@@ -1,7 +1,7 @@
 # <img src="https://gitlab.com/Wacton/Desu/raw/main/Desu/Resources/Desu.png" width="32" height="32"> Desu
 [![pipeline status](https://gitlab.com/Wacton/Desu/badges/main/pipeline.svg)](https://gitlab.com/Wacton/Desu/-/commits/main)
 [![coverage report](https://gitlab.com/Wacton/Desu/badges/main/coverage.svg)](https://gitlab.com/Wacton/Desu/-/commits/main)
-[![NuGet](https://img.shields.io/nuget/v/Wacton.Desu)](https://www.nuget.org/packages/Wacton.Desu/)
+[![NuGet](https://badgen.net/nuget/v/Wacton.Desu)](https://www.nuget.org/packages/Wacton.Desu/)
 
 Wacton.Desu is a Japanese and kanji dictionary .NET library built upon
 [JMdict](https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project),
