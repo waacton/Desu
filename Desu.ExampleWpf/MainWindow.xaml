@@ -7,7 +7,7 @@
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Title="MainWindow" Height="350" Width="525">
     
-    <Grid x:Name="Grid">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -31,6 +31,6 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
         
-        <Button Content="Next" Grid.Row="3" Click="ButtonBase_OnClick" />
+        <Button Content="Next" Grid.Row="3" Click="OnNextButtonClick" />
     </Grid>
 </Window>

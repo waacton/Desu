@@ -17,6 +17,7 @@
         public static readonly Field Botany = new Field(nameof(Botany), "botany");
         public static readonly Field Buddhism = new Field(nameof(Buddhism), "Buddhism");
         public static readonly Field Business = new Field(nameof(Business), "business");
+        public static readonly Field CardGames = new Field(nameof(CardGames), "card games");
         public static readonly Field Chemistry = new Field(nameof(Chemistry), "chemistry");
         public static readonly Field Christianity = new Field(nameof(Christianity), "Christianity");
         public static readonly Field Clothing = new Field(nameof(Clothing), "clothing");
@@ -37,7 +38,9 @@
         public static readonly Field Geology = new Field(nameof(Geology), "geology");
         public static readonly Field Geometry = new Field(nameof(Geometry), "geometry");
         public static readonly Field Go = new Field(nameof(Go), "go (game)");
+        public static readonly Field Golf = new Field(nameof(Golf), "golf");
         public static readonly Field Grammar = new Field(nameof(Grammar), "grammar");
+        public static readonly Field GreekMythology = new Field(nameof(GreekMythology), "Greek mythology");
         public static readonly Field Hanafuda = new Field(nameof(Hanafuda), "hanafuda");
         public static readonly Field HorseRacing = new Field(nameof(HorseRacing), "horse racing");
         public static readonly Field Law = new Field(nameof(Law), "law");
@@ -54,7 +57,7 @@
         public static readonly Field Ornithology = new Field(nameof(Ornithology), "ornithology");
         public static readonly Field Paleontology = new Field(nameof(Paleontology), "paleontology");
         public static readonly Field Pathology = new Field(nameof(Pathology), "pathology");
-        public static readonly Field Pharmacy = new Field(nameof(Pharmacy), "pharmacy");
+        public static readonly Field Pharmacology = new Field(nameof(Pharmacology), "pharmacology");
         public static readonly Field Philosophy = new Field(nameof(Philosophy), "philosophy");
         public static readonly Field Photography = new Field(nameof(Photography), "photography");
         public static readonly Field Physics = new Field(nameof(Physics), "physics");

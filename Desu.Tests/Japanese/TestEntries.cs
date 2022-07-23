@@ -404,7 +404,7 @@ public static class TestEntries
             KanjiRestriction = new List<string> { "九百" },
             ReadingRestriction = new List<string> { "くひゃく" },
             PartsOfSpeech = new List<PartOfSpeech> { PartOfSpeech("noun (common) (futsuumeishi)") },
-            Miscellanea = new List<Miscellaneous> { Miscellaneous("archaism"), Miscellaneous("derogatory") },
+            Miscellanea = new List<Miscellaneous> { Miscellaneous("archaic"), Miscellaneous("derogatory") },
             Glosses = new List<Gloss> {
                 new("fool", Language("eng"), null, null),
                 new("idiot", Language("eng"), null, null)
@@ -567,7 +567,7 @@ public static class TestEntries
             PartsOfSpeech = new List<PartOfSpeech> { PartOfSpeech("noun (common) (futsuumeishi)") },
             CrossReferences = new List<string> { "攻め・2", "受け・5" },
             Antonyms = new List<string> { "猫・6" },
-            Miscellanea = new List<Miscellaneous> { Miscellaneous("colloquialism") },
+            Miscellanea = new List<Miscellaneous> { Miscellaneous("colloquial") },
             Glosses = new List<Gloss> { new("dominant partner of a homosexual relationship", Language("eng"), null, null) }
         };
 

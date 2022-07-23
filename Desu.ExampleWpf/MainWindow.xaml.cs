@@ -23,51 +23,48 @@
 
         public MainWindow()
         {
-            this.kanjiEntries = KanjiDictionary.ParseEntries().ToList();
-            this.UpdateKanji();
+            kanjiEntries = KanjiDictionary.ParseEntries().ToList();
+            UpdateKanji();
 
             InitializeComponent();
         }
 
-        public string Text => this.currentEntry.Literal;
-        public string Meanings => this.GetEnglishMeanings();
+        public string Text => currentEntry.Literal;
+        public string Meanings => GetEnglishMeanings();
 
         public ObservableCollection<Geometry> Strokes { get; set; }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            this.UpdateKanji();
-        }
-
+        private void OnNextButtonClick(object sender, RoutedEventArgs e) => UpdateKanji();
+        
         private void UpdateKanji()
         {
             var hasStrokePaths = false;
             while (!hasStrokePaths)
             {
-                this.currentEntry = this.kanjiEntries[this.GetRandomIndex()];
-                hasStrokePaths = this.currentEntry.StrokePaths.Any();
+                currentEntry = kanjiEntries[GetRandomIndex()];
+                hasStrokePaths = currentEntry.StrokePaths.Any();
             }
 
-            this.Strokes = new ObservableCollection<Geometry>();
-            foreach (var strokePath in this.currentEntry.StrokePaths)
+            Strokes = new ObservableCollection<Geometry>();
+            foreach (var strokePath in currentEntry.StrokePaths)
             {
-                this.Strokes.Add(Geometry.Parse(strokePath));
+                Strokes.Add(Geometry.Parse(strokePath));
             }
 
-            this.OnPropertyChanged(nameof(this.Text));
-            this.OnPropertyChanged(nameof(this.Meanings));
-            this.OnPropertyChanged(nameof(this.Strokes));
+            OnPropertyChanged(nameof(Text));
+            OnPropertyChanged(nameof(Meanings));
+            OnPropertyChanged(nameof(Strokes));
         }
 
         private int GetRandomIndex()
         {
-            return this.random.Next(0, this.kanjiEntries.Count - 1);
+            return random.Next(0, kanjiEntries.Count - 1);
         }
 
         private string GetEnglishMeanings()
         {
-            var englishMeanings = this.currentEntry.Meanings
-                .Where(meaning => meaning.Language == Wacton.Desu.Enums.Language.English)
+            var englishMeanings = currentEntry.Meanings
+                .Where(meaning => meaning.Language.Equals(Enums.Language.English))
                 .Select(meaning => meaning.Term);
 
             return string.Join(" · ", englishMeanings);
@@ -78,7 +75,7 @@
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
