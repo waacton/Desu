@@ -60,11 +60,13 @@
         public static readonly Language Spanish = new Language(nameof(Spanish), "spa", "es");
         public static readonly Language Swahili = new Language(nameof(Swahili), "swa", "sw");
         public static readonly Language Swedish = new Language(nameof(Swedish), "swe", "sv");
+        public static readonly Language Tagalog = new Language(nameof(Tagalog), "tgl", "tl");
         public static readonly Language Tahitian = new Language(nameof(Tahitian), "tah", "ty");
         public static readonly Language Tamil = new Language(nameof(Tamil), "tam", "ta");
         public static readonly Language Thai = new Language(nameof(Thai), "tha", "th");
         public static readonly Language Tibetan = new Language(nameof(Tibetan), "tib", "bo");
         public static readonly Language Turkish = new Language(nameof(Turkish), "tur", "tr");
+        public static readonly Language Ukrainian = new Language(nameof(Ukrainian), "ukr", "uk");
         public static readonly Language Urdu = new Language(nameof(Urdu), "urd", "ur");
         public static readonly Language Vietnamese = new Language(nameof(Vietnamese), "vie", "vi");
         public static readonly Language Yiddish = new Language(nameof(Yiddish), "yid", "yi");

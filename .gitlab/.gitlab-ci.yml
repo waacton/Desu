@@ -34,8 +34,10 @@ test:
         reports:
             junit:
                 - ./**/*test-result.xml
-            cobertura: ./**/coverage.cobertura.xml
-
+            coverage_report:
+                coverage_format: cobertura
+                path: ./**/coverage.cobertura.xml
+                
 # will enable when GitLab allows it to work
 #sast:
 #    stage: security-test

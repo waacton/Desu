@@ -1331,7 +1331,7 @@ Source File URL: http://ftp.edrdg.org/pub/Nihongo/kradzip.zip  _(radkfilex)_
 **KanjiVG** ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))  
 Copyright © Ulrich Apel  
 Licence URL: http://kanjivg.tagaini.net/  
-Source File URL: https://github.com/KanjiVG/kanjivg/releases/download/r20160426/kanjivg-20160426.xml.gz  _(kanjivg.xml)_  
+Source File URL: https://github.com/KanjiVG/kanjivg/releases/download/r20220427/kanjivg-20220427.xml.gz  _(kanjivg.xml)_  
 
 ---
 

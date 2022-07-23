@@ -7,6 +7,7 @@
         public static readonly NameType Company = new NameType(nameof(Company), "company name");
         public static readonly NameType Creature = new NameType(nameof(Creature), "creature");
         public static readonly NameType Deity = new NameType(nameof(Deity), "deity");
+        public static readonly NameType Document = new NameType(nameof(Document), "document");
         public static readonly NameType Event = new NameType(nameof(Event), "event");
         public static readonly NameType Female = new NameType(nameof(Female), "female given name or forename");
         public static readonly NameType Fiction = new NameType(nameof(Fiction), "fiction");

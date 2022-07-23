@@ -4,11 +4,12 @@
     public class Miscellaneous : Enumeration
     {
         public static readonly Miscellaneous Abbreviation = new Miscellaneous(nameof(Abbreviation), "abbreviation");
-        public static readonly Miscellaneous Archaism = new Miscellaneous(nameof(Archaism), "archaism");
+        public static readonly Miscellaneous Archaic = new Miscellaneous(nameof(Archaic), "archaic");
         public static readonly Miscellaneous Childrens = new Miscellaneous(nameof(Childrens), "children's language");
-        public static readonly Miscellaneous Colloquialism = new Miscellaneous(nameof(Colloquialism), "colloquialism");
+        public static readonly Miscellaneous Colloquial = new Miscellaneous(nameof(Colloquial), "colloquial");
         public static readonly Miscellaneous Dated = new Miscellaneous(nameof(Dated), "dated term");
         public static readonly Miscellaneous Derogatory = new Miscellaneous(nameof(Derogatory), "derogatory");
+        public static readonly Miscellaneous Euphemistic = new Miscellaneous(nameof(Euphemistic), "euphemistic");
         public static readonly Miscellaneous Familiar = new Miscellaneous(nameof(Familiar), "familiar language");
         public static readonly Miscellaneous Female = new Miscellaneous(nameof(Female), "female term or language");
         public static readonly Miscellaneous Formal = new Miscellaneous(nameof(Formal), "formal or literary term");
@@ -21,7 +22,6 @@
         public static readonly Miscellaneous Legend = new Miscellaneous(nameof(Legend), "legend");
         public static readonly Miscellaneous Male = new Miscellaneous(nameof(Male), "male term or language");
         public static readonly Miscellaneous Manga = new Miscellaneous(nameof(Manga), "manga slang");
-        public static readonly Miscellaneous Obscure = new Miscellaneous(nameof(Obscure), "obscure term");
         public static readonly Miscellaneous Obsolete = new Miscellaneous(nameof(Obsolete), "obsolete term");
         public static readonly Miscellaneous Onomatopoeic = new Miscellaneous(nameof(Onomatopoeic), "onomatopoeic or mimetic word");
         public static readonly Miscellaneous Person = new Miscellaneous(nameof(Person), "full name of a particular person");
@@ -30,7 +30,7 @@
         public static readonly Miscellaneous Polite = new Miscellaneous(nameof(Polite), "polite (teineigo) language");
         public static readonly Miscellaneous Proverb = new Miscellaneous(nameof(Proverb), "proverb");
         public static readonly Miscellaneous Quotation = new Miscellaneous(nameof(Quotation), "quotation");
-        public static readonly Miscellaneous Rare = new Miscellaneous(nameof(Rare), "rare");
+        public static readonly Miscellaneous Rare = new Miscellaneous(nameof(Rare), "rare term");
         public static readonly Miscellaneous Sensitive = new Miscellaneous(nameof(Sensitive), "sensitive");
         public static readonly Miscellaneous Slang = new Miscellaneous(nameof(Slang), "slang");
         public static readonly Miscellaneous UsuallyKanaAlone = new Miscellaneous(nameof(UsuallyKanaAlone), "word usually written using kana alone");

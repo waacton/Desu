@@ -11,7 +11,7 @@
         public static readonly Resource KanjiToRadicals1 = new Resource("KanjiToRadicals1", nameof(Resources.kradfile));
         public static readonly Resource KanjiToRadicals2 = new Resource("KanjiToRadicals2", nameof(Resources.kradfile2));
         public static readonly Resource RadicalToKanjis = new Resource("RadicalToKanjis", nameof(Resources.radkfilex));
-        public static readonly Resource KanjiStrokes = new Resource("KanjiStrokes", nameof(Resources.KanjiVG));
+        public static readonly Resource KanjiStrokes = new Resource("KanjiStrokes", nameof(Resources.kanjivg));
 
         public string Name { get; }
 

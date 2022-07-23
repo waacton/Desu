@@ -93,9 +93,9 @@ namespace Wacton.Desu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] KanjiVG {
+        internal static byte[] kanjivg {
             get {
-                object obj = ResourceManager.GetObject("KanjiVG", resourceCulture);
+                object obj = ResourceManager.GetObject("kanjivg", resourceCulture);
                 return ((byte[])(obj));
             }
         }

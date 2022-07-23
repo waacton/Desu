@@ -16,8 +16,8 @@
     {
         private const bool GenerateExampleJson = false;
         private const bool UseAsync = true;
-        private static readonly Random Random = new Random();
-        private static readonly Transliterator Transliterator = new Transliterator();
+        private static readonly Random Random = new();
+        private static readonly Transliterator Transliterator = new();
 
         public static async Task Main()
         {
@@ -45,7 +45,7 @@
             }
         }
 
-        public static async Task RunAsync()
+        private static async Task RunAsync()
         {
             var japaneseDictionaryStopwatch = new Stopwatch();
             var nameDictionaryStopwatch = new Stopwatch();
@@ -78,7 +78,7 @@
             }
         }
 
-        public static void RunSync()
+        private static void RunSync()
         {
             var japaneseDictionaryStopwatch = new Stopwatch();
             var nameDictionaryStopwatch = new Stopwatch();
@@ -165,12 +165,12 @@
 
             OutputEndEntry();
         }
-
-        private static void OutputStartEntry() => OutputLine("------------------------------");
-
+        
+        private static void OutputLineBreak() => OutputLine("------------------------------");
+        private static void OutputStartEntry() => OutputLineBreak();
         private static void OutputEndEntry()
         {
-            OutputLine("------------------------------");
+            OutputLineBreak();
             OutputLine(string.Empty);
             Console.ReadKey();
         }

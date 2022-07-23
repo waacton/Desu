@@ -5,7 +5,7 @@
     <ApplicationIcon>Resources\Desu.ico</ApplicationIcon>
     <AssemblyName>Wacton.Desu</AssemblyName>
     <RootNamespace>Wacton.Desu</RootNamespace>
-    <Version>6.1.0</Version>
+    <Version>6.2.0</Version>
     <Authors>William Acton</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Japanese and kanji dictionary .NET library built upon JMdict, JMnedict, KANJIDIC, RADKFILE/KRADFILE, and KanjiVG.
@@ -13,12 +13,12 @@ Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framewor
     <PackageProjectUrl>https://gitlab.com/Wacton/Desu</PackageProjectUrl>
     <RepositoryUrl>https://gitlab.com/Wacton/Desu</RepositoryUrl>
     <PackageTags>Japanese kanji dictionary JMdict JMnedict KANJIDIC RADKFILE KRADFILE KanjiVG EDICT radicals romaji</PackageTags>
-    <PackageReleaseNotes>Remove duplicate radicals and replace approximate glyphs</PackageReleaseNotes>
+    <PackageReleaseNotes>Update kanji stroke path data from KanjiVG</PackageReleaseNotes>
     <LangVersion>7.3</LangVersion>
     <Copyright>William Acton</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>Desu_64.png</PackageIcon>
-    <PackageVersion>6.1.0</PackageVersion>
+    <PackageVersion>6.2.0</PackageVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -29,7 +29,7 @@ Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framewor
     <None Remove="Resources\JMdict.zip" />
     <None Remove="Resources\JMnedict.zip" />
     <None Remove="Resources\kanjidic2.zip" />
-    <None Remove="Resources\KanjiVG.zip" />
+    <None Remove="Resources\kanjivg.zip" />
     <None Remove="Resources\kradfile" />
     <None Remove="Resources\kradfile2" />
     <None Remove="Resources\radkfilex" />
@@ -47,7 +47,7 @@ Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framewor
     <EmbeddedResource Include="Resources\JMdict.zip" />
     <EmbeddedResource Include="Resources\JMnedict.zip" />
     <EmbeddedResource Include="Resources\kanjidic2.zip" />
-    <EmbeddedResource Include="Resources\KanjiVG.zip" />
+    <EmbeddedResource Include="Resources\kanjivg.zip" />
     <EmbeddedResource Include="Resources\kradfile" />
     <EmbeddedResource Include="Resources\kradfile2" />
     <EmbeddedResource Include="Resources\radkfilex" />
