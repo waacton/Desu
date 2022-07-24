@@ -3,6 +3,7 @@ image: mcr.microsoft.com/dotnet/sdk:6.0
 stages:
     - build
     - test
+    - security-scan
 
 build:
     stage: build
@@ -15,7 +16,7 @@ build:
 # dotnet test generates JUnit format logs for GitLab test reporting (https://docs.gitlab.com/ee/ci/unit_test_reports.html#net-example)
 # and collects code coverage report (https://github.com/coverlet-coverage/coverlet)
 # however coverage report is not in a useful format, so create a report from it (https://github.com/danielpalme/ReportGenerator) which requires installing as a tool
-# finally, cat the coverage report summary so it is displayed in the job log - which can then be regex'd from gitlab (https://gitlab.com/Wacton/Desu/-/settings/ci_cd)
+# finally, cat the coverage report summary so it is displayed in the job log - which can then be regex'd from gitlab (https://docs.gitlab.com/ee/ci/yaml/index.html#coverage)
 test:
     stage: test
     script:
@@ -26,6 +27,7 @@ test:
         - 'dotnet tool install -g dotnet-reportgenerator-globaltool'
         - 'reportgenerator "-reports:./**/coverage.cobertura.xml" "-targetdir:./artifacts/report" "-reporttypes:Html;TextSummary"'
         - 'cat ./artifacts/report/Summary.txt'
+    coverage: '/Line coverage: \d+\.\d+%/'
 
     artifacts:
         when: always
@@ -37,9 +39,32 @@ test:
             coverage_report:
                 coverage_format: cobertura
                 path: ./**/coverage.cobertura.xml
-                
-# will enable when GitLab allows it to work
-#sast:
-#    stage: security-test
-#include:
+
+# security scanning
+# https://docs.gitlab.com/ee/user/application_security/#security-scanning-without-auto-devops
+include:
+    - template: Security/Dependency-Scanning.gitlab-ci.yml
+    - template: Security/License-Scanning.gitlab-ci.yml
 #    - template: Security/SAST.gitlab-ci.yml
+    - template: Security/Secret-Detection.gitlab-ci.yml
+
+dependency_scanning:
+    stage: security-scan
+
+license_scanning:
+    stage: security-scan
+
+# currently not able to get SAST working in this repo;
+# GitLab's using `security-code-scan` for .NET SAST 
+# (https://docs.gitlab.com/ee/user/application_security/sast/analyzers.html / https://security-code-scan.github.io/)
+# which fails due to the example WPF .NET Framework project in the solution
+# it seems as though SAST_EXCLUDED_PATHS has no effect, so unable to ignore the WPF project
+# --------------------------------------------------
+# will try to re-enable this when either:
+# a) specific projects are able to be excluded from security-code-scan analyser (https://gitlab.com/gitlab-org/gitlab/-/issues/360181 ?)
+# b) GitLab adopts semgrep analyser for .NET (https://gitlab.com/gitlab-org/gitlab/-/issues/347258)
+#sast:
+#    stage: security-scan
+    
+.secret-analyzer:
+    stage: security-scan
