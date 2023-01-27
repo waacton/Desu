@@ -29,7 +29,7 @@ var japaneseEntries = JapaneseDictionary.ParseEntries();
 var japaneseEntries = await JapaneseDictionary.ParseEntriesAsync();
 ```
 <details>
-<summary>Click to see example structure of a Japanese entry: 円</summary>
+<summary>Example structure of a Japanese entry: 円</summary>
 
 ```json
 {
@@ -626,7 +626,7 @@ var nameEntries = NameDictionary.ParseEntries();
 var nameEntries = await NameDictionary.ParseEntriesAsync();
 ```
 <details>
-<summary>Click to see example structure of a proper name entry: 円</summary>
+<summary>Example structure of a proper name entry: 円</summary>
 
 ```json
 {
@@ -681,7 +681,7 @@ var kanjiEntries = KanjiDictionary.ParseEntries();
 var kanjiEntries = await KanjiDictionary.ParseEntriesAsync();
 ```
 <details>
-<summary>Click to see example structure of a kanji entry: 円</summary>
+<summary>Example structure of a kanji entry: 円</summary>
 
 ```json
 {
@@ -1229,7 +1229,7 @@ var kanjiToRadicals = RadicalLookup.ParseKanjiToRadicals();
 var kanjiToRadicals = await RadicalLookup.ParseKanjiToRadicalsAsync();
 ```
 <details>
-<summary>Click to see example return value of a radical lookup (kanji to radicals): 円</summary>
+<summary>Example return value of a radical lookup (kanji to radicals): 円</summary>
 
 ```json
 ["冂","亠","一","｜"]
@@ -1246,7 +1246,7 @@ var radicalToKanjis = await RadicalLookup.ParseRadicalToKanjisAsync();
 ```
 <details>
 <summary>
-Click to see example return value of a radical lookup (radical to kanjis): 冂,
+Example return value of a radical lookup (radical to kanjis): 冂,
 <a href="https://en.wikipedia.org/wiki/Radical_13">the index radical of 円</a>
 </summary>
 
@@ -1265,7 +1265,7 @@ var kanjiToStrokes = await StrokeLookup.ParseKanjiToStrokesAsync();
 ```
 <details>
 <summary>
-Click to see example return value of a stroke lookup:
+Example return value of a stroke lookup:
 05186, <a href="https://unicode-table.com/en/5186/">the 5-digit unicode number of 円</a>
 </summary>
 
