@@ -2,27 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
-
     <AssemblyName>Wacton.Desu.Tests</AssemblyName>
-
     <RootNamespace>Wacton.Desu.Tests</RootNamespace>
-
     <Authors>William Acton</Authors>
-
     <Company>William Acton</Company>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="coverlet.collector" Version="3.1.0">
+    <PackageReference Include="coverlet.collector" Version="3.2.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="JunitXml.TestLogger" Version="3.0.110" />
-    <PackageReference Include="NUnit" Version="3.12.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="JunitXml.TestLogger" Version="3.0.114" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.3.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
   </ItemGroup>
 
   <ItemGroup>

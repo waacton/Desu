@@ -17,7 +17,7 @@ Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framewor
     <LangVersion>7.3</LangVersion>
     <Copyright>William Acton</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageIcon>Desu_64.png</PackageIcon>
+    <PackageIcon>Resources\Desu.png</PackageIcon>
     <PackageVersion>6.2.0</PackageVersion>
   </PropertyGroup>
 
@@ -33,13 +33,13 @@ Targets .NET Standard 2.0 for use in .NET 5.0+, .NET Core 2.0+ and .NET Framewor
     <None Remove="Resources\kradfile" />
     <None Remove="Resources\kradfile2" />
     <None Remove="Resources\radkfilex" />
+    <None Update="Resources\Desu.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="Resources\Desu_64.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
