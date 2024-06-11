@@ -1266,7 +1266,7 @@ var kanjiToStrokes = await StrokeLookup.ParseKanjiToStrokesAsync();
 <details>
 <summary>
 Example return value of a stroke lookup:
-05186, <a href="https://unicode-table.com/en/5186/">the 5-digit unicode number of 円</a>
+05186, <a href="https://symbl.cc/en/5186/">the 5-digit unicode number of 円</a>
 </summary>
 
 ```json
