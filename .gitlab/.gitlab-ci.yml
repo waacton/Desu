@@ -1,12 +1,12 @@
-image: mcr.microsoft.com/dotnet/sdk:6.0
+image: mcr.microsoft.com/dotnet/sdk:8.0
 
 stages:
-    - build
-    - test
-    - security-scan
+    - 🦺 build
+    - 🧪 test
+    - 🛃 security-scan
 
 build:
-    stage: build
+    stage: 🦺 build
     script:
         - "dotnet build Desu"
     artifacts:
@@ -18,7 +18,7 @@ build:
 # however coverage report is not in a useful format, so create a report from it (https://github.com/danielpalme/ReportGenerator) which requires installing as a tool
 # finally, cat the coverage report summary so it is displayed in the job log - which can then be regex'd from gitlab (https://docs.gitlab.com/ee/ci/yaml/index.html#coverage)
 test:
-    stage: test
+    stage: 🧪 test
     script:
         - 'dotnet test 
             --test-adapter-path:. --logger:"junit;LogFilePath=..\artifacts\{assembly}-test-result.xml;MethodFormat=Class;FailureBodyFormat=Verbose"
@@ -42,17 +42,14 @@ test:
 
 # security scanning
 # https://docs.gitlab.com/ee/user/application_security/#security-scanning-without-auto-devops
+# https://docs.gitlab.com/ee/user/application_security/#using-a-custom-scanning-stage
 include:
-    - template: Security/Dependency-Scanning.gitlab-ci.yml
-    - template: Security/License-Scanning.gitlab-ci.yml
-#    - template: Security/SAST.gitlab-ci.yml
-    - template: Security/Secret-Detection.gitlab-ci.yml
+    - template: Jobs/Dependency-Scanning.gitlab-ci.yml
+#    - template: Jobs/SAST.gitlab-ci.yml
+    - template: Jobs/Secret-Detection.gitlab-ci.yml
 
 dependency_scanning:
-    stage: security-scan
-
-license_scanning:
-    stage: security-scan
+    stage: 🛃 security-scan
 
 # currently not able to get SAST working in this repo;
 # GitLab's using `security-code-scan` for .NET SAST 
@@ -64,7 +61,7 @@ license_scanning:
 # a) specific projects are able to be excluded from security-code-scan analyser (https://gitlab.com/gitlab-org/gitlab/-/issues/360181 ?)
 # b) GitLab adopts semgrep analyser for .NET (https://gitlab.com/gitlab-org/gitlab/-/issues/347258)
 #sast:
-#    stage: security-scan
+#    stage: 🛃 security-scan
     
 .secret-analyzer:
-    stage: security-scan
+    stage: 🛃 security-scan
